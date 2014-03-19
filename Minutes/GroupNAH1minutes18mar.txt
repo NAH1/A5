@@ -1,0 +1,44 @@
+Minutes
+Meeting Of Minutes: Lewis, Gavin, Dan, Geraint, Jiaming
+-------------------------------------------------------
+Date: 18 Mar '14
+Start time: 1.45pm
+End time: 2.15pm
+Date and time of next meeting: 19 mar '14, 11.00am.
+
+Topics Discussed:
+- Ben has stated that he is very ill and is unlikely to be here this week, possibly next week. No classes will be
+allocated to him, but he will be availible for help with implementation online if it is needed.
+
+- Class allocation is as follows (with relevant info fromt the meeting):
+
+- Lewis: saveManager & loadManager
+	- BoardGame.board stores the board data.
+	- player stores the player data.
+	- GameController.m_current stores the player turn.
+
+- Callum: timer
+	- New class
+	- 1 method (setTime) that sets the time that the game starts at.
+	- getTime returns the duration of the game.
+
+- Geraint: aiEasy
+	- othello.availibleMove gives you all the availible current moves.
+	- othello.countScore gives the total number of pieces for each player.
+	- This will be moved to the super class "boardGame".
+	
+- Jiaming: aiHard
+	- othello.availibleMove gives you all the availible current moves.
+	- othello.countScore gives the total number of pieces for each player.
+	- This will be moved to the super class "boardGame".
+ 
+- Dan: animation
+	- GUI.drawPieces: alter this method for animation.
+	- Each square of the grid is a jpanel.
+	- Each piece is an icon, which are components of the jpanels. 
+
+- Gavin: Editing the game logic.
+	- 
+
+TODO (by next meeting):
+-Nothing to be done by tomorrow's programming session.

@@ -1,0 +1,51 @@
+Minutes
+
+Minutes of Meeting: Lewis, Gavin, Ben, Dan, Callum, Geraint
+
+-----------------------------------------------------------
+
+Date: 6th Mar '14
+
+Start time: 1.05pm
+
+End time: 1.20pm
+
+Date and time of next meeting: 12.30pm, 7th Mar '14
+
+Jiaming absent, appologies sent.
+
+
+
+Topics Discussed:
+- 
+Assesment Report topics:
+
+- Design: Dan
+
+- Implementation: Gavin & Ben
+
+- Testing: Geraint & Jiaming
+
+- Doxygen: Callum
+
+- Groupwork: Lewis
+
+
+
+Progress since last meeting:
+
+- N/A
+
+
+
+TODO (next meeting):
+
+- Lewis: See the groupwork of the hand off group.
+
+- Gavin & Ben: See the code given by the hand off.
+
+- Dan: See the design and structure by the hand off.
+
+- Geraint & Jiaming: See the tests done by the hand off.
+
+- Callum: See the doxygen comments of the hand off group.

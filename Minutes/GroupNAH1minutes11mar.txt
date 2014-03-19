@@ -1,0 +1,53 @@
+Minutes
+Minutes of Meeting: Gavin, Lewis, Callum, Dan, Geraint, Jiaming
+
+------------------------------------------------------
+
+Date: 11 Mar '14
+
+Start Time: 2.30pm
+
+End time: 2.55pm
+
+
+Date and Time of next meeting: 12.10, 13 Mar '14
+
+
+
+Progress since last meeting:
+
+- Gavin: Assessment Report almost complete, sections 5 & 6 remain.
+
+- Lewis: Assessment report complete.
+
+- Callum: Assessment report complete, just needs slight adjustment.
+
+- Dan: Assessment Report almost complete, section 7 remains.
+
+- Jiaming: Assessment Report almost complete, last 2 questions remain.
+
+- Geraint: Assessment Report almost complete, 1 questions remains.
+
+- Lewis, Ben, Gavin: Finish off coding convention report of classes.
+
+
+
+Topics Discussed:
+
+- All parts of the hand off project
+
+
+
+TODO (by next meeting):
+
+- Gavin: Complete sections 5 & 6.
+
+- Dan: Complete section 7.
+
+- Jiaming: Finish the remaining questions.
+
+- Geraint: Finish the final question.
+
+- Lewis: Compile the final document after 12:00pm 12 Mar '14.
+
+

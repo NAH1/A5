@@ -1,0 +1,51 @@
+Minutes
+
+Minutes of Meeting: Lewis, Geraint, Jiaming, Dan, Gavin
+-------------------------------------------------------
+
+Date: 7th Mar '14
+
+Start time: 12.30pm
+
+End time: 12.55pm			
+
+Date and time of next meeting: 	2.00pm, 11th Feb '14
+
+
+Absent: 
+Callum, In hospital, apologies sent.
+		
+Ben, illness, apologies sent.
+		
+
+
+Topics Discussed:
+- The implementation of the hand off project did not initially compile.
+
+This problem has now been fixed by Gavin, and now compiles correctly.
+
+
+
+Progress since last meeting:
+
+- Lewis: Group work documents read.
+
+- Geraint & Jiaming: Tests read.
+
+- Gavin: Implementation has been read.
+
+- Dan: Design has been viewed.
+
+
+
+TODO (by next meeting):
+
+- Gavin & Ben: Write implementation assessment report.
+
+- Lewis: Write group contributions assessment report.
+
+- Geraint & Jiaming: Write testing assessment report.
+
+- Dan: Write design assessment report.
+
+- Callum: Write doxygen assessment report.

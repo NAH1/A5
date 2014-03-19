@@ -1,12 +1,12 @@
 /**
-* \file -saveManager.java
+* \file saveManager.java
 * \author Lewis Edwards 708830
 * \date 19th Mar '14
 *
 * \brief This class will manage the saving and loading of games.
 *
 *
-*
+* 
 */
 
 

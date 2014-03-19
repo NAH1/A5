@@ -1,0 +1,24 @@
+Minutes
+Minutes of meeting: Lewis, Dan, Gavin, Geraint, Jiaming, Callum
+---------------------------------------------------------------
+Date: 19 Mar '14
+Start Time: 11.30am
+End Time: 3.20pm
+Date and time of next meeting: 12pm, 20 Mar '14
+
+Topics Discussed: 
+- Lewis: saveManager base code is done, progress will continue tomorrow.
+- Dan: Animation is progressing, animation works, but not implemented.
+- Gavin: Availible moves method move to the superclass.
+- Callum: Timer class is almost complete. Slight tweaks & upload to github needed.
+- Jiaming & Geraint: Need to wait for Gavin to complete his adjustments.
+
+
+- Github is now set up. Members who left earlier than others will be added to the group tomorrow, and shown how it works.
+
+TODO (by next meeting):
+- Gavin: Learn how to use github correctly (to teach everyone else).
+- Dan: Implement the connect 4 animation.
+- Lewis: Add more to the saveManager.
+- Callum: Make changes to timer. Install github.
+- Geraint + Jiaming: Install github.

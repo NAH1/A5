@@ -14,8 +14,8 @@ public class AnimationOthello extends Animation{
 	 * \param frame - 
 	 * \param game - 
 	 */
-	public AnimationOthello(JFrame frame,  Othello game) {
-		super(frame, game);		
+	public AnimationOthello(JFrame frame,  BoardGame game, GUI gui) {
+		super(frame, game, gui);		
 	}
 
 	/**

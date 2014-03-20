@@ -1,5 +1,6 @@
 import javax.swing.JFrame;
 
+import piece.GamePiece;
 import boardGame.*;
 
 public class AnimationConnect4 extends Animation{
@@ -9,10 +10,12 @@ public class AnimationConnect4 extends Animation{
 	 * \param frame
 	 * \param game
 	 */
-	public AnimationConnect4(JFrame frame, ConnectFour game) {
-		super(frame, game);
-		//setXCoord(0); //Set the X Coordinate to be where the player has clicked
-		setYCoord(0);	//Set the Y Coordinate to be 0
+	public AnimationConnect4(JFrame frame, BoardGame game, GUI gui) {
+		super(frame, game, gui);
+		setXCoord(INITIAL_X); //Set the X Coordinate to be where the player has clicked
+		setYCoord(INITIAL_Y);	//Set the Y Coordinate to be 0
+		System.out.println("HEIGHT: " + HEIGHT + " WIDTH: " + WIDTH);
+		System.out.println("Y Coordinate: " + getYCoord() + " X Coordinate: " + getXCoord());
 	}
 
 	/**
@@ -41,8 +44,16 @@ public class AnimationConnect4 extends Animation{
 		startTime = System.currentTimeMillis();
 		
 		while (getRunBool() == true) {
+			GamePiece piece;
 			cycle();
-			getGame().SetPiece(getXCoord(), getYCoord(), "red");
+			if (getYCoord() > 0) {
+				getGUI().m_panels[getXCoord()][getYCoord() - 1].removeAll();
+				getGUI().m_panels[getXCoord()][getYCoord() - 1].add(getGUI().m_labels[getXCoord()][getYCoord() - 1]);
+				System.out.println("Y Coordinate: " + getYCoord() + " X Coordinate: " + getXCoord());
+			}			
+			//getGame().SetPiece(getXCoord(), getYCoord(), "red");
+			piece = getGame().GetPiece(getXCoord(), getYCoord());
+			getGUI().m_labels[getXCoord()][getYCoord()].setIcon(piece.GetIcon());
 			
 			timeDiff = System.currentTimeMillis() - startTime;
 			sleep = DELAY - timeDiff;

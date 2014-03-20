@@ -106,7 +106,20 @@ public abstract class Animation implements Runnable {
 	
 	/**
 	 * 
-	 
+	 * \return
+	 */
+	public GUI getGUI() {
+		return m_gui;
+	}
+	
+	public void setGUI (GUI gui) {
+		m_gui = gui;
+	}
+	
+	/**
+	 * 
+	 */	
+	/*
 	public void addNotify() {
 		getGUIFrame().addNotify();
 		
@@ -120,13 +133,12 @@ public abstract class Animation implements Runnable {
 	 * 
 	 * \param frame
 	 */
-	public Animation(JFrame frame, BoardGame game) {
+	public Animation(JFrame frame, BoardGame game, GUI gui) {
 		setGUIFrame(frame);
 		setGame(game);
-		INITIAL_X = 0;
-		INITIAL_Y = 0;
-		WIDTH = getGUIFrame().getWidth();
-		HEIGHT = getGUIFrame().getHeight();
+		setGUI(gui);
+		WIDTH = getGUI().m_width;
+		HEIGHT = getGUI().m_height;
 	}
 	
 	/**
@@ -147,10 +159,11 @@ public abstract class Animation implements Runnable {
 	private int m_yCoord;
 	private boolean m_run = true;
 	private BoardGame m_game;
-	protected final int INITIAL_X;	//The initial X Coordinate of the Image
-    protected final int INITIAL_Y;	//The initial Y Coordinate of the Image
+	private GUI m_gui;
+	protected final int INITIAL_X = 3;	//The initial X Coordinate of the Image
+    protected final int INITIAL_Y = 2;	//The initial Y Coordinate of the Image
     protected final int WIDTH;		//Width of the gameboard
     protected final int HEIGHT;		//Height of the gameboard
-    protected final int DELAY = 5;	
+    protected final int DELAY = 15;	
     //the initial delay to put the thread to sleep by
 }

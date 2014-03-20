@@ -29,7 +29,7 @@ public class OthelloGUI extends GUI {
      *  to display on screen.
      * \return boolean  return true if the action complete.
      */
-	public boolean SetOthelloInfo() {
+	public boolean setInfo() {
 		boolean test = false;
 		if (test || m_test){
 			System.out.println("OthelloGUI :: SetOthelloInfo() BEGIN");
@@ -78,7 +78,7 @@ public class OthelloGUI extends GUI {
      * with regard to available moves of different player. 
      * \return boolean  return true if the action complete.
      */
-	public boolean SetPanelColour() {
+	public boolean setPanelColour() {
 		boolean test=false;
 		if (test || m_test){
 			System.out.println("OthelloGUI :: SetPanelColour() BEGIN");
@@ -117,7 +117,7 @@ public class OthelloGUI extends GUI {
     */
 	public OthelloGUI(BoardGame b, GameController g) {
 		super(b, g);
-		SetOthelloInfo();
+		setInfo();
 	}
 	/** boolean turn to true to print out begining and ends of methods*/
 	boolean m_test = false;

@@ -17,7 +17,7 @@ import piece.*;
  * \brief GUI is used to set up and update the display for game board and the information. 
  * 
  */
-public class GUI extends JFrame {
+public abstract class GUI extends JFrame {
 
 	 /**
      * Get the game controller object.
@@ -43,6 +43,10 @@ public class GUI extends JFrame {
 	public JPanel[][] GetPanels() {
 		return m_panels;
 	}
+	
+	public abstract boolean setPanelColour();
+	
+	public abstract boolean setInfo();
 
     /**
     * Constructor of GUI, construct the game board and sets the player 

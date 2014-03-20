@@ -117,20 +117,11 @@ public class GameController {
 	        }
 			m_currentPlayer = m_p1;
 		}
-	
-		if (m_gameType.equals(m_othello)) {
-			if (test || m_test) {
-	            System.out.println("GameController :: Alternate() END");
-	        }
-			m_othelloGUI.SetPanelColour();
-			m_othelloGUI.SetOthelloInfo();
-		} else if (m_gameType.equals(m_connectFour)) {
-			if (test || m_test) {
-	            System.out.println("GameController :: Alternate() END");
-	        }
-			m_c4GUI.SetPanelColour();
-			m_c4GUI.SetConnectFourInfo();
-		}
+		if (test || m_test) {
+            System.out.println("GameController :: Alternate() END");
+        }
+		m_GUI.setPanelColour();
+		m_GUI.setInfo();
 	}
 
 	 /**
@@ -143,17 +134,11 @@ public class GameController {
             System.out.println("GameController :: CheckWin() BEGIN");
         }
 		boolean win = false;
-		if (m_gameType.equals(m_othello)) {
-			if (test || m_test) {
-	            System.out.println("GameController :: CheckWin() END");
-	        }
-			win = m_othelloBoard.WinningCondition();
-		} else if (m_gameType.equals(m_connectFour)) {
-			if (test || m_test) {
-	            System.out.println("GameController :: CheckWin() END");
-	        }
-			win = m_connectFourBoard.WinningCondition();
-		}
+		if (test || m_test) {
+            System.out.println("GameController :: CheckWin() END");
+        }
+		win = m_board.WinningCondition();
+	
 		SetGameOn(win);
 		return win;
 	}
@@ -162,45 +147,43 @@ public class GameController {
 	  * Set up the game board with given game type.
 	  * \param the game type.
   */
-	public void SetUp(String m_gameType) {
+	public void SetUp(GameType gameType) {
 		boolean test = false;
         if (test || m_test) {
             System.out.println("GameController :: SetUp() BEGIN");
         }
 		// System.out.println(getCurrent());
-
-		if (m_gameType.equals(m_othello)) {
-			if (test || m_test) {
-	            System.out.println("GameController :: SetUp() END");
-	        }
-			m_othelloBoard = new Othello();
-			m_othelloGUI = new OthelloGUI(m_othelloBoard, this);
-			m_othelloGUI.DrawPieces();
-			m_othelloGUI.SetPanelColour();
-		} else if (m_gameType.equals(m_connectFour)) {
-			if (test || m_test) {
-	            System.out.println("GameController :: SetUp() END");
-	        }
-			m_connectFourBoard = new ConnectFour();
-			m_c4GUI = new Connect4GUI(m_connectFourBoard, this);
-			m_c4GUI.SetPanelColour();
+		if (test || m_test) {
+            System.out.println("GameController :: SetUp() END");
+        }
+		if (gameType == GameType.OTHELLO) {
+			m_board = new Othello();
+			m_GUI = new OthelloGUI(m_board, this);
+		} else if (gameType == GameType.CONNECTFOUR) {
+			m_board = new ConnectFour();
+			m_GUI = new Connect4GUI(m_board, this);
 		}
+		m_GUI.DrawPieces();
+		m_GUI.setPanelColour();
 	}
 	
 	 /**
 	  * Constructor of GameController.
 	  * \param game type, the two HumanPlayer objects
     */
-	public GameController(String gt, HumanPlayer one, HumanPlayer two) {
+	public GameController(GameType gt, HumanPlayer one, HumanPlayer two) {
 		boolean test = false;
         if (test || m_test) {
             System.out.println("GameController :: GameController() BEGIN");
         }
 		m_p1 = one;
 		m_p2 = two;
-		m_currentPlayer = m_p1;
-		m_gameType = gt;
-		SetUp(m_gameType);
+		if (gt == GameType.CONNECTFOUR) {
+			m_currentPlayer = m_p1;
+		} else if (gt == GameType.OTHELLO) {
+			if(m_p1.GetPiece().equals())
+		}
+		SetUp(gt);
 		
 		if (test || m_test) {
             System.out.println("GameController :: GameController() END");
@@ -211,20 +194,19 @@ public class GameController {
 	  * It is used for testing.
 	  * \param the game type.
     */
-	public GameController(String gt) {
+	public GameController(GameType gt) {
 		boolean test = false;
         if (test || m_test) {
             System.out.println("GameController :: GameController() BEGIN");
         }
-		m_gameType = gt;
 
-		if (m_gameType.equals(m_othello)) {
+		if (gt == GameType.OTHELLO) {
 			if (test || m_test) {
 	            System.out.println("GameController :: GameController() END");
 	        }
 			m_p1 = new HumanPlayer("Jim", "white");
 			m_p2 = new HumanPlayer("Bob", "black");
-		} else if (m_gameType.equals(m_connectFour)) {
+		} else if (gt == GameType.CONNECTFOUR) {
 			if (test || m_test) {
 	            System.out.println("GameController :: GameController() END");
 	        }
@@ -235,7 +217,7 @@ public class GameController {
 		// System.out.println("P1: " + m_p1.GetPiece());
 		// System.out.println("P2: " + m_p2.GetPiece());
 
-		SetUp(m_gameType);
+		SetUp(gt);
 		if (test || m_test) {
             System.out.println("GameController :: GameController() END");
         }
@@ -247,7 +229,7 @@ public class GameController {
 	  * It is used for testing.
      */
 	public static void main(String[] args) {
-		GameController a = new GameController("m_connectFour");
+		GameController a = new GameController(GameType.CONNECTFOUR);
 		//GameController b = new GameController("m_othello");
 		
 		/** Can't get these test cases to run */
@@ -257,20 +239,11 @@ public class GameController {
 	
 	}
 
-	/**The default String for the ConnectFour game*/
-	private final String m_connectFour = "connectFour";
-	/**The default String for the Othello game*/
-	private final String m_othello = "othello";
-	/**Identifier for the Connect4GUI*/
-	private Connect4GUI m_c4GUI;
-	/**Identifier for the Othello4GUI*/
-	private OthelloGUI m_othelloGUI;
-	/**Identifier for the Othello Gameboard*/
-	private Othello m_othelloBoard;
-	/**Identifier for the Connect4 Gameboard*/
-	private ConnectFour m_connectFourBoard;
-	/**Stores the gameType (connectFour or Othello).*/
-	private String m_gameType;
+	public enum GameType {OTHELLO, CONNECTFOUR};
+	/**Identifier for the GUI*/
+	private GUI m_GUI;
+	/**Identifier for the Gameboard*/
+	private BoardGame m_board;
 	/**Available for a boolean test to check whether the game is still in session*/
 	private boolean m_gameOn = true;
 	/**Identifier for first player object*/

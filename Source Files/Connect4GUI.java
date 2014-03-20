@@ -27,7 +27,7 @@ public class Connect4GUI extends GUI {
      * display on screen.
      * \return boolean  return true if the action complete.
      */
-	public boolean SetConnectFourInfo(){
+	public boolean setInfo(){
 		boolean test = false;
 		if (test || m_test){
 			System.out.println("Connect4GUI :: SetConnectFourInfo() BEGIN");
@@ -64,7 +64,7 @@ public class Connect4GUI extends GUI {
      * Set the background colour of the connect four game board. 
      * \return boolean  return true if the action complete.
      */
-	public boolean SetPanelColour() {
+	public boolean setPanelColour() {
 		boolean test = false;
 		if (test || m_test){
 			System.out.println("Connect4GUI :: SetPannelColour() BEGIN");
@@ -124,7 +124,7 @@ public class Connect4GUI extends GUI {
 		}
 		
 		setImages();
-		SetConnectFourInfo();
+		setInfo();
 		
 		if (test || m_test){
 			System.out.println("Connect4GUI :: Connect4GUI() END");

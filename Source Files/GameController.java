@@ -181,7 +181,14 @@ public class GameController {
 		if (gt == GameType.CONNECTFOUR) {
 			m_currentPlayer = m_p1;
 		} else if (gt == GameType.OTHELLO) {
-			if(m_p1.GetPiece().equals())
+			if(m_p1.GetPiece().equals("black")) {
+				m_currentPlayer = m_p1;
+			} else if (m_p2.GetPiece().equals("black")){
+				m_currentPlayer = m_p2;
+			} else {
+				m_currentPlayer = m_p1;
+				System.err.println("GameController::GameController() ");
+			}
 		}
 		SetUp(gt);
 		

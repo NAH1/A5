@@ -1,6 +1,9 @@
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
+
+import Player.Player;
 import boardGame.*;
 import piece.*;
 
@@ -173,49 +176,24 @@ public abstract class GUI extends JFrame {
 	 * Detect mouse action and button click to pass the information to the 
 	 * BoardGame and GameController class.
 	 */
-	private class GUIHandler implements MouseListener, ActionListener {
-		// these methods had to be declared as MouseListener is abstract
-		public void mousePressed(MouseEvent e) {
-		}
-	
+	private class GUIHandler extends MouseAdapter implements ActionListener {
+		
 		public void mouseClicked(MouseEvent e) {
-		}
-	
-		public void mouseEntered(MouseEvent e) {
-		}
-	
-		public void mouseExited(MouseEvent e) {
-		}
-	
-		public void mouseReleased(MouseEvent e) {
-			boolean moveComplete = false;
-			if (m_game.GetGamOn()) {
-				for (int y = 0; y < m_height; y++) {
-					for (int x = 0; x < m_width; ++x) {
-						if (e.getSource() == m_panels[x][y]) {
-							moveComplete = m_board.Move(x, y,
-									m_game.GetCurrent());
-						}
-					}
-				}
-				if (moveComplete) {
-					m_game.Alternate();
-					DrawPieces();
-					if (m_game.CheckWin()) {
-						ShowWinningBox();
-					}
-					// System.out.println(m_board.toString());
+			if(m_game.GetGamOn()) {
+				playerMove(e);
+				if (player.isAI()) {
+					AIMove();
 				}
 			}
 		}
-	
+		
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == m_passMove) {
 				if (m_game.GetGamOn()) {
 					if (((Othello) m_board).CheckPassTurn()) {
 						m_game.Alternate();
 						UpdatePlayerTurnIcon(new OthelloPiece(
-								m_game.GetCurrent()).GetIcon());
+								m_game.GetCurrent().GetPlayerName()).GetIcon());
 					}
 				}
 			}
@@ -224,6 +202,41 @@ public abstract class GUI extends JFrame {
 				SelectGame sg = new SelectGame();
 				sg.Draw();
 				m_frame.dispose();
+			}
+		}
+		
+		private void playerMove(MouseEvent e) {
+			boolean moveComplete = false;
+			for (int y = 0; y < m_height; y++) {
+				for (int x = 0; x < m_width; ++x) {
+					if (e.getSource() == m_panels[x][y]) {
+						moveComplete = m_board.Move(x, y,
+								m_game.GetCurrent().GetPlayerName());
+					}
+				}
+			}
+			if (moveComplete) {
+				m_game.Alternate();
+				DrawPieces();
+				if (m_game.CheckWin()) {
+					ShowWinningBox();
+				}
+				// System.out.println(m_board.toString());
+			}
+		}
+		
+		private void AIMove() {
+			boolean moveComplete = false;
+			Player player = m_game.GetCurrent();
+			player.takeMove();
+			moveComplete = m_board.Move(player.getX, player.getY, player.GetPlayerName());
+			if (moveComplete) {
+				m_game.Alternate();
+				DrawPieces();
+				if (m_game.CheckWin()) {
+					ShowWinningBox();
+				}
+				// System.out.println(m_board.toString());
 			}
 		}
 	}

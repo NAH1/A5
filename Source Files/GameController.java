@@ -80,10 +80,10 @@ public class GameController {
 	}
 
 	 /**
-     * Get current player name.
+     * Get current player.
      * \return String  return the name of the current player.
      */
-	public String GetCurrent() {
+	public Player GetCurrent() {
 		boolean test = false;
         if (test || m_test) {
             System.out.println("GameController :: GetCurrent() BEGIN");
@@ -93,7 +93,7 @@ public class GameController {
             System.out.println("GameController :: GetCurrent() END");
         }
 		
-		return m_currentPlayer.GetPiece();
+		return m_currentPlayer;
 	}
 
 	 /**

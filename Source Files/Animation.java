@@ -1,3 +1,5 @@
+import java.awt.Graphics;
+
 import javax.swing.JFrame;
 
 import boardGame.BoardGame;
@@ -145,6 +147,18 @@ public abstract class Animation implements Runnable {
 	 * This abstract method will be used to update GUI coordinates
 	 */
 	protected abstract void cycle();
+	
+	/**
+	 * 
+	 * \param g
+	 */
+	public abstract void paintComponent(Graphics g);
+	
+	/**
+	 * 
+	 * \param g
+	 */
+	protected abstract void drawPiece(Graphics g);
 	
 	/**
 	 * Abstractly define the run method to force subclasses to implement

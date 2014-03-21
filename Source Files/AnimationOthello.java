@@ -1,3 +1,5 @@
+import java.awt.Graphics;
+
 import javax.swing.JFrame;
 
 import boardGame.*;
@@ -46,6 +48,16 @@ public class AnimationOthello extends Animation{
 	@Override
 	public void run() {
 		
+		
+	}
+
+	@Override
+	public void paintComponent(Graphics g) {
+				
+	}
+
+	@Override
+	protected void drawPiece(Graphics g) {
 		
 	}
 	

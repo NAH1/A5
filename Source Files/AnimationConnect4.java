@@ -1,4 +1,10 @@
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JFrame;
+import javax.swing.ImageIcon;
 
 import piece.GamePiece;
 import boardGame.*;
@@ -12,10 +18,9 @@ public class AnimationConnect4 extends Animation{
 	 */
 	public AnimationConnect4(JFrame frame, BoardGame game, GUI gui) {
 		super(frame, game, gui);
-		setXCoord(INITIAL_X); //Set the X Coordinate to be where the player has clicked
+		setXCoord(INITIAL_X);
+		//Set the X Coordinate to be where the player has clicked
 		setYCoord(INITIAL_Y);	//Set the Y Coordinate to be 0
-		System.out.println("HEIGHT: " + HEIGHT + " WIDTH: " + WIDTH);
-		System.out.println("Y Coordinate: " + getYCoord() + " X Coordinate: " + getXCoord());
 	}
 
 	/**
@@ -24,7 +29,7 @@ public class AnimationConnect4 extends Animation{
 	 */
 	@Override
 	protected void cycle() {
-		if (getYCoord() > HEIGHT) {
+		if (getYCoord() >= HEIGHT) {
 			setRunBool(false);
 			//getAnimatorThread().interrupt();
 			//setYCoord(INITIAL_Y);
@@ -33,27 +38,44 @@ public class AnimationConnect4 extends Animation{
 		}		
 	}
 	
+	@Override
+	public void paintComponent(Graphics g) {
+		System.out.println("Paint Component :: START");
+		drawPiece(g);
+		System.out.println("Paint Component :: END");
+	}
+	
+	@Override
+	protected void drawPiece(Graphics g) {
+		
+		Graphics2D g2d = (Graphics2D) g;
+		g2d.drawImage(m_piece, getXCoord(), getYCoord(), getGUIFrame());
+		Toolkit.getDefaultToolkit().sync();
+		g.dispose();
+	}
+	
 	/**
 	 * 
 	 */
 	@Override
 	public void run() {
+		System.out.println("Animator Thread :: START");
 		long startTime, timeDiff, sleep;
 		int defaultSleep = 2;
+		ImageIcon newPiece = new ImageIcon();
+		String playerColour = getGUI().GetGame().GetCurrent();
 		
 		startTime = System.currentTimeMillis();
 		
 		while (getRunBool() == true) {
-			GamePiece piece;
+			GamePiece piece = getGame().GetPiece(0, 0);
 			cycle();
+			//setGUIFrame(getGUI().getFrame());
+			getGUIFrame().repaint();
 			if (getYCoord() > 0) {
-				getGUI().m_panels[getXCoord()][getYCoord() - 1].removeAll();
-				getGUI().m_panels[getXCoord()][getYCoord() - 1].add(getGUI().m_labels[getXCoord()][getYCoord() - 1]);
-				System.out.println("Y Coordinate: " + getYCoord() + " X Coordinate: " + getXCoord());
+				
 			}			
 			//getGame().SetPiece(getXCoord(), getYCoord(), "red");
-			piece = getGame().GetPiece(getXCoord(), getYCoord());
-			getGUI().m_labels[getXCoord()][getYCoord()].setIcon(piece.GetIcon());
 			
 			timeDiff = System.currentTimeMillis() - startTime;
 			sleep = DELAY - timeDiff;
@@ -71,5 +93,6 @@ public class AnimationConnect4 extends Animation{
 			startTime = System.currentTimeMillis();
 		}
 	}
-
+	
+	private Image m_piece;
 }

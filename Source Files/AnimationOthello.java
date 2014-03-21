@@ -12,7 +12,7 @@ import boardGame.*;
 public class AnimationOthello extends Animation{
 
 	/**
-	 * 
+	 * Constructor method
 	 * \param frame - 
 	 * \param game - 
 	 */

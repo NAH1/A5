@@ -421,8 +421,20 @@ public class Othello extends BoardGame {
 	
 	@Override
 	public int MoveQuality(int x, int y, Player current) {
-		// TODO Auto-generated method stub
-		return 0;
+		countScore();
+		int black = GetBlackScore();
+		int white = GetWhiteScore();
+		final GamePiece[][] GRID = board;
+		Move(x, y, current.GetPlayerName());
+		countScore();
+		black = GetBlackScore() - black;
+		white = GetWhiteScore() - white;
+		board = GRID;
+		if (current.GetPiece() == m_white) {
+			return white;
+		} else {
+			return black;
+		}
 	}
 	
     /** main method for tests */

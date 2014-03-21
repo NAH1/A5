@@ -1,5 +1,6 @@
 package boardGame;
 
+import Player.Player;
 import piece.*;
 /**
  * \\file -ConnectFour.java 
@@ -302,6 +303,13 @@ public class ConnectFour extends BoardGame {
 			}
 		return true;
 		}
+	}
+	
+
+	@Override
+	public int MoveQuality(int x, int y, Player current) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
     
     /** main method for tests */

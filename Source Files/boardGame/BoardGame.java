@@ -1,5 +1,6 @@
 package boardGame;
 
+import Player.Player;
 import piece.*;
 /**
  * \\file -BoardGame.java 
@@ -76,6 +77,8 @@ public abstract class BoardGame {
 	        return null;
 	    }
 	}
+	
+	public abstract int MoveQuality(int x, int y, Player current);
 
 	/**
      * Abstract method

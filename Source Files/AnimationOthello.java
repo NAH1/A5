@@ -1,5 +1,6 @@
 import java.awt.Graphics;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import boardGame.*;
@@ -17,7 +18,24 @@ public class AnimationOthello extends Animation{
 	 * \param game - 
 	 */
 	public AnimationOthello(JFrame frame,  BoardGame game, GUI gui) {
-		super(frame, game, gui);		
+		super(frame, game, gui);
+		
+		setXCoord(INITIAL_X);
+		//Set the X Coordinate to be where the player has clicked
+		setYCoord(INITIAL_Y);	//Set the Y Coordinate to be 0
+		String playerColour = getGUI().GetGame().GetCurrent().GetPiece();
+		
+		EventHandler handler = new EventHandler();
+		javax.swing.Timer timer = new javax.swing.Timer(DELAY, handler);
+		setTimer(timer);
+		
+		if (playerColour == "white") {
+			ImageIcon ii = new ImageIcon("piece\\white.png");
+			setPiece(ii.getImage());
+		} else {
+			ImageIcon ii = new ImageIcon("piece\\black.png");
+			setPiece(ii.getImage());
+		}
 	}
 
 	/**
@@ -25,35 +43,11 @@ public class AnimationOthello extends Animation{
 	 */
 	@Override
 	protected void cycle() {
-		long startTime, timeDiff, sleep;
-		int defaultSleep = 2;
-		
-		startTime = System.currentTimeMillis();
-		while (getRunBool() == true) {
-			timeDiff = System.currentTimeMillis() - startTime;
-			sleep = DELAY - timeDiff;
-			
-			if (sleep < 0) {
-				sleep = defaultSleep;
-			}
-			
-			try {
-				Thread.sleep(sleep);
-			} catch (InterruptedException e) {
-				System.out.println("Interrupted: " + e.getMessage());
-			}
-		}
-	}
-
-	@Override
-	public void run() {
-		
 		
 	}
 
-	@Override
 	public void paintComponent(Graphics g) {
-				
+		super.paintComponents(g);
 	}
 
 	@Override

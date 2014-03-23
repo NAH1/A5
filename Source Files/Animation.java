@@ -1,6 +1,10 @@
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import boardGame.BoardGame;
 
@@ -9,18 +13,18 @@ import boardGame.BoardGame;
  * \author Daniel Squires - 709547
  * \date 18/03/2014
  */
-public abstract class Animation implements Runnable {
+public abstract class Animation extends JPanel {
 	/**
-	 * 
-	 * \return
+	 * Get the JFrame from the GUI
+	 * \return the GUI JFrame
 	 */
 	public JFrame getGUIFrame() {
 		return m_GUIFrame;
 	}
 	
 	/**
-	 * 
-	 * \param frame - 
+	 * Set the GUI JFrame 
+	 * \param frame - JFrame object to instantiate m_GUIFRame to
 	 */
 	public void setGUIFrame(JFrame frame) {
 		m_GUIFrame = frame;
@@ -120,6 +124,38 @@ public abstract class Animation implements Runnable {
 	
 	/**
 	 * 
+	 * \param image
+	 */
+	public void setPiece(Image image) {
+		m_piece = image;
+	}
+	
+	/**
+	 * 
+	 * \return
+	 */
+	public Image getPiece() {
+		return m_piece;
+	}
+	
+	/**
+	 * 
+	 * \param timer
+	 */
+	public void setTimer(javax.swing.Timer timer) {
+		m_timer = timer;
+	}
+	
+	/**
+	 * 
+	 * \return
+	 */
+	public javax.swing.Timer getTimer () {
+		return m_timer;
+	}
+	
+	/**
+	 * 
 	 */	
 	/*
 	public void addNotify() {
@@ -149,35 +185,33 @@ public abstract class Animation implements Runnable {
 	protected abstract void cycle();
 	
 	/**
-	 * 
-	 * \param g
-	 */
-	public abstract void paintComponent(Graphics g);
-	
-	/**
-	 * 
-	 * \param g
+	 * Abstract method will be used to draw the piece to the board
+	 * \param g - The graphics context
 	 */
 	protected abstract void drawPiece(Graphics g);
 	
-	/**
-	 * Abstractly define the run method to force subclasses to implement
-	 */
-	@Override
-	public abstract void run();
+	protected class EventHandler implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			cycle();
+			repaint();	
+		}
+	}
 
 	//Global Vairables
 	private Thread m_animatorThread;
 	private JFrame m_GUIFrame;
 	private int m_xCoord;
 	private int m_yCoord;
-	private boolean m_run = true;
+	private boolean m_run = false;
 	private BoardGame m_game;
 	private GUI m_gui;
-	protected final int INITIAL_X = 3;	//The initial X Coordinate of the Image
+	private Image m_piece;
+	private javax.swing.Timer m_timer;
+	protected final int INITIAL_X = 100;	//The initial X Coordinate of the Image
     protected final int INITIAL_Y = 2;	//The initial Y Coordinate of the Image
     protected final int WIDTH;		//Width of the gameboard
     protected final int HEIGHT;		//Height of the gameboard
-    protected final int DELAY = 15;	
+    protected final int DELAY = 5;
     //the initial delay to put the thread to sleep by
 }

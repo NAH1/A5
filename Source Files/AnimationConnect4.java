@@ -1,26 +1,52 @@
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.print.attribute.AttributeSetUtilities;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
-import piece.GamePiece;
+import piece.*;
 import boardGame.*;
 
+/**
+ * \\file - Connect4Animation.java
+ * \author Daniel Squires - 709547
+ * \date 22/03/2014
+ */
 public class AnimationConnect4 extends Animation{
 
 	/**
-	 * Constructor method
-	 * \param frame
-	 * \param game
+	 * Constructor of Connect4Animation
+	 * Calls the constructor of superclass Animation
+	 * Sets the X and Y Coordinate, and sets the Image Piece
+	 * \param frame - 
+	 * \param game - 
+	 * \param gui - 
 	 */
 	public AnimationConnect4(JFrame frame, BoardGame game, GUI gui) {
 		super(frame, game, gui);
 		setXCoord(INITIAL_X);
 		//Set the X Coordinate to be where the player has clicked
 		setYCoord(INITIAL_Y);	//Set the Y Coordinate to be 0
+		String playerColour = getGUI().GetGame().GetCurrent().GetPiece();
+		
+		EventHandler handler = new EventHandler();
+		javax.swing.Timer timer = new javax.swing.Timer(DELAY, handler);
+		setTimer(timer);
+		
+		if (playerColour == "red") {
+			ImageIcon ii = new ImageIcon("piece\\red.png");
+			setPiece(ii.getImage());
+		} else {
+			ImageIcon ii = new ImageIcon("piece\\yellow.png");
+			setPiece(ii.getImage());
+		}
 	}
 
 	/**
@@ -29,70 +55,37 @@ public class AnimationConnect4 extends Animation{
 	 */
 	@Override
 	protected void cycle() {
+		final int INCREMENT = 5;
+		
 		if (getYCoord() >= HEIGHT) {
 			setRunBool(false);
 			//getAnimatorThread().interrupt();
 			//setYCoord(INITIAL_Y);
 		} else {
-			setYCoord(getYCoord() + 1);
+			setYCoord(getYCoord() + INCREMENT);
 		}		
 	}
 	
 	@Override
 	public void paintComponent(Graphics g) {
+		super.paintComponents(g);
 		System.out.println("Paint Component :: START");
-		drawPiece(g);
+		if (getRunBool() == true) {
+			drawPiece(g);
+		}
 		System.out.println("Paint Component :: END");
 	}
 	
+	/**
+	 * Draw the piece onto the Board
+	 * \param Graphics g - The Graphics Context
+	 */
 	@Override
 	protected void drawPiece(Graphics g) {
 		
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.drawImage(m_piece, getXCoord(), getYCoord(), getGUIFrame());
+		g2d.drawImage(getPiece(), getXCoord(), getYCoord(), this);
 		Toolkit.getDefaultToolkit().sync();
 		g.dispose();
 	}
-	
-	/**
-	 * 
-	 */
-	@Override
-	public void run() {
-		System.out.println("Animator Thread :: START");
-		long startTime, timeDiff, sleep;
-		int defaultSleep = 2;
-		ImageIcon newPiece = new ImageIcon();
-		String playerColour = getGUI().GetGame().GetCurrent();
-		
-		startTime = System.currentTimeMillis();
-		
-		while (getRunBool() == true) {
-			GamePiece piece = getGame().GetPiece(0, 0);
-			cycle();
-			//setGUIFrame(getGUI().getFrame());
-			getGUIFrame().repaint();
-			if (getYCoord() > 0) {
-				
-			}			
-			//getGame().SetPiece(getXCoord(), getYCoord(), "red");
-			
-			timeDiff = System.currentTimeMillis() - startTime;
-			sleep = DELAY - timeDiff;
-			
-			if (sleep < 0) {
-				sleep = defaultSleep;
-			}
-			
-			try {
-				Thread.sleep(sleep);
-			} catch (InterruptedException e) {
-				System.out.println("Interrupted: " + e.getMessage());
-			}
-			
-			startTime = System.currentTimeMillis();
-		}
-	}
-	
-	private Image m_piece;
 }

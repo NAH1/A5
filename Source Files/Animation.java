@@ -36,7 +36,7 @@ public abstract class Animation extends JPanel {
 	 * \param ycoord - (Start) y coordinate
 	 * \param playerColour - the colour of the peice / current player
 	 */
-	public abstract void animate(int xcoord, int ycoord, String playerColour);
+	public abstract void animate(int xcoord, int ycoord, Color playerColour);
 	
 	
 	/**

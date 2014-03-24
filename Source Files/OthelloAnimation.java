@@ -38,12 +38,28 @@ public class OthelloAnimation extends Animation{
 		}*/
 	}
 
+	public void animate(int xcoord, int ycoord, Color playerColour)
+	{
+		// TODO use PlayerColour and get rid of test magic constant
+		m_Animating.add(new OthelloAnimationPoint(xcoord, ycoord, 0, 10));
+	}
+
 	/**
 	 * 
 	 */
 	@Override
 	protected void cycle() {
-		
+		List<OthelloAnimationPoint> toRemove =
+			new ArrayList<OthelloAnimationPoint>();
+
+		for (OthelloAnimationPoint point : m_Animating) {
+			point.sync();
+			System.out.println("TEST ANIMATION: " + point.frame());
+			if (point.completed()) { toRemove.add(point); }
+		}
+	
+		m_Animating.removeAll(toRemove);
+	
 	}
 
 	public void paintComponent(Graphics g) {

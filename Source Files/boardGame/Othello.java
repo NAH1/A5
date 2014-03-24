@@ -202,6 +202,9 @@ public class Othello extends BoardGame {
 			m_searchY -= m_i_diff;
 			m_searchX -= m_j_diff;
 			board[m_searchX][m_searchY].SetColour(col);
+			
+			// here call Animation.setXcoord(m_searchX); TODO
+			// here call Animation.setYcoord(m_searchY); TODO
 		}
         if (test || m_test) {
             System.out.println("Othello :: flip() END");

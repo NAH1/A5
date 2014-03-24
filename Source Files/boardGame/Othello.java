@@ -205,6 +205,7 @@ public class Othello extends BoardGame {
 			
 			// here call Animation.setXcoord(m_searchX); TODO
 			// here call Animation.setYcoord(m_searchY); TODO
+			// <animation object>.animate(m_searchX, m_searchY, Color.something);
 		}
         if (test || m_test) {
             System.out.println("Othello :: flip() END");

@@ -1,9 +1,12 @@
+import java.awt.Color;
 import java.awt.Graphics;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import boardGame.*;
+
+import java.util.ArrayList;
 
 /**
  * 
@@ -49,7 +52,7 @@ public class OthelloAnimation extends Animation{
 	 */
 	@Override
 	protected void cycle() {
-		List<OthelloAnimationPoint> toRemove =
+		ArrayList<OthelloAnimationPoint> toRemove =
 			new ArrayList<OthelloAnimationPoint>();
 
 		for (OthelloAnimationPoint point : m_Animating) {
@@ -72,5 +75,5 @@ public class OthelloAnimation extends Animation{
 	}
 	
 	
-	private List <OthelloAnimationPoint> m_Animating;
+	private ArrayList <OthelloAnimationPoint> m_Animating;
 }

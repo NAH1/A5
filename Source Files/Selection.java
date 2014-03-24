@@ -1,5 +1,7 @@
 import javax.swing.*;
+
 import Player.HumanPlayer;
+
 import java.awt.event.*;
 import java.awt.*;
 
@@ -22,7 +24,7 @@ public class Selection implements ActionListener {
 	 * Accessor method to set the current game type 
 	 * \param GameType a string for the current game type
 	 */
-	private void setGameType(String GameType) {
+	private void setGameType(GameController.GameType GameType) {
 		boolean test = false;
 		if (test || m_test){
 			System.out.println("Selection :: setGameType() BEGIN");
@@ -37,7 +39,7 @@ public class Selection implements ActionListener {
 	 * Accessor method to get the current game type 
 	 * \return currentGameType a String of what the current game type is
 	 */
-	public String GetGameType() {
+	public GameController.GameType GetGameType() {
 		boolean test = false;
 		if (test || m_test){
 			System.out.println("Selection :: GetGameType() BEGIN");
@@ -238,7 +240,7 @@ public class Selection implements ActionListener {
 				setPlayerNameTwo(playerTwo.getText().substring(0, 20));
 			}
 			/** this if statement checks if the chosenGame is Othello */
-			if (m_currentGameType.equalsIgnoreCase(m_opponentOthello)) {
+			if (m_currentGameType == GameController.GameType.OTHELLO) {
 				/** then the first human player is set to the 
 				 * piece colour black */
 				HumanPlayer HuPlay = new HumanPlayer(m_p1Text, m_black);
@@ -258,7 +260,7 @@ public class Selection implements ActionListener {
 
 					/** creates a new gameController object */
 					GameController gameCont = new GameController(
-							m_opponentOthello, HuPlay, HuPlayOpponent);
+							GameController.GameType.OTHELLO, HuPlay, HuPlayOpponent);
 					displaySelection.dispose();
 				} else {
 					/**
@@ -278,7 +280,7 @@ public class Selection implements ActionListener {
 			 * this else if statement checks whether the chosen game is Connect
 			 * Four
 			 */
-			else if (m_currentGameType.equalsIgnoreCase(m_opponentConnectFour)){
+			else if (m_currentGameType == GameController.GameType.CONNECTFOUR){
 				/** then the first human player is set to the piece colour red*/
 				HumanPlayer HuPlay = new HumanPlayer(m_p1Text, m_red);
 
@@ -297,7 +299,7 @@ public class Selection implements ActionListener {
 					displaySelection.dispose();
 					/** creates a new gameController object */
 					GameController gameCont = new GameController(
-							m_opponentConnectFour, HuPlay, HuPlayOpponent);
+							GameController.GameType.CONNECTFOUR, HuPlay, HuPlayOpponent);
 					
 					if (test || m_test){
 						System.out.println("Selection :: actionPerformed() END");
@@ -329,14 +331,14 @@ public class Selection implements ActionListener {
 	 * Constructor of Selection, receives the type of game, ready for later.
 	 * \param chosenGame a String for the chosen game.
 	 */
-	public Selection(String chosenGame) {
+	public Selection(GameController.GameType chosenGame) {
 		boolean test = false;
 		if (test || m_test){
 			System.out.println("Selection :: Selection() BEGIN");
 		}
 		setGameType(chosenGame);
-		if (chosenGame.equalsIgnoreCase("othello")
-				|| chosenGame.equalsIgnoreCase("connectfour"))
+		if (chosenGame == GameController.GameType.OTHELLO
+				|| chosenGame == GameController.GameType.CONNECTFOUR)
 			setGameType(chosenGame);
 		else
 			System.err
@@ -350,8 +352,7 @@ public class Selection implements ActionListener {
 	
 	public static void main(String args[]) {
 
-		Selection select = new Selection("othello");
-		Selection invalid = new Selection("argh");
+		Selection select = new Selection(GameController.GameType.CONNECTFOUR);
 		
 	}
 
@@ -404,9 +405,5 @@ public class Selection implements ActionListener {
 	/** Variable used to turn testing on or off*/
 	private boolean m_test = false;
 	/** Stores the game type that is passed through from SelectGame.java */
-	private String m_currentGameType;
-	/** The Othello String used throughout the class */
-	private String m_opponentOthello = "othello";
-	/** The Connect Four String used throughout the class */
-	private String m_opponentConnectFour = "connectFour";
+	private GameController.GameType m_currentGameType;
 }

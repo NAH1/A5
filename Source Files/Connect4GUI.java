@@ -45,11 +45,11 @@ public class Connect4GUI extends GUI {
 		ConnectFourPiece yellow = new ConnectFourPiece("yellow");
 		playerTwoIcon.setIcon(yellow.GetIcon());
 		playerTwoIcon.setVisible(true);
-		playerTurnIcon.setIcon(new ConnectFourPiece(m_game.GetCurrent()).
-		        GetIcon());
+		playerTurnIcon.setIcon(new ConnectFourPiece(
+				m_game.GetCurrent().GetPiece()).GetIcon());
 		playerTurnIcon.setVisible(true);
-		playerTurnLabel.setText(m_game.GetPlayerName(m_game.GetCurrent()) 
-		        + "'s TURN");
+		playerTurnLabel.setText(m_game.GetPlayerName(
+				m_game.GetCurrent().GetPlayerName()) + "'s TURN");
 		playerTurnLabel.setFont(f);
 		playerTurnLabel.setVisible(true);
 		m_frame.pack();

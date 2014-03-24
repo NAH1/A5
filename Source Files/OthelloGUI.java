@@ -47,10 +47,11 @@ public class OthelloGUI extends GUI {
 		OthelloPiece white = new OthelloPiece("white");
 		playerTwoIcon.setIcon(white.GetIcon());
 		playerTwoIcon.setVisible(true);
-		playerTurnIcon.setIcon(new OthelloPiece(m_game.GetCurrent()).GetIcon());
+		playerTurnIcon.setIcon(new OthelloPiece(
+				m_game.GetCurrent().GetPiece()).GetIcon());
 		playerTurnIcon.setVisible(true);
-		playerTurnLabel.setText(m_game.GetPlayerName(m_game.GetCurrent())
-				+ "'s TURN");
+		playerTurnLabel.setText(m_game.GetPlayerName(
+				m_game.GetCurrent().GetPlayerName()) + "'s TURN");
 		playerTurnLabel.setFont(f);
 		playerTurnLabel.setVisible(true);
 		blackIcon.setIcon(black.GetIcon());
@@ -85,14 +86,14 @@ public class OthelloGUI extends GUI {
 		}
 		
 		char[][] availableMoves = ((Othello) GetBoard())
-				.AvailableMove(GetGame().GetCurrent());
+				.AvailableMove(GetGame().GetCurrent().GetPiece());
 		Color defCol = new Color(170, 150, 100);
 		for (int y = 0; y < GetBoard().GetHeight(); ++y) {
 			for (int x = 0; x < GetBoard().GetWidth(); ++x) {
 				m_panels[x][y].setBorder(BorderFactory
 						.createLineBorder(Color.black));
 				if (availableMoves[x][y] == 'O') {
-					if ((GetGame().GetCurrent() == "black"))
+					if ((GetGame().GetCurrent().GetPiece() == "black"))
 						m_panels[x][y].setBackground(Color.blue);
 					else
 						m_panels[x][y].setBackground(Color.red);

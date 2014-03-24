@@ -171,7 +171,7 @@ public class GameController {
 	  * Constructor of GameController.
 	  * \param game type, the two HumanPlayer objects
     */
-	public GameController(GameType gt, HumanPlayer one, HumanPlayer two) {
+	public GameController(GameType gt, Player one, Player two) {
 		boolean test = false;
         if (test || m_test) {
             System.out.println("GameController :: GameController() BEGIN");
@@ -254,11 +254,11 @@ public class GameController {
 	/**Available for a boolean test to check whether the game is still in session*/
 	private boolean m_gameOn = true;
 	/**Identifier for first player object*/
-	private HumanPlayer m_p1;
+	private Player m_p1;
 	/**Identifier for second player object*/
-	private HumanPlayer m_p2;
+	private Player m_p2;
 	/**Identifier to store which player object is the current turn*/
-	private HumanPlayer m_currentPlayer;
+	private Player m_currentPlayer;
 	/** Indicates whether to run tests */
     private boolean m_test = false;
 }

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  * 
- * \author Daniel
+ * \author Ben Golightly
  *
  */
 public class OthelloAnimation extends Animation{

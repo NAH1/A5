@@ -20,11 +20,11 @@ public class OthelloAnimation extends Animation{
 	public OthelloAnimation(JFrame frame,  BoardGame game, GUI gui) {
 		super(frame, game, gui);
 		
-		setXCoord(INITIAL_X);
-		//Set the X Coordinate to be where the player has clicked
-		setYCoord(INITIAL_Y);	//Set the Y Coordinate to be 0
-		String playerColour = getGUI().GetGame().GetCurrent().GetPiece();
+		m_Animating = new ArrayList<OthelloAnimationPoint>();
 		
+		//String playerColour = getGUI().GetGame().GetCurrent().GetPiece();
+		
+		/*
 		EventHandler handler = new EventHandler();
 		javax.swing.Timer timer = new javax.swing.Timer(DELAY, handler);
 		setTimer(timer);
@@ -35,7 +35,7 @@ public class OthelloAnimation extends Animation{
 		} else {
 			ImageIcon ii = new ImageIcon("piece\\black.png");
 			setPiece(ii.getImage());
-		}
+		}*/
 	}
 
 	/**
@@ -56,5 +56,5 @@ public class OthelloAnimation extends Animation{
 	}
 	
 	
-
+	private List <OthelloAnimationPoint> m_Animating;
 }

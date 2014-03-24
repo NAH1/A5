@@ -31,27 +31,13 @@ public abstract class Animation extends JPanel {
 	}
 	
 	/**
-	 * 
+	 * Indicate that an animation should begin at the given point
+	 * \param xcoord - (Start) x coordinate
+	 * \param ycoord - (Start) y coordinate
+	 * \param playerColour - the colour of the peice / current player
 	 */
-	public abstract int getYCoord();
+	public abstract void animate(int xcoord, int ycoord, String playerColour);
 	
-	/**
-	 * 
-	 * \param coord - 
-	 */
-	public abstract void setYCoord(int coord);
-	
-	/**
-	 * 
-	 * \return
-	 */
-	public abstract int getXCoord();
-	
-	/**
-	 * 
-	 * \param coord
-	 */
-	public abstract void setXCoord(int coord);
 	
 	/**
 	 * 

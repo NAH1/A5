@@ -22,7 +22,26 @@ import boardGame.*;
  * \date 22/03/2014
  */
 public class Connect4Animation extends Animation{
+	
+	public int getYCoord() {
+		return m_yCoord;
+	}
 
+	
+	public void setYCoord(int coord) {
+		m_yCoord = coord;
+	}
+
+	
+	public int getXCoord() {
+		return m_xCoord;
+	}
+
+	
+	public void setXCoord(int coord) {
+		m_xCoord = coord;		
+	}	
+	
 	/**
 	 * Constructor of Connect4Animation
 	 * Calls the constructor of superclass Animation
@@ -33,22 +52,10 @@ public class Connect4Animation extends Animation{
 	 */
 	public Connect4Animation(JFrame frame, BoardGame game, GUI gui) {
 		super(frame, game, gui);
-		setXCoord(INITIAL_X);
-		//Set the X Coordinate to be where the player has clicked
-		setYCoord(INITIAL_Y);	//Set the Y Coordinate to be 0
-		String playerColour = getGUI().GetGame().GetCurrent().GetPiece();
 		
 		EventHandler handler = new EventHandler();
 		javax.swing.Timer timer = new javax.swing.Timer(DELAY, handler);
 		setTimer(timer);
-		
-		if (playerColour == "red") {
-			ImageIcon ii = new ImageIcon("piece\\red.png");
-			setPiece(ii.getImage());
-		} else {
-			ImageIcon ii = new ImageIcon("piece\\yellow.png");
-			setPiece(ii.getImage());
-		}
 	}
 
 	/**
@@ -91,52 +98,18 @@ public class Connect4Animation extends Animation{
 		g.dispose();
 	}
 	
-	private class MotionListener implements MouseMotionListener {
-
-        @Override
-        public void mouseDragged(MouseEvent e) {
-        }
-
-        @Override
-        public void mouseMoved(MouseEvent e) {
-            if (getRunBool() == false) {
-                if (getXCoord() < WIDTH && getXCoord() > 0) {
-                    setYCoord(e.getX());
-                    repaint();
-                } else if (getXCoord() > WIDTH) {
-                    setXCoord(getXCoord() - 1);
-                    repaint();
-                } else if (getXCoord() < 0) {
-                    setXCoord(getXCoord() + 1);
-                    repaint();
-                } else {
-                    setXCoord(INITIAL_X);
-                    repaint();
-                }
-            }
-
-        }
-        
-    }
-
 	@Override
-	public int getYCoord() {
-		return m_yCoord;
-	}
-
-	@Override
-	public void setYCoord(int coord) {
-		m_yCoord = coord;
-	}
-
-	@Override
-	public int getXCoord() {
-		return m_xCoord;
-	}
-
-	@Override
-	public void setXCoord(int coord) {
-		m_xCoord = coord;		
+	public void animate(int xCoord, int yCoord, Color playerColour) {
+		setXCoord(xCoord);
+		setYCoord(yCoord);
+		
+		if (playerColour == Color.RED) {
+			ImageIcon ii = new ImageIcon("piece\\red.png");
+			setPiece(ii.getImage());
+		} else {
+			ImageIcon ii = new ImageIcon("piece\\yellow.png");
+			setPiece(ii.getImage());
+		}
 	}
 	
 	private int m_xCoord;

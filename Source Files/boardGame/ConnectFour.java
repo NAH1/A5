@@ -308,8 +308,102 @@ public class ConnectFour extends BoardGame {
 
 	@Override
 	public int MoveQuality(int x, int y, Player current) {
-		// TODO Auto-generated method stub
-		return 0;
+		int score = 0;
+		int crossScore = crossQuality(x, y, current);
+		int diagScore = diagonalQuality(x, y, current);
+					
+		score = Math.max(crossScore, diagScore);
+		if (score > 3) {
+			return 3;
+		} else {
+			return score;
+		}
+	}
+	
+	private int crossQuality(int x, int y, Player current) {
+		final String COLOUR = current.GetPiece();
+		//Horizontal check
+		int scoreHoriz = 0;
+		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
+			if (board[x - dx][y].GetColour().equals(COLOUR)) {
+				scoreHoriz++;
+			} else {
+				break;
+			}
+		}
+		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
+			if (board[x + dx][y].GetColour().equals(COLOUR)) {
+				scoreHoriz++;
+			} else {
+				break;
+			}
+		}
+		
+		//Vertical check
+		int scoreVert = 0;
+		for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
+			if (board[x][y - dy].GetColour().equals(COLOUR)) {
+				scoreVert++;
+			} else {
+				break;
+			}
+		}
+		for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
+			if (board[x][y + dy].GetColour().equals(COLOUR)) {
+				scoreVert++;
+			} else {
+				break;
+			}
+		}
+		
+		return Math.max(scoreHoriz, scoreVert);
+	}
+	
+	private int diagonalQuality(int x, int y, Player current) {
+		final String COLOUR = current.GetPiece();
+		//LeftDiagonal check
+		int scoreLeftDiag = 0;
+		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
+			for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
+				if (board[x - dx][y - dy].GetColour().equals(COLOUR)) {
+					scoreLeftDiag++;
+				} else {
+					break;
+				}
+			}
+		}
+		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
+			for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
+				if (board[x + dx][y + dy].GetColour().equals(COLOUR)) {
+					scoreLeftDiag++;
+				} else {
+					break;
+				}
+			}
+		}
+		
+		//RightDiagonal check
+		int scoreRightDiag = 0;
+		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
+			for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
+				if (board[x - dx][y + dy].GetColour().equals(COLOUR)) {
+					scoreRightDiag++;
+				} else {
+					break;
+				}
+			}
+		}
+		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
+			for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
+				if (board[x + dx][y - dy].GetColour().equals(COLOUR)) {
+					scoreRightDiag++;
+				} else {
+					break;
+				}
+			}
+		}
+		
+		return Math.max(scoreLeftDiag, scoreRightDiag);
 	}
     
     /** main method for tests */

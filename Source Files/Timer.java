@@ -1,8 +1,8 @@
 public class Timer {
 	long startTime;
 	
-	public void setRunTime(){
-		long startTime = System.currentTimeMillis();
+	private void m_setRunTime(){
+		startTime = System.currentTimeMillis();
 	}
 	
 	public void getRunTime(){

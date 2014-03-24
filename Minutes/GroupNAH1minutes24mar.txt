@@ -1,0 +1,24 @@
+Minutes
+Meeting Of Minutes: Lewis, Gavin, Dan, Geraint, Jiaming, Ben
+------------------------------------------------------------
+Date: 24 Mar '14
+Start time: 2.15pm
+End time: 2.30pm
+Date and time of next meeting: 15 mar '14, 1.00pm.
+
+Topics Discussed:
+- Ben has returned!
+- Ben has been given the othelloAnimation class by Dan.
+- Gavin has finised all the AI parts of the implementation.
+- Jiaming and Geraint 
+- Dan has the animation working for connect 4. He just needs to adjust some parts.
+- Callum has finished the timer class, some parts need to be changed.
+- Lewis has decided that the file needs to be saved in CSV not XML. So he will begin again.
+
+TODO by next meeting:
+- Ben: Get the animation to work on its own.
+- Dan: Change needed parts of the connect4Animation class.
+- Geraint & Jiaming: Start AI.
+- Gavin: Start changes to the GUI.
+- Lewis: Begin the save mamnager again.
+- Callum: Make changes to the timer class.

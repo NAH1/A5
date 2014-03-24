@@ -83,7 +83,7 @@ public class SelectGame {
 			}
 			if (event.getSource() == m_othello_Button) {
 	
-				Selection s1 = new Selection("othello");
+				Selection s1 = new Selection(GameController.GameType.OTHELLO);
 				m_display.dispose();
 				if (test || m_test){
 					System.out.println("SelectGame :: actionPerformed() END");
@@ -92,7 +92,7 @@ public class SelectGame {
 	
 			if (event.getSource() == m_connectFour_Button) {
 	
-				Selection s2 = new Selection("connectFour");
+				Selection s2 = new Selection(GameController.GameType.CONNECTFOUR);
 				m_display.dispose();
 				
 				if (test || m_test){

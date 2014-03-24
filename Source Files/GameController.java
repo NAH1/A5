@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 import Player.*;
 import boardGame.*;
 /**
@@ -211,14 +213,14 @@ public class GameController {
 			if (test || m_test) {
 	            System.out.println("GameController :: GameController() END");
 	        }
-			m_p1 = new HumanPlayer("Jim", "white");
-			m_p2 = new HumanPlayer("Bob", "black");
+			m_p1 = new HumanPlayer("Jim", Color.WHITE);
+			m_p2 = new HumanPlayer("Bob", Color.BLACK);
 		} else if (gt == GameType.CONNECTFOUR) {
 			if (test || m_test) {
 	            System.out.println("GameController :: GameController() END");
 	        }
-			m_p1 = new HumanPlayer("Jim", "red");
-			m_p2 = new HumanPlayer("Bob", "yellow");
+			m_p1 = new HumanPlayer("Jim", Color.RED);
+			m_p2 = new HumanPlayer("Bob", Color.YELLOW);
 		}
 		m_currentPlayer = m_p1;
 		// System.out.println("P1: " + m_p1.GetPiece());

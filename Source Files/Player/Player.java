@@ -1,5 +1,7 @@
 package Player;
 
+import java.awt.Color;
+
 /**
  * \\file -Player.java 
  * \author -Mathew Lloyd 711293 
@@ -17,7 +19,7 @@ package Player;
 public abstract class Player {
 
 	/** \return m_pieceColor players piece colour */
-	public String GetPiece() {
+	public Color GetPiece() {
 		boolean test = false;
         if (test || m_test) {
             System.out.println("Player :: GetPiece() BEGIN");
@@ -48,7 +50,7 @@ public abstract class Player {
 	 * Abstract accessor method to set the piece colour for the player. 
 	 * \param gamePiece a String containing the colour of the gamePiece
 	 */
-	public abstract boolean SetPieceColor(String gamePiece);
+	public abstract boolean SetPieceColor(Color gamePiece);
 
 	/**
 	 * Abstract accessor method to set the players name. 
@@ -66,7 +68,7 @@ public abstract class Player {
 	/** The players set name */
 	protected String m_playerName;
 	/** The players piece colour */
-	protected String m_pieceColor;
+	protected Color m_pieceColor;
 	/** Indicates whether to run tests */
     private boolean m_test = false;
 }

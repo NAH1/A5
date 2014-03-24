@@ -243,7 +243,7 @@ public class Selection implements ActionListener {
 			if (m_currentGameType == GameController.GameType.OTHELLO) {
 				/** then the first human player is set to the 
 				 * piece colour black */
-				HumanPlayer HuPlay = new HumanPlayer(m_p1Text, m_black);
+				HumanPlayer HuPlay = new HumanPlayer(m_p1Text, Color.BLACK);
 
 				/**
 				 * this if statement checks if the opponentType is a Human
@@ -255,7 +255,7 @@ public class Selection implements ActionListener {
 					 * white
 					 */
 					HumanPlayer HuPlayOpponent = new HumanPlayer(m_p2Text,
-							m_white);
+							Color.WHITE);
 					/** closes the JFrame displaySelection entirely */
 
 					/** creates a new gameController object */
@@ -282,7 +282,7 @@ public class Selection implements ActionListener {
 			 */
 			else if (m_currentGameType == GameController.GameType.CONNECTFOUR){
 				/** then the first human player is set to the piece colour red*/
-				HumanPlayer HuPlay = new HumanPlayer(m_p1Text, m_red);
+				HumanPlayer HuPlay = new HumanPlayer(m_p1Text, Color.RED);
 
 				/**
 				 * this if statement checks if the opponentType is a human
@@ -294,7 +294,7 @@ public class Selection implements ActionListener {
 					 * yellow
 					 */
 					HumanPlayer HuPlayOpponent = new HumanPlayer(m_p2Text,
-							m_yellow);
+							Color.YELLOW);
 					/** closes the JFrame displaySelection entirely */
 					displaySelection.dispose();
 					/** creates a new gameController object */
@@ -376,14 +376,6 @@ public class Selection implements ActionListener {
 	 */
 	private String m_opponentType = "Human";
 
-	/** The String of the black piece stored */
-	private String m_black = "black";
-	/** The String of the white piece stored */
-	private String m_white = "white";
-	/** The String of the yellow piece stored */
-	private String m_yellow = "yellow";
-	/** The String of the red piece stored */
-	private String m_red = "red";
 
 	/** The JButtons used in the display */
 	private JButton btn_cancel, btn_play;

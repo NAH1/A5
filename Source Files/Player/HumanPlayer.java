@@ -1,5 +1,7 @@
 package Player;
 
+import java.awt.Color;
+
 /**
  * \\file -HumanPlayer.java 
  * \author -Mathew Lloyd 711293 
@@ -40,7 +42,7 @@ public class HumanPlayer extends Player {
 	 * 
 	 * retrieves from Player class
 	 */
-	public String GetPiece() {
+	public Color GetPieceColor() {
 		boolean test = false;
 		if (test || m_test) {
             System.out.println("HumanPlayer :: GetPiece() BEGIN");
@@ -77,25 +79,10 @@ public class HumanPlayer extends Player {
 	 * the players piece colour in the Player class.
 	 *  Has if statement to make sure that there are only 4 possible inputs
 	 */
-	public boolean SetPieceColor(String gamePiece) {
+	public boolean SetPieceColor(Color gamePiece) {
 		boolean test = false;
-		if (gamePiece.isEmpty() && (test == true)) {
-			System.err
-			.println("*** Warning HumanPlayer::SetPlayerName() "
-			                        + "gamePiece set to empty string.");
-		}
-		if (gamePiece.equalsIgnoreCase("red")
-				|| gamePiece.equalsIgnoreCase("yellow")
-				|| gamePiece.equalsIgnoreCase("black")
-				|| gamePiece.equalsIgnoreCase("white")) {
-			m_pieceColor = gamePiece.toLowerCase();
-			return true;
-		} else {
-			System.err
-			.println("Invalid Entry, only red,yellow,black or White. Entered: "
-					+ gamePiece);
-		}
-		return false;
+		m_pieceColor = gamePiece;
+		return true;
 	}
 
 	/** No argument constructor for testing purposes */
@@ -117,7 +104,7 @@ public class HumanPlayer extends Player {
 	 * \param gamePiece sets the players piece colour
 	 * 
 	 */
-	public HumanPlayer(String playName, String gamePiece) {
+	public HumanPlayer(String playName, Color gamePiece) {
 		boolean test = false;
 		if (test || m_test) {
             System.out.println("HumanPlayer :: HumanPlayer() BEGIN");

@@ -32,51 +32,26 @@ public abstract class Animation extends JPanel {
 	
 	/**
 	 * 
-	 * \return
 	 */
-	public int getYCoord() {
-		return m_yCoord;
-	}
+	public abstract int getYCoord();
 	
 	/**
 	 * 
 	 * \param coord - 
 	 */
-	public void setYCoord(int coord) {
-		m_yCoord = coord;
-	}
+	public abstract void setYCoord(int coord);
 	
 	/**
 	 * 
 	 * \return
 	 */
-	public int getXCoord() {
-		return m_xCoord;
-	}
+	public abstract int getXCoord();
 	
 	/**
 	 * 
 	 * \param coord
 	 */
-	public void setXCoord(int coord) {
-		m_xCoord = coord;
-	}
-	
-	/**
-	 * 
-	 * \return
-	 */
-	public Thread getAnimatorThread() {
-		return m_animatorThread;
-	}
-	
-	/**
-	 * 
-	 * \param thread - 
-	 */
-	public void setAnimatorThread(Thread thread) {
-		m_animatorThread = thread;
-	}
+	public abstract void setXCoord(int coord);
 	
 	/**
 	 * 
@@ -199,10 +174,7 @@ public abstract class Animation extends JPanel {
 	}
 
 	//Global Vairables
-	private Thread m_animatorThread;
 	private JFrame m_GUIFrame;
-	private int m_xCoord;
-	private int m_yCoord;
 	private boolean m_run = false;
 	private BoardGame m_game;
 	private GUI m_gui;

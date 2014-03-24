@@ -10,14 +10,14 @@ import boardGame.*;
  * \author Daniel
  *
  */
-public class AnimationOthello extends Animation{
+public class OthelloAnimation extends Animation{
 
 	/**
 	 * Constructor method
 	 * \param frame - 
 	 * \param game - 
 	 */
-	public AnimationOthello(JFrame frame,  BoardGame game, GUI gui) {
+	public OthelloAnimation(JFrame frame,  BoardGame game, GUI gui) {
 		super(frame, game, gui);
 		
 		setXCoord(INITIAL_X);

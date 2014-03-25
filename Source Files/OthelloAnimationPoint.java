@@ -23,7 +23,12 @@ public class OthelloAnimationPoint {
 	
 	public int frame()
 	{
-		return m_Completion;
+		if (m_Type < 0) {
+			return (m_Limit - m_Completion);
+		}
+		else {
+			return m_Completion;
+		}
 	}
 	
 	public void sync()

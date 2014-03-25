@@ -71,7 +71,7 @@ public class Othello extends BoardGame {
 	 if (x > GetWidth() || x < 0 || y > GetHeight() || y <0 ){
 		  return false;
 	  }
-		board[x][y] = new OthelloPiece(col);
+		board[x][y].SetColour(col);
         if (test || m_test) {
             System.out.println("Othello :: SetPiece() END");
         }

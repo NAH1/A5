@@ -33,13 +33,13 @@ public class Connect4GUI extends GUI {
 			System.out.println("Connect4GUI :: SetConnectFourInfo() BEGIN");
 		}
 		
-		playerOneColor.setText(m_game.GetPlayerName("red")+":");
+		playerOneColor.setText(m_game.GetPlayerName(Color.RED)+":");
 		playerOneColor.setFont(f);
 		playerOneColor.setVisible(true);
 		ConnectFourPiece red = new ConnectFourPiece(Color.RED);
 		playerOneIcon.setIcon(red.GetIcon());
 		playerOneIcon.setVisible(true);
-		playerTwoColor.setText(m_game.GetPlayerName("yellow")+":");
+		playerTwoColor.setText(m_game.GetPlayerName(Color.YELLOW)+":");
 		playerTwoColor.setFont(f);
 		playerTwoColor.setVisible(true);
 		ConnectFourPiece yellow = new ConnectFourPiece(Color.YELLOW);
@@ -48,8 +48,8 @@ public class Connect4GUI extends GUI {
 		playerTurnIcon.setIcon(new ConnectFourPiece(
 				m_game.GetCurrent().GetPieceColour()).GetIcon());
 		playerTurnIcon.setVisible(true);
-		playerTurnLabel.setText(m_game.GetPlayerName(
-				m_game.GetCurrent().GetPlayerName()) + "'s TURN");
+		playerTurnLabel.setText(
+				m_game.GetCurrent().GetPlayerName() + "'s TURN");
 		playerTurnLabel.setFont(f);
 		playerTurnLabel.setVisible(true);
 		m_frame.pack();

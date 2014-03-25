@@ -446,7 +446,7 @@ public class Othello extends BoardGame {
 		int black = GetBlackScore();
 		int white = GetWhiteScore();
 		final GamePiece[][] GRID = board;
-		Move(x, y, current.GetPlayerName());
+		Move(x, y, current.GetPieceColour());
 		countScore();
 		black = GetBlackScore() - black;
 		white = GetWhiteScore() - white;
@@ -462,15 +462,15 @@ public class Othello extends BoardGame {
     public static void main(String[] args) {
         Othello a = new Othello ();
         a.GetBlackScore();
-        a.SetPiece(2,3,"white");
+        a.SetPiece(2,3,Color.WHITE);
         a.GetWhiteScore();
-        a.AvailableMove("black");
+        a.AvailableMove(Color.BLACK);
         a.CheckPassTurn();
         a.countScore();
         a.initialGame();
-        a.Move(2,2,"black");
+        a.Move(2,2,Color.BLACK);
         a.SetWinner();
-        a.validMove(4,4,"red");
+        a.validMove(4,4,Color.RED);
         a.WinningCondition();
     }
   //The following two int's are static due to calling the BoardGame in method.

@@ -1,9 +1,10 @@
 import static org.junit.Assert.*;
 
+import java.awt.Color;
+
 import org.junit.Test;
 
 import boardGame.ConnectFour;
-
 import Player.HumanPlayer;
 
 /** 
@@ -22,21 +23,22 @@ import Player.HumanPlayer;
 * 
 */
 public class Connect4GUITest {
-	HumanPlayer p1 = new HumanPlayer("Jim", "black");
-	HumanPlayer p2 = new HumanPlayer("Bob", "white");
+	HumanPlayer p1 = new HumanPlayer("Jim", Color.BLACK);
+	HumanPlayer p2 = new HumanPlayer("Bob", Color.WHITE);
 	ConnectFour C4 = new ConnectFour();
-	GameController game = new GameController("othello", p1, p2);
+	GameController game = new GameController(
+			GameController.GameType.OTHELLO, p1, p2);
 	Connect4GUI C4GUI = new Connect4GUI(C4, game);
 	
 
 	@Test
 	public void testSetConnectFourInfo() {
-		assertTrue(C4GUI.SetConnectFourInfo());
+		assertTrue(C4GUI.setInfo());
 	}
 
 	@Test
 	public void testSetPanelColour() {
-		assertTrue(C4GUI.SetPanelColour());
+		assertTrue(C4GUI.setPanelColour());
 	}
 
 }

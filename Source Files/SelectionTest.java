@@ -19,22 +19,12 @@ public class SelectionTest {
 	@Test
 	public void testSelection() {
 		/**Valid Test Cases*/
-		selectTest = new Selection("Othello");
-		assertTrue(selectTest.GetGameType() == "Othello");
-		selectTest = new Selection("connectfour");
-		assertTrue(selectTest.GetGameType() == "connectfour");
-		selectTest = new Selection("CONNECTFOUR");
-		assertTrue(selectTest.GetGameType() == "CONNECTFOUR");
-		
-		/**Invalid Test Cases*/
-		selectTest = new Selection(" ");
-		assertFalse(selectTest.GetGameType() == " ");
-		selectTest = new Selection("CONNECT4");
-		assertFalse(selectTest.GetGameType() == "CONNECT4");
-		selectTest = new Selection("1,2,3");
-		assertFalse(selectTest.GetGameType() == "1,2,3");
-		selectTest = new Selection("&*&");
-		assertFalse(selectTest.GetGameType() == "&*&");
+		selectTest = new Selection(GameController.GameType.OTHELLO);
+		assertTrue(selectTest.GetGameType() == GameController.GameType.OTHELLO);
+		selectTest = new Selection(GameController.GameType.CONNECTFOUR);
+		assertTrue(selectTest.GetGameType() == GameController.GameType.CONNECTFOUR);
+		selectTest = new Selection(GameController.GameType.CONNECTFOUR);
+		assertTrue(selectTest.GetGameType() == GameController.GameType.CONNECTFOUR);
 	}
 
 	@Test
@@ -42,16 +32,16 @@ public class SelectionTest {
 		/**Test that GetGameType() returns the two accepted options,
 		 * Invalid entries that will not return on this method call 
 		 * are listed in the testSelection() method*/
-		selectTest = new Selection("othello");
-		assertTrue(selectTest.GetGameType() == "othello");
-		selectTest = new Selection("connectfour");
-		assertTrue(selectTest.GetGameType() == "connectfour");
+		selectTest = new Selection(GameController.GameType.OTHELLO);
+		assertTrue(selectTest.GetGameType() == GameController.GameType.OTHELLO);
+		selectTest = new Selection(GameController.GameType.CONNECTFOUR);
+		assertTrue(selectTest.GetGameType() == GameController.GameType.CONNECTFOUR);
 		
 	}
 
 	@Test
 	public void testDraw() {
-		selectTest = new Selection("othello");
+		selectTest = new Selection(GameController.GameType.OTHELLO);
 		selectTest.Draw();
 	}
 

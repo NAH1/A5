@@ -3,7 +3,10 @@
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
+import java.awt.Color;
+
 import org.junit.Test;
+
 import Player.HumanPlayer;
 import boardGame.*;
 /** This is a test class
@@ -21,9 +24,9 @@ import boardGame.*;
 
 public class ConnectFourTest {
 
-	HumanPlayer p1 = new HumanPlayer("Jim", "red");
-	HumanPlayer p2 = new HumanPlayer("Bob", "yellow");
-	GameController g = new GameController("connectFour");
+	HumanPlayer p1 = new HumanPlayer("Jim", Color.RED);
+	HumanPlayer p2 = new HumanPlayer("Bob", Color.YELLOW);
+	GameController g = new GameController(GameController.GameType.OTHELLO);
 	ConnectFour c4 = new ConnectFour();
 	
 	/**
@@ -32,13 +35,13 @@ public class ConnectFourTest {
 	@Test
 	public void testSetPiece() {
 		/**Valid Test Cases*/
-		assertTrue(c4.SetPiece(9,6,"red"));
-		assertTrue(c4.SetPiece(0,0,"yellow"));
+		assertTrue(c4.SetPiece(9,6,Color.RED));
+		assertTrue(c4.SetPiece(0,0,Color.YELLOW));
 		
 		/**Invalid Test Cases*/
-		assertFalse(c4.SetPiece(9, 7, "red"));
-		assertFalse(c4.SetPiece(10, 8, "yellow"));
-		assertFalse(c4.SetPiece(-1, -1, "yellow"));
+		assertFalse(c4.SetPiece(9, 7, Color.RED));
+		assertFalse(c4.SetPiece(10, 8, Color.YELLOW));
+		assertFalse(c4.SetPiece(-1, -1, Color.YELLOW));
 	}
 	
 	@Test
@@ -68,16 +71,16 @@ public class ConnectFourTest {
 	@Test
 	public void testMove() {
 		/**Valid Test Cases*/
-		assertTrue(c4.Move(9,6,"red"));
-		assertTrue(c4.Move(9,1,"yellow"));
-		assertTrue(c4.Move(9,6,"red"));
-		assertTrue(c4.Move(9,1,"yellow"));
-		assertTrue(c4.Move(9,2,"red"));
-		assertTrue(c4.Move(9,3,"yellow"));
-		assertTrue(c4.Move(9,4,"red"));
+		assertTrue(c4.Move(9,6,Color.RED));
+		assertTrue(c4.Move(9,1,Color.YELLOW));
+		assertTrue(c4.Move(9,6,Color.RED));
+		assertTrue(c4.Move(9,1,Color.YELLOW));
+		assertTrue(c4.Move(9,2,Color.RED));
+		assertTrue(c4.Move(9,3,Color.YELLOW));
+		assertTrue(c4.Move(9,4,Color.RED));
 		
 		/**Invalid Test Cases*/
-		assertFalse(c4.Move(9,7,"red"));
+		assertFalse(c4.Move(9,7,Color.RED));
 	}
 	
 	@Test
@@ -86,10 +89,10 @@ public class ConnectFourTest {
 		assertFalse(c4.WinningCondition());
 		
 		/**Valid Test Cases*/
-		c4.Move(9,6,"red");
-		c4.Move(9,5,"red");
-		c4.Move(9,6,"red");
-		c4.Move(9,6,"red");
+		c4.Move(9,6,Color.RED);
+		c4.Move(9,5,Color.RED);
+		c4.Move(9,6,Color.RED);
+		c4.Move(9,6,Color.RED);
 		assertTrue(c4.WinningCondition());
 	}
 	
@@ -99,36 +102,36 @@ public class ConnectFourTest {
 		assertFalse(c4.SetWinner());
 		
 		/**Valid Test Cases*/
-		c4.Move(9,6,"red");
-		c4.Move(9,5,"red");
-		c4.Move(9,6,"red");
-		c4.Move(9,6,"red");
+		c4.Move(9,6,Color.RED);
+		c4.Move(9,5,Color.RED);
+		c4.Move(9,6,Color.RED);
+		c4.Move(9,6,Color.RED);
 		assertTrue(c4.SetWinner());
 	}
 	
 	@Test
 	public void testGetPiece(){
 		assertEquals(null ,c4.GetPiece(2, 2));
-		c4.Move(9,3,"red");
-		assertEquals("red" ,c4.GetPiece(9, 6).GetColour());
+		c4.Move(9,3,Color.RED);
+		assertEquals(Color.RED ,c4.GetPiece(9, 6).GetColour());
 	}
 	
 	@Test
 	public void testGetWinningColour(){
-		assertThat("red", not(c4.GetWinningColour()));
-		c4.Move(9,6,"red");
-		c4.Move(9,6,"red");
-		c4.Move(9,6,"red");
-		c4.Move(9,6,"red");
+		assertThat(Color.RED, not(c4.GetWinningColour()));
+		c4.Move(9,6,Color.RED);
+		c4.Move(9,6,Color.RED);
+		c4.Move(9,6,Color.RED);
+		c4.Move(9,6,Color.RED);
 		c4.SetWinner();
-		assertEquals("red", c4.GetWinningColour());
+		assertEquals(Color.RED, c4.GetWinningColour());
 	}
 	
 	@Test
 	public void testGetTotalPieces(){
 		assertEquals(0, c4.GetTotalPieces());
-		c4.Move(9,6,"red");
-		c4.Move(9,6,"red");
+		c4.Move(9,6,Color.RED);
+		c4.Move(9,6,Color.RED);
 		assertEquals(2, c4.GetTotalPieces());
 	}
 

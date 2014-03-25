@@ -2,6 +2,8 @@ package piece;
 
 import static org.junit.Assert.*;
 
+import java.awt.Color;
+
 import org.junit.Test;
 
 /** This is a test class
@@ -24,16 +26,16 @@ public class OthelloPieceTest {
 	OthelloPiece OthPiece;
 	@Test
 	public void testGetIcon() {
-		OthPiece = new OthelloPiece("black");
+		OthPiece = new OthelloPiece(Color.BLACK);
 		assertTrue(OthPiece.GetIcon() != null);
-		OthPiece = new OthelloPiece("white");
+		OthPiece = new OthelloPiece(Color.WHITE);
 		assertTrue(OthPiece.GetIcon() != null);
 		/**Tests that there is still a piece being set*/
-		OthPiece = new OthelloPiece("red");
+		OthPiece = new OthelloPiece(Color.RED);
 		assertTrue(OthPiece.GetIcon() == null);
-		OthPiece = new OthelloPiece("yellow");
+		OthPiece = new OthelloPiece(Color.YELLOW);
 		assertTrue(OthPiece.GetIcon() == null);
-		OthPiece = new OthelloPiece("123");
+		OthPiece = new OthelloPiece(null);
 		assertTrue(OthPiece.GetIcon() == null);
 		
 	}
@@ -46,11 +48,11 @@ public class OthelloPieceTest {
 
 	@Test
 	public void testOthelloPiece() {
-		OthPiece = new OthelloPiece("black");
+		OthPiece = new OthelloPiece(Color.BLACK);
 		assertTrue(OthPiece.SetIcons());
-		OthPiece = new OthelloPiece("white");
+		OthPiece = new OthelloPiece(Color.WHITE);
 		assertTrue(OthPiece.SetIcons());
-		OthPiece = new OthelloPiece("yellow");
+		OthPiece = new OthelloPiece(Color.YELLOW);
 	}
 
 }

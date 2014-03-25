@@ -1,12 +1,14 @@
 
 import static org.junit.Assert.*;
 
+import java.awt.Color;
+
 import org.hamcrest.core.IsEqual;
 import org.hamcrest.core.IsNot;
 import org.junit.Assert;
 import org.junit.Test;
-import static org.hamcrest.CoreMatchers.*;
 
+import static org.hamcrest.CoreMatchers.*;
 import Player.HumanPlayer;
 import boardGame.*;
 
@@ -24,9 +26,9 @@ import boardGame.*;
 
 public class OthelloTest {
 
-	HumanPlayer p1 = new HumanPlayer("Jim", "black");
-	HumanPlayer p2 = new HumanPlayer("Bob", "white");
-	GameController game = new GameController("othello", p1, p2);
+	HumanPlayer p1 = new HumanPlayer("Jim", Color.BLACK);
+	HumanPlayer p2 = new HumanPlayer("Bob", Color.WHITE);
+	GameController game = new GameController(GameController.GameType.OTHELLO, p1, p2);
 	Othello othello = new Othello();
 
 	@Test
@@ -45,10 +47,10 @@ public class OthelloTest {
 					testAvailabeMove[j][i] = 'X';
 			}
 		}
-		assertArrayEquals(testAvailabeMove, othello.AvailableMove("black"));
+		assertArrayEquals(testAvailabeMove, othello.AvailableMove(Color.BLACK));
 		
 		/**Invalid Test Cases*/
-		Assert.assertThat(testAvailabeMove, IsNot.not(IsEqual.equalTo(othello.AvailableMove("white"))));
+		Assert.assertThat(testAvailabeMove, IsNot.not(IsEqual.equalTo(othello.AvailableMove(Color.WHITE))));
 		
 	}
 
@@ -103,37 +105,37 @@ public class OthelloTest {
 	@Test
 	public void testSetPiece() {
 		/**Valid Test Cases*/
-		assertTrue(othello.SetPiece(4, 2, "black"));
-		assertTrue(othello.SetPiece(5, 3, "black"));
-		assertTrue(othello.SetPiece(2, 4, "white"));
-		assertTrue(othello.SetPiece(3, 5, "white"));
+		assertTrue(othello.SetPiece(4, 2, Color.BLACK));
+		assertTrue(othello.SetPiece(5, 3, Color.BLACK));
+		assertTrue(othello.SetPiece(2, 4, Color.WHITE));
+		assertTrue(othello.SetPiece(3, 5, Color.WHITE));
 		
 		/**Invalid Test Cases*/
 		assertFalse(othello.SetPiece(
-				99, 99, "black"));
+				99, 99, Color.BLACK));
 		assertFalse(othello.SetPiece(
-				99, 99, "white"));
-		assertFalse(othello.SetPiece(-1, -5, "black"));
-		assertFalse(othello.SetPiece(-1, -5, "white"));
-		assertFalse(othello.SetPiece(-1, -5, "yellow"));
+				99, 99, Color.WHITE));
+		assertFalse(othello.SetPiece(-1, -5, Color.BLACK));
+		assertFalse(othello.SetPiece(-1, -5, Color.WHITE));
+		assertFalse(othello.SetPiece(-1, -5, Color.YELLOW));
 	}
 
 	@Test
 	public void testCheckPassTurn() {
 		/**Valid Test Cases*/
-		othello.SetPiece(4, 2, "black");
-		othello.SetPiece(5, 3, "black");
-		othello.SetPiece(2, 4, "black");
-		othello.SetPiece(3, 5, "black");
-		othello.AvailableMove("black");
+		othello.SetPiece(4, 2, Color.BLACK);
+		othello.SetPiece(5, 3, Color.BLACK);
+		othello.SetPiece(2, 4, Color.BLACK);
+		othello.SetPiece(3, 5, Color.BLACK);
+		othello.AvailableMove(Color.BLACK);
 		assertTrue(othello.CheckPassTurn());
 		
 		/**Invalid Test Cases*/
-		othello.SetPiece(4, 2, "black");
-		othello.SetPiece(5, 3, "black");
-		othello.SetPiece(2, 4, "white");
-		othello.SetPiece(3, 5, "white");
-		othello.AvailableMove("black");
+		othello.SetPiece(4, 2, Color.BLACK);
+		othello.SetPiece(5, 3, Color.BLACK);
+		othello.SetPiece(2, 4, Color.WHITE);
+		othello.SetPiece(3, 5, Color.WHITE);
+		othello.AvailableMove(Color.BLACK);
 		assertFalse(othello.CheckPassTurn());
 		
 	}
@@ -141,20 +143,20 @@ public class OthelloTest {
 	@Test
 	public void testMove() {
 		/**Valid Test Cases*/
-		assertTrue(othello.Move(4, 2, "black"));
-		assertTrue(othello.Move(5, 2, "white"));
+		assertTrue(othello.Move(4, 2, Color.BLACK));
+		assertTrue(othello.Move(5, 2, Color.WHITE));
 		
 		/**Invalid Test Cases*/
-	 	assertFalse((othello.Move(-99, -22, "black")));
-	 	assertFalse((othello.Move(992, -422, "yellow")));
-	 	assertFalse((othello.Move(-7, 422, "black")));
+	 	assertFalse((othello.Move(-99, -22, Color.BLACK)));
+	 	assertFalse((othello.Move(992, -422, Color.YELLOW)));
+	 	assertFalse((othello.Move(-7, 422, Color.BLACK)));
 	}
 
 	@Test
 	public void testWinningCondition() {
 		for (int i = 0; i < othello.GetHeight(); i++) {
 			for (int j = 0; j < othello.GetWidth(); j++) {
-					othello.SetPiece(j, i, "black");
+					othello.SetPiece(j, i, Color.BLACK);
 			}
 		}
 		/**Valid Test Cases*/

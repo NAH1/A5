@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import java.awt.Color;
+
 import org.junit.Test;
 
 import Player.HumanPlayer;
@@ -19,19 +21,19 @@ import boardGame.Othello;
 */
 
 public class OthelloGUITest {
-	HumanPlayer p1 = new HumanPlayer("Jim", "black");
-	HumanPlayer p2 = new HumanPlayer("Bob", "white");
+	HumanPlayer p1 = new HumanPlayer("Jim", Color.BLACK);
+	HumanPlayer p2 = new HumanPlayer("Bob", Color.WHITE);
 	Othello othello = new Othello();
-	GameController game = new GameController("othello", p1, p2);
+	GameController game = new GameController(GameController.GameType.OTHELLO, p1, p2);
 	OthelloGUI OthelloGUI = new OthelloGUI(othello, game);
 
 	@Test
 	public void testSetOthelloInfo() {
-		assertTrue(OthelloGUI.SetOthelloInfo());
+		assertTrue(OthelloGUI.setInfo());
 	}
 
 	@Test
 	public void testSetPanelColour() {
-		assertTrue(OthelloGUI.SetPanelColour());
+		assertTrue(OthelloGUI.setPanelColour());
 	}
 }

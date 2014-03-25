@@ -405,11 +405,11 @@ public class ConnectFour extends BoardGame {
     /** main method for tests */
     public static void main(String[] args) {
         ConnectFour a = new ConnectFour();
-        a.SetPiece(3,3,"red");
-        a.allDirection("yellow",4,4);
-        a.singleDirection("red",2,3,4,5);
-        a.checkWin("yellow");
-        a.Move(2,4,"red");
+        a.SetPiece(3,3,Color.RED);
+        a.allDirection(Color.YELLOW,4,4);
+        a.singleDirection(Color.RED,2,3,4,5);
+        a.checkWin(Color.YELLOW);
+        a.Move(2,4,Color.RED);
         a.WinningCondition();
         a.SetWinner();
     }

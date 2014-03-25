@@ -2,6 +2,8 @@ package piece;
 
 import static org.junit.Assert.*;
 
+import java.awt.Color;
+
 import org.junit.Test;
 /** This is a test class
 * \\file ConnectFourPieceTest.java
@@ -25,17 +27,17 @@ public class ConnectFourPieceTest {
 		/**Tests that there is still a piece being set
 		 * (Invalid Tests)
 		 * */
-		C4P = new ConnectFourPiece("123");
+		C4P = new ConnectFourPiece(null);
 		assertTrue(C4P.GetIcon() == null);
-		C4P = new ConnectFourPiece("black");
+		C4P = new ConnectFourPiece(Color.BLACK);
 		assertTrue(C4P.GetIcon() == null);
-		C4P = new ConnectFourPiece("white");
+		C4P = new ConnectFourPiece(Color.WHITE);
 		assertTrue(C4P.GetIcon() == null);
 		
 		/**Valid Tests*/
-		C4P = new ConnectFourPiece("red");
+		C4P = new ConnectFourPiece(Color.RED);
 		assertTrue(C4P.GetIcon() != null);
-		C4P = new ConnectFourPiece("yellow");
+		C4P = new ConnectFourPiece(Color.YELLOW);
 		assertTrue(C4P.GetIcon() != null);
 		
 	}
@@ -48,11 +50,11 @@ public class ConnectFourPieceTest {
 
 	@Test
 	public void testConnectFourPiece() {
-		C4P = new ConnectFourPiece("black");
+		C4P = new ConnectFourPiece(Color.BLACK);
 		assertTrue(C4P.SetIcons());
-		C4P = new ConnectFourPiece("white");
+		C4P = new ConnectFourPiece(Color.WHITE);
 		assertTrue(C4P.SetIcons());
-		C4P = new ConnectFourPiece("yellow");
+		C4P = new ConnectFourPiece(Color.YELLOW);
 	}
 
 }

@@ -2,6 +2,8 @@ package Player;
 
 import static org.junit.Assert.*;
 
+import java.awt.Color;
+
 import org.junit.Test;
 /** This is a testing class
 * \\file -HumanPlayerTestJUnit.java 
@@ -17,10 +19,10 @@ import org.junit.Test;
 */
 public class HumanPlayerTestJUnit {
 	
-	HumanPlayer hp = new HumanPlayer("JUnit test", "yellow");
+	HumanPlayer hp = new HumanPlayer("JUnit test", Color.YELLOW);
 	@Test
 	public void testGetPiece() {
-		assertEquals("yellow", hp.GetPiece());
+		assertEquals(Color.YELLOW, hp.GetPieceColour());
 		
 	}
 	
@@ -32,25 +34,15 @@ public class HumanPlayerTestJUnit {
 
 	@Test
 	public void testSetPieceColor() {
-		/**invalid entries of piece Color*/
-    	hp.SetPieceColor("1,2");
-    	assertFalse("1,2" == hp.GetPiece());
-    	hp.SetPieceColor("yellow 1");
-    	assertFalse("yellow 1" == hp.GetPiece());
-    	hp.SetPieceColor("");
-    	assertFalse("" == hp.GetPiece());
-    	hp.SetPieceColor("green");
-		assertFalse("green" ==  hp.GetPiece());
-		
     	/**Valid Entries:*/
-    	hp.SetPieceColor("yellow");
-    	assertEquals("yellow", (hp.GetPiece()));
-    	hp.SetPieceColor("red");
-    	assertEquals("red", (hp.GetPiece()));
-    	hp.SetPieceColor("black");
-    	assertEquals("black", (hp.GetPiece()));
-    	hp.SetPieceColor("white");
-    	assertEquals("white", (hp.GetPiece()));
+    	hp.SetPieceColor(Color.YELLOW);
+    	assertEquals(Color.YELLOW, (hp.GetPieceColour()));
+    	hp.SetPieceColor(Color.RED);
+    	assertEquals(Color.RED, (hp.GetPieceColour()));
+    	hp.SetPieceColor(Color.BLACK);
+    	assertEquals(Color.BLACK, (hp.GetPieceColour()));
+    	hp.SetPieceColor(Color.WHITE);
+    	assertEquals(Color.WHITE, (hp.GetPieceColour()));
 	}
 
 	@Test

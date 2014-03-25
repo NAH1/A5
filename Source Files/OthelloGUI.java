@@ -35,37 +35,37 @@ public class OthelloGUI extends GUI {
 			System.out.println("OthelloGUI :: SetOthelloInfo() BEGIN");
 		}
 		
-		playerOneColor.setText(m_game.GetPlayerName(Color.BLACK) + ":");
-		playerOneColor.setFont(f);
+		playerOneColor.setText(GetGame().GetPlayerName(Color.BLACK) + ":");
+		playerOneColor.setFont(FONT);
 		playerOneColor.setVisible(true);
 		OthelloPiece black = new OthelloPiece(Color.BLACK);
 		playerOneIcon.setIcon(black.GetIcon());
 		playerOneIcon.setVisible(true);
-		playerTwoColor.setText(m_game.GetPlayerName(Color.WHITE) + ":");
-		playerTwoColor.setFont(f);
+		playerTwoColor.setText(GetGame().GetPlayerName(Color.WHITE) + ":");
+		playerTwoColor.setFont(FONT);
 		playerTwoColor.setVisible(true);
 		OthelloPiece white = new OthelloPiece(Color.WHITE);
 		playerTwoIcon.setIcon(white.GetIcon());
 		playerTwoIcon.setVisible(true);
 		playerTurnIcon.setIcon(new OthelloPiece(
-				m_game.GetCurrent().GetPieceColour()).GetIcon());
+				GetGame().GetCurrent().GetPieceColour()).GetIcon());
 		playerTurnIcon.setVisible(true);
 		playerTurnLabel.setText(
-				m_game.GetCurrent().GetPlayerName() + "'s TURN");
-		playerTurnLabel.setFont(f);
+				GetGame().GetCurrent().GetPlayerName() + "'s TURN");
+		playerTurnLabel.setFont(FONT);
 		playerTurnLabel.setVisible(true);
 		blackIcon.setIcon(black.GetIcon());
 		blackIcon.setVisible(true);
-		blackPieces.setText(((Othello) (m_board)).GetBlackScore() + "");
-		blackPieces.setFont(f);
+		blackPieces.setText(((Othello) (GetBoard())).GetBlackScore() + "");
+		blackPieces.setFont(FONT);
 		blackPieces.setVisible(true);
 		whiteIcon.setIcon(white.GetIcon());
 		whiteIcon.setVisible(true);
-		whitePieces.setText(((Othello) (m_board)).GetWhiteScore() + "");
-		whitePieces.setFont(f);
+		whitePieces.setText(((Othello) (GetBoard())).GetWhiteScore() + "");
+		whitePieces.setFont(FONT);
 		whitePieces.setVisible(true);
-		m_passMove.setVisible(true);
-		m_frame.pack();
+		PASSMOVE.setVisible(true);
+		FRAME.pack();
 		
 		if (test || m_test){
 			System.out.println("OthelloGUI :: SetOthelloInfo() END");
@@ -90,16 +90,16 @@ public class OthelloGUI extends GUI {
 		Color defCol = new Color(170, 150, 100);
 		for (int y = 0; y < GetBoard().GetHeight(); ++y) {
 			for (int x = 0; x < GetBoard().GetWidth(); ++x) {
-				m_panels[x][y].setBorder(BorderFactory
+				GetPanel(x, y).setBorder(BorderFactory
 						.createLineBorder(Color.black));
 				if (availableMoves[x][y] == 'O') {
 					if ((GetGame().GetCurrent().GetPieceColour() == Color.BLACK))
-						m_panels[x][y].setBackground(Color.BLUE);
+						GetPanel(x, y).setBackground(Color.BLUE);
 					else
-						m_panels[x][y].setBackground(Color.RED);
+						GetPanel(x, y).setBackground(Color.RED);
 
 				} else {
-					m_panels[x][y].setBackground(defCol);
+					GetPanel(x, y).setBackground(defCol);
 				}
 			}
 		}

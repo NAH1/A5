@@ -33,26 +33,26 @@ public class Connect4GUI extends GUI {
 			System.out.println("Connect4GUI :: SetConnectFourInfo() BEGIN");
 		}
 		
-		playerOneColor.setText(m_game.GetPlayerName(Color.RED)+":");
-		playerOneColor.setFont(f);
+		playerOneColor.setText(GetGame().GetPlayerName(Color.RED)+":");
+		playerOneColor.setFont(FONT);
 		playerOneColor.setVisible(true);
 		ConnectFourPiece red = new ConnectFourPiece(Color.RED);
 		playerOneIcon.setIcon(red.GetIcon());
 		playerOneIcon.setVisible(true);
-		playerTwoColor.setText(m_game.GetPlayerName(Color.YELLOW)+":");
-		playerTwoColor.setFont(f);
+		playerTwoColor.setText(GetGame().GetPlayerName(Color.YELLOW)+":");
+		playerTwoColor.setFont(FONT);
 		playerTwoColor.setVisible(true);
 		ConnectFourPiece yellow = new ConnectFourPiece(Color.YELLOW);
 		playerTwoIcon.setIcon(yellow.GetIcon());
 		playerTwoIcon.setVisible(true);
 		playerTurnIcon.setIcon(new ConnectFourPiece(
-				m_game.GetCurrent().GetPieceColour()).GetIcon());
+				GetGame().GetCurrent().GetPieceColour()).GetIcon());
 		playerTurnIcon.setVisible(true);
 		playerTurnLabel.setText(
-				m_game.GetCurrent().GetPlayerName() + "'s TURN");
-		playerTurnLabel.setFont(f);
+				GetGame().GetCurrent().GetPlayerName() + "'s TURN");
+		playerTurnLabel.setFont(FONT);
 		playerTurnLabel.setVisible(true);
-		m_frame.pack();
+		FRAME.pack();
 		
 		if (test || m_test){
 			System.out.println("Connect4GUI :: SetConnectFourInfo() END");
@@ -72,37 +72,14 @@ public class Connect4GUI extends GUI {
 		
 		for (int y = 0; y < GetBoard().GetHeight(); ++y) {
 			for (int x = 0; x < GetBoard().GetWidth(); ++x) {
-				m_panels[x][y].removeAll();
-				m_panels[x][y].add(new JLabel((m_empty)));
-				m_panels[x][y].setBackground(Color.BLUE);
+				GetPanel(x, y).removeAll();
+				GetPanel(x, y).add(new JLabel(EMPTY));
+				GetPanel(x, y).setBackground(Color.BLUE);
 			}
 		}
 		
 		if (test || m_test){
 			System.out.println("Connect4GUI :: SetPannelColour() END");
-		}
-		
-		return true;
-	}
-
-	 /**
-     * Set the image as the empty square in the game board. 
-     * \return boolean  return true if the action complete.
-     */
-	private boolean setImages() {
-		boolean test = false;
-		if (test || m_test){
-			System.out.println("Connect4GUI :: setImages() BEGIN");
-		}
-		
-		try {
-			m_empty = new ImageIcon(getClass().getResource("empty.png"));
-		} catch (Exception e) {
-			System.out.println("Images not found");
-		}
-		
-		if (test || m_test){
-			System.out.println("Connect4GUI :: setImage() END");
 		}
 		
 		return true;
@@ -122,8 +99,9 @@ public class Connect4GUI extends GUI {
 		if (test || m_test){
 			System.out.println("Connect4GUI :: Connect4GUI() BEGIN");
 		}
+
+		EMPTY = new ImageIcon(getClass().getResource("empty.png"));
 		
-		setImages();
 		setInfo();
 		
 		if (test || m_test){
@@ -131,8 +109,8 @@ public class Connect4GUI extends GUI {
 		}
 	}
 
-	/** image icon which holds a blank peice image*/
-	private ImageIcon m_empty;
-	/** boolean turn to true to print out begining and ends of methods*/
-	private boolean m_test =false;
+	/** image icon which holds a blank piece image*/
+	private final ImageIcon EMPTY;
+	/** boolean turn to true to print out beginning and ends of methods*/
+	private boolean m_test = false;
 }

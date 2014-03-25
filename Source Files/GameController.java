@@ -68,20 +68,48 @@ public class GameController {
             System.out.println("GameController :: GetPlayerName() BEGIN");
         }
         
-		if (m_p1.GetPieceColour() == colour) {
+		if (getPlayer1().GetPieceColour() == colour) {
 		if (test || m_test) {
 			System.out.println("GameController :: GetPlayerName() END");
 		}
-			return m_p1.GetPlayerName();
+			return getPlayer1().GetPlayerName();
 		} else {
 		if (test || m_test) {
 			System.out.println("GameController :: GetPlayerName() END");
 		}
-			return m_p2.GetPlayerName();
+			return getPlayer2().GetPlayerName();
 		}
 	}
 
 	 /**
+	 * @return the m_p1
+	 */
+	public Player getPlayer1() {
+		return m_p1;
+	}
+
+	/**
+	 * @param m_p1 the m_p1 to set
+	 */
+	public void setPlayer1(Player player) {
+		m_p1 = player;
+	}
+
+	/**
+	 * @return the m_p2
+	 */
+	public Player getPlayer2() {
+		return m_p2;
+	}
+
+	/**
+	 * @param m_p2 the m_p2 to set
+	 */
+	public void setPlayer2(Player player) {
+		m_p2 = player;
+	}
+
+	/**
      * Get current player.
      * \return String  return the name of the current player.
      */
@@ -106,18 +134,18 @@ public class GameController {
         if (test || m_test) {
             System.out.println("GameController :: Alternate() BEGIN");
         }
-		if (m_currentPlayer == m_p1) {
+		if (m_currentPlayer == getPlayer1()) {
 			if (test || m_test) {
 	            System.out.println("GameController :: Alternate() END :: " + 
-	                                m_currentPlayer + " " + m_p2);
+	                                m_currentPlayer + " " + getPlayer2());
 	        }
-			m_currentPlayer = m_p2;
-		} else if (m_currentPlayer == m_p2) {
+			m_currentPlayer = getPlayer2();
+		} else if (m_currentPlayer == getPlayer2()) {
 			if (test || m_test) {
 	            System.out.println("GameController :: Alternate() END :: " + 
-	                                m_currentPlayer + " " + m_p1);
+	                                m_currentPlayer + " " + getPlayer1());
 	        }
-			m_currentPlayer = m_p1;
+			m_currentPlayer = getPlayer1();
 		}
 		if (test || m_test) {
             System.out.println("GameController :: Alternate() END");
@@ -178,17 +206,17 @@ public class GameController {
         if (test || m_test) {
             System.out.println("GameController :: GameController() BEGIN");
         }
-		m_p1 = one;
-		m_p2 = two;
+		setPlayer1(one);
+		setPlayer2(two);
 		if (gt == GameType.CONNECTFOUR) {
-			m_currentPlayer = m_p1;
+			m_currentPlayer = getPlayer1();
 		} else if (gt == GameType.OTHELLO) {
-			if(m_p1.GetPieceColour() == Color.BLACK) {
-				m_currentPlayer = m_p1;
-			} else if (m_p2.GetPieceColour() == Color.BLACK){
-				m_currentPlayer = m_p2;
+			if(getPlayer1().GetPieceColour() == Color.BLACK) {
+				m_currentPlayer = getPlayer1();
+			} else if (getPlayer2().GetPieceColour() == Color.BLACK){
+				m_currentPlayer = getPlayer2();
 			} else {
-				m_currentPlayer = m_p1;
+				m_currentPlayer = getPlayer1();
 				System.err.println("GameController::GameController() Error,"
 						+ "Current player is not valid");
 			}
@@ -214,18 +242,18 @@ public class GameController {
 			if (test || m_test) {
 	            System.out.println("GameController :: GameController() END");
 	        }
-			m_p1 = new HumanPlayer("Jim", Color.WHITE);
-			m_p2 = new HumanPlayer("Bob", Color.BLACK);
+			setPlayer1(new HumanPlayer("Jim", Color.WHITE));
+			setPlayer2(new HumanPlayer("Bob", Color.BLACK));
 		} else if (gt == GameType.CONNECTFOUR) {
 			if (test || m_test) {
 	            System.out.println("GameController :: GameController() END");
 	        }
-			m_p1 = new HumanPlayer("Jim", Color.RED);
-			m_p2 = new HumanPlayer("Bob", Color.YELLOW);
+			setPlayer1(new HumanPlayer("Jim", Color.RED));
+			setPlayer2(new HumanPlayer("Bob", Color.YELLOW));
 		}
-		m_currentPlayer = m_p1;
-		// System.out.println("P1: " + m_p1.GetPiece());
-		// System.out.println("P2: " + m_p2.GetPiece());
+		m_currentPlayer = getPlayer1();
+		// System.out.println("P1: " + getPlayer1().GetPiece());
+		// System.out.println("P2: " + getPlayer2().GetPiece());
 
 		SetUp(gt);
 		if (test || m_test) {
@@ -261,7 +289,7 @@ public class GameController {
 	/**Identifier for second player object*/
 	private Player m_p2;
 	/**Identifier to store which player object is the current turn*/
-	private Player m_currentPlayer;
+	private Player m_currentPlayer; //TODO Getter and setter
 	/** Indicates whether to run tests */
     private boolean m_test = false;
 }

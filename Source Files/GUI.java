@@ -43,8 +43,26 @@ public abstract class GUI extends JFrame {
      * Get the squares of the game board.
      * \return JPanel[][]  return the two dimensional array in the game panel.
      */
-	public JPanel[][] GetPanels() {
+	public JPanel[][] GetPanel() {
 		return m_panels;
+	}
+	
+	public JPanel GetPanel(int x, int y) {
+		return m_panels[x][y];
+	}
+	
+	public boolean SetPanel(int x, int y, JPanel panel) {
+		m_panels[x][y] = panel;
+		return true;
+	}
+	
+	public JLabel GetLabel(int x, int y) {
+		return m_labels[x][y];
+	}
+	
+	public boolean SetLabel(int x, int y, JLabel label) {
+		m_labels[x][y] = label;
+		return true;
 	}
 	
 	public abstract boolean setPanelColour();
@@ -57,13 +75,16 @@ public abstract class GUI extends JFrame {
     * \param a BoardGame object , a GameController object.
     */
 	public GUI(BoardGame b, GameController g) {
+		FRAME = new JFrame("Game");
 		m_board = b;
 		m_game = g;
-		m_width = m_board.GetWidth();
-		m_height = m_board.GetHeight();
-		m_panels = new JPanel[m_width][m_height];
-		m_labels = new JLabel[m_width][m_height];
-		m_icon = new ImageIcon(getClass().getResource(m_iconURL));
+		WIDTH = GetBoard().GetWidth();
+		HEIGHT = GetBoard().GetHeight();
+		m_panels = new JPanel[WIDTH][HEIGHT];
+		m_labels = new JLabel[WIDTH][HEIGHT];
+		ICON = new ImageIcon(getClass().getResource(ICON_URL));
+		PASSMOVE = new JButton("Pass");
+		NEWGAME = new JButton("New Game");
 		Draw();
 	}
 	
@@ -80,7 +101,6 @@ public abstract class GUI extends JFrame {
      * Draw the main frame which includes the game panel and the info panel.
      */
 	public void Draw() {
-		m_frame = new JFrame("Game");
 		JPanel mainPanel = new JPanel(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
@@ -88,7 +108,7 @@ public abstract class GUI extends JFrame {
 		c.gridy = 1;
 		c.ipadx = 15;
 	
-		JPanel gamePanel = new JPanel(new GridLayout(m_height, m_width));
+		JPanel gamePanel = new JPanel(new GridLayout(HEIGHT, WIDTH));
 		mainPanel.add(gamePanel, c);
 	
 		JPanel infoPanel = new JPanel(new GridLayout(6, 2));
@@ -125,51 +145,49 @@ public abstract class GUI extends JFrame {
 		whitePieces = new JLabel();
 		whitePieces.setVisible(false);
 		infoPanel.add(whitePieces);
-		m_newGame = new JButton("New Game");
-		infoPanel.add(m_newGame);
-		m_newGame.setVisible(true);
-		m_passMove = new JButton("Pass");
-		infoPanel.add(m_passMove);
-		m_passMove.setVisible(false);
+		infoPanel.add(NEWGAME);
+		NEWGAME.setVisible(true);
+		infoPanel.add(PASSMOVE);
+		PASSMOVE.setVisible(false);
 	
 		GUIHandler handler = new GUIHandler();
-		for (int y = 0; y < m_height; ++y) {
-			for (int x = 0; x < m_width; ++x) {
-				m_panels[x][y] = new JPanel();
-				m_panels[x][y].setPreferredSize(new Dimension(70, 70));
-				m_labels[x][y] = new JLabel();
-				m_panels[x][y].addMouseListener(handler);
-				gamePanel.add(m_panels[x][y]);
+		for (int y = 0; y < HEIGHT; ++y) {
+			for (int x = 0; x < WIDTH; ++x) {
+				SetPanel(x, y, new JPanel());
+				GetPanel(x, y).setPreferredSize(new Dimension(70, 70));
+				SetLabel(x, y, new JLabel());
+				GetPanel(x, y).addMouseListener(handler);
+				gamePanel.add(GetPanel(x, y));
 			}
 		}
-		m_passMove.addActionListener(handler);
-		m_newGame.addActionListener(handler);
+		PASSMOVE.addActionListener(handler);
+		NEWGAME.addActionListener(handler);
 	
-		m_frame.add(mainPanel, BorderLayout.WEST);
-		m_frame.add(infoPanel, BorderLayout.EAST);
+		FRAME.add(mainPanel, BorderLayout.WEST);
+		FRAME.add(infoPanel, BorderLayout.EAST);
 	
-		m_frame.pack();
-		m_frame.setLocationRelativeTo(null);
-		m_frame.setVisible(true);
-		m_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		FRAME.pack();
+		FRAME.setLocationRelativeTo(null);
+		FRAME.setVisible(true);
+		FRAME.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 		 /**
      * Draw the pieces to be displayed on the JFrame.
      */
 	public void DrawPieces() {
-		for (int y = 0; y < m_height; ++y) {
-			for (int x = 0; x < m_width; ++x) {
-				GamePiece p = m_board.GetPiece(x, y);
+		for (int y = 0; y < HEIGHT; ++y) {
+			for (int x = 0; x < WIDTH; ++x) {
+				GamePiece p = GetBoard().GetPiece(x, y);
 	
 				if (p != null) {
-					m_labels[x][y].setIcon(p.GetIcon());
-					m_panels[x][y].removeAll();
+					GetLabel(x, y).setIcon(p.GetIcon());
+					GetPanel(x, y).removeAll();
 				}
-				m_panels[x][y].add(m_labels[x][y]);
+				GetPanel(x, y).add(GetLabel(x, y));
 			}
 		}
-		SwingUtilities.updateComponentTreeUI(m_frame);
+		SwingUtilities.updateComponentTreeUI(FRAME);
 	}
 
 	/** These methods had to be declared as MouseListener is abstract. 
@@ -179,7 +197,7 @@ public abstract class GUI extends JFrame {
 	private class GUIHandler extends MouseAdapter implements ActionListener {
 		
 		public void mouseClicked(MouseEvent e) {
-			if(m_game.GetGamOn()) {
+			if(GetGame().GetGamOn()) {
 				playerMove(e);
 				if (player.isAI()) {
 					AIMove();
@@ -188,13 +206,13 @@ public abstract class GUI extends JFrame {
 		}
 		
 		public void actionPerformed(ActionEvent e) {
-			if (e.getSource() == m_passMove) {
-				if (m_game.GetGamOn()) {
-					if (((Othello) m_board).CheckPassTurn()) {
-						if (((Othello) m_board).AnyValidMoveForAnyone()) {
-							m_game.Alternate();
+			if (e.getSource() == PASSMOVE) {
+				if (GetGame().GetGamOn()) {
+					if (((Othello) GetBoard()).CheckPassTurn()) {
+						if (((Othello) GetBoard()).AnyValidMoveForAnyone()) {
+							GetGame().Alternate();
 							UpdatePlayerTurnIcon(new OthelloPiece(
-								m_game.GetCurrent().GetPieceColour()).GetIcon());
+								GetGame().GetCurrent().GetPieceColour()).GetIcon());
 						} else {
 							//endgame
 						}
@@ -203,45 +221,45 @@ public abstract class GUI extends JFrame {
 				}
 			}
 	
-			if (e.getSource() == m_newGame) {
+			if (e.getSource() == NEWGAME) {
 				SelectGame sg = new SelectGame();
 				sg.Draw();
-				m_frame.dispose();
+				FRAME.dispose();
 			}
 		}
 		
 		private void playerMove(MouseEvent e) {
 			boolean moveComplete = false;
-			for (int y = 0; y < m_height; y++) {
-				for (int x = 0; x < m_width; ++x) {
-					if (e.getSource() == m_panels[x][y]) {
-						moveComplete = m_board.Move(x, y,
-								m_game.GetCurrent().GetPieceColour());
+			for (int y = 0; y < HEIGHT; y++) {
+				for (int x = 0; x < WIDTH; ++x) {
+					if (e.getSource() == GetPanel()[x][y]) {
+						moveComplete = GetBoard().Move(x, y,
+								GetGame().GetCurrent().GetPieceColour());
 					}
 				}
 			}
 			if (moveComplete) {
-				m_game.Alternate();
+				GetGame().Alternate();
 				DrawPieces();
-				if (m_game.CheckWin()) {
+				if (GetGame().CheckWin()) {
 					ShowWinningBox();
 				}
-				// System.out.println(m_board.toString());
+				// System.out.println(GetBoard().toString());
 			}
 		}
 		
 		private void AIMove() {
 			boolean moveComplete = false;
-			Player player = m_game.GetCurrent();
+			Player player = GetGame().GetCurrent();
 			player.takeMove();
-			moveComplete = m_board.Move(player.getX, player.getY, player.GetPlayerName());
+			moveComplete = GetBoard().Move(player.getX, player.getY, player.GetPlayerName());
 			if (moveComplete) {
-				m_game.Alternate();
+				GetGame().Alternate();
 				DrawPieces();
-				if (m_game.CheckWin()) {
+				if (GetGame().CheckWin()) {
 					ShowWinningBox();
 				}
-				// System.out.println(m_board.toString());
+				// System.out.println(GetBoard().toString());
 			}
 		}
 	}
@@ -250,19 +268,19 @@ public abstract class GUI extends JFrame {
      * Show a dialog box of the game result when the game ends.
      */
 	public void ShowWinningBox() {
-		if (m_board.GetWinningColour().equals("draw")) {
-			JOptionPane.showMessageDialog(m_frame, "GAME DRAWN", "Draw",
-					JOptionPane.OK_OPTION, m_icon);
+		if (GetBoard().GetWinningColour() == null) {
+			JOptionPane.showMessageDialog(FRAME, "GAME DRAWN", "Draw",
+					JOptionPane.OK_OPTION, ICON);
 		} else {
-			JOptionPane.showMessageDialog(m_frame,
-					m_game.GetPlayerName(m_board.GetWinningColour())
+			JOptionPane.showMessageDialog(FRAME,
+					GetGame().GetPlayerName(GetBoard().GetWinningColour())
 					+ "   WINS!!!!", "Winner", JOptionPane.OK_OPTION,
-					m_icon);
+					ICON);
 		}
 	}
 
 	/**Setting the default font face*/
-	protected Font f = new Font("Dialog", Font.PLAIN, 15);
+	protected final Font FONT = new Font("Dialog", Font.PLAIN, 15);
 	/**Setting up all of the JLabels for the GUI*/
 	protected JLabel playerOneColor, playerOneIcon, playerTwoColor,
 	                 playerTwoIcon, playerTurnIcon, playerTurnLabel, whiteIcon,
@@ -274,19 +292,19 @@ public abstract class GUI extends JFrame {
 	/**The panel to display the board*/
 	protected JPanel[][] m_panels;
 	/**The width of the gameboard*/
-	protected int m_width;
+	protected final int WIDTH;
 	/**The height of the gameboard*/
-	protected int m_height;
+	protected final int HEIGHT;
 	/**An array of labels to set the piece upon*/
 	protected JLabel[][] m_labels;
 	/**The JFrame to display the board*/
-	protected JFrame m_frame;
+	protected final JFrame FRAME;
 	/**The pass move button*/
-	protected JButton m_passMove;
+	protected final JButton PASSMOVE;
 	/**The new game button*/
-	private JButton m_newGame;
+	private final JButton NEWGAME;
 	/**The Icon on which the piece is equal to*/
-	private Icon m_icon;
+	private final Icon ICON;
 	/**The image location for the initial image on the gameboard*/
-	private String m_iconURL = "icon.png";
+	private String ICON_URL = "icon.png";
 }

@@ -9,7 +9,7 @@ Date and time of next meeting: 15 mar '14, 1.00pm.
 Topics Discussed:
 - Ben has returned!
 - Ben has been given the othelloAnimation class by Dan.
-- Gavin has finised all the AI parts of the implementation.
+- Gavin has finished all the AI parts of the implementation.
 - Jiaming and Geraint 
 - Dan has the animation working for connect 4. He just needs to adjust some parts.
 - Callum has finished the timer class, some parts need to be changed.

@@ -130,24 +130,20 @@ public class HumanPlayer extends Player {
 		HumanPlayer humanPlayer = new HumanPlayer();
 		humanPlayer.SetPlayerName("");
 		humanPlayer.SetPlayerName("Proper Name Player");
-		/** invalid entries of piece Color */
-		humanPlayer.SetPieceColor("1,2");
-		humanPlayer.SetPieceColor("yellow 1");
-		humanPlayer.SetPieceColor("");
 		/** Valid Entries: */
-		humanPlayer.SetPieceColor("yellow");
+		humanPlayer.SetPieceColor(Color.RED);
 		/** Print statements to test setting of piece colour */
 		System.out.println("HumanPlayer test:: Piece: "
-				+ humanPlayer.GetPiece());
-		humanPlayer.SetPieceColor("red");
+				+ humanPlayer.GetPieceColour());
+		humanPlayer.SetPieceColor(Color.RED);
 		System.out.println("HumanPlayer test:: Piece: "
-				+ humanPlayer.GetPiece());
-		humanPlayer.SetPieceColor("black");
+				+ humanPlayer.GetPieceColour());
+		humanPlayer.SetPieceColor(Color.BLACK);
 		System.out.println("HumanPlayer test:: Piece: "
-				+ humanPlayer.GetPiece());
-		humanPlayer.SetPieceColor("white");
+				+ humanPlayer.GetPieceColour());
+		humanPlayer.SetPieceColor(Color.WHITE);
 		System.out.println("HumanPlayer test:: Piece: "
-				+ humanPlayer.GetPiece());
+				+ humanPlayer.GetPieceColor());
 		System.out.println("HumanPlayer test:: PlayerName: "
 				+ humanPlayer.GetPlayerName());
 		if (test == true) {

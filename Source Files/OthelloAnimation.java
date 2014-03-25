@@ -29,8 +29,10 @@ public class OthelloAnimation extends Animation{
 		javax.swing.Timer timer = new javax.swing.Timer(DELAY, handler);
 		setTimer(timer);
 		
-		ImageIcon ii[] = new ImageIcon[10];
-		//("piece\\white.png")
+		ImageIcon ii[] = new ImageIcon[5];
+		for (int i = 0; i < FRAMES; i++) {
+			ii[i] = new ImageIcon("othello-anim-"+i+".png");
+		}
 		
 	}
 
@@ -48,7 +50,7 @@ public class OthelloAnimation extends Animation{
 			throw new IllegalArgumentException("bad playerColour");
 		}
 		
-		m_Animating.add(new OthelloAnimationPoint(xcoord, ycoord, dir, 10));
+		m_Animating.add(new OthelloAnimationPoint(xcoord, ycoord, dir, FRAMES));
 	}
 
 	/**
@@ -80,4 +82,5 @@ public class OthelloAnimation extends Animation{
 	
 	
 	private ArrayList <OthelloAnimationPoint> m_Animating;
+	private final int FRAMES = 6;
 }

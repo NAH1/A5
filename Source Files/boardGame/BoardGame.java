@@ -155,14 +155,14 @@ public abstract class BoardGame {
      * \param the winning colour.
      * \return boolean  return true if the action completes..
      */
-	public boolean SetWinningColour(Color m_winningColour2) {
+	public boolean SetWinningColour(Color winningColour) {
         boolean test = false;
         
         if (test || m_test) {
             System.out.println("BoardGame :: SetWinningColour() BEGIN");
         }
 
-	    m_winningColour = m_winningColour2;
+	    m_winningColour = winningColour;
 	   
 	    if (test || m_test) {
             System.out.println("BoardGame :: SetWinningColour() END");

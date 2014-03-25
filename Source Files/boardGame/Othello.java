@@ -283,7 +283,7 @@ public class Othello extends BoardGame {
         }
 
 		if (m_scoreBlack == m_scoreWhite) {
-			SetWinningColour("draw");
+			SetWinningColour(null);
 
 		} else if (m_scoreWhite > m_scoreBlack)
 			SetWinningColour(Color.WHITE);

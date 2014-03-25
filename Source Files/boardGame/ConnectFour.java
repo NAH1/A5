@@ -137,8 +137,8 @@ public class ConnectFour extends BoardGame {
 					m_counter++;
 					if (m_counter ==  NUM_IN_ROW_WIN) {
 						m_winningColour = col;
-						System.out.println(col + " wins");
 				        if (test || m_test) {
+				        	System.out.println(col + " wins");
 				            System.out.println("ConnectFour :"
 				                    + ": singleDirection() END");
 				        }
@@ -253,7 +253,7 @@ public class ConnectFour extends BoardGame {
 			}
 		}
 		if (m_draw == true) {
-			m_winningColour = "draw";
+			m_winningColour = null;
 			SetWinner();
 	        if (test || m_test) {
 	            System.out.println("ConnectFour :: singleDirection() END");
@@ -293,18 +293,12 @@ public class ConnectFour extends BoardGame {
         if (test || m_test) {
             System.out.println("ConnectFour :: SetWinner() BEGIN");
         }
-		if(m_winningColour == null){
-	        if (test || m_test) {
-	            System.out.println("ConnectFour :: SetWinner() BEGIN");
-	        }
-			return false;
-		} else {
-			SetWinningColour(m_winningColour);
-			if (test || m_test) {
-				System.out.println("ConnectFour :: SetWinner() END");
-			}
-		return true;
+		SetWinningColour(m_winningColour);
+		if (test || m_test) {
+			System.out.println("ConnectFour :: SetWinner() END");
 		}
+		return true;
+		
 	}
 	
 

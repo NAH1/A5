@@ -24,27 +24,31 @@ public class OthelloAnimation extends Animation{
 		super(frame, game, gui);
 		
 		m_Animating = new ArrayList<OthelloAnimationPoint>();
-		
-		//String playerColour = getGUI().GetGame().GetCurrent().GetPiece();
-		
-		/*
+
 		EventHandler handler = new EventHandler();
 		javax.swing.Timer timer = new javax.swing.Timer(DELAY, handler);
 		setTimer(timer);
 		
-		if (playerColour == "white") {
-			ImageIcon ii = new ImageIcon("piece\\white.png");
-			setPiece(ii.getImage());
-		} else {
-			ImageIcon ii = new ImageIcon("piece\\black.png");
-			setPiece(ii.getImage());
-		}*/
+		ImageIcon ii[] = new ImageIcon[10];
+		//("piece\\white.png")
+		
 	}
 
-	public void animate(int xcoord, int ycoord, Color playerColour)
-	{
-		// TODO use PlayerColour and get rid of test magic constant
-		m_Animating.add(new OthelloAnimationPoint(xcoord, ycoord, 0, 10));
+	@Override
+	public void animate(int xcoord, int ycoord, Color playerColour) {
+		int dir;
+		
+		if (playerColour == Color.black) {
+			dir = 1;
+		}
+		else if (playerColour == Color.white) {
+			dir = -1;
+		}
+		else {
+			throw new IllegalArgumentException("bad playerColour");
+		}
+		
+		m_Animating.add(new OthelloAnimationPoint(xcoord, ycoord, dir, 10));
 	}
 
 	/**

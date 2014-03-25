@@ -152,10 +152,6 @@ public abstract class GUI extends JFrame {
 		m_frame.setLocationRelativeTo(null);
 		m_frame.setVisible(true);
 		m_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		m_glasspane = new BetterGlassPane(m_frame);
-	//	changeButton.addItemListener(myGlassPane);
-	//	frame.setGlassPane(myGlassPane);
 	}
 
 		 /**
@@ -195,9 +191,14 @@ public abstract class GUI extends JFrame {
 			if (e.getSource() == m_passMove) {
 				if (m_game.GetGamOn()) {
 					if (((Othello) m_board).CheckPassTurn()) {
-						m_game.Alternate();
-						UpdatePlayerTurnIcon(new OthelloPiece(
+						if (((Othello) m_board).anyValidMoveForAnyone()) {
+							m_game.Alternate();
+							UpdatePlayerTurnIcon(new OthelloPiece(
 								m_game.GetCurrent().GetPlayerName()).GetIcon());
+						} else {
+							//endgame
+						}
+						
 					}
 				}
 			}
@@ -288,6 +289,4 @@ public abstract class GUI extends JFrame {
 	private Icon m_icon;
 	/**The image location for the initial image on the gameboard*/
 	private String m_iconURL = "icon.png";
-	
-	private BetterGlassPane m_glasspane;
 }

@@ -304,6 +304,21 @@ public class Othello extends BoardGame {
 	 * \return boolean return true if the move is valid.
 	 */
 
+		//HACK
+	public boolean AnyValidMoveForAnyone()
+	{
+		for (int y = 0; y < INITIAL_H; y++)
+		{
+			for (int x = 0; x < INITIAL_W; x++)
+			{
+				if (validMove(x, y, "White")) { return true; }
+				if (validMove(x, y, "Black")) { return true; }
+			}
+		}
+		
+		return false;
+	}
+	
 	private boolean validMove(int x, int y, String col) {
         boolean test = false;
         if (test || m_test) {

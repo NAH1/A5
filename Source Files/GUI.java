@@ -152,6 +152,10 @@ public abstract class GUI extends JFrame {
 		m_frame.setLocationRelativeTo(null);
 		m_frame.setVisible(true);
 		m_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		m_glasspane = new BetterGlassPane(m_frame);
+	//	changeButton.addItemListener(myGlassPane);
+	//	frame.setGlassPane(myGlassPane);
 	}
 
 		 /**
@@ -284,4 +288,6 @@ public abstract class GUI extends JFrame {
 	private Icon m_icon;
 	/**The image location for the initial image on the gameboard*/
 	private String m_iconURL = "icon.png";
+	
+	private BetterGlassPane m_glasspane;
 }

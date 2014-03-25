@@ -1,5 +1,7 @@
 package boardGame;
 
+import java.awt.Color;
+
 import Player.Player;
 import piece.*;
 /**
@@ -85,7 +87,7 @@ public abstract class BoardGame {
      * \param x and y, the position of the GamePiece, the colour of the piece.
      * \return boolean
      */
-	public abstract boolean SetPiece(int x, int y, String col);
+	public abstract boolean SetPiece(int x, int y, Color col);
 
 	 /**
      * Get the total number of pieces on the game board.
@@ -153,14 +155,14 @@ public abstract class BoardGame {
      * \param the winning colour.
      * \return boolean  return true if the action completes..
      */
-	public boolean SetWinningColour(String winner) {
+	public boolean SetWinningColour(Color m_winningColour2) {
         boolean test = false;
         
         if (test || m_test) {
             System.out.println("BoardGame :: SetWinningColour() BEGIN");
         }
 
-	    m_winningColour = winner;
+	    m_winningColour = m_winningColour2;
 	   
 	    if (test || m_test) {
             System.out.println("BoardGame :: SetWinningColour() END");
@@ -172,7 +174,7 @@ public abstract class BoardGame {
      * Get the winning colour.
      * \return String  return the colour.
      */
-	public String GetWinningColour() {
+	public Color GetWinningColour() {
         boolean test = false;
         
         if (test || m_test) {
@@ -216,7 +218,7 @@ public abstract class BoardGame {
      * \param X,y position and the colour of the piece.
      * \return boolean
      */
-	public abstract boolean Move(int x, int y, String col);
+	public abstract boolean Move(int x, int y, Color col);
 
 	/**
      * Abstract method.
@@ -230,7 +232,7 @@ public abstract class BoardGame {
 	 * @return A two dimensional array grid indicating available moves. An 'O' indicates this
 	 * grid position is a valid move while an 'X' indicates it is not.
 	 */
-	public abstract char[][] AvailableMove(String col);
+	public abstract char[][] AvailableMove(Color col);
 	
 	/**
      * This method is used for testing
@@ -274,7 +276,7 @@ public abstract class BoardGame {
     /**The board height*/
     private int m_height;
     /**The winning colour string value is stored here*/
-    private String m_winningColour;
+    private Color m_winningColour;
     /**For testing purposes*/
     private boolean m_test = false;
 }

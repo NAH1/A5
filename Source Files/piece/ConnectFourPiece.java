@@ -1,4 +1,6 @@
 package piece;
+import java.awt.Color;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
@@ -19,13 +21,13 @@ public class ConnectFourPiece extends GamePiece {
      * Constructor of ConnectFourPiece, calls  setColour() and setIcons()
      * \param col a String to set colour using setColour() of the superclass
      */
-    public ConnectFourPiece(String col) {
+    public ConnectFourPiece(Color col) {
         boolean test = false;
         if (test || m_test) {
             System.out.println("ConnectFourPiece :: ConnectFourPiece() BEGIN");
         }
         
-        if (col.equals(m_red) || col.equals(m_yellow)) {
+        if (col == Color.RED || col == Color.YELLOW) {
             SetColour(col);
             m_iconsSet = SetIcons();
         } else {
@@ -48,13 +50,13 @@ public class ConnectFourPiece extends GamePiece {
         }
         
         if (m_iconsSet) {
-            if (GetColour().equals(m_yellow)) {
+            if (GetColour() == Color.YELLOW) {
                 if (test || m_test) {
                     System.out.println("ConnectFourPiece :: getIcon() END");
                 }
                 
                 return m_yellowpiece;
-            } else if (GetColour().equals(m_red)){
+            } else if (GetColour() == Color.RED){
                 if (test || m_test) {
                     System.out.println("ConnectFourPiece :: getIcon() END");
                 }
@@ -102,12 +104,12 @@ public class ConnectFourPiece extends GamePiece {
     
     /** main method for tests */
     public static void main(String[] args) {
-        ConnectFourPiece a = new ConnectFourPiece("red");
+        ConnectFourPiece a = new ConnectFourPiece(Color.RED);
         a.GetIcon();
         a.SetIcons();
         a.GetColour();
         
-        ConnectFourPiece b = new ConnectFourPiece("123");
+        ConnectFourPiece b = new ConnectFourPiece(Color.ORANGE);
         b.GetIcon();
         b.SetIcons();
         b.GetColour();
@@ -116,9 +118,6 @@ public class ConnectFourPiece extends GamePiece {
     // variable declarations
     /** flag for setting icons */
     private boolean m_iconsSet = false;
-    /** Colour Strings */
-    private final String m_red = "red";
-    private final String m_yellow = "yellow";
     /** store the yellow icon */
     private Icon m_yellowpiece;
     /** store the red icon */

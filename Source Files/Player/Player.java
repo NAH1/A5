@@ -19,7 +19,7 @@ import java.awt.Color;
 public abstract class Player {
 
 	/** \return m_pieceColor players piece colour */
-	public Color GetPiece() {
+	public Color GetPieceColour() {
 		boolean test = false;
         if (test || m_test) {
             System.out.println("Player :: GetPiece() BEGIN");

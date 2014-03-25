@@ -1,5 +1,7 @@
 package boardGame;
 
+import java.awt.Color;
+
 import Player.Player;
 import piece.*;
 /**
@@ -38,7 +40,7 @@ public class ConnectFour extends BoardGame {
 	 * game board. \param y the y axis in the game board. \param col the color
 	 * of the game piece. \return boolean return true if the action complete.
 	 */
-	public boolean SetPiece(int x, int y, String col) {
+	public boolean SetPiece(int x, int y, Color col) {
         boolean test = false;
         if (test || m_test) {
             System.out.println("ConnectFour :: SetPiece() BEGIN");
@@ -65,7 +67,7 @@ public class ConnectFour extends BoardGame {
 	 * \return boolean return true if there is a sequence of four pieces of the
 	 *  same color, false while the game is on.
 	 */
-	private boolean allDirection(String col, int x, int index_y) {
+	private boolean allDirection(Color col, int x, int index_y) {
         boolean test = false;
         if (test || m_test) {
             System.out.println("ConnectFour :: allDirection() BEGIN");
@@ -100,7 +102,7 @@ public class ConnectFour extends BoardGame {
 	 * \return boolean return true if there is a sequence of four pieces of the 
 	 * same color, false while the game is on.
 	 */
-	private boolean singleDirection(String col, int x,int index_y,int i, int j){
+	private boolean singleDirection(Color col, int x,int index_y,int i, int j){
         boolean test = false;
         if (test || m_test) {
             System.out.println("ConnectFour :: singleDirection() BEGIN");
@@ -160,7 +162,7 @@ public class ConnectFour extends BoardGame {
 	 * \return boolean return true if there is a sequence of four pieces of the
 	 * same color, false while the game is on.
 	 */
-	private boolean checkWin(String col){
+	private boolean checkWin(Color col){
         boolean test = false;
         if (test || m_test) {
             System.out.println("ConnectFour :: checkWin() BEGIN");
@@ -192,7 +194,7 @@ public class ConnectFour extends BoardGame {
 	 * boolean return true if the move is valid and the piece has been placed on
 	 * the game board, false if the column is full.
 	 */
-	public boolean Move(int x, int y, String col) {
+	public boolean Move(int x, int y, Color col) {
         boolean test = false;
         if (test || m_test) {
             System.out.println("ConnectFour :: Move() BEGIN");
@@ -264,7 +266,7 @@ public class ConnectFour extends BoardGame {
 		return false;
 	}
 	
-	public char[][] AvailableMove(String col) {
+	public char[][] AvailableMove(Color col) {
 		char grid[][] = new char[GetWidth()][GetHeight()];
 		for(int x = 0; x < GetWidth(); x++) {
 			boolean rowPieceEnd = false;
@@ -321,18 +323,18 @@ public class ConnectFour extends BoardGame {
 	}
 	
 	private int crossQuality(int x, int y, Player current) {
-		final String COLOUR = current.GetPiece();
+		final Color COLOUR = current.GetPieceColour();
 		//Horizontal check
 		int scoreHoriz = 0;
 		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
-			if (board[x - dx][y].GetColour().equals(COLOUR)) {
+			if (board[x - dx][y].GetColour() == COLOUR) {
 				scoreHoriz++;
 			} else {
 				break;
 			}
 		}
 		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
-			if (board[x + dx][y].GetColour().equals(COLOUR)) {
+			if (board[x + dx][y].GetColour() == COLOUR) {
 				scoreHoriz++;
 			} else {
 				break;
@@ -342,7 +344,7 @@ public class ConnectFour extends BoardGame {
 		//Vertical check
 		int scoreVert = 0;
 		for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
-			if (board[x][y - dy].GetColour().equals(COLOUR)) {
+			if (board[x][y - dy].GetColour() == COLOUR) {
 				scoreVert++;
 			} else {
 				break;
@@ -360,7 +362,7 @@ public class ConnectFour extends BoardGame {
 	}
 	
 	private int diagonalQuality(int x, int y, Player current) {
-		final String COLOUR = current.GetPiece();
+		final Color COLOUR = current.GetPieceColour();
 		//LeftDiagonal check
 		int scoreLeftDiag = 0;
 		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
@@ -425,7 +427,7 @@ public class ConnectFour extends BoardGame {
 	/**Counts the current pieces in a sequence to check for a win*/
 	private int m_counter;
 	/**Stores the winning colour to output on the message dialogue*/
-	private String m_winningColour;
+	private Color m_winningColour;
 	//The following two int's are static due to calling the BoardGame in method.
 	/**Sets the Size in BoardGame (is static due to calling the BoardGame in method*/
 	private final static int INITIAL_X = 10;

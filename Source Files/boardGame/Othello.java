@@ -1,5 +1,7 @@
 package boardGame;
 
+import java.awt.Color;
+
 import Player.Player;
 import piece.*;
 /**
@@ -61,7 +63,7 @@ public class Othello extends BoardGame {
 	 * \param col the color of the game piece. 
 	 * \return boolean return true if the action completes.
 	 */
-	public boolean SetPiece(int x, int y, String col) {
+	public boolean SetPiece(int x, int y, Color col) {
         boolean test = false;
         if (test || m_test) {
             System.out.println("Othello :: SetPiece() BEGIN");
@@ -102,7 +104,7 @@ public class Othello extends BoardGame {
 	 * all the available moves.
 	 */
 	
-	public char[][] AvailableMove(String col) { // check available move and
+	public char[][] AvailableMove(Color col) { // check available move and
 		// return the char array.
 		// 'O' means available move.
 
@@ -171,9 +173,9 @@ public class Othello extends BoardGame {
 			for (int j = 0; j < GetWidth(); j++) {
 				if (board[j][i] != null) {
 	
-					if (board[j][i].GetColour() == m_black) {
+					if (board[j][i].GetColour() == Color.BLACK) {
 						m_scoreBlack++;
-					} else if (board[j][i].GetColour() == m_white)
+					} else if (board[j][i].GetColour() == Color.WHITE)
 						m_scoreWhite++;
 				}
 			}
@@ -192,7 +194,7 @@ public class Othello extends BoardGame {
 	 * \param col the color of the game piece.
 	 */
 	
-	private void flip(String col) {
+	private void flip(Color col) {
         boolean test = false;
         if (test || m_test) {
             System.out.println("Othello :: flip() BEGIN");
@@ -221,10 +223,10 @@ public class Othello extends BoardGame {
             System.out.println("Othello :: initialGame() BEGIN");
         }
 
-		this.SetPiece(INTIAL_X, INITIAL_Y, m_black);
-		this.SetPiece(INITIAL_X_TWO, INITIAL_Y_TWO, m_black);
-		this.SetPiece(INITIAL_X_TWO, INITIAL_Y, m_white);
-		this.SetPiece(INTIAL_X, INITIAL_Y_TWO, m_white);
+		this.SetPiece(INTIAL_X, INITIAL_Y, Color.BLACK);
+		this.SetPiece(INITIAL_X_TWO, INITIAL_Y_TWO, Color.BLACK);
+		this.SetPiece(INITIAL_X_TWO, INITIAL_Y, Color.WHITE);
+		this.SetPiece(INTIAL_X, INITIAL_Y_TWO, Color.WHITE);
 		countScore();
         if (test || m_test) {
             System.out.println("Othello :: initialGame() END");
@@ -242,7 +244,7 @@ public class Othello extends BoardGame {
 	 *  piece has been placed on the game board.
 	 */
 
-	public boolean Move(int x, int y, String col) { // move action
+	public boolean Move(int x, int y, Color col) { // move action
         boolean test = false;
         if (test || m_test) {
             System.out.println("Othello :: Move() BEGIN");
@@ -284,9 +286,9 @@ public class Othello extends BoardGame {
 			SetWinningColour("draw");
 
 		} else if (m_scoreWhite > m_scoreBlack)
-			SetWinningColour(m_white);
+			SetWinningColour(Color.WHITE);
 		else {
-			SetWinningColour(m_black);
+			SetWinningColour(Color.BLACK);
 		}
         if (test || m_test) {
             System.out.println("Othello :: SetWinner() END");
@@ -311,15 +313,15 @@ public class Othello extends BoardGame {
 		{
 			for (int x = 0; x < INITIAL_W; x++)
 			{
-				if (validMove(x, y, "White")) { return true; }
-				if (validMove(x, y, "Black")) { return true; }
+				if (validMove(x, y, Color.WHITE)) { return true; }
+				if (validMove(x, y, Color.BLACK)) { return true; }
 			}
 		}
 		
 		return false;
 	}
 	
-	private boolean validMove(int x, int y, String col) {
+	private boolean validMove(int x, int y, Color col) {
         boolean test = false;
         if (test || m_test) {
             System.out.println("Othello :: validMove() BEGIN");
@@ -449,7 +451,7 @@ public class Othello extends BoardGame {
 		black = GetBlackScore() - black;
 		white = GetWhiteScore() - white;
 		board = GRID;
-		if (current.GetPiece() == m_white) {
+		if (current.GetPieceColour() == Color.WHITE) {
 			return white;
 		} else {
 			return black;
@@ -500,10 +502,6 @@ public class Othello extends BoardGame {
 	private final int INITIAL_Y = 3;
 	/**Setting up the initial piece positions*/
 	private final int INITIAL_Y_TWO = 4;
-	/**The string representation of the counter*/
-	private String m_black = "black";
-	/**The string representation of the counter*/
-	private String m_white = "white";
 	/**For testing purposes*/
     private boolean m_test = false;
 }

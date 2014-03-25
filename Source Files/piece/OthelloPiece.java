@@ -1,5 +1,7 @@
 package piece;
 
+import java.awt.Color;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 /**
@@ -19,7 +21,7 @@ public class OthelloPiece extends GamePiece{
      * Constructor of OthelloPiece, calls  setColour() and setIcons()
      * \param col a String to set colour using setColour() of the superclass
      */
-    public OthelloPiece(String col) {
+    public OthelloPiece(Color col) {
         boolean test = false;
         if (test || m_test) {
             System.out.println("OthelloPiece :: OthelloPiece() BEGIN");
@@ -100,12 +102,12 @@ public class OthelloPiece extends GamePiece{
     
     /** main method for tests */
     public static void main(String[] args) {
-        OthelloPiece a = new OthelloPiece("white");
+        OthelloPiece a = new OthelloPiece(Color.RED);
         a.GetIcon();
         a.SetIcons();
         a.GetColour();
         
-        OthelloPiece b = new OthelloPiece("123");
+        OthelloPiece b = new OthelloPiece(Color.BLACK);
         b.GetIcon();
         b.SetIcons();
         b.GetColour();

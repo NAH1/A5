@@ -35,23 +35,23 @@ public class OthelloGUI extends GUI {
 			System.out.println("OthelloGUI :: SetOthelloInfo() BEGIN");
 		}
 		
-		playerOneColor.setText(m_game.GetPlayerName("black") + ":");
+		playerOneColor.setText(m_game.GetPlayerName(Color.BLACK) + ":");
 		playerOneColor.setFont(f);
 		playerOneColor.setVisible(true);
-		OthelloPiece black = new OthelloPiece("black");
+		OthelloPiece black = new OthelloPiece(Color.BLACK);
 		playerOneIcon.setIcon(black.GetIcon());
 		playerOneIcon.setVisible(true);
-		playerTwoColor.setText(m_game.GetPlayerName("white") + ":");
+		playerTwoColor.setText(m_game.GetPlayerName(Color.WHITE) + ":");
 		playerTwoColor.setFont(f);
 		playerTwoColor.setVisible(true);
-		OthelloPiece white = new OthelloPiece("white");
+		OthelloPiece white = new OthelloPiece(Color.WHITE);
 		playerTwoIcon.setIcon(white.GetIcon());
 		playerTwoIcon.setVisible(true);
 		playerTurnIcon.setIcon(new OthelloPiece(
-				m_game.GetCurrent().GetPiece()).GetIcon());
+				m_game.GetCurrent().GetPieceColour()).GetIcon());
 		playerTurnIcon.setVisible(true);
-		playerTurnLabel.setText(m_game.GetPlayerName(
-				m_game.GetCurrent().GetPlayerName()) + "'s TURN");
+		playerTurnLabel.setText(
+				m_game.GetCurrent().GetPlayerName() + "'s TURN");
 		playerTurnLabel.setFont(f);
 		playerTurnLabel.setVisible(true);
 		blackIcon.setIcon(black.GetIcon());
@@ -86,17 +86,17 @@ public class OthelloGUI extends GUI {
 		}
 		
 		char[][] availableMoves = ((Othello) GetBoard())
-				.AvailableMove(GetGame().GetCurrent().GetPiece());
+				.AvailableMove(GetGame().GetCurrent().GetPieceColour());
 		Color defCol = new Color(170, 150, 100);
 		for (int y = 0; y < GetBoard().GetHeight(); ++y) {
 			for (int x = 0; x < GetBoard().GetWidth(); ++x) {
 				m_panels[x][y].setBorder(BorderFactory
 						.createLineBorder(Color.black));
 				if (availableMoves[x][y] == 'O') {
-					if ((GetGame().GetCurrent().GetPiece() == "black"))
-						m_panels[x][y].setBackground(Color.blue);
+					if ((GetGame().GetCurrent().GetPieceColour() == Color.BLACK))
+						m_panels[x][y].setBackground(Color.BLUE);
 					else
-						m_panels[x][y].setBackground(Color.red);
+						m_panels[x][y].setBackground(Color.RED);
 
 				} else {
 					m_panels[x][y].setBackground(defCol);

@@ -1,5 +1,7 @@
 package piece;
 
+import java.awt.Color;
+
 import javax.swing.Icon;
 /**
  * \\file   -GamePiece.java
@@ -20,7 +22,7 @@ public abstract class GamePiece {
      * \param col a String for piece colour
      * \return true when method completes
      */
-    public boolean SetColour(String col) {
+    public boolean SetColour(Color col) {
         boolean test = false;
         if (test || m_test) {
             System.out.println("GamePiece :: setColour() BEGIN");
@@ -39,7 +41,7 @@ public abstract class GamePiece {
      * Accessor method to get piece colour
      * \return m_colour a String of what colour the piece is currently
      */
-    public String GetColour() {
+    public Color GetColour() {
         boolean test = false;
         if (test || m_test) {
             System.out.println("GamePiece :: getColour() BEGIN");
@@ -70,7 +72,7 @@ public abstract class GamePiece {
     
     /*variable declarations*/
     /** Stores the String of the current colour */
-    private String m_colour;
+    private Color m_colour;
     /** Indicates whether to run tests */
     private boolean m_test = false;
 }

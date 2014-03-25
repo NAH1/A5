@@ -191,10 +191,10 @@ public abstract class GUI extends JFrame {
 			if (e.getSource() == m_passMove) {
 				if (m_game.GetGamOn()) {
 					if (((Othello) m_board).CheckPassTurn()) {
-						if (((Othello) m_board).anyValidMoveForAnyone()) {
+						if (((Othello) m_board).AnyValidMoveForAnyone()) {
 							m_game.Alternate();
 							UpdatePlayerTurnIcon(new OthelloPiece(
-								m_game.GetCurrent().GetPlayerName()).GetIcon());
+								m_game.GetCurrent().GetPieceColour()).GetIcon());
 						} else {
 							//endgame
 						}
@@ -216,7 +216,7 @@ public abstract class GUI extends JFrame {
 				for (int x = 0; x < m_width; ++x) {
 					if (e.getSource() == m_panels[x][y]) {
 						moveComplete = m_board.Move(x, y,
-								m_game.GetCurrent().GetPlayerName());
+								m_game.GetCurrent().GetPieceColour());
 					}
 				}
 			}

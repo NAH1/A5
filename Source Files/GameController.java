@@ -62,13 +62,13 @@ public class GameController {
      * \param the colour of a piece.
      * \return String  return the player name with the given colour.
      */
-	public String GetPlayerName(String colour) {
+	public String GetPlayerName(Color colour) {
 		boolean test = false;
         if (test || m_test) {
             System.out.println("GameController :: GetPlayerName() BEGIN");
         }
         
-		if (m_p1.GetPiece().equals(colour)) {
+		if (m_p1.GetPieceColour() == colour) {
 		if (test || m_test) {
 			System.out.println("GameController :: GetPlayerName() END");
 		}
@@ -183,13 +183,14 @@ public class GameController {
 		if (gt == GameType.CONNECTFOUR) {
 			m_currentPlayer = m_p1;
 		} else if (gt == GameType.OTHELLO) {
-			if(m_p1.GetPiece().equals("black")) {
+			if(m_p1.GetPieceColour() == Color.BLACK) {
 				m_currentPlayer = m_p1;
-			} else if (m_p2.GetPiece().equals("black")){
+			} else if (m_p2.GetPieceColour() == Color.BLACK){
 				m_currentPlayer = m_p2;
 			} else {
 				m_currentPlayer = m_p1;
-				System.err.println("GameController::GameController() ");
+				System.err.println("GameController::GameController() Error,"
+						+ "Current player is not valid");
 			}
 		}
 		SetUp(gt);

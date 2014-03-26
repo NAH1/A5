@@ -10,11 +10,10 @@ public class OthelloAnimationPane extends JPanel implements AWTEventListener {
     public OthelloAnimationPane(JFrame frame) { 
         super(null); 
         this.frame = frame; 
-        //setOpaque(false); 
+        setOpaque(false); 
         System.out.println("OthelloAnimationPane constructed");
         setLocation(0, 0);
         setSize(1000, 1000);
-        setVisible(true);
     } 
  
     public void setPoint(Point point) { 

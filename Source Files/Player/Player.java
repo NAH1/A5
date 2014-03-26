@@ -45,12 +45,20 @@ public abstract class Player {
 		
 		return m_playerName;
 	}
+	
+	public abstract int getX();
+	
+	public abstract int getY();
 
 	/**
 	 * Abstract accessor method to set the piece colour for the player. 
 	 * \param gamePiece a String containing the colour of the gamePiece
 	 */
 	public abstract boolean SetPieceColor(Color gamePiece);
+	
+	public abstract boolean isAI();
+	
+	public abstract boolean takeMove();
 
 	/**
 	 * Abstract accessor method to set the players name. 

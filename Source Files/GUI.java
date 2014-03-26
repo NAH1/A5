@@ -100,7 +100,10 @@ public abstract class GUI extends JFrame {
 	/**
      * Draw the main frame which includes the game panel and the info panel.
      */
-	public void Draw() {
+	private void Draw() {
+
+		GUIHandler handler = new GUIHandler();
+		JPanel infoPanel = DrawInfoPanel(handler);
 		JPanel mainPanel = new JPanel(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
@@ -111,6 +114,27 @@ public abstract class GUI extends JFrame {
 		JPanel gamePanel = new JPanel(new GridLayout(HEIGHT, WIDTH));
 		mainPanel.add(gamePanel, c);
 	
+		
+		for (int y = 0; y < HEIGHT; ++y) {
+			for (int x = 0; x < WIDTH; ++x) {
+				SetPanel(x, y, new JPanel());
+				GetPanel(x, y).setPreferredSize(new Dimension(70, 70));
+				SetLabel(x, y, new JLabel());
+				GetPanel(x, y).addMouseListener(handler);
+				gamePanel.add(GetPanel(x, y));
+			}
+		}
+	
+		FRAME.add(mainPanel, BorderLayout.WEST);
+		FRAME.add(infoPanel, BorderLayout.EAST);
+	
+		FRAME.pack();
+		FRAME.setLocationRelativeTo(null);
+		FRAME.setVisible(true);
+		FRAME.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	private JPanel DrawInfoPanel(GUIHandler handler) {
 		JPanel infoPanel = new JPanel(new GridLayout(6, 2));
 		playerOneColor = new JLabel();
 		playerOneColor.setVisible(false);
@@ -149,27 +173,12 @@ public abstract class GUI extends JFrame {
 		NEWGAME.setVisible(true);
 		infoPanel.add(PASSMOVE);
 		PASSMOVE.setVisible(false);
-	
-		GUIHandler handler = new GUIHandler();
-		for (int y = 0; y < HEIGHT; ++y) {
-			for (int x = 0; x < WIDTH; ++x) {
-				SetPanel(x, y, new JPanel());
-				GetPanel(x, y).setPreferredSize(new Dimension(70, 70));
-				SetLabel(x, y, new JLabel());
-				GetPanel(x, y).addMouseListener(handler);
-				gamePanel.add(GetPanel(x, y));
-			}
-		}
+
+		
 		PASSMOVE.addActionListener(handler);
 		NEWGAME.addActionListener(handler);
-	
-		FRAME.add(mainPanel, BorderLayout.WEST);
-		FRAME.add(infoPanel, BorderLayout.EAST);
-	
-		FRAME.pack();
-		FRAME.setLocationRelativeTo(null);
-		FRAME.setVisible(true);
-		FRAME.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		return infoPanel;
 	}
 
 		 /**
@@ -199,7 +208,7 @@ public abstract class GUI extends JFrame {
 		public void mouseClicked(MouseEvent e) {
 			if(GetGame().GetGamOn()) {
 				playerMove(e);
-				if (player.isAI()) {
+				if (GetGame().GetCurrent().isAI()) {
 					AIMove();
 				}
 			}
@@ -252,7 +261,7 @@ public abstract class GUI extends JFrame {
 			boolean moveComplete = false;
 			Player player = GetGame().GetCurrent();
 			player.takeMove();
-			moveComplete = GetBoard().Move(player.getX(), player.getY(), player.GetPlayerName());
+			moveComplete = GetBoard().Move(player.getX(), player.getY(), player.GetPieceColour());
 			if (moveComplete) {
 				GetGame().Alternate();
 				DrawPieces();

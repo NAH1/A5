@@ -84,6 +84,26 @@ public class HumanPlayer extends Player {
 		m_pieceColor = gamePiece;
 		return true;
 	}
+	
+	@Override
+	public int getX() {
+		return 0;
+	}
+
+	@Override
+	public int getY() {
+		return 0;
+	}
+
+	@Override
+	public boolean takeMove() {
+		return false;
+	}
+	
+	@Override
+	public boolean isAI() {
+		return false;
+	}
 
 	/** No argument constructor for testing purposes */
 	private HumanPlayer() {

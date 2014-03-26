@@ -137,8 +137,8 @@ public abstract class Animation extends JPanel {
 		setGUIFrame(frame);
 		setGame(game);
 		setGUI(gui);
-		WIDTH = getGUI().m_width;
-		HEIGHT = getGUI().m_height;
+		WIDTH = getGUI(). GetBoard().GetWidth();
+		HEIGHT = getGUI(). GetBoard().GetHeight();
 	}
 	
 	/**

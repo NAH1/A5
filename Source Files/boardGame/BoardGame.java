@@ -80,6 +80,11 @@ public abstract class BoardGame {
 	    }
 	}
 	
+	public boolean SetPiece(int x, int y, GamePiece piece) {
+		board[x][y] = piece;
+		return true;
+	}
+	
 	public abstract int MoveQuality(int x, int y, Player current);
 
 	/**

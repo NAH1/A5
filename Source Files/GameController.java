@@ -110,6 +110,13 @@ public class GameController {
 	}
 
 	/**
+	 * @param currentPlayer the currentPlayer to set
+	 */
+	public void setCurrentPlayer(Player currentPlayer) {
+		m_currentPlayer = currentPlayer;
+	}
+
+	/**
      * Get current player.
      * \return String  return the name of the current player.
      */
@@ -125,6 +132,10 @@ public class GameController {
 		
 		return m_currentPlayer;
 	}
+	
+	public GUI GetGUI() {
+		return m_GUI;
+	}
 
 	 /**
 	  * Exchange player turn in othello or connect four.
@@ -134,24 +145,24 @@ public class GameController {
         if (test || m_test) {
             System.out.println("GameController :: Alternate() BEGIN");
         }
-		if (m_currentPlayer == getPlayer1()) {
+		if (GetCurrent() == getPlayer1()) {
 			if (test || m_test) {
 	            System.out.println("GameController :: Alternate() END :: " + 
-	                                m_currentPlayer + " " + getPlayer2());
+	                                GetCurrent() + " " + getPlayer2());
 	        }
-			m_currentPlayer = getPlayer2();
-		} else if (m_currentPlayer == getPlayer2()) {
+			setCurrentPlayer(getPlayer2());
+		} else if (GetCurrent() == getPlayer2()) {
 			if (test || m_test) {
 	            System.out.println("GameController :: Alternate() END :: " + 
-	                                m_currentPlayer + " " + getPlayer1());
+	                                GetCurrent() + " " + getPlayer1());
 	        }
-			m_currentPlayer = getPlayer1();
+			setCurrentPlayer(getPlayer1());
 		}
 		if (test || m_test) {
             System.out.println("GameController :: Alternate() END");
         }
-		m_GUI.setPanelColour();
-		m_GUI.setInfo();
+		GetGUI().setPanelColour();
+		GetGUI().setInfo();
 	}
 
 	 /**
@@ -193,8 +204,8 @@ public class GameController {
 			m_board = new ConnectFour();
 			m_GUI = new Connect4GUI(m_board, this);
 		}
-		m_GUI.DrawPieces();
-		m_GUI.setPanelColour();
+		GetGUI().DrawPieces();
+		GetGUI().setPanelColour();
 	}
 	
 	 /**
@@ -209,14 +220,14 @@ public class GameController {
 		setPlayer1(one);
 		setPlayer2(two);
 		if (gt == GameType.CONNECTFOUR) {
-			m_currentPlayer = getPlayer1();
+			setCurrentPlayer(getPlayer1());
 		} else if (gt == GameType.OTHELLO) {
 			if(getPlayer1().GetPieceColour() == Color.BLACK) {
-				m_currentPlayer = getPlayer1();
+				setCurrentPlayer(getPlayer1());
 			} else if (getPlayer2().GetPieceColour() == Color.BLACK){
-				m_currentPlayer = getPlayer2();
+				setCurrentPlayer(getPlayer2());
 			} else {
-				m_currentPlayer = getPlayer1();
+				setCurrentPlayer(getPlayer1());
 				System.err.println("GameController::GameController() Error,"
 						+ "Current player is not valid");
 			}
@@ -251,7 +262,7 @@ public class GameController {
 			setPlayer1(new HumanPlayer("Jim", Color.RED));
 			setPlayer2(new HumanPlayer("Bob", Color.YELLOW));
 		}
-		m_currentPlayer = getPlayer1();
+		setCurrentPlayer(getPlayer1());
 		// System.out.println("P1: " + getPlayer1().GetPiece());
 		// System.out.println("P2: " + getPlayer2().GetPiece());
 

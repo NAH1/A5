@@ -25,12 +25,11 @@ public class Othello extends BoardGame {
 	 * 
 	 */
 	public Othello() {
-	super(INITIAL_W, INITIAL_H);
+		super(INITIAL_W, INITIAL_H);
         boolean test = false;
         if (test || m_test) {
             System.out.println("Othello :: Othello() BEGIN");
         }
-
 		
 		initialGame();
         if (test || m_test) {
@@ -64,14 +63,15 @@ public class Othello extends BoardGame {
 	 * \return boolean return true if the action completes.
 	 */
 	public boolean SetPiece(int x, int y, Color col) {
-        boolean test = false;
+        boolean test = true;
         if (test || m_test) {
             System.out.println("Othello :: SetPiece() BEGIN");
+            System.out.println("Othello::SetPiecce()" + GetPiece(x, y));
         }
-	 if (x > GetWidth() || x < 0 || y > GetHeight() || y <0 ){
-		  return false;
-	  }
-		board[x][y].SetColour(col);
+        if (x > GetWidth() || x < 0 || y > GetHeight() || y <0 ){
+        	return false;
+		}
+		SetPiece(x, y, new OthelloPiece(col));
         if (test || m_test) {
             System.out.println("Othello :: SetPiece() END");
         }
@@ -223,10 +223,10 @@ public class Othello extends BoardGame {
             System.out.println("Othello :: initialGame() BEGIN");
         }
 
-		this.SetPiece(INTIAL_X, INITIAL_Y, Color.BLACK);
-		this.SetPiece(INITIAL_X_TWO, INITIAL_Y_TWO, Color.BLACK);
-		this.SetPiece(INITIAL_X_TWO, INITIAL_Y, Color.WHITE);
-		this.SetPiece(INTIAL_X, INITIAL_Y_TWO, Color.WHITE);
+		SetPiece(INTIAL_X, INITIAL_Y, Color.BLACK);
+		SetPiece(INITIAL_X_TWO, INITIAL_Y_TWO, Color.BLACK);
+		SetPiece(INITIAL_X_TWO, INITIAL_Y, Color.WHITE);
+		SetPiece(INTIAL_X, INITIAL_Y_TWO, Color.WHITE);
 		countScore();
         if (test || m_test) {
             System.out.println("Othello :: initialGame() END");

@@ -27,7 +27,7 @@ public class OthelloPiece extends GamePiece{
             System.out.println("OthelloPiece :: OthelloPiece() BEGIN");
         }
         
-        if (col.equals(m_white) || col.equals(m_black)) {
+        if (col == Color.WHITE || col == Color.BLACK) {
             SetColour(col);
             m_iconsSet = SetIcons();
         } else {
@@ -49,18 +49,18 @@ public class OthelloPiece extends GamePiece{
             System.out.println("OthelloPiece :: getIcon() BEGIN");
         }
         if (m_iconsSet) {
-            if (GetColour().equals("black")) {
+            if (GetColour() == Color.BLACK) {
                 if (test || m_test) {
                     System.out.println("OthelloPiece :: getIcon() END");
                 }
-                
                 return m_blackpiece;
-            } else {
+            } else if (GetColour() == Color.WHITE){
                 if (test || m_test) {
                     System.out.println("OthelloPiece :: getIcon() END");
                 }
-                
                 return m_whitepiece;
+            } else {
+            	return null;
             }
         }
         return null;

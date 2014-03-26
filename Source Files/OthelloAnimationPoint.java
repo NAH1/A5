@@ -31,12 +31,12 @@ public class OthelloAnimationPoint {
 				", width: " + width());*/
 		
 		// hack to cover set peices
-		g.setColor(Color.gray);
-		g.fillRect(m_X * SQRW, m_Y * SQRW, SQRW, SQRW);
+		g.setColor(BGCOLOR);
+		g.fillRect(m_X * SQRW + 3, m_Y * SQRH + 1, SQRW - 4, SQRH - 2);
 		
 		g.setColor(color());
         g.fillOval((m_X * SQRW) + (SQRW/2 - width()/2),
-        			m_Y * SQRW, width(), SQRW);
+        			m_Y * SQRH, width(), SQRH);
 	}
 	
 	private int frame() {
@@ -70,5 +70,7 @@ public class OthelloAnimationPoint {
 	private int m_Type;  // black to white, or reverse
 	private int m_Completion;
 	private int m_Limit;
-	private final int SQRW = 70; // square width
+	private final int SQRW = 71; // square width (yeah WTF, right?)
+	private final int SQRH = 70; // square height
+	private final Color BGCOLOR = new Color(170, 150, 100);
 }

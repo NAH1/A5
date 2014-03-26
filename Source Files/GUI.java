@@ -85,6 +85,7 @@ public abstract class GUI extends JFrame {
 		ICON = new ImageIcon(getClass().getResource(ICON_URL));
 		PASSMOVE = new JButton("Pass");
 		NEWGAME = new JButton("New Game");
+		SAVEGAME = new JButton("Save Game");
 		Draw();
 	}
 	
@@ -135,7 +136,7 @@ public abstract class GUI extends JFrame {
 	}
 	
 	private JPanel DrawInfoPanel(GUIHandler handler) {
-		JPanel infoPanel = new JPanel(new GridLayout(6, 2));
+		JPanel infoPanel = new JPanel(new GridLayout(7, 2));
 		playerOneColor = new JLabel();
 		playerOneColor.setVisible(false);
 		infoPanel.add(playerOneColor);
@@ -173,12 +174,19 @@ public abstract class GUI extends JFrame {
 		NEWGAME.setVisible(true);
 		infoPanel.add(PASSMOVE);
 		PASSMOVE.setVisible(false);
+		infoPanel.add(SAVEGAME);
 
+		timerLabel = new JLabel("Time Elapsed:");
+		infoPanel.add(timerLabel);
 		
 		PASSMOVE.addActionListener(handler);
 		NEWGAME.addActionListener(handler);
-
+		SAVEGAME.addActionListener(handler);
 		return infoPanel;
+	}
+	
+	public boolean SetLabel(String time) {
+		timerLabel.setText("Time Elapsed:/n" + GameTimer.getDuration());
 	}
 
 		 /**
@@ -223,7 +231,7 @@ public abstract class GUI extends JFrame {
 							UpdatePlayerTurnIcon(new OthelloPiece(
 								GetGame().GetCurrent().GetPieceColour()).GetIcon());
 						} else {
-							//endgame
+							ShowWinningBox();
 						}
 						
 					}
@@ -234,6 +242,10 @@ public abstract class GUI extends JFrame {
 				SelectGame sg = new SelectGame();
 				sg.Draw();
 				FRAME.dispose();
+			}
+			
+			if (e.getSource() == SAVEGAME) {
+				//TODO save manager method call goes here
 			}
 		}
 		
@@ -293,7 +305,7 @@ public abstract class GUI extends JFrame {
 	/**Setting up all of the JLabels for the GUI*/
 	protected JLabel playerOneColor, playerOneIcon, playerTwoColor,
 	                 playerTwoIcon, playerTurnIcon, playerTurnLabel, whiteIcon,
-	                 whitePieces, blackIcon, blackPieces;
+	                 whitePieces, blackIcon, blackPieces, timerLabel;
 	/**The gameBoard*/
 	protected BoardGame m_board;
 	/**setting up the GameController to interact with for each game*/
@@ -312,6 +324,8 @@ public abstract class GUI extends JFrame {
 	protected final JButton PASSMOVE;
 	/**The new game button*/
 	private final JButton NEWGAME;
+	/**The save game button*/
+	private final JButton SAVEGAME;
 	/**The Icon on which the piece is equal to*/
 	private final Icon ICON;
 	/**The image location for the initial image on the gameboard*/

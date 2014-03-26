@@ -252,7 +252,7 @@ public abstract class GUI extends JFrame {
 			boolean moveComplete = false;
 			Player player = GetGame().GetCurrent();
 			player.takeMove();
-			moveComplete = GetBoard().Move(player.getX, player.getY, player.GetPlayerName());
+			moveComplete = GetBoard().Move(player.getX(), player.getY(), player.GetPlayerName());
 			if (moveComplete) {
 				GetGame().Alternate();
 				DrawPieces();

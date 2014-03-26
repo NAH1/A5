@@ -204,12 +204,11 @@ public class GameController {
 			m_board = new Othello();
 			m_GUI = new OthelloGUI(m_board, this);
 			m_AnimationController = new OthelloAnimation
-					(new JFrame(), m_GUI.GetBoard(), m_GUI);
+					(m_GUI.GetFrame(), m_GUI.GetBoard(), m_GUI);
 		} else if (gameType == GameType.CONNECTFOUR) {
 			m_board = new ConnectFour();
 			m_GUI = new Connect4GUI(m_board, this);
-			m_AnimationController = new Connect4Animation
-						(new JFrame(), m_GUI.GetBoard(), m_GUI);
+			m_AnimationController = new Connect4Animation(m_GUI);
 		}
 		GetGUI().DrawPieces();
 		GetGUI().setPanelColour();

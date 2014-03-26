@@ -27,6 +27,7 @@ public class OthelloAnimation extends Animation{
 		
 		m_GlassPane = new OthelloAnimationPane(frame);
 		m_Animating = new ArrayList<OthelloAnimationPoint>();
+		frame.setGlassPane(m_GlassPane);
 
 		EventHandler handler = new EventHandler();
 		javax.swing.Timer timer =

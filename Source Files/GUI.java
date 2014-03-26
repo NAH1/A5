@@ -39,6 +39,10 @@ public abstract class GUI extends JFrame {
 		return m_board;
 	}
 
+	public JFrame GetFrame() {
+		return FRAME;
+	}
+	
 	 /**
      * Get the squares of the game board.
      * \return JPanel[][]  return the two dimensional array in the game panel.

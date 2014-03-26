@@ -1,5 +1,8 @@
 import java.awt.Color;
 
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 import Player.*;
 import boardGame.*;
 /**
@@ -200,9 +203,13 @@ public class GameController {
 		if (gameType == GameType.OTHELLO) {
 			m_board = new Othello();
 			m_GUI = new OthelloGUI(m_board, this);
+			m_AnimationController = new OthelloAnimation
+					(new JFrame(), m_GUI.GetBoard(), m_GUI);
 		} else if (gameType == GameType.CONNECTFOUR) {
 			m_board = new ConnectFour();
 			m_GUI = new Connect4GUI(m_board, this);
+			m_AnimationController = new Connect4Animation
+						(new JFrame(), m_GUI.GetBoard(), m_GUI);
 		}
 		GetGUI().DrawPieces();
 		GetGUI().setPanelColour();
@@ -291,6 +298,7 @@ public class GameController {
 	public enum GameType {OTHELLO, CONNECTFOUR};
 	/**Identifier for the GUI*/
 	private GUI m_GUI;
+	private Animation m_AnimationController;
 	/**Identifier for the Gameboard*/
 	private BoardGame m_board;
 	/**Available for a boolean test to check whether the game is still in session*/

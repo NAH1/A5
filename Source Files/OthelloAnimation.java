@@ -1,5 +1,7 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -23,15 +25,24 @@ public class OthelloAnimation extends Animation{
 	public OthelloAnimation(JFrame frame,  BoardGame game, GUI gui) {
 		super(frame, game, gui);
 		
+		m_GlassPane = new OthelloAnimationPane(frame);
 		m_Animating = new ArrayList<OthelloAnimationPoint>();
 
 		EventHandler handler = new EventHandler();
-		javax.swing.Timer timer = new javax.swing.Timer(DELAY, handler);
-		setTimer(timer);
+		javax.swing.Timer timer =
+			new javax.swing.Timer(DELAY, new ActionListener() {         
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+	               cycle();          
+	        }
+	    });
 		
-		ImageIcon ii[] = new ImageIcon[5];
-		for (int i = 0; i < FRAMES; i++) {
-			ii[i] = new ImageIcon("othello-anim-"+i+".png");
+		setTimer(timer);
+		timer.start();
+		
+		ImageIcon ii[] = new ImageIcon[FRAMES];
+		for (int i = 1; i <= FRAMES; i++) {
+			ii[i - 1] = new ImageIcon("othello-anim-"+i+".png");
 		}
 		
 	}
@@ -68,11 +79,16 @@ public class OthelloAnimation extends Animation{
 		}
 	
 		m_Animating.removeAll(toRemove);
-	
+		//this.repaint();
+		m_GlassPane.revalidate();
+		m_GlassPane.repaint();
+		// TODO m_GlassPane.setPoints(m_Animating);
 	}
 
 	public void paintComponent(Graphics g) {
-		super.paintComponents(g);
+		System.out.println("OthelloAnimation::paintComponent: do");
+		// super.paintComponents(g);
+		m_GlassPane.paintComponent(g);
 	}
 
 	@Override
@@ -81,6 +97,7 @@ public class OthelloAnimation extends Animation{
 	}
 	
 	
+	private OthelloAnimationPane m_GlassPane;
 	private ArrayList <OthelloAnimationPoint> m_Animating;
 	private final int FRAMES = 6;
 }

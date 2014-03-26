@@ -155,6 +155,7 @@ public abstract class Animation extends JPanel {
 	protected class EventHandler implements ActionListener{
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
+			System.out.println("Animation::cycle");
 			cycle();
 			repaint();	
 		}

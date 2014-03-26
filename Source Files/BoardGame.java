@@ -1,4 +1,4 @@
-package boardGame;
+
 
 import java.awt.Color;
 
@@ -54,6 +54,15 @@ public abstract class BoardGame {
 	    return m_height;
 	}
 
+	/** TODO comment */
+	public void SetAnimationController(Animation a) {
+		m_animationController = a;
+	}
+	
+	public Animation GetAnimationController() {
+		return m_animationController;
+	}
+	
 	 /**
      * Get the board height.
      * \param x and y, the position of the GamePiece.
@@ -284,4 +293,6 @@ public abstract class BoardGame {
     private Color m_winningColour;
     /**For testing purposes*/
     private boolean m_test = false;
+    /**For triggering animations*/
+    private Animation m_animationController;
 }

@@ -190,7 +190,7 @@ public abstract class GUI extends JFrame {
 	}
 	
 	public boolean SetLabel(String time) {
-		timerLabel.setText("Time Elapsed:/n" + GameTimer.getDuration());
+		timerLabel.setText("Time Elapsed:/n" + GameTimer.getRunTime());
 	}
 
 		 /**

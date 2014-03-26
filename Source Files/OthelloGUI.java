@@ -1,7 +1,9 @@
 import java.awt.Color;
+
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.SwingUtilities;
+
 import piece.GamePiece;
 import piece.OthelloPiece;
 import boardGame.*;

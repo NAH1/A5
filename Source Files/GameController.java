@@ -203,13 +203,14 @@ public class GameController {
 		if (gameType == GameType.OTHELLO) {
 			m_board = new Othello();
 			m_GUI = new OthelloGUI(m_board, this);
-			m_AnimationController = new OthelloAnimation
-					(m_GUI.GetFrame(), m_GUI.GetBoard(), m_GUI);
+			m_AnimationController = new OthelloAnimation(m_GUI);
 		} else if (gameType == GameType.CONNECTFOUR) {
 			m_board = new ConnectFour();
 			m_GUI = new Connect4GUI(m_board, this);
 			m_AnimationController = new Connect4Animation(m_GUI);
 		}
+		m_board.SetAnimationController(m_AnimationController);
+		
 		GetGUI().DrawPieces();
 		GetGUI().setPanelColour();
 	}

@@ -5,7 +5,6 @@ import java.awt.Color;
 import org.junit.Test;
 
 import Player.HumanPlayer;
-import boardGame.Othello;
 /** 
 * This is a test class
 * \\file -OthelloGUITest.java 

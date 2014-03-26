@@ -7,8 +7,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import boardGame.BoardGame;
-
 /**
  * \\file - Animation.java
  * \author Daniel Squires - 709547

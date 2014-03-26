@@ -1,4 +1,4 @@
-package boardGame;
+
 
 import java.awt.Color;
 
@@ -27,6 +27,7 @@ public class Othello extends BoardGame {
 	public Othello() {
 		super(INITIAL_W, INITIAL_H);
         boolean test = false;
+        
         if (test || m_test) {
             System.out.println("Othello :: Othello() BEGIN");
         }
@@ -35,7 +36,6 @@ public class Othello extends BoardGame {
         if (test || m_test) {
             System.out.println("Othello :: Othello() END");
         }
-        
 	}
 
 	/**
@@ -208,6 +208,7 @@ public class Othello extends BoardGame {
 			// here call Animation.setXcoord(m_searchX); TODO
 			// here call Animation.setYcoord(m_searchY); TODO
 			// <animation object>.animate(m_searchX, m_searchY, Color.something);
+			GetAnimationController().animate(m_searchX, m_searchY, col);
 		}
         if (test || m_test) {
             System.out.println("Othello :: flip() END");
@@ -459,7 +460,7 @@ public class Othello extends BoardGame {
 	}
 	
     /** main method for tests */
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Othello a = new Othello ();
         a.GetBlackScore();
         a.SetPiece(2,3,Color.WHITE);
@@ -472,7 +473,7 @@ public class Othello extends BoardGame {
         a.SetWinner();
         a.validMove(4,4,Color.RED);
         a.WinningCondition();
-    }
+    }*/
   //The following two int's are static due to calling the BoardGame in method.
     /**Sets the Size in BoardGame (is static due to calling the BoardGame in method*/
     private final static int INITIAL_W = 8;

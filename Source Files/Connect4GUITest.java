@@ -4,7 +4,6 @@ import java.awt.Color;
 
 import org.junit.Test;
 
-import boardGame.ConnectFour;
 import Player.HumanPlayer;
 
 /** 

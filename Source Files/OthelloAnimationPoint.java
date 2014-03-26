@@ -1,3 +1,6 @@
+import java.awt.Color;
+import java.awt.Graphics2D;
+
 /**
  * \\file -OthelloAnimationPoint.java 
  * \author - Ben Golightly
@@ -21,23 +24,44 @@ public class OthelloAnimationPoint {
 		m_Limit = limit;
 	}
 	
-	public int frame()
-	{
-		if (m_Type < 0) {
-			return (m_Limit - m_Completion);
-		}
-		else {
-			return m_Completion;
-		}
+	public void draw(Graphics2D g) {
+		/*System.out.println("OthelloAnimationPoint::draw at "
+				+ m_X +", " + m_Y +
+				", frame: " + m_Completion +
+				", width: " + width());*/
+		
+		// hack to cover set peices
+		g.setColor(Color.gray);
+		g.fillRect(m_X * SQRW, m_Y * SQRW, SQRW, SQRW);
+		
+		g.setColor(color());
+        g.fillOval((m_X * SQRW) + (SQRW/2 - width()/2),
+        			m_Y * SQRW, width(), SQRW);
 	}
 	
-	public void sync()
-	{
+	private int frame() {
+		return m_Completion;
+	}
+	
+	private int width() {
+		return (int) Math.round(70.0 * (double) frame() / (double) m_Limit);
+	}
+	
+	private Color color() {
+		if (frame() < m_Limit / 2) {
+			if (m_Type < 0) { return Color.black; } else { return Color.white; }
+		}
+		else {
+			if (m_Type < 0) { return Color.white; } else { return Color.black; }
+		}
+			
+	}
+	
+	public void sync() {
 		m_Completion++;
 	}
 	
-	public boolean completed()
-	{
+	public boolean completed() {
 		return m_Completion == m_Limit;
 	}
 	
@@ -46,4 +70,5 @@ public class OthelloAnimationPoint {
 	private int m_Type;  // black to white, or reverse
 	private int m_Completion;
 	private int m_Limit;
+	private final int SQRW = 70; // square width
 }

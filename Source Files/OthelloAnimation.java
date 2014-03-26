@@ -22,8 +22,9 @@ public class OthelloAnimation extends Animation{
 	 * \param frame - 
 	 * \param game - 
 	 */
-	public OthelloAnimation(JFrame frame,  BoardGame game, GUI gui) {
-		super(frame, game, gui);
+	public OthelloAnimation(GUI gui) {
+		super(gui.GetFrame(), gui.GetBoard(), gui);
+		JFrame frame = gui.GetFrame();
 		
 		m_GlassPane = new OthelloAnimationPane(frame);
 		m_Animating = new ArrayList<OthelloAnimationPoint>();
@@ -42,10 +43,10 @@ public class OthelloAnimation extends Animation{
 		setTimer(timer);
 		timer.start();
 		
-		ImageIcon ii[] = new ImageIcon[FRAMES];
+		/*ImageIcon ii[] = new ImageIcon[FRAMES];
 		for (int i = 1; i <= FRAMES; i++) {
 			ii[i - 1] = new ImageIcon("othello-anim-"+i+".png");
-		}
+		}*/
 		
 	}
 
@@ -76,12 +77,12 @@ public class OthelloAnimation extends Animation{
 
 		for (OthelloAnimationPoint point : m_Animating) {
 			point.sync();
-			System.out.println("TEST ANIMATION: " + point.frame());
 			if (point.completed()) { toRemove.add(point); }
 		}
 	
 		m_Animating.removeAll(toRemove);
 		//this.repaint();
+		m_GlassPane.setPoints(m_Animating);
 		m_GlassPane.revalidate();
 		m_GlassPane.repaint();
 		// TODO m_GlassPane.setPoints(m_Animating);
@@ -101,5 +102,5 @@ public class OthelloAnimation extends Animation{
 	
 	private OthelloAnimationPane m_GlassPane;
 	private ArrayList <OthelloAnimationPoint> m_Animating;
-	private final int FRAMES = 6;
+	private final int FRAMES = 250;
 }

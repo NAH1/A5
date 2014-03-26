@@ -1,8 +1,11 @@
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
+
 import boardGame.*;
+
 import javax.swing.*;
+
 import piece.ConnectFourPiece;
 import piece.GamePiece;
 import piece.OthelloPiece;

@@ -2,6 +2,9 @@
 
 import java.awt.Color;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 import Player.Player;
 import piece.*;
 /**
@@ -62,6 +65,8 @@ public abstract class BoardGame {
 	public Animation GetAnimationController() {
 		return m_animationController;
 	}
+	
+	public abstract void HighlightWinners(JPanel[][] panels, Color winner);
 	
 	 /**
      * Get the board height.

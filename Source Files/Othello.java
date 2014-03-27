@@ -2,6 +2,9 @@
 
 import java.awt.Color;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 import Player.Player;
 import piece.*;
 /**
@@ -16,6 +19,8 @@ import piece.*;
  * 
  * This class extends from the BoardGame class. It will check the valid move 
  * when the player place the pieces and return the feedback.
+ * 
+ * Updated by BSAG to highlight winners
  */
 public class Othello extends BoardGame {
 
@@ -38,6 +43,22 @@ public class Othello extends BoardGame {
         }
 	}
 
+	/**
+	 * Highlight winning colours
+	 * @param m_Lables: the GUI label elements
+	 * @param winner the winning colour ID
+	 */
+	public void HighlightWinners(JPanel[][] panels, Color winner) {
+		for (int y = 0; y < GetHeight(); y++) {
+			for (int x = 0; x < GetWidth(); x++) {
+				System.out.println("HighlightWinners?");
+				if (GetPiece(x,y).GetColour() == winner) {
+					panels[x][y].setBackground(Color.CYAN);
+				}
+			}
+		}
+	}
+	
 	/**
 	 * Public method,It passes the score to GUI class. \return scoreBlack the
 	 * black player score.

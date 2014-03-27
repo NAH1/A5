@@ -306,6 +306,7 @@ public abstract class GUI extends JFrame {
 			JOptionPane.showMessageDialog(FRAME, "GAME DRAWN", "Draw",
 					JOptionPane.OK_OPTION, ICON);
 		} else {
+			m_board.HighlightWinners(m_panels, GetBoard().GetWinningColour());
 			JOptionPane.showMessageDialog(FRAME,
 					GetGame().GetPlayerName(GetBoard().GetWinningColour())
 					+ "   WINS!!!!", "Winner", JOptionPane.OK_OPTION,

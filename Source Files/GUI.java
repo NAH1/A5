@@ -84,7 +84,12 @@ public abstract class GUI extends JFrame {
 	}
 	
 	public Clock getClock() {
-		return CLOCK;
+		return m_clock;
+	}
+	
+	public boolean setClock(Clock clock) {
+		m_clock = clock;
+		return true;
 	}
 	
 	public abstract boolean setPanelColour();
@@ -111,7 +116,7 @@ public abstract class GUI extends JFrame {
 		SAVEGAME = new JButton("Save Game");
 		Draw();
 
-		CLOCK = new Clock(this, 0);
+		m_clock = new Clock(this, 0);
 	}
 	
 	/**
@@ -265,7 +270,7 @@ public abstract class GUI extends JFrame {
 			}
 	
 			if (e.getSource() == NEWGAME) {
-				CLOCK.stop();
+				m_clock.stop();
 				SelectGame sg = new SelectGame();
 				sg.Draw();
 				FRAME.dispose();
@@ -316,7 +321,7 @@ public abstract class GUI extends JFrame {
      * Show a dialog box of the game result when the game ends.
      */
 	public void ShowWinningBox() {
-		CLOCK.stop();
+		m_clock.stop();
 		if (GetBoard().GetWinningColour() == null) {
 			JOptionPane.showMessageDialog(FRAME, "GAME DRAWN", "Draw",
 					JOptionPane.OK_OPTION, ICON);
@@ -360,5 +365,5 @@ public abstract class GUI extends JFrame {
 	/**The image location for the initial image on the gameboard*/
 	private String ICON_URL = "icon.png";
 
-	private final Clock CLOCK;
+	private Clock m_clock;
 }

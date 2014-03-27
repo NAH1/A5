@@ -46,27 +46,27 @@ public class SaveManager {
 				p.println();
 			}
 			p.print("x");
-			p.print(game.getPlayer1().GetPlayerName());
-			p.print(game.getPlayer1().GetPieceColour());
+			p.println(game.getPlayer1().GetPlayerName());
+			p.println(game.getPlayer1().GetPieceColour());
 			if (game.getPlayer1().isAI()) {
 				if(game.getPlayer1() instanceof AIHard) {
-					p.print("Hard");
+					p.println("Hard");
 				} else {
-					p.print("Easy");
+					p.println("Easy");
 				}
 			}
-			p.print(game.getPlayer2().GetPlayerName());
-			p.print(game.getPlayer2().GetPieceColour());
+			p.println(game.getPlayer2().GetPlayerName());
+			p.println(game.getPlayer2().GetPieceColour());
 			if (game.getPlayer2().isAI()) {
 				if(game.getPlayer2() instanceof AIHard) {
-					p.print("Hard");
+					p.println("Hard");
 				} else {
-					p.print("Easy");
+					p.println("Easy");
 				}
 			}
 			
-			p.print(game.GetCurrent().GetPieceColour());
-			p.print(game.GetGUI().getClock().getTime());
+			p.println(game.GetCurrent().GetPieceColour());
+			p.println(game.GetGUI().getClock().getTime());
 			p.close();
 
 			System.out.println("Saved");

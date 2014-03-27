@@ -31,7 +31,10 @@ public class SaveManager {
 			}
 			for (int i = 0; i < game.GetBoard().GetWidth(); i++){
 				for (int j = 0; j< game.GetBoard().GetHeight(); j++){
-					if (game.GetBoard().GetPiece(i, j).GetColour() == Color.YELLOW){
+					if (game.GetBoard().GetPiece(i, j) == null) {
+						p.print("N ");
+					}
+					else if (game.GetBoard().GetPiece(i, j).GetColour() == Color.YELLOW){
 						p.print("Y ");
 					}
 					else if (game.GetBoard().GetPiece(i, j).GetColour() == Color.RED){

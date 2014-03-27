@@ -1,9 +1,22 @@
+import java.awt.AWTEvent;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 
-import javax.swing.ImageIcon;
+import javax.print.attribute.AttributeSetUtilities;
 import javax.swing.JFrame;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+
+import piece.*;
 
 /**
  * \\file - Connect4Animation.java
@@ -64,36 +77,15 @@ public class Connect4Animation extends Animation{
 	
 	/**
 	 * 
-	 * \param image
+	 * \return m_playerColour the colour of the players piece
 	 */
-	public void setPiece(Image image) {
-		m_piece = image;
+	public Color getPlayerColour() {
+		return m_playerColour;
 	}
 	
 	/**
 	 * 
-	 * \return
 	 */
-	public Image getPiece() {
-		return m_piece;
-	}
-	
-	/**
-	 * 
-	 * \return
-	 */
-	public boolean getRunBool() {
-		return m_run;
-	}
-	
-	/**
-	 * 
-	 * \param bool - 
-	 */
-	public void setRunBool(boolean bool) {
-		m_run = bool;
-	}
-	
 	public void setAnimationPane() {
 		m_GlassPane.setC4Animation(this);
 	}
@@ -107,7 +99,6 @@ public class Connect4Animation extends Animation{
 	 * \param gui - 
 	 */
 	public Connect4Animation(GUI gui) {
-		System.out.println("Connect4Animation() :: START");
 		setYCoord(0);
 		WIDTH = gui.GetBoard().GetWidth();
 		HEIGHT = gui.GetBoard().GetHeight();
@@ -119,7 +110,6 @@ public class Connect4Animation extends Animation{
 		frame.setGlassPane(m_GlassPane);
 		m_GlassPane.setVisible(true);
 		
-		System.out.println("Connect4Animation() :: END");
 	}
 
 	/**
@@ -128,23 +118,20 @@ public class Connect4Animation extends Animation{
 	 */
 	@Override
 	protected void cycle() {
-		//System.out.println("Cycle() :: START");
-		final int INCREMENT = 5;
+		final int INCREMENT = 10;
 		
-		if (getYCoord() >= getLowestYCoord() - 50) {
+		if (getYCoord() >= getLowestYCoord()) {
 			if (m_trace) {
 				System.out.println("Stopping Cycle");
 			}
-			setRunBool(false);
 			getTimer().stop();
 			setYCoord(INITIAL_Y);
 			//getAnimatorThread().interrupt();
 			//setYCoord(INITIAL_Y);
 		} else {
 			setYCoord(getYCoord() + INCREMENT);
-			m_GlassPane.repaint();
 		}
-		//System.out.println("Cycle() :: END");
+		m_GlassPane.repaint();
 	}
 	
 	
@@ -153,22 +140,16 @@ public class Connect4Animation extends Animation{
 	}
 	
 	@Override
-	public void animate(int xCoord, int yCoord, Color playerColour) {
+	public void animate(int xCoord, int yCoord, Color playerColour, int delay) {
 		setXCoord(xCoord * xMultiple);
 		setYCoord(0);
 		setLowestYCoord(yCoord * yMultiple);
 		if (m_trace) {
 			System.out.println("xCoord" + xCoord);
-			System.out.println("YCoord" + yCoord);
+			System.out.println("LowestYCoord" + yCoord);
 		}
 		
-		if (playerColour == Color.RED) {
-			ImageIcon ii = new ImageIcon("piece\\red.png");
-			setPiece(ii.getImage());
-		} else {
-			ImageIcon ii = new ImageIcon("piece\\yellow.png");
-			setPiece(ii.getImage());
-		}
+		m_playerColour = playerColour;
 		
 		getTimer().start();
 	}
@@ -177,10 +158,8 @@ public class Connect4Animation extends Animation{
 	private int m_xCoord;
 	private int m_yCoord;
 	private int m_lowestYCoord;
-	private int[][] m_conversionTable; 
 	private Connect4AnimationPane m_GlassPane;
-	private Image m_piece;
-	private boolean m_run = false;
+	private Color m_playerColour;
 	protected final int INITIAL_X = 100;	//The initial X Coordinate of the Image
     protected final int INITIAL_Y = 2;	//The initial Y Coordinate of the Image
     protected final int WIDTH;		//Width of the gameboard

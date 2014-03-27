@@ -66,5 +66,5 @@ public class OthelloAnimationPane extends JPanel {
     /** height of pane */
     private final int HEIGHT = 1000; // big enough
     /** opacity of pane */
-    private final double OPACITY = 1.0f;
+    private final float OPACITY = 1.0f;
 } 

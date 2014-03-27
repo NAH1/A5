@@ -14,74 +14,6 @@ import java.awt.Color;
  */
 
 public class HumanPlayer extends Player {
-
-	/**
-	 * An accessor method to retrieve the players name from the Player class.
-	 * \return m_playerName returns the player name retrieves from Player class
-	 */
-	public String GetPlayerName() {
-		boolean test = false;
-		if (test || m_test) {
-            System.out.println("HumanPlayer :: GetPlayerName() BEGIN");
-            }
-		
-		if (test || m_test) {
-			System.out.println("HumanPlayer :: GetPlayerName() END");
-		}
-		
-		return m_playerName;
-	
-		
-	}
-
-	/**
-	 * An accessor method to retrieve the players colour piece 
-	 * \return m_pieceColor the players colour. 
-	 * 
-	 * retrieves from Player class
-	 */
-	public Color GetPieceColor() {
-		boolean test = false;
-		if (test || m_test) {
-            System.out.println("HumanPlayer :: GetPiece() BEGIN");
-            }
-		
-		if (test || m_test) {
-			System.out.println("HumanPlayer :: GetPiece() END");
-		}
-		
-		
-		
-		return m_pieceColor;
-	}
-
-	/**
-	 * An accessor method to set the players name. 
-	 * \param settingPlayerName parameter comes from the constructor, 
-	 * sets the players name in the Player class.
-	 */
-	public boolean SetPlayerName(String settingPlayerName) {
-		boolean test = false;
-		if (settingPlayerName.isEmpty() && (test == true)) {
-			System.err
-			.println("*** Warning HumanPlayer:"
-			        + "  :SetPlayerName() name set to empty string.");
-		}
-		m_playerName = settingPlayerName;
-		return true;
-	}
-
-	/**
-	 * An accessor method to set the players game piece colour. 
-	 * \param gamePiece parameter comes from the constructor sets 
-	 * the players piece colour in the Player class.
-	 *  Has if statement to make sure that there are only 4 possible inputs
-	 */
-	public boolean SetPieceColor(Color gamePiece) {
-		boolean test = false;
-		m_pieceColor = gamePiece;
-		return true;
-	}
 	
 	@Override
 	public int getX() {
@@ -161,7 +93,7 @@ public class HumanPlayer extends Player {
 				+ humanPlayer.GetPieceColour());
 		humanPlayer.SetPieceColor(Color.WHITE);
 		System.out.println("HumanPlayer test:: Piece: "
-				+ humanPlayer.GetPieceColor());
+				+ humanPlayer.GetPieceColour());
 		System.out.println("HumanPlayer test:: PlayerName: "
 				+ humanPlayer.GetPlayerName());
 		if (test == true) {

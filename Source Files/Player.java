@@ -47,23 +47,37 @@ public abstract class Player {
 	public abstract int getX();
 	
 	public abstract int getY();
+	
+	/**
+	 * An accessor method to set the players name. 
+	 * \param settingPlayerName parameter comes from the constructor, 
+	 * sets the players name in the Player class.
+	 */
+	public boolean SetPlayerName(String settingPlayerName) {
+		boolean test = false;
+		if (settingPlayerName.isEmpty() && (test == true)) {
+			System.err
+			.println("*** Warning HumanPlayer:"
+			        + "  :SetPlayerName() name set to empty string.");
+		}
+		m_playerName = settingPlayerName;
+		return true;
+	}
 
 	/**
-	 * Abstract accessor method to set the piece colour for the player. 
-	 * \param gamePiece a String containing the colour of the gamePiece
+	 * An accessor method to set the players game piece colour. 
+	 * \param gamePiece parameter comes from the constructor sets 
+	 * the players piece colour in the Player class.
+	 *  Has if statement to make sure that there are only 4 possible inputs
 	 */
-	public abstract boolean SetPieceColor(Color gamePiece);
+	public boolean SetPieceColor(Color gamePiece) {
+		m_pieceColor = gamePiece;
+		return true;
+	}
 	
 	public abstract boolean isAI();
 	
 	public abstract boolean takeMove();
-
-	/**
-	 * Abstract accessor method to set the players name. 
-	 * \param settingPlayerName settingPlayerName = 
-	 * the players name that gets set.
-	 */
-	public abstract boolean SetPlayerName(String settingPlayerName);
 
 	/**
 	 * For testing purposes have a main method.

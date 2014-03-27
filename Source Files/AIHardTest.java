@@ -6,7 +6,7 @@ import org.junit.Test;
 
 
 public class AIHardTest {
-
+    
 	@Test
 	public void test() {
 		BoardGame b = new Othello();
@@ -15,10 +15,14 @@ public class AIHardTest {
 		int x = a.getX();
 		int y =a.getY();
 		assertTrue(
-				((x == 5) && (y == 3)) ||
-				((x == 6) && (y ==4)) ||
-				((x == 3) && (y == 5)) ||
-				((x == 4) && (y ==6))
-				);
+                   ((x == BLACK1X + 1) && (y == BLACK1Y - 1)) ||
+                   ((x == WHITE1X + 1) && (y == BLACK1Y)) ||
+                   ((x == BLACK1X - 1) && (y == BLACK1Y + 1)) ||
+                   ((x == BLACK1X) && (y == WHITE2Y + 1))
+                   );
 	}
+	final int BLACK1X = 3;
+	final int BLACK1Y = 3;
+	final int WHITE1X = 4;
+	final int WHITE2Y = 4 ;
 }

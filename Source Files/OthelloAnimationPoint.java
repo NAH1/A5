@@ -49,7 +49,10 @@ public class OthelloAnimationPoint {
 		
 		// hack to cover set peices
 		g.setColor(BGCOLOR);
-		g.fillRect(m_X * SQRW + 3, m_Y * SQRH + 1, SQRW - 4, SQRH - 2);
+		g.fillRect(m_X * SQRW + SQ_PADX1,
+					m_Y * SQRH + SQ_PADY1,
+					SQRW - SQ_PADX2,
+					SQRH - SQ_PADY2);
 		
 		g.setColor(color());
         g.fillOval((m_X * SQRW) + (SQRW/2 - width()/2) + PADDING,
@@ -141,4 +144,12 @@ public class OthelloAnimationPoint {
 	private final int DIAMETER = 60;
 	/** Left/top padding/margin of circle */
 	private final int PADDING = 5;
+	/**padding */
+	private final int SQ_PADX1 = 3;
+	/**padding */
+	private final int SQ_PADX2 = 4;
+	/**padding */
+	private final int SQ_PADY1 = 1;
+	/**padding */
+	private final int SQ_PADY2 = 2;
 }

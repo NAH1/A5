@@ -1,3 +1,11 @@
+ /**
+ *  @file	Clock.Java
+ * 	@author	Callum Hazelton
+ * 	@date	27/03/2014
+ * 	@brief Makes the timer
+ * 
+ * Counts the seconds since game started and converts to hh:mm:ss format. Also references GUI class
+ */
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -9,29 +17,43 @@ public class Clock {
 	private GUI m_gui;
     
 	/**
-	 * @return the m_gui
+	 * gets the GUI
+	 * @return the gui
 	 */
 	private GUI getGui() {
 		return m_gui;
 	}
 
 	/**
-	 * @param m_gui the m_gui to set
+	 * sets the GUI
+	 * @param the gui
 	 */
 	private void setGui(GUI m_gui) {
 		this.m_gui = m_gui;
 	}
 	
+	/**
+	 * gets time
+	 * @param gets how many seconds have passed
+	 */
 	public int getTime() {
 		return TASK.getSeconds();
 	}
     
+	/**
+	 * Gets GUI and updates time every 1000 milliseconds 
+	 * @param the gui, time 
+	 */
     public Clock(GUI gui, int time) {
     	setGui(gui);
         TASK = new UpdateUITask(time);
         TIMER.schedule(TASK, 0, MSINSEC);
     }
     
+    /**
+   	 * stops clock when game finishes
+   	 * @return true when method is run
+   	 */
     public boolean stop() {
     	TIMER.cancel();
     	return true;
@@ -40,23 +62,31 @@ public class Clock {
 	private class UpdateUITask extends TimerTask {
 		
 		/**
-		 * @return the m_seconds
+		 * gets seconds passed
+		 * @return seconds passed
 		 */
 		private int getSeconds() {
 			return m_seconds;
 		}
 
 		/**
-		 * @param m_seconds the m_seconds to set
-		 */
-		private void setSeconds(int m_seconds) {
+		 * sets seconds passed
+		 * @param seconds passed
+		 */ void setSeconds(int m_seconds) {
 			this.m_seconds = m_seconds;
 		}
-
+		 
+		 /**
+		  * updates time with seconds passed
+		  * @param time
+		  */
 		public UpdateUITask(int time) {
 			setSeconds(time);
 		}
 		
+		/**
+		 * formats the seconds passed into hh:mm:ss
+		 */
 		public void run() {
 			int Hours = 0;
 			int Minutes = 0;

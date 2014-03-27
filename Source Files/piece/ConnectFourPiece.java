@@ -27,7 +27,7 @@ public class ConnectFourPiece extends GamePiece {
             System.out.println("ConnectFourPiece :: ConnectFourPiece() BEGIN");
         }
         
-        if (col == Color.RED || col == Color.YELLOW) {
+        if (col == Color.RED || col == Color.YELLOW || col == Color.PINK) {
             SetColour(col);
             m_iconsSet = SetIcons();
         } else {

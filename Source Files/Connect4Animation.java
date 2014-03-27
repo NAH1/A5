@@ -128,7 +128,7 @@ public class Connect4Animation extends Animation{
 	 */
 	@Override
 	protected void cycle() {
-		System.out.println("Cycle() :: START");
+		//System.out.println("Cycle() :: START");
 		final int INCREMENT = 5;
 		
 		if (getYCoord() >= getLowestYCoord() - 50) {
@@ -144,7 +144,7 @@ public class Connect4Animation extends Animation{
 			setYCoord(getYCoord() + INCREMENT);
 			m_GlassPane.repaint();
 		}
-		System.out.println("Cycle() :: END");
+		//System.out.println("Cycle() :: END");
 	}
 	
 	

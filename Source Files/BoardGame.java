@@ -2,6 +2,7 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 
+import piece.ConnectFourPiece;
 import piece.GamePiece;
 /**
  * \\file -BoardGame.java 
@@ -63,6 +64,16 @@ public abstract class BoardGame {
 	}
 	
 	public abstract void HighlightWinners(JPanel[][] panels, Color winner);
+	
+	// HACK
+	public GamePiece GetNonNullPiece(int x, int y) {
+		if (board[x][y] == null) {
+			return new ConnectFourPiece(Color.PINK); // HACK
+		}
+		else {
+			return GetPiece(x, y);
+		}
+	}
 	
 	 /**
      * Get the board height.

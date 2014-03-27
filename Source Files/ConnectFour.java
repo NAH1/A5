@@ -228,6 +228,7 @@ public class ConnectFour extends BoardGame {
 	}
 	
 	public void HighlightWinners(JPanel[][] panels, Color winner) {
+		System.out.println("ConnectFour :: HighlightWinners");
 		for (int y = 0; y < GetHeight(); y++) {
 			for (int x = 0; x < GetWidth(); x++) {
 				if (RightHighlight(panels, winner, x, y)) return;
@@ -239,13 +240,15 @@ public class ConnectFour extends BoardGame {
 	}
 	
 	private boolean RightHighlight(JPanel[][] p, Color winner, int x, int y) {
-		if (x + 3 >= GetWidth()) { return false; }
+		if (x + 4 >= GetWidth()) { return false; }
+		
+		System.out.println("ConnectFour::RightHighlight:CHECK " + x + ", "+ y);
 		
 		if (
-			(GetPiece(x,y).GetColour() == winner) &&
-			(GetPiece(x+1,y).GetColour() == winner) &&
-			(GetPiece(x+2,y).GetColour() == winner) &&
-			(GetPiece(x+3,y).GetColour() == winner)
+			(GetNonNullPiece(x,y).GetColour() == winner) &&
+			(GetNonNullPiece(x+1,y).GetColour() == winner) &&
+			(GetNonNullPiece(x+2,y).GetColour() == winner) &&
+			(GetNonNullPiece(x+3,y).GetColour() == winner)
 		) {
 			p[x][y].setBackground(Color.CYAN);
 			p[x+1][y].setBackground(Color.CYAN);
@@ -258,13 +261,13 @@ public class ConnectFour extends BoardGame {
 	}
 	
 	private boolean DownHighlight(JPanel[][] p, Color winner, int x, int y) {
-		if (y + 3 >= GetHeight()) { return false; }
+		if (y + 4 >= GetHeight()) { return false; }
 		
 		if (
-			(GetPiece(x,y).GetColour() == winner) &&
-			(GetPiece(x,y+1).GetColour() == winner) &&
-			(GetPiece(x,y+2).GetColour() == winner) &&
-			(GetPiece(x,y+3).GetColour() == winner)
+			(GetNonNullPiece(x,y).GetColour() == winner) &&
+			(GetNonNullPiece(x,y+1).GetColour() == winner) &&
+			(GetNonNullPiece(x,y+2).GetColour() == winner) &&
+			(GetNonNullPiece(x,y+3).GetColour() == winner)
 		) {
 			p[x][y].setBackground(Color.CYAN);
 			p[x][y+1].setBackground(Color.CYAN);
@@ -278,14 +281,14 @@ public class ConnectFour extends BoardGame {
 
 	private boolean DiagHighlight1(JPanel[][] p, Color winner, int x, int y) {
 		// go down and right
-		if (x + 3 >= GetWidth()) { return false; }
-		if (y + 3 >= GetHeight()) { return false; }
+		if (x + 4 >= GetWidth()) { return false; }
+		if (y + 4 >= GetHeight()) { return false; }
 		
 		if (
-			(GetPiece(x,y).GetColour() == winner) &&
-			(GetPiece(x+1,y+1).GetColour() == winner) &&
-			(GetPiece(x+2,y+2).GetColour() == winner) &&
-			(GetPiece(x+3,y+3).GetColour() == winner)
+			(GetNonNullPiece(x,y).GetColour() == winner) &&
+			(GetNonNullPiece(x+1,y+1).GetColour() == winner) &&
+			(GetNonNullPiece(x+2,y+2).GetColour() == winner) &&
+			(GetNonNullPiece(x+3,y+3).GetColour() == winner)
 		) {
 			p[x][y].setBackground(Color.CYAN);
 			p[x+1][y+1].setBackground(Color.CYAN);
@@ -299,14 +302,14 @@ public class ConnectFour extends BoardGame {
 
 	private boolean DiagHighlight2(JPanel[][] p, Color winner, int x, int y) {
 		// go up and right
-		if (x + 3 >= GetWidth()) { return false; }
+		if (x + 4 >= GetWidth()) { return false; }
 		if (y - 3 < GetHeight()) { return false; }
 		
 		if (
-			(GetPiece(x,y).GetColour() == winner) &&
-			(GetPiece(x+1,y-1).GetColour() == winner) &&
-			(GetPiece(x+2,y-2).GetColour() == winner) &&
-			(GetPiece(x+3,y-3).GetColour() == winner)
+			(GetNonNullPiece(x,y).GetColour() == winner) &&
+			(GetNonNullPiece(x+1,y-1).GetColour() == winner) &&
+			(GetNonNullPiece(x+2,y-2).GetColour() == winner) &&
+			(GetNonNullPiece(x+3,y-3).GetColour() == winner)
 		) {
 			p[x][y].setBackground(Color.CYAN);
 			p[x+1][y-1].setBackground(Color.CYAN);

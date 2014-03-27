@@ -267,7 +267,7 @@ public class Othello extends BoardGame {
 	 */
 
 	public boolean Move(int x, int y, Color col) { // move action
-        boolean test = false;
+        boolean test = true;
         if (test || m_test) {
             System.out.println("Othello :: Move() BEGIN");
         }
@@ -464,20 +464,36 @@ public class Othello extends BoardGame {
 	
 	@Override
 	public int MoveQuality(int x, int y, Player current) {
-		countScore();
-		int black = GetBlackScore();
-		int white = GetWhiteScore();
-		final GamePiece[][] GRID = m_board;
-		Move(x, y, current.GetPieceColour());
-		countScore();
-		black = GetBlackScore() - black;
-		white = GetWhiteScore() - white;
-		m_board = GRID;
-		if (current.GetPieceColour() == Color.WHITE) {
-			return white;
-		} else {
-			return black;
-		}
+		int moveScore = 0;
+		Color color = current.GetPieceColour();
+		moveScore += lineQuality(x, y, 0, 1, color);
+		moveScore += lineQuality(x, y, 0, -1, color);
+		moveScore += lineQuality(x, y, 1, 0, color);
+		moveScore += lineQuality(x, y, -1, 0, color);
+		moveScore += lineQuality(x, y, 1, 1, color);
+		moveScore += lineQuality(x, y, -1, 1, color);
+		moveScore += lineQuality(x, y, 1, -1, color);
+		moveScore += lineQuality(x, y, -0, -1, color);
+		return moveScore;
+	}
+	
+	private int lineQuality(int dx, int dy, int deltaX, int deltaY, Color color) {
+		int moveScore = 0;
+		int score = 0;
+		boolean notWall = true;
+		do {
+			dx += deltaX;
+			dy += deltaY;
+			if (dx < 0 || dy < 0 || dx >= INITIAL_W || dy >= INITIAL_H) break;
+			if (GetPiece(dx,dy) == null) break;
+			if(GetPiece(dx,dy).GetColour() == color) {
+				moveScore = score;
+				notWall = false;
+			} else {
+				score++;
+			}
+		} while (notWall);
+		return moveScore;
 	}
 	
     /** main method for tests */

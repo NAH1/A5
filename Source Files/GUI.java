@@ -68,6 +68,10 @@ public abstract class GUI extends JFrame {
 		return true;
 	}
 	
+	public Clock getClock() {
+		return CLOCK;
+	}
+	
 	public abstract boolean setPanelColour();
 	
 	public abstract boolean setInfo();

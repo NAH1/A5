@@ -4,7 +4,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import Player.*;
-import boardGame.*;
 /**
  * \\file -GameController.java 
  * \author - Thomas Letheby

@@ -16,7 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 import piece.*;
-import boardGame.*;
 
 /**
  * \\file - Connect4Animation.java

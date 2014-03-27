@@ -4,7 +4,6 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import Player.Player;
-import boardGame.*;
 import piece.*;
 
 /**

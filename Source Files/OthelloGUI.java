@@ -6,7 +6,6 @@ import javax.swing.SwingUtilities;
 
 import piece.GamePiece;
 import piece.OthelloPiece;
-import boardGame.*;
 
 /**
  * \\file -OthelloGUI.java 

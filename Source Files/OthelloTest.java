@@ -10,7 +10,6 @@ import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.*;
 import Player.HumanPlayer;
-import boardGame.*;
 
 /** This is a testing class
 *\\file -OthelloTest.java 

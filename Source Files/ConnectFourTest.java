@@ -1,5 +1,3 @@
-
-
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
@@ -8,7 +6,7 @@ import java.awt.Color;
 import org.junit.Test;
 
 import Player.HumanPlayer;
-import boardGame.*;
+
 /** This is a test class
 * \\file -ConnectFourTest.java 
 * \author - Lam Chak Yan 667271

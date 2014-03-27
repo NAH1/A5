@@ -5,16 +5,22 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * \file -SaveManager.java
+ * \\file -SaveManager.java
  * \author - Lewis Edwards
  * \date -24nd Mar 14
  * 
  * \brief  SaveManager handles the saving of a game.
  *
- * 
+ * This class handles all saving of a game. It saves the state of the game,
+ * and the information on the players.
  */
 public class SaveManager {
-	
+	/**
+	 * This is the constructor for this class. Here, we save all aspects of
+	 * the game, including the grid, player names, colour, wheather the 
+	 * opponent is AI and the save time.
+	 * \param game Creates an instance of the GameController class.
+	 */
 	public SaveManager(GameController game) {
 		File file = new File("SaveGame.txt");
 		try (FileOutputStream f = new FileOutputStream(file)) {

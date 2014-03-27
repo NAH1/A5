@@ -4,8 +4,6 @@ import java.awt.Color;
 
 import org.junit.Test;
 
-import boardGame.BoardGame;
-import boardGame.Othello;
 
 public class AIHardTest {
 

@@ -27,6 +27,8 @@ public class SelectGame {
 		m_othello_Button = new JButton("Othello");
 	
 		m_connectFour_Button = new JButton("Connect Four");
+		
+		loadGame = new JButton("Load Last Save");
 	
 		m_content = new JPanel(new GridBagLayout());
 	
@@ -51,11 +53,17 @@ public class SelectGame {
 		c.gridx = BTN_CONNECT4_X;
 		c.gridy = BTN_CONNECT4_Y;
 		m_content.add(m_connectFour_Button, c);
+		
+		c.gridy = 2;
+		c.gridx = 0;
+		c.gridwidth = GridBagConstraints.REMAINDER;
+		m_content.add(loadGame, c);
 	
 		guiEventHandler handler = new guiEventHandler();
 	
 		m_othello_Button.addActionListener(handler);
 		m_connectFour_Button.addActionListener(handler);
+		loadGame.addActionListener(handler);
 		m_display.add(m_content);
 	
 		m_display.pack();
@@ -99,6 +107,10 @@ public class SelectGame {
 					System.out.println("SelectGame :: actionPerformed() END");
 				}
 			}
+			
+			if (event.getSource() == loadGame) {
+				new LoadManager();
+			}
 		}
 	}
 
@@ -134,6 +146,8 @@ public class SelectGame {
 	 * \see http://www.macs.hw.ac.uk/guidebook/?name=Layouts&page=7 
 	 * for more information on GridBagLayout.
 	 */
+	private JButton loadGame;
+	
 	private JPanel m_content;
 	/**
 	 * message_Label is JLabel used to tell the player to pick a game

@@ -9,7 +9,7 @@ import piece.*;
 
 public class LoadManager {
 
-	public LoadManager(SelectGame window) {
+	public LoadManager() {
 		try {
 			load();
 		} catch (FileNotFoundException e) {
@@ -51,7 +51,7 @@ public class LoadManager {
 				if(board[x][y] == null) {
 					
 				} else {
-					controller.GetBoard().SetPiece(x, y, board[x][y]);
+					controller.GetBoard().SetPiece(x, y, board[x][y].GetColour());
 				}
 			}
 		}
@@ -63,7 +63,11 @@ public class LoadManager {
 			brokenFileMsg();
 		}
 		
+		controller.GetGUI().getClock().stop();
 		controller.GetGUI().setClock(new Clock(controller.GetGUI(), time));
+		controller.GetGUI().setPanelColour();
+		controller.GetGUI().DrawPieces();
+		controller.GetGUI().setInfo();
 	}
 	
 	private void brokenFileMsg() {
@@ -76,6 +80,7 @@ public class LoadManager {
 	
 	private String gameType(Scanner in) {
 		String gameTypeString = in.nextLine();
+		if (m_Trace) System.out.println(gameTypeString);
 		if (!gameTypeString.equals("Othello") 
 				&& !gameTypeString.equals("Connect 4")) {
 			brokenFileMsg();
@@ -104,7 +109,8 @@ public class LoadManager {
 		
 		for (int x = 0; x < width; x++) {
 			for (int y = 0; y < height; y++) {
-				String piece = in.next();
+				String piece = in.nextLine();
+				if (m_Trace) System.out.println(piece);
 				switch (piece) {
 				case "Y":	board[x][y] = new ConnectFourPiece(Color.YELLOW); break;
 				case "R":	board[x][y] = new ConnectFourPiece(Color.RED); break;
@@ -116,7 +122,7 @@ public class LoadManager {
 			}
 		}
 		
-		if(!in.nextLine().equals("X")) {
+		if(!in.nextLine().equals("x")) {
 			brokenFileMsg();
 		}
 		
@@ -129,6 +135,9 @@ public class LoadManager {
 		String name = in.nextLine();
 		String colorString = in.nextLine();
 		String type = in.nextLine();
+		if (m_Trace) System.out.println(name);
+		if (m_Trace) System.out.println(colorString);
+		if (m_Trace) System.out.println(type);
 		
 		switch(colorString) {
 		case "Black":	color = Color.BLACK; break;
@@ -150,6 +159,7 @@ public class LoadManager {
 	
 	private Color current(Scanner in) {
 		String colorString = in.nextLine();
+		if (m_Trace) System.out.println(colorString);
 		Color color = null;
 		
 		switch(colorString) {
@@ -166,4 +176,6 @@ public class LoadManager {
 	private int timer(Scanner in) {
 		return in.nextInt();
 	}
+	
+	boolean m_Trace = true;
 }

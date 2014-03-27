@@ -93,6 +93,7 @@ public class Othello extends BoardGame {
         if (test || m_test) {
             System.out.println("Othello :: SetPiece() END");
         }
+		countScore();
 		return true;
         
 	}

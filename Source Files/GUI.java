@@ -277,7 +277,10 @@ public abstract class GUI extends JFrame {
 			}
 			
 			if (e.getSource() == SAVEGAME) {
-				new SaveManager(GetGame());
+				if (GetGame().GetGamOn()) {
+					new SaveManager(GetGame());
+				}
+				
 			}
 		}
 		

@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -8,13 +9,10 @@ import java.util.Random;
  */
 
 public class AIHard extends Player{
-	
-	public AIHard(BoardGame board) {
-		m_board = board;
-	}
-	
-	private BoardGame GetBoard() {
-		return m_board;
+
+	public AIHard(String name, Color color) {
+		SetPlayerName(name);
+		SetPieceColor(color);
 	}
 	
 	@Override
@@ -73,5 +71,4 @@ public class AIHard extends Player{
 	
 	private int m_X;
 	private int m_Y;
-	private BoardGame m_board;
 }

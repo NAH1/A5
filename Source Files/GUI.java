@@ -277,7 +277,7 @@ public abstract class GUI extends JFrame {
 			}
 			
 			if (e.getSource() == SAVEGAME) {
-				//TODO save manager method call goes here
+				new SaveManager(GetGame());
 			}
 		}
 		

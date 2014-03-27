@@ -4,7 +4,7 @@ Meeting Of Minutes: Lewis, Gavin, Dan, Geraint, Jiaming, Ben
 Date: 24 Mar '14
 Start time: 2.15pm
 End time: 2.30pm
-Date and time of next meeting: 15 mar '14, 1.00pm.
+Date and time of next meeting: 27 mar '14, 10.00am.
 
 Topics Discussed:
 - Ben has returned!
@@ -20,5 +20,5 @@ TODO by next meeting:
 - Dan: Change needed parts of the connect4Animation class.
 - Geraint & Jiaming: Start AI.
 - Gavin: Start changes to the GUI.
-- Lewis: Begin the save mamnager again.
+- Lewis: Begin the save manager again.
 - Callum: Make changes to the timer class.

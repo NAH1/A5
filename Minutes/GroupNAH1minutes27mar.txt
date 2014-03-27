@@ -1,0 +1,24 @@
+Minutes
+Minutes of meeting: Lewis, Callum, Gavin, Dan, Ben, Jiaming, Geraint
+--------------------------------------------------------------------
+Date: 27 Mar '14
+Time: 10.00am
+End time: 10.30am
+Date and time of next meeting: N/A (end of project).
+
+Topics Discussed:
+- Lewis: Needs to finish off the save manager class.
+- Gavin: Has been handed the LoadManager class to give him a class.
+- Callum: Timer class needs slight adjustment to conform to project conventions.
+- Dan: Completed Connect 4 animation.
+- Ben: Othello animation completed.
+- Jiaming: AIEasy completed.
+- Geraint: AIHard needs to be completed.
+
+TODO (by deadline):
+- Lewis: Complete the save manager, test, and group report.
+- Gavin: Do LoadManager, doxygen, test, and group report.
+- Dan: Test and group report.
+- Ben: Test and group report.
+- Jiaming: Doxygen, test, group report.
+- Geraint: Complete AI hard, doxygen, test and group report.

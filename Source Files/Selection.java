@@ -219,9 +219,9 @@ public class Selection implements ActionListener {
 					setPlayerNameOne(m_PlayerOne.getText());
 			} else {
 				JOptionPane
-						.showMessageDialog(null,
-								"The name of player one exceeds the limit " +
-								"of 20 characters.");
+					.showMessageDialog(null,
+					"The name of player one exceeds the limit " +
+					"of 20 characters.");
 				setPlayerNameOne(m_PlayerOne.getText().substring(0, 20));
 			}
 			/** setting the Player two name to what is typed 
@@ -233,9 +233,9 @@ public class Selection implements ActionListener {
 					setPlayerNameTwo(m_PlayerTwo.getText());
 			} else {
 				JOptionPane
-						.showMessageDialog(null,
-								"The name of player two exceeds the limit of " +
-								"20 characters. ");
+					.showMessageDialog(null,
+					"The name of player two exceeds the limit of " +
+					"20 characters. ");
 				setPlayerNameTwo(m_PlayerTwo.getText().substring(0, 20));
 			}
 			/** this if statement checks if the chosenGame is Othello */
@@ -254,12 +254,12 @@ public class Selection implements ActionListener {
 					 * white
 					 */
 					HumanPlayer HuPlayOpponent = new HumanPlayer(m_p2Text,
-							Color.WHITE);
+					Color.WHITE);
 					/** closes the JFrame displaySelection entirely */
 
 					/** creates a new gameController object */
 					GameController gameCont = new GameController(
-							GameController.GameType.OTHELLO, HuPlay, HuPlayOpponent);
+					GameController.GameType.OTHELLO, HuPlay, HuPlayOpponent);
 					m_DisplaySelection.dispose();
 				} else {
 					/**
@@ -267,8 +267,8 @@ public class Selection implements ActionListener {
 					 * that AI can't be played in current version
 					 */
 					JOptionPane.showMessageDialog(null,
-							"AI not available in this version.", "Error",
-							JOptionPane.ERROR_MESSAGE);
+					"AI not available in this version.", "Error",
+					JOptionPane.ERROR_MESSAGE);
 				}
 				if (test || m_Test){
 					System.out.println("Selection :: actionPerformed() END");
@@ -298,7 +298,7 @@ public class Selection implements ActionListener {
 					m_DisplaySelection.dispose();
 					/** creates a new gameController object */
 					GameController gameCont = new GameController(
-							GameController.GameType.CONNECTFOUR, HuPlay, HuPlayOpponent);
+					GameController.GameType.CONNECTFOUR, HuPlay, HuPlayOpponent);
 					
 					if (test || m_Test){
 						System.out.println("Selection :: actionPerformed() END");
@@ -310,11 +310,11 @@ public class Selection implements ActionListener {
 					 * that AI can't be played in current version
 					 */
 					JOptionPane.showMessageDialog(null,
-							"AI not available in this version.", "Error",
-							JOptionPane.ERROR_MESSAGE);
+					"AI not available in this version.", "Error",
+					JOptionPane.ERROR_MESSAGE);
 					
 					if (test || m_Test){
-						System.out.println("Selection :: actionPerformed() END");
+					System.out.println("Selection :: actionPerformed() END");
 					}
 					
 				}

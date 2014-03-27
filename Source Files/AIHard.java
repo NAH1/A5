@@ -1,60 +1,37 @@
-package Player;
-
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
-
-import boardGame.*;
 
 /**
  * \\file - AIHard.java
  * \author Jiaming Dong - 742299
  * \date 27/03/2014
- * \brief Let the program take a move with logic.
- * 
  */
 
-public class AIHard extends Player{	
-	/**
-	 * Extend BoardGame class.
-	 * \param board
-	 */
+public class AIHard extends Player{
+	
 	public AIHard(BoardGame board) {
 		m_board = board;
 	}
 	
-	/**
-	 * Get game board.
-	 * \return game board.
-	 */
 	private BoardGame GetBoard() {
 		return m_board;
 	}
 	
-	/**
-	 * Get x coordinate.
-	 */
 	@Override
 	public int getX() {
 		return m_X;
 	}
-	/**
-	 * Get y coordinate.
-	 */
+
 	@Override
 	public int getY() {
 		return m_Y;
 	}
-	/**
-	 *  Check whether the player is AI or not.
-	 */
+
 	@Override
 	public boolean isAI() {
 		return true;
 	}
-	/**
-	 * Let the AI do a move.
-	 */
+	
 	public boolean takeMove(){
 		ArrayList<int[]> moves = new ArrayList<int[]>();
 		char[][] availableMoves = ((ConnectFour) GetBoard())
@@ -93,9 +70,7 @@ public class AIHard extends Player{
 		
 		return true;
 	}
-	/**
-	 * Global variables.
-	 */
+	
 	private int m_X;
 	private int m_Y;
 	private BoardGame m_board;

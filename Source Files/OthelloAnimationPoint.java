@@ -26,15 +26,13 @@ public class OthelloAnimationPoint {
 	 * @param type The direction in which to animate (black to white, or
 	 *  			the reverse)
 	 * @param limit The limit of the animation size.
-	 * @param delay The delay
 	 */
-	public OthelloAnimationPoint(int x, int y, int type, int limit, int delay) {
+	public OthelloAnimationPoint(int x, int y, int type, int limit) {
 		m_X = x;
 		m_Y = y;
 		m_Type = type;
 		m_Completion = 0;
 		m_Limit = limit;
-		m_Delay = delay * DELAY_TIME;
 	}
 	
 	/**
@@ -72,7 +70,6 @@ public class OthelloAnimationPoint {
 	 * @return The width
 	 */
 	private int width() {
-		if (m_Delay > 0) { return DIAMETER; }
 		// 0.0 to 1.0
 		double completion = (double) frame() / (double) m_Limit;
 		
@@ -89,10 +86,6 @@ public class OthelloAnimationPoint {
 	 * @return The colour
 	 */
 	private Color color() {
-		if (m_Delay > 0) {
-			if (m_Type < 0) { return Color.black; } else { return Color.white; }
-		}
-		
 		if (frame() < m_Limit / 2) {
 			if (m_Type < 0) { return Color.black; } else { return Color.white; }
 		}
@@ -106,7 +99,6 @@ public class OthelloAnimationPoint {
 	 * Update the animation state of the piece
 	 */
 	public void sync() {
-		if (m_Delay > 0) { m_Delay--; return; }
 		m_Completion++;
 	}
 	
@@ -128,9 +120,6 @@ public class OthelloAnimationPoint {
 	private int m_Completion;
 	/** limit of animation */
 	private int m_Limit;
-	/** delay */
-	private int m_Delay;
-	private final int DELAY_TIME = 10;
 	/** Width of grid square */
 	private final int SQRW = 71; // square width (yeah WTF, right?)
 	/** Height of grid square */

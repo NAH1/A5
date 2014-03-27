@@ -46,10 +46,8 @@ public abstract class Animation {
 	 * \param xcoord - (Start) x coordinate
 	 * \param ycoord - (Start) y coordinate
 	 * \param playerColour - the colour of the peice / current player
-	 * \param delay - optional delay
 	 */
-	public abstract void animate(int xcoord, int ycoord, Color playerColour,
-			int delay);
+	public abstract void animate(int xcoord, int ycoord, Color playerColour);
 	
 	/**
 	 * This abstract method will be used to update GUI coordinates

@@ -208,7 +208,7 @@ public class ConnectFour extends BoardGame {
 				}
 			}
 			//TODO GetAnimationController().animate(x,index,col) here?
-			GetAnimationController().animate(x,index,col,0);
+			GetAnimationController().animate(x,index,col);
 			
 			SetPiece(x, index, col);
 			

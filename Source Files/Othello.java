@@ -218,8 +218,6 @@ public class Othello extends BoardGame {
             System.out.println("Othello :: flip() BEGIN");
         }
 
-        int delay = 0;
-        
 		for (int a = 0; a < m_counter; a++) {
 			m_searchY -= m_i_diff;
 			m_searchX -= m_j_diff;
@@ -228,8 +226,7 @@ public class Othello extends BoardGame {
 			// here call Animation.setXcoord(m_searchX); TODO
 			// here call Animation.setYcoord(m_searchY); TODO
 			// <animation object>.animate(m_searchX, m_searchY, Color.something);
-			GetAnimationController().animate(m_searchX, m_searchY, col, delay);
-			delay++;
+			GetAnimationController().animate(m_searchX, m_searchY, col);
 		}
         if (test || m_test) {
             System.out.println("Othello :: flip() END");

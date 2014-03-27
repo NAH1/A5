@@ -18,12 +18,10 @@ public class SaveManager {
 	public SaveManager(GameController game) {
 
 		File file = new File("SaveGame.txt");
-		String content = "This needs to be saved.";
 		try (FileOutputStream f = new FileOutputStream(file)) {
 
 
 			PrintWriter p = new PrintWriter(file);
-				
 			
 			for (int i = 0; i < game.GetBoard().GetWidth(); i++){
 				for (int j = 0; j< game.GetBoard().GetHeight(); j++){

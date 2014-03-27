@@ -6,6 +6,7 @@
  * 
  * Counts the seconds since game started and converts to hh:mm:ss format. Also references GUI class
  */
+import java.awt.Color;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -66,14 +67,15 @@ public class Clock {
 		 * @return seconds passed
 		 */
 		private int getSeconds() {
-			return m_seconds;
+			return m_Seconds;
 		}
 
 		/**
 		 * sets seconds passed
 		 * @param seconds passed
-		 */ void setSeconds(int m_seconds) {
-			this.m_seconds = m_seconds;
+		 */ 
+		void setSeconds(int m_Seconds) {
+			this.m_Seconds = m_Seconds;
 		}
 		 
 		 /**
@@ -120,10 +122,13 @@ public class Clock {
 		}
 		
 
-		int m_seconds = 0;
+		int m_Seconds = 0;
 		boolean m_Trace = true;
 	}
-    
+	/**
+	  * runs GameController to test the timer works
+	  */
     public static void main(String args[]) {
+    	GameController g = new GameController(GameController.GameType.OTHELLO);
     }
 }

@@ -6,6 +6,8 @@ import java.util.Random;
  * \\file - AIHard.java
  * \author Jiaming Dong - 742299
  * \date 27/03/2014
+ * 
+ * \brief This class pick a move by using logic.
  */
 
 public class AIHard extends Player{
@@ -15,21 +17,31 @@ public class AIHard extends Player{
 		SetPieceColor(color);
 	}
 	
+	/**
+	 * Get X coordinate.
+	 */
 	@Override
 	public int getX() {
 		return m_X;
 	}
-
+	/**
+	 * Get Y coordinate.
+	 */
 	@Override
 	public int getY() {
 		return m_Y;
 	}
-
+	/**
+	 * Check is the player a AI player.
+	 */
 	@Override
 	public boolean isAI() {
 		return true;
 	}
 	
+	/**
+	 * Pick a move.
+	 */
 	public boolean takeMove(){
 		ArrayList<int[]> moves = new ArrayList<int[]>();
 		char[][] availableMoves = (GetBoard())
@@ -69,6 +81,9 @@ public class AIHard extends Player{
 		return true;
 	}
 	
+	/**
+	 * Global variables.
+	 */
 	private int m_X;
 	private int m_Y;
 }

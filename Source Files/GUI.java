@@ -78,6 +78,7 @@ public abstract class GUI extends JFrame {
     * \param a BoardGame object , a GameController object.
     */
 	public GUI(BoardGame b, GameController g) {
+		
 		FRAME = new JFrame("Game");
 		m_board = b;
 		m_game = g;
@@ -90,6 +91,8 @@ public abstract class GUI extends JFrame {
 		NEWGAME = new JButton("New Game");
 		SAVEGAME = new JButton("Save Game");
 		Draw();
+
+		CLOCK = new Clock(this, 0);
 	}
 	
 	/**
@@ -188,8 +191,9 @@ public abstract class GUI extends JFrame {
 		return infoPanel;
 	}
 	
-	public boolean SetLabel(String time) {
-		timerLabel.setText("Time Elapsed:/n" + GameTimer.getRunTime());
+	public boolean SetTime(String time) {
+		timerLabel.setText("Time Elapsed: " + time);
+		return true;
 	}
 
 		 /**
@@ -242,6 +246,7 @@ public abstract class GUI extends JFrame {
 			}
 	
 			if (e.getSource() == NEWGAME) {
+				CLOCK.stop();
 				SelectGame sg = new SelectGame();
 				sg.Draw();
 				FRAME.dispose();
@@ -292,6 +297,7 @@ public abstract class GUI extends JFrame {
      * Show a dialog box of the game result when the game ends.
      */
 	public void ShowWinningBox() {
+		CLOCK.stop();
 		if (GetBoard().GetWinningColour() == null) {
 			JOptionPane.showMessageDialog(FRAME, "GAME DRAWN", "Draw",
 					JOptionPane.OK_OPTION, ICON);
@@ -333,4 +339,6 @@ public abstract class GUI extends JFrame {
 	private final Icon ICON;
 	/**The image location for the initial image on the gameboard*/
 	private String ICON_URL = "icon.png";
+
+	private final Clock CLOCK;
 }

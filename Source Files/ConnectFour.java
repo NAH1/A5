@@ -368,10 +368,10 @@ public class ConnectFour extends BoardGame {
 			boolean rowPieceEnd = false;
 			for (int y = GetHeight() - 1; y >= 0; y--) {
 				if(m_board[x][y] != null || rowPieceEnd) {
-					grid[x][y] = 'O';
+					grid[x][y] = 'X';
 				}
 				else if (m_board[x][y] == null) {
-					grid[x][y] = 'X';
+					grid[x][y] = 'O';
 					rowPieceEnd = true;
 				} 
 			}

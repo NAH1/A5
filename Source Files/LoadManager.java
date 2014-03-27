@@ -7,8 +7,18 @@ import javax.swing.JOptionPane;
 
 import piece.*;
 
+/**
+ * 	\\file LoadManager.java
+ * 	\author Gavin Tsang
+ *	\date 27/03/2014
+ *
+ *	\brief LoadManger deals with loading a saved game from a file
+ */
 public class LoadManager {
-
+	
+	/**
+	 * Constructor which calls method load() to load the file
+	 */
 	public LoadManager() {
 		try {
 			load();
@@ -22,6 +32,13 @@ public class LoadManager {
 		}
 	}
 	
+	/**
+	 * Recreates the game state to what it was at the time of saving the game
+	 * Calls all the other private methods to recreate the game.
+	 * Once game has been recreated, update the GUI once to output the
+	 * pieces on the board to the screen
+	 * \throws FileNotFoundException
+	 */
 	private void load() throws FileNotFoundException {
 		Scanner in = new Scanner(new File("SaveGame.txt"));
 		
@@ -70,6 +87,9 @@ public class LoadManager {
 		controller.GetGUI().setInfo();
 	}
 	
+	/**
+	 * Displays an error if the save file is broken or corrupted
+	 */
 	private void brokenFileMsg() {
 		JOptionPane.showMessageDialog(null,
 				"Error: Save File Corrupted",
@@ -78,6 +98,11 @@ public class LoadManager {
 				);
 	}
 	
+	/**
+	 * Finds the type of game that was saved
+	 * \param in - Scanner object containing the file
+	 * \return "Othello" or "Connect4" depending on what game was saved
+	 */
 	private String gameType(Scanner in) {
 		String gameTypeString = in.nextLine();
 		if (m_Trace) System.out.println(gameTypeString);
@@ -88,6 +113,13 @@ public class LoadManager {
 		return gameTypeString;
 	}
 	
+	/**
+	 * Recreates the game board by going through the file line by line
+	 * and finding out the GamePiece value at each coordinate
+	 * \param in - Scanner object containing the file
+	 * \param gameTypeString - string containing the gametype
+	 * \return the gameboard that was saved
+	 */
 	private GamePiece[][] gameBoard(Scanner in, String gameTypeString) {
 		final int OTHELLOHEIGHT = 8;
 		final int OTHELLOWIDTH = 8;
@@ -129,6 +161,12 @@ public class LoadManager {
 		return board;
 	}
 	
+	/**
+	 * Creates a player object from the data in the file
+	 * whether it is player 1 or player 2 depends on the call in load()
+	 * \param in - Scanner object containing the file
+	 * \return Player object containing data for one of the players
+	 */
 	private Player player(Scanner in) {
 		Player player = null;
 		Color color = null;
@@ -157,6 +195,11 @@ public class LoadManager {
 		return player;
 	}
 	
+	/**
+	 * Get the colour of the current players turn
+	 * \param in - Scanner object containing the file
+	 * \return The Colour of the current players turn
+	 */
 	private Color current(Scanner in) {
 		String colorString = in.nextLine();
 		if (m_Trace) System.out.println(colorString);
@@ -173,6 +216,11 @@ public class LoadManager {
 		return color;
 	}
 	
+	/**
+	 * Get the time passed at the time of saving the game
+	 * \param in Scanner object containing the file
+	 * \return The time passed at time of saving
+	 */
 	private int timer(Scanner in) {
 		return in.nextInt();
 	}

@@ -6,7 +6,8 @@ import java.awt.Color;
  * 
  * \brief GameController is used to control the game flow. 
  * 
- * This class monitor the game status, it checks the winning condition and change the player turn.
+ * This class monitor the game status, it checks the winning condition
+ *  and change the player turn.
  * There are tests that cannot be run due to problems in the class.
  */
 public class GameController {
@@ -42,12 +43,12 @@ public class GameController {
         }
 		if (win) {
 			if (test || m_test) {
-	            System.out.println("GameController :: SetGameOn() END");
+	        System.out.println("GameController :: SetGameOn() END");
 	        }
 			m_gameOn = false;
 		} else {
 			if (test || m_test) {
-	            System.out.println("GameController :: SetGameOn() END");
+	        System.out.println("GameController :: SetGameOn() END");
 	        }
 			m_gameOn = true;
 		}
@@ -62,7 +63,7 @@ public class GameController {
 	public String GetPlayerName(Color colour) {
 		boolean test = false;
         if (test || m_test) {
-            System.out.println("GameController :: GetPlayerName() BEGIN");
+        	System.out.println("GameController :: GetPlayerName() BEGIN");
         }
         
 		if (getPlayer1().GetPieceColour() == colour) {
@@ -149,13 +150,13 @@ public class GameController {
 		if (GetCurrent() == getPlayer1()) {
 			if (test || m_test) {
 	            System.out.println("GameController :: Alternate() END :: " + 
-	                                GetCurrent() + " " + getPlayer2());
+	            GetCurrent() + " " + getPlayer2());
 	        }
 			setCurrentPlayer(getPlayer2());
 		} else if (GetCurrent() == getPlayer2()) {
 			if (test || m_test) {
 	            System.out.println("GameController :: Alternate() END :: " + 
-	                                GetCurrent() + " " + getPlayer1());
+	            GetCurrent() + " " + getPlayer1());
 	        }
 			setCurrentPlayer(getPlayer1());
 		}
@@ -300,7 +301,8 @@ public class GameController {
 	private Animation m_AnimationController;
 	/**Identifier for the Gameboard*/
 	private BoardGame m_board;
-	/**Available for a boolean test to check whether the game is still in session*/
+	/**Available for a boolean test to check whether the 
+	 * game is still in session*/
 	private boolean m_gameOn = true;
 	/**Identifier for first player object*/
 	private Player m_p1;

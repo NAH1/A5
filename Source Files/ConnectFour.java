@@ -400,162 +400,45 @@ public class ConnectFour extends BoardGame {
 
 	@Override
 	public int MoveQuality(int x, int y, Player current) {
+		int moveScoreHor = 0;
+		int moveScoreVer = 0;
+		int moveScoreLDia = 0;
+		int moveScoreRDia = 0;
+		Color color = current.GetPieceColour();
+		moveScoreHor += lineQuality(x, y, 0, 1, color);
+		moveScoreHor += lineQuality(x, y, 0, -1, color);
+		moveScoreVer += lineQuality(x, y, 1, 0, color);
+		moveScoreVer += lineQuality(x, y, -1, 0, color);
+		moveScoreLDia += lineQuality(x, y, 1, 1, color);
+		moveScoreRDia += lineQuality(x, y, -1, 1, color);
+		moveScoreRDia += lineQuality(x, y, 1, -1, color);
+		moveScoreLDia += lineQuality(x, y, -0, -1, color);
+		return Math.max(moveScoreHor, Math.max(moveScoreVer, Math.max(moveScoreLDia, moveScoreRDia)));
+	}
+	
+	private int lineQuality(int dx, int dy, int deltaX, int deltaY, Color color) {
+		int moveScore = 0;
 		int score = 0;
-		int crossScore = crossQuality(x, y, current);
-		int diagScore = diagonalQuality(x, y, current);
-					
-		score = Math.max(crossScore, diagScore);
-		if (score > 3) {
-			return 3;
-		} else {
-			return score;
-		}
-	}
-	
-	private int crossQuality(int x, int y, Player current) {
-		final Color COLOUR = current.GetPieceColour();
-		//Horizontal check
-		int scoreHoriz = 0;
-		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
-			if (x - dx < 0 || x - dx > INITIAL_X - 1) {
+		boolean notWall = true;
+		do {
+			dx += deltaX;
+			dy += deltaY;
+			if (dx < 0 || dy < 0 || dx >= GetWidth() || dy >= GetHeight()) {
+				moveScore = score;
 				break;
 			}
-			if (m_board[x - dx][y] == null) {
+			if (GetPiece(dx,dy) == null) {
+				moveScore = score;
 				break;
 			}
-			if (m_board[x - dx][y].GetColour() == COLOUR) {
-				scoreHoriz++;
+			if(GetPiece(dx,dy).GetColour() == color) {
+				score++;
 			} else {
-				break;
+				moveScore = score;
+				notWall = false;
 			}
-		}
-		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
-			if (x + dx < 0 || x + dx > INITIAL_X - 1) {
-				break;
-			}
-			if (m_board[x + dx][y] == null) {
-				break;
-			}
-			if (m_board[x + dx][y].GetColour() == COLOUR) {
-				scoreHoriz++;
-			} else {
-				break;
-			}
-		}
-		
-		//Vertical check
-		int scoreVert = 0;
-		for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
-			if (y - dy < 0 || y - dy > INITIAL_Y - 1) {
-				break;
-			}
-			if (m_board[x][y - dy] == null) {
-				break;
-			}
-			if (m_board[x][y - dy].GetColour() == COLOUR) {
-				scoreVert++;
-			} else {
-				break;
-			}
-		}
-		for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
-			if (y + dy < 0 || y + dy > INITIAL_Y - 1) {
-				break;
-			}
-			if (m_board[x][y + dy] == null) {
-				break;
-			}
-			if (m_board[x][y + dy].GetColour() == COLOUR) {
-				scoreVert++;
-			} else {
-				break;
-			}
-		}
-		
-		return Math.max(scoreHoriz, scoreVert);
-	}
-	
-	private int diagonalQuality(int x, int y, Player current) {
-		final Color COLOUR = current.GetPieceColour();
-		//LeftDiagonal check
-		int scoreLeftDiag = 0;
-		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
-			for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
-				if(x - dx < 0 
-						|| y - dy < 0 
-						|| x - dx > INITIAL_X - 1 
-						|| y - dy > INITIAL_Y - 1) {
-					break;
-				}
-				if (m_board[x - dx][y - dy] == null) {
-					break;
-				}
-				if (m_board[x - dx][y - dy].GetColour() == COLOUR) {
-					scoreLeftDiag++;
-				} else {
-					break;
-				}
-			}
-		}
-		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
-			for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
-				if(x + dx < 0 
-						|| y + dy < 0 
-						|| x + dx > INITIAL_X - 1 
-						|| y + dy > INITIAL_Y - 1) {
-					break;
-				}
-				if (m_board[x + dx][y + dy] == null) {
-					break;
-				}
-				if (m_board[x + dx][y + dy].GetColour() == COLOUR) {
-					scoreLeftDiag++;
-				} else {
-					break;
-				}
-			}
-		}
-		
-		//RightDiagonal check
-		int scoreRightDiag = 0;
-		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
-			for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
-				if(x - dx < 0 
-						|| y + dy < 0 
-						|| x - dx > INITIAL_X - 1 
-						|| y + dy > INITIAL_Y - 1) {
-					break;
-				}
-				if (m_board[x - dx][y + dy] == null) {
-					break;
-				}
-				if (m_board[x - dx][y + dy].GetColour() == COLOUR) {
-					scoreRightDiag++;
-				} else {
-					break;
-				}
-			}
-		}
-		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
-			for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
-				if(x + dx < 0 
-						|| y - dy < 0 
-						|| x + dx > INITIAL_X - 1 
-						|| y - dy > INITIAL_Y - 1) {
-					break;
-				}
-				if (m_board[x + dx][y - dy] == null) {
-					break;
-				}
-				if (m_board[x + dx][y - dy].GetColour() == COLOUR) {
-					scoreRightDiag++;
-				} else {
-					break;
-				}
-			}
-		}
-		
-		return Math.max(scoreLeftDiag, scoreRightDiag);
+		} while (notWall);
+		return moveScore;
 	}
     
     /** main method for tests */

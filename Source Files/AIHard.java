@@ -32,7 +32,7 @@ public class AIHard extends Player{
 	
 	public boolean takeMove(){
 		ArrayList<int[]> moves = new ArrayList<int[]>();
-		char[][] availableMoves = ((ConnectFour) GetBoard())
+		char[][] availableMoves = (GetBoard())
 				.AvailableMove(GetPieceColour());
 		
 		for (int y = 0; y < GetBoard().GetHeight(); ++y) {

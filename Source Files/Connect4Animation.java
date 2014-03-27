@@ -6,6 +6,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 
@@ -21,6 +22,9 @@ import piece.*;
  * \\file - Connect4Animation.java
  * \author Daniel Squires - 709547
  * \date 22/03/2014
+ * 
+ * \brief Class which handles all the animations for connect four
+ * 
  */
 public class Connect4Animation extends Animation{
 	/**
@@ -72,6 +76,38 @@ public class Connect4Animation extends Animation{
 	}	
 	
 	/**
+	 * 
+	 * \param image
+	 */
+	public void setPiece(Image image) {
+		m_piece = image;
+	}
+	
+	/**
+	 * 
+	 * \return
+	 */
+	public Image getPiece() {
+		return m_piece;
+	}
+	
+	/**
+	 * 
+	 * \return
+	 */
+	public boolean getRunBool() {
+		return m_run;
+	}
+	
+	/**
+	 * 
+	 * \param bool - 
+	 */
+	public void setRunBool(boolean bool) {
+		m_run = bool;
+	}
+	
+	/**
 	 * Constructor of Connect4Animation
 	 * Calls the constructor of superclass Animation
 	 * Sets the X and Y Coordinate, and sets the Image Piece
@@ -80,14 +116,22 @@ public class Connect4Animation extends Animation{
 	 * \param gui - 
 	 */
 	public Connect4Animation(GUI gui) {
-		super(gui.FRAME, gui.GetBoard(), gui);
+		System.out.println("Connect4Animation() :: START");
 		setYCoord(0);
+		WIDTH = gui.GetBoard().GetWidth();
+		HEIGHT = gui.GetBoard().GetHeight();
 		
 		EventHandler handler = new EventHandler();
 		javax.swing.Timer timer = new javax.swing.Timer(DELAY, handler);
-		setTimer(timer);
-		Toolkit.getDefaultToolkit().addAWTEventListener(
-				this, AWTEvent.MOUSE_MOTION_EVENT_MASK);
+		createTimer();
+		getTimer();
+		
+		
+		
+		//setOpaque(true);
+		//setBackground(Color.BLACK);
+		//setDoubleBuffered(true);
+		System.out.println("Connect4Animation() :: END");
 	}
 
 	/**
@@ -96,41 +140,30 @@ public class Connect4Animation extends Animation{
 	 */
 	@Override
 	protected void cycle() {
+		System.out.println("Cycle() :: START");
 		final int INCREMENT = 5;
 		
-		if (getYCoord() >= HEIGHT) {
+		if (getYCoord() >= getLowestYCoord() - 50) {
 			setRunBool(false);
+			getTimer().stop();
+			setYCoord(INITIAL_Y);
 			//getAnimatorThread().interrupt();
 			//setYCoord(INITIAL_Y);
 		} else {
 			setYCoord(getYCoord() + INCREMENT);
-		}		
-	}
-	
-	@Override
-	public void paintComponent(Graphics g) {
-		super.paintComponents(g);
-		System.out.println("Paint Component :: START");
-		if (getRunBool() == true) {
-			drawPiece(g);
+			m_GlassPane.repaint();
 		}
-		System.out.println("Paint Component :: END");
+		System.out.println("Cycle() :: END");
 	}
 	
-	/**
-	 * Draw the piece onto the Board
-	 * \param Graphics g - The Graphics Context
-	 */
-	@Override
-	protected void drawPiece(Graphics g) {
-		Graphics2D g2d = (Graphics2D) g;
-		g2d.drawImage(getPiece(), getXCoord(), getYCoord(), this);
-		Toolkit.getDefaultToolkit().sync();
-		g.dispose();
+	
+	public void paintComponent(Graphics g) {
+		System.out.println("Connect4Animation :: paintComponent: START");
 	}
 	
 	@Override
 	public void animate(int xCoord, int yCoord, Color playerColour) {
+		System.out.println("Animate() :: START");
 		setXCoord(xCoord);
 		setYCoord(0);
 		setLowestYCoord(yCoord);
@@ -144,35 +177,27 @@ public class Connect4Animation extends Animation{
 		}
 		
 		getTimer().start();
+		System.out.println("Animate() :: END");
 	}
 	
-	@Override
-	public void eventDispatched(AWTEvent event) {
-        if (event instanceof MouseEvent) { 
-            MouseEvent me = (MouseEvent) event; 
-            if (!SwingUtilities.isDescendingFrom(me.getComponent()
-            		, getGUIFrame())) { 
-                return; 
-            } 
-            if (me.getID() == MouseEvent.MOUSE_MOVED &&
-            		me.getComponent() == getGUI().FRAME) {
-            	if (!getRunBool()) {
-            		setXCoord(((MouseEvent) event).getX());
-            		repaint();
-            	}            	
-            } 
-            if (me.getID() == MouseEvent.MOUSE_CLICKED &&
-            		me.getComponent() == getGUI().FRAME) {
-                if (!getRunBool()) {
-                    setRunBool(true);
-                    animate(((MouseEvent) event).getX(), HEIGHT, 
-                    		getGUI().GetGame().GetCurrent().GetPieceColour());
-                }
-            } 
-        } 
+	protected class EventHandler implements ActionListener{
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			System.out.println("Animation::cycle");
+			cycle();
+			//repaint();	
+		}
 	}
-	
+
 	private int m_xCoord;
 	private int m_yCoord;
 	private int m_lowestYCoord;
+	private int[][] m_conversionTable; 
+	private Connect4AnimationPane m_GlassPane;
+	private Image m_piece;
+	private boolean m_run = false;
+	protected final int INITIAL_X = 100;	//The initial X Coordinate of the Image
+    protected final int INITIAL_Y = 2;	//The initial Y Coordinate of the Image
+    protected final int WIDTH;		//Width of the gameboard
+    protected final int HEIGHT;		//Height of the gameboard
 }

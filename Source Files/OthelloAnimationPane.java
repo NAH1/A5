@@ -47,7 +47,8 @@ public class OthelloAnimationPane extends JPanel {
         Graphics2D g2 = (Graphics2D) g;
         
         // Set transparency to opaque (1.0f = maximum)
-        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1.0f));  
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,
+        			OPACITY));  
         
         // Draw each point
         if (m_toDraw != null) {
@@ -64,4 +65,6 @@ public class OthelloAnimationPane extends JPanel {
     private final int WIDTH = 1000; // big enough
     /** height of pane */
     private final int HEIGHT = 1000; // big enough
+    /** opacity of pane */
+    private final double OPACITY = 1.0f;
 } 

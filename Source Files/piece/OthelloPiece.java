@@ -17,29 +17,8 @@ import javax.swing.ImageIcon;
  */
 public class OthelloPiece extends GamePiece{
     
-    /**
-     * Constructor of OthelloPiece, calls  setColour() and setIcons()
-     * \param col a String to set colour using setColour() of the superclass
-     */
-    public OthelloPiece(Color col) {
-        boolean test = false;
-        if (test || m_test) {
-            System.out.println("OthelloPiece :: OthelloPiece() BEGIN");
-        }
-        
-        if (col == Color.WHITE || col == Color.BLACK) {
-            SetColour(col);
-            m_iconsSet = SetIcons();
-        } else {
-            System.out.println("Invalid Colours");
-        }
-        
-        if (test || m_test) {
-            System.out.println("OthelloPiece :: OthelloPiece() END");
-        }
-    }
-    
-    /**
+	
+	/**
      * Accessor method to retrieve the ImageIcon of the piece
      * \return Icon depending on piece colour
      */
@@ -51,12 +30,12 @@ public class OthelloPiece extends GamePiece{
         if (m_iconsSet) {
             if (GetColour() == Color.BLACK) {
                 if (test || m_test) {
-                    System.out.println("OthelloPiece :: getIcon() END");
+                System.out.println("OthelloPiece :: getIcon() END");
                 }
                 return m_blackpiece;
             } else if (GetColour() == Color.WHITE){
                 if (test || m_test) {
-                    System.out.println("OthelloPiece :: getIcon() END");
+                System.out.println("OthelloPiece :: getIcon() END");
                 }
                 return m_whitepiece;
             } else {
@@ -81,11 +60,13 @@ public class OthelloPiece extends GamePiece{
         String whiteImageURL = "white.png";
         
         try {
-            m_blackpiece = new ImageIcon(getClass().getResource(blackImageURL));
-            m_whitepiece = new ImageIcon(getClass().getResource(whiteImageURL));
+            m_blackpiece = new ImageIcon
+            (getClass().getResource(blackImageURL));
+            m_whitepiece = new ImageIcon
+            (getClass().getResource(whiteImageURL));
             
             if (test || m_test) {
-                System.out.println("OthelloPiece :: setIcons() END");
+            System.out.println("OthelloPiece :: setIcons() END");
             }
             
             return true;
@@ -94,12 +75,34 @@ public class OthelloPiece extends GamePiece{
         }
         
         if (test || m_test) {
-            System.out.println("OthelloPiece :: setIcons() END");
+        	System.out.println("OthelloPiece :: setIcons() END");
         }
         
         return false;
     }
     
+    /**
+     * Constructor of OthelloPiece, calls  setColour() and setIcons()
+     * \param col a String to set colour using setColour() of the superclass
+     */
+    public OthelloPiece(Color col) {
+        boolean test = false;
+        if (test || m_test) {
+            System.out.println("OthelloPiece :: OthelloPiece() BEGIN");
+        }
+        
+        if (col == Color.WHITE || col == Color.BLACK) {
+            SetColour(col);
+            m_iconsSet = SetIcons();
+        } else {
+            System.out.println("Invalid Colours");
+        }
+        
+        if (test || m_test) {
+            System.out.println("OthelloPiece :: OthelloPiece() END");
+        }
+    }
+       
     /** main method for tests */
     public static void main(String[] args) {
         OthelloPiece a = new OthelloPiece(Color.RED);

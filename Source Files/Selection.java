@@ -94,7 +94,6 @@ public class Selection implements ActionListener {
 			System.out.println("Selection :: setPlayerNameTwo() END");
 		}
 	}
-
 	/**
 	 * The method that sets up and draws the JFrame and its corresponding
 	 * elements
@@ -104,13 +103,11 @@ public class Selection implements ActionListener {
 		if (test || m_Test){
 			System.out.println("Selection :: Draw() BEGIN");
 		}
-
 		/** sets up JFrame */
 		m_DisplaySelection = new JFrame();
 		m_DisplaySelection.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		m_DisplaySelection.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		m_DisplaySelection.setTitle("Select Players");
-
 		/**
 		 * Sets up the JPanels within the JFrame and set their flow layout to
 		 * centre
@@ -118,7 +115,6 @@ public class Selection implements ActionListener {
 		m_BtnPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		m_SelectPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		m_ComboPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-
 		/**
 		 * Sets up a JComboBox and adds it to the selectPanel JPanel, also adds
 		 * the action listener
@@ -127,7 +123,6 @@ public class Selection implements ActionListener {
 		m_SelectOpponent.setSelectedIndex(0);
 		m_SelectOpponent.addActionListener(this);
 		m_ComboPanel.add(m_SelectOpponent);
-
 		/**
 		 * sets up the players one and two JTextFields and adds the
 		 * actionlistener + mouse listener to both, clears contents currently in
@@ -155,16 +150,13 @@ public class Selection implements ActionListener {
 		m_BtnPlay.addActionListener(this);
 
 		/** Adds the JButtons "cancel" and "play" to the JPanel btnPanel. */
-		m_BtnPanel.add(m_BtnCancel);
-		m_BtnPanel.add(m_BtnPlay);
-
+		m_BtnPanel.add(m_BtnCancel); m_BtnPanel.add(m_BtnPlay);
 		/***
 		 * Adds the JTextFields for player one and player two to the JPanel
 		 * selectPanel.
 		 */
 		m_SelectPanel.add(m_PlayerOne);
 		m_SelectPanel.add(m_PlayerTwo);
-
 		m_DisplaySelection.add(m_ComboPanel, BorderLayout.NORTH);
 		/** adds the btnPanel to the JFrame and aligns it to SOUTH of frame */
 		m_DisplaySelection.add(m_BtnPanel, BorderLayout.SOUTH);
@@ -178,7 +170,6 @@ public class Selection implements ActionListener {
 		m_DisplaySelection.setLocationRelativeTo(null);
 		m_DisplaySelection.setVisible(true);
 		m_DisplaySelection.setResizable(false);
-		
         if (test || m_Test) {
             System.out.println("Selection :: Draw() END");
         }

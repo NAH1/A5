@@ -27,7 +27,7 @@ public class OthelloAnimationPane extends JPanel {
         m_toDraw = null;
         setOpaque(false); 
         setLocation(0, 0);
-        setSize(1000, 1000);
+        setSize(WIDTH, HEIGHT);
     } 
  
     /**
@@ -60,4 +60,8 @@ public class OthelloAnimationPane extends JPanel {
     
     /** the points to draw */
     private ArrayList <OthelloAnimationPoint> m_toDraw;
+    /** width of pane */
+    private final int WIDTH = 1000; // big enough
+    /** height of pane */
+    private final int HEIGHT = 1000; // big enough
 } 

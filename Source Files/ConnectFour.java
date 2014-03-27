@@ -228,9 +228,96 @@ public class ConnectFour extends BoardGame {
 	}
 	
 	public void HighlightWinners(JPanel[][] panels, Color winner) {
+		for (int y = 0; y < GetHeight(); y++) {
+			for (int x = 0; x < GetWidth(); x++) {
+				if (RightHighlight(panels, winner, x, y)) return;
+				if (DownHighlight(panels, winner, x, y)) return;
+				if (DiagHighlight1(panels, winner, x, y)) return;
+				if (DiagHighlight2(panels, winner, x, y)) return;
+			}
+		}
+	}
+	
+	private boolean RightHighlight(JPanel[][] p, Color winner, int x, int y) {
+		if (x + 3 >= GetWidth()) { return false; }
 		
+		if (
+			(GetPiece(x,y).GetColour() == winner) &&
+			(GetPiece(x+1,y).GetColour() == winner) &&
+			(GetPiece(x+2,y).GetColour() == winner) &&
+			(GetPiece(x+3,y).GetColour() == winner)
+		) {
+			p[x][y].setBackground(Color.CYAN);
+			p[x+1][y].setBackground(Color.CYAN);
+			p[x+2][y].setBackground(Color.CYAN);
+			p[x+3][y].setBackground(Color.CYAN);
+			return true;
+		}
+		
+		return false;
+	}
+	
+	private boolean DownHighlight(JPanel[][] p, Color winner, int x, int y) {
+		if (y + 3 >= GetHeight()) { return false; }
+		
+		if (
+			(GetPiece(x,y).GetColour() == winner) &&
+			(GetPiece(x,y+1).GetColour() == winner) &&
+			(GetPiece(x,y+2).GetColour() == winner) &&
+			(GetPiece(x,y+3).GetColour() == winner)
+		) {
+			p[x][y].setBackground(Color.CYAN);
+			p[x][y+1].setBackground(Color.CYAN);
+			p[x][y+2].setBackground(Color.CYAN);
+			p[x][y+3].setBackground(Color.CYAN);
+			return true;
+		}
+		
+		return false;
 	}
 
+	private boolean DiagHighlight1(JPanel[][] p, Color winner, int x, int y) {
+		// go down and right
+		if (x + 3 >= GetWidth()) { return false; }
+		if (y + 3 >= GetHeight()) { return false; }
+		
+		if (
+			(GetPiece(x,y).GetColour() == winner) &&
+			(GetPiece(x+1,y+1).GetColour() == winner) &&
+			(GetPiece(x+2,y+2).GetColour() == winner) &&
+			(GetPiece(x+3,y+3).GetColour() == winner)
+		) {
+			p[x][y].setBackground(Color.CYAN);
+			p[x+1][y+1].setBackground(Color.CYAN);
+			p[x+2][y+2].setBackground(Color.CYAN);
+			p[x+3][y+3].setBackground(Color.CYAN);
+			return true;
+		}
+		
+		return false;
+	}
+
+	private boolean DiagHighlight2(JPanel[][] p, Color winner, int x, int y) {
+		// go up and right
+		if (x + 3 >= GetWidth()) { return false; }
+		if (y - 3 < GetHeight()) { return false; }
+		
+		if (
+			(GetPiece(x,y).GetColour() == winner) &&
+			(GetPiece(x+1,y-1).GetColour() == winner) &&
+			(GetPiece(x+2,y-2).GetColour() == winner) &&
+			(GetPiece(x+3,y-3).GetColour() == winner)
+		) {
+			p[x][y].setBackground(Color.CYAN);
+			p[x+1][y-1].setBackground(Color.CYAN);
+			p[x+2][y-2].setBackground(Color.CYAN);
+			p[x+3][y-3].setBackground(Color.CYAN);
+			return true;
+		}
+		
+		return false;
+	}
+	
 	/**
 	 * Call the setWinner method to set the winning color when the game ends.
 	 * \return boolean return true if one of the players wins the game, false if

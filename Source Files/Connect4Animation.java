@@ -107,6 +107,10 @@ public class Connect4Animation extends Animation{
 		m_run = bool;
 	}
 	
+	public void setAnimationPane() {
+		m_GlassPane.setC4Animation(this);
+	}
+	
 	/**
 	 * Constructor of Connect4Animation
 	 * Calls the constructor of superclass Animation
@@ -121,16 +125,13 @@ public class Connect4Animation extends Animation{
 		WIDTH = gui.GetBoard().GetWidth();
 		HEIGHT = gui.GetBoard().GetHeight();
 		
-		EventHandler handler = new EventHandler();
-		javax.swing.Timer timer = new javax.swing.Timer(DELAY, handler);
 		createTimer();
-		getTimer();
 		
+		JFrame frame = gui.GetFrame();
+		m_GlassPane = new Connect4AnimationPane(frame);		
+		frame.setGlassPane(m_GlassPane);
+		m_GlassPane.setVisible(true);
 		
-		
-		//setOpaque(true);
-		//setBackground(Color.BLACK);
-		//setDoubleBuffered(true);
 		System.out.println("Connect4Animation() :: END");
 	}
 
@@ -144,6 +145,9 @@ public class Connect4Animation extends Animation{
 		final int INCREMENT = 5;
 		
 		if (getYCoord() >= getLowestYCoord() - 50) {
+			if (m_trace) {
+				System.out.println("Stopping Cycle");
+			}
 			setRunBool(false);
 			getTimer().stop();
 			setYCoord(INITIAL_Y);
@@ -163,10 +167,13 @@ public class Connect4Animation extends Animation{
 	
 	@Override
 	public void animate(int xCoord, int yCoord, Color playerColour) {
-		System.out.println("Animate() :: START");
-		setXCoord(xCoord);
+		setXCoord(xCoord * xMultiple);
 		setYCoord(0);
-		setLowestYCoord(yCoord);
+		setLowestYCoord(yCoord * yMultiple);
+		if (m_trace) {
+			System.out.println("xCoord" + xCoord);
+			System.out.println("YCoord" + yCoord);
+		}
 		
 		if (playerColour == Color.RED) {
 			ImageIcon ii = new ImageIcon("piece\\red.png");
@@ -177,17 +184,8 @@ public class Connect4Animation extends Animation{
 		}
 		
 		getTimer().start();
-		System.out.println("Animate() :: END");
 	}
 	
-	protected class EventHandler implements ActionListener{
-		@Override
-		public void actionPerformed(ActionEvent arg0) {
-			System.out.println("Animation::cycle");
-			cycle();
-			//repaint();	
-		}
-	}
 
 	private int m_xCoord;
 	private int m_yCoord;
@@ -200,4 +198,7 @@ public class Connect4Animation extends Animation{
     protected final int INITIAL_Y = 2;	//The initial Y Coordinate of the Image
     protected final int WIDTH;		//Width of the gameboard
     protected final int HEIGHT;		//Height of the gameboard
+    protected final int xMultiple = 71;
+    protected final int yMultiple = 70;
+    private boolean m_trace = false;
 }

@@ -138,6 +138,10 @@ public class GameController {
 	public GUI GetGUI() {
 		return m_GUI;
 	}
+	
+	public BoardGame GetBoard() {
+		return m_board;
+	}
 
 	 /**
 	  * Exchange player turn in othello or connect four.

@@ -114,7 +114,7 @@ public abstract class GUI extends JFrame {
 		PASSMOVE = new JButton("Pass");
 		NEWGAME = new JButton("New Game");
 		SAVEGAME = new JButton("Save Game");
-		Draw();
+		draw();
 
 		m_clock = new Clock(this, 0);
 	}
@@ -124,15 +124,15 @@ public abstract class GUI extends JFrame {
      * \return boolean  return true if the action completes.
      */
 	public boolean UpdatePlayerTurnIcon(Icon picon) {
-		playerTurnIcon.setIcon(picon);
+		m_playerTurnIcon.setIcon(picon);
 		return true;
 	}
 	
 	/**
      * Draw the main frame which includes the game panel and the info panel.
      */
-	private void Draw() {
-
+	private void draw() {
+		final int PADX = 15;
 		GUIHandler handler = new GUIHandler();
 		JPanel infoPanel = DrawInfoPanel(handler);
 		JPanel mainPanel = new JPanel(new GridBagLayout());
@@ -140,7 +140,7 @@ public abstract class GUI extends JFrame {
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.gridx = 1;
 		c.gridy = 1;
-		c.ipadx = 15;
+		c.ipadx = PADX;
 	
 		JPanel gamePanel = new JPanel(new GridLayout(HEIGHT, WIDTH));
 		mainPanel.add(gamePanel, c);
@@ -167,47 +167,47 @@ public abstract class GUI extends JFrame {
 	
 	private JPanel DrawInfoPanel(GUIHandler handler) {
 		JPanel infoPanel = new JPanel(new GridLayout(7, 2));
-		playerOneColor = new JLabel();
-		playerOneColor.setVisible(false);
-		infoPanel.add(playerOneColor);
+		m_playerOneColor = new JLabel();
+		m_playerOneColor.setVisible(false);
+		infoPanel.add(m_playerOneColor);
 		// playerOneColor.setVisible(true);
-		playerOneIcon = new JLabel();
-		infoPanel.add(playerOneIcon);
-		playerOneIcon.setVisible(false);
-		playerTwoColor = new JLabel();
-		playerTwoColor.setVisible(false);
-		infoPanel.add(playerTwoColor);
+		m_playerOneIcon = new JLabel();
+		infoPanel.add(m_playerOneIcon);
+		m_playerOneIcon.setVisible(false);
+		m_playerTwoColor = new JLabel();
+		m_playerTwoColor.setVisible(false);
+		infoPanel.add(m_playerTwoColor);
 		// playerOneIcon.setVisible(true);
-		playerTwoIcon = new JLabel();
-		playerTwoIcon.setVisible(false);
-		infoPanel.add(playerTwoIcon);
-		playerTurnIcon = new JLabel();
-		playerTurnIcon.setVisible(false);
-		infoPanel.add(playerTurnIcon);
-		playerTurnLabel = new JLabel();
-		playerTurnLabel.setVisible(false);
-		infoPanel.add(playerTurnLabel);
+		m_playerTwoIcon = new JLabel();
+		m_playerTwoIcon.setVisible(false);
+		infoPanel.add(m_playerTwoIcon);
+		m_playerTurnIcon = new JLabel();
+		m_playerTurnIcon.setVisible(false);
+		infoPanel.add(m_playerTurnIcon);
+		m_playerTurnLabel = new JLabel();
+		m_playerTurnLabel.setVisible(false);
+		infoPanel.add(m_playerTurnLabel);
 		// JLabel whiteIcon = new JLabel();
-		blackIcon = new JLabel();
-		blackIcon.setVisible(false);
-		infoPanel.add(blackIcon);
-		blackPieces = new JLabel();
-		blackPieces.setVisible(false);
-		infoPanel.add(blackPieces);
-		whiteIcon = new JLabel();
-		whiteIcon.setVisible(false);
-		infoPanel.add(whiteIcon);
-		whitePieces = new JLabel();
-		whitePieces.setVisible(false);
-		infoPanel.add(whitePieces);
+		m_blackIcon = new JLabel();
+		m_blackIcon.setVisible(false);
+		infoPanel.add(m_blackIcon);
+		m_blackPieces = new JLabel();
+		m_blackPieces.setVisible(false);
+		infoPanel.add(m_blackPieces);
+		m_whiteIcon = new JLabel();
+		m_whiteIcon.setVisible(false);
+		infoPanel.add(m_whiteIcon);
+		m_whitePieces = new JLabel();
+		m_whitePieces.setVisible(false);
+		infoPanel.add(m_whitePieces);
 		infoPanel.add(NEWGAME);
 		NEWGAME.setVisible(true);
 		infoPanel.add(PASSMOVE);
 		PASSMOVE.setVisible(false);
 		infoPanel.add(SAVEGAME);
 
-		timerLabel = new JLabel("Time Elapsed:");
-		infoPanel.add(timerLabel);
+		m_timerLabel = new JLabel("Time Elapsed:");
+		infoPanel.add(m_timerLabel);
 		
 		PASSMOVE.addActionListener(handler);
 		NEWGAME.addActionListener(handler);
@@ -216,7 +216,7 @@ public abstract class GUI extends JFrame {
 	}
 	
 	public boolean SetTime(String time) {
-		timerLabel.setText("Time Elapsed: " + time);
+		m_timerLabel.setText("Time Elapsed: " + time);
 		return true;
 	}
 
@@ -257,13 +257,13 @@ public abstract class GUI extends JFrame {
 			if (e.getSource() == PASSMOVE) {
 				if (GetGame().GetGamOn()) {
 					if (((Othello) GetBoard()).CheckPassTurn()) {
-						if (((Othello) GetBoard()).AnyValidMoveForAnyone()) {
-							GetGame().Alternate();
-							UpdatePlayerTurnIcon(new OthelloPiece(
-								GetGame().GetCurrent().GetPieceColour()).GetIcon());
-						} else {
-							ShowWinningBox();
-						}
+					if (((Othello) GetBoard()).AnyValidMoveForAnyone()) {
+					GetGame().Alternate();
+					UpdatePlayerTurnIcon(new OthelloPiece(
+					GetGame().GetCurrent().GetPieceColour()).GetIcon());
+					} else {
+					ShowWinningBox();
+					}
 						
 					}
 				}
@@ -333,13 +333,13 @@ public abstract class GUI extends JFrame {
 					ICON);
 		}
 	}
-
+	final int FSIZE = 15;
 	/**Setting the default font face*/
-	protected final Font FONT = new Font("Dialog", Font.PLAIN, 15);
+	protected final Font FONT = new Font("Dialog", Font.PLAIN, FSIZE);
 	/**Setting up all of the JLabels for the GUI*/
-	protected JLabel playerOneColor, playerOneIcon, playerTwoColor,
-	                 playerTwoIcon, playerTurnIcon, playerTurnLabel, whiteIcon,
-	                 whitePieces, blackIcon, blackPieces, timerLabel;
+	protected JLabel m_playerOneColor, m_playerOneIcon, m_playerTwoColor,
+	                 m_playerTwoIcon, m_playerTurnIcon, m_playerTurnLabel, m_whiteIcon,
+	                 m_whitePieces, m_blackIcon, m_blackPieces, m_timerLabel;
 	/**The gameBoard*/
 	protected BoardGame m_board;
 	/**setting up the GameController to interact with for each game*/

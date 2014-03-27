@@ -43,9 +43,10 @@ public class OthelloAnimation extends Animation{
 	 * \param ycoord the Y position of the piece to animate capturing
 	 * \param playerColour the colour of the piece to animate to. Must be
 	 * 		  			   Color.black or Color.white.
+	 * \param delay the delay
 	 */
 	@Override
-	public void animate(int xcoord, int ycoord, Color playerColour) {
+	public void animate(int xcoord, int ycoord, Color playerColour, int delay) {
 		int dir;
 		
 		if (playerColour == Color.black) {
@@ -58,7 +59,8 @@ public class OthelloAnimation extends Animation{
 			throw new IllegalArgumentException("bad playerColour");
 		}
 		
-		m_Animating.add(new OthelloAnimationPoint(xcoord, ycoord, dir, FRAMES));
+		m_Animating.add(new OthelloAnimationPoint(xcoord, ycoord, dir, FRAMES,
+					delay));
 	}
 
 	/**

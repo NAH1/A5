@@ -206,6 +206,7 @@ public class GameController {
 			m_board = new ConnectFour();
 			m_GUI = new Connect4GUI(m_board, this);
 			m_AnimationController = new Connect4Animation(m_GUI);
+			((Connect4Animation) m_AnimationController).setAnimationPane();
 		}
 		m_board.SetAnimationController(m_AnimationController);
 		

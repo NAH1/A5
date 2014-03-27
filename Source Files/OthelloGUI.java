@@ -88,7 +88,7 @@ public class OthelloGUI extends GUI {
 		
 		char[][] availableMoves = ((Othello) GetBoard())
 				.AvailableMove(GetGame().GetCurrent().GetPieceColour());
-		Color defCol = new Color(170, 150, 100);
+		Color defCol = BACKGROUND_COLOR;
 		for (int y = 0; y < GetBoard().GetHeight(); ++y) {
 			for (int x = 0; x < GetBoard().GetWidth(); ++x) {
 				GetPanel(x, y).setBorder(BorderFactory
@@ -123,4 +123,6 @@ public class OthelloGUI extends GUI {
 	}
 	/** boolean turn to true to print out begining and ends of methods*/
 	boolean m_test = false;
+	/** background colour */
+	private final Color BACKGROUND_COLOR = new Color(170, 150, 100);
 }

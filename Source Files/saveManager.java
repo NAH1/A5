@@ -21,7 +21,7 @@ import java.io.PrintWriter;
 
 public class SaveManager {
 	
-	public void SaveManager(BoardGame board, GameController game) {
+	public SaveManager(BoardGame board, GameController game) {
 
 		File file = new File("SaveGame.txt");
 		String content = "This needs to be saved.";

@@ -3,9 +3,10 @@ import java.util.TimerTask;
 
 public class Clock {
 
-    private Timer timer = new Timer();
-    final int MSINSEC = 1000;
-	GUI m_gui;
+    private final Timer TIMER = new Timer();
+    private final UpdateUITask TASK;
+    private final int MSINSEC = 1000;
+	private GUI m_gui;
     
 	/**
 	 * @return the m_gui
@@ -20,15 +21,19 @@ public class Clock {
 	private void setGui(GUI m_gui) {
 		this.m_gui = m_gui;
 	}
+	
+	public int getTime() {
+		return TASK.getSeconds();
+	}
     
     public Clock(GUI gui, int time) {
     	setGui(gui);
-        UpdateUITask task = new UpdateUITask(time);
-        timer.schedule(task, 0, MSINSEC);
+        TASK = new UpdateUITask(time);
+        TIMER.schedule(TASK, 0, MSINSEC);
     }
     
     public boolean stop() {
-    	timer.cancel();
+    	TIMER.cancel();
     	return true;
     }
 

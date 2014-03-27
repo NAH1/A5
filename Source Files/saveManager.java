@@ -64,7 +64,7 @@ public class SaveManager {
 			}
 			
 			p.print(game.GetCurrent().GetPieceColour());
-			p.print(game.GetGUI().getClock().getTimeString());
+			p.print(game.GetGUI().getClock().getTime());
 			//GET CLOCK TO BE IMPLEMENTED
 			p.close();
 

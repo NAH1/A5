@@ -20,31 +20,15 @@ public class OthelloAnimation extends Animation{
 	 * \param game - 
 	 */
 	public OthelloAnimation(GUI gui) {
-		super(gui.GetFrame(), gui.GetBoard(), gui);
 		JFrame frame = gui.GetFrame();
 		
-		m_GlassPane = new OthelloAnimationPane(frame);
+		m_GlassPane = new OthelloAnimationPane(gui.GetFrame());
 		m_Animating = new ArrayList<OthelloAnimationPoint>();
 		frame.setGlassPane(m_GlassPane);
 		m_GlassPane.setVisible(true);
 
-		EventHandler handler = new EventHandler();
-		javax.swing.Timer timer =
-			new javax.swing.Timer(DELAY, new ActionListener() {         
-	        @Override
-	        public void actionPerformed(ActionEvent e) {
-	               cycle();          
-	        }
-	    });
-		
-		setTimer(timer);
-		timer.start();
-		
-		/*ImageIcon ii[] = new ImageIcon[FRAMES];
-		for (int i = 1; i <= FRAMES; i++) {
-			ii[i - 1] = new ImageIcon("othello-anim-"+i+".png");
-		}*/
-		
+		createTimer();
+		getTimer().start();
 	}
 
 	@Override
@@ -89,15 +73,9 @@ public class OthelloAnimation extends Animation{
 		System.out.println("OthelloAnimation::paintComponent: do");
 		// super.paintComponents(g);
 		m_GlassPane.paintComponent(g);
-	}
-
-	@Override
-	protected void drawPiece(Graphics g) {
-		
-	}
-	
+	}	
 	
 	private OthelloAnimationPane m_GlassPane;
 	private ArrayList <OthelloAnimationPoint> m_Animating;
-	private final int FRAMES = 250;
+	private final int FRAMES = 15; // 15 frames == 0.5 seconds
 }

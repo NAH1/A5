@@ -1,80 +1,94 @@
 /**
-* \file saveManager.java
-* \author Lewis Edwards 708830
-* \date 19th Mar '14
-*
-* \brief This class will manage the saving and loading of games.
-*
-*
-* 
-*/
+ * \\file -SaveManager.java
+ * \author - Lewis Edwards
+ * \date -24nd Mar 14
+ * 
+ * \brief  SaveManager handles the saving of a game.
+ *
+ * \
+ */
 
 
+
+
+
+import java.awt.Color;
+import java.io.IOException;
+import java.util.Scanner;
 import java.io.File;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
- 
-import org.w3c.dom.Attr;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+
+import Player.Player;
+import boardGame.BoardGame;
 
 
-public saveManager() {
-
-	 try {
- 
-		DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+public class SaveManager {
 	
-		/**
-		*
-		*
-		*/
-		Document doc = docBuilder.newDocument();
-		Element rootElement = doc.createElement("Game");
-		doc.appendChild(rootElement);
+	public void SaveManager(BoardGame board, GameController game) {
 
-		Element player = doc.createElement("Player");
-		rootElement.appendChild(player);
-
-		Attr attr = doc.createAttribute("number");
-		attr.setValue("1");
-		player.setAttributeNode(attr);
-
-		Element player1Name = doc.createElement("name");
-		name.appendChild(doc.createTextNode("PLAYER 1 NAME GET METHOD"));
-		player.appendChild(player1Name);
-
-		Element player1Colour = doc.createElement("colour");
-		playercolour.appendChild(doc.createTextNode("GET PLAYER 1 COLOUR"));
-		player.appendChild(player1Colour);
-
-		Element player1Type = doc.createElement("player type");
-		playerType.appendChild(doc.createTextNode("GET PLAYER 1 TYPE"));
-		player.appendChild(player1Type);
-
-		Attr attr = doc.createAttribute("number");
-		attr.setValue("2");
-		player.setAttributeNode(attr);
-
-		Element player2Name = doc.createElement("name");
-		name.appendChild(doc.createTextNode("PLAYER 2 NAME GET METHOD"));
-		player.appendChild(player2Name);
-
-		Element player2Colour = doc.createElement("colour");
-		playercolour.appendChild(doc.createTextNode("GET PLAYER 2 COLOUR"));
-		player.appendChild(player2Colour);
-
-		Element player2Type = doc.createElement("player type");
-		playerType.appendChild(doc.createTextNode("GET PLAYER 2 TYPE"));
-		player.appendChild(player2Type);
+		File file = new File("SaveGame.txt");
+		String content = "This needs to be saved.";
+		try (FileOutputStream f = new FileOutputStream(file)) {
 
 
-		} 
-}
+			PrintWriter p = new PrintWriter(file);
+				
+			
+			for (int i = 0; i < board.GetWidth(); i++){
+				for (int j = 0; j< board.GetHeight(); j++){
+					if (board.GetPiece(i, j).GetColour() == Color.YELLOW){
+						p.print("Y");
+					}
+					else if (board.GetPiece(i, j).GetColour() == Color.RED){
+						p.print("R");
+					}
+					else if (board.GetPiece(i, j).GetColour() == Color.BLACK){
+						p.print("B");
+					}	
+					else if (board.GetPiece(i, j).GetColour() == Color.WHITE){
+						p.print("W");
+					}
+					else {
+						p.print("N");
+					}
+				}	
+			p.print("x");
+			p.print(game.getPlayer1().GetPlayerName());
+			p.print(game.getPlayer1().GetPieceColour());
+			if (game.getPlayer1().isAI()) {
+				//p.print((game.getPlayer1() instanceof HardAI));
+			}
+			//AI TO BE IMPLEMENTED
+			p.print(game.getPlayer2().GetPlayerName());
+			p.print(game.getPlayer2().GetPieceColour());
+			if (game.getPlayer2().isAI()) {
+				//p.print((game.getPlayer1() instanceof HardAI));
+			}
+			}
+			
+			p.print(game.GetCurrent().GetPieceColour());
+			p.print(game.GetGUI().getClock().getTimeString());
+			//GET CLOCK TO BE IMPLEMENTED
+			p.close();
+
+			System.out.println("Saved");
+
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+
+
+
+
+
+
+
+
+
+
+} 

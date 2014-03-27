@@ -16,13 +16,19 @@ import java.io.PrintWriter;
 public class SaveManager {
 	
 	public SaveManager(GameController game) {
-
 		File file = new File("SaveGame.txt");
 		try (FileOutputStream f = new FileOutputStream(file)) {
 
 
 			PrintWriter p = new PrintWriter(file);
 			
+
+			
+			if (game.GetBoard() instanceof Othello) {
+				p.println("Othello");
+			} else {
+				p.println("Connect 4");
+			}
 			for (int i = 0; i < game.GetBoard().GetWidth(); i++){
 				for (int j = 0; j< game.GetBoard().GetHeight(); j++){
 					if (game.GetBoard().GetPiece(i, j).GetColour() == Color.YELLOW){

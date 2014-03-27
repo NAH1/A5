@@ -61,40 +61,6 @@ public class Selection implements ActionListener {
 	}
 
 	/**
-	 * Accessor method to set the player ones name 
-	 * \param playerName a String for the players name
-	 */
-	private void setPlayerNameOne(String playerName) {
-		
-		boolean test = false;
-		if (test || m_Test){
-			System.out.println("Selection :: setPlayerNameOne() BEGIN");
-		}
-		
-		m_p1Text = playerName;
-		
-		if (test || m_Test){
-			System.out.println("Selection :: setPlayerNameOne() END");
-		}
-	}
-
-	/**
-	 * Accessor method to set the player twos name 
-	 * \param playerName a String for the players name
-	 */
-	private void setPlayerNameTwo(String playerName) {
-		boolean test = false;
-		if (test || m_Test){
-			System.out.println("Selection :: setPlayerNameTwo() BEGIN");
-		}
-		
-		m_p2Text = playerName;
-		
-		if (test || m_Test){
-			System.out.println("Selection :: setPlayerNameTwo() END");
-		}
-	}
-	/**
 	 * The method that sets up and draws the JFrame and its corresponding
 	 * elements
 	 */
@@ -119,7 +85,7 @@ public class Selection implements ActionListener {
 		 * Sets up a JComboBox and adds it to the selectPanel JPanel, also adds
 		 * the action listener
 		 */
-		m_SelectOpponent = new JComboBox(m_OpponentList);
+		
 		m_SelectOpponent.setSelectedIndex(0);
 		m_SelectOpponent.addActionListener(this);
 		m_ComboPanel.add(m_SelectOpponent);
@@ -128,18 +94,8 @@ public class Selection implements ActionListener {
 		 * actionlistener + mouse listener to both, clears contents currently in
 		 * JTextField
 		 */
-		m_PlayerOne = new JTextField("Player One Name:", FIELD_SIZE);
-		m_PlayerTwo = new JTextField("Player Two Name:", FIELD_SIZE);
-		m_PlayerOne.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
-				m_PlayerOne.setText("");
-			}
-		});
-		m_PlayerTwo.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
-				m_PlayerTwo.setText("");
-			}
-		});
+		m_PlayerOne = new JTextField("Player One", FIELD_SIZE);
+		m_PlayerTwo = new JTextField("Player Two", FIELD_SIZE);
 		/**
 		 * Adds the JButtons "Cancel" and "play" and adds the action listeners
 		 * to both
@@ -150,7 +106,8 @@ public class Selection implements ActionListener {
 		m_BtnPlay.addActionListener(this);
 
 		/** Adds the JButtons "cancel" and "play" to the JPanel btnPanel. */
-		m_BtnPanel.add(m_BtnCancel); m_BtnPanel.add(m_BtnPlay);
+		m_BtnPanel.add(m_BtnCancel);
+		m_BtnPanel.add(m_BtnPlay);
 		/***
 		 * Adds the JTextFields for player one and player two to the JPanel
 		 * selectPanel.
@@ -177,182 +134,53 @@ public class Selection implements ActionListener {
 
 	/** Sets up the action listeners for the objects needed for Listeners */
 	public void actionPerformed(ActionEvent e) {
-		boolean test = false;
-		if (test || m_Test){
-			System.out.println("Selection :: actionPerformed() BEGIN");
+		if (e.getSource() == m_BtnCancel) {
+			new SelectGame();
+			m_DisplaySelection.dispose();
+		} else if (e.getSource() == m_BtnPlay) {
+			Color color1;
+			Color color2;
+			GameController controller;
+			if (GetGameType() == GameController.GameType.OTHELLO) {
+				color1 = Color.BLACK;
+				color2 = Color.WHITE;
+			} else {
+				color1 = Color.RED;
+				color2 = Color.YELLOW;
+			}
+			
+			Player player1 = new HumanPlayer(m_PlayerOne.getText(), color1);
+			Player player2 = null;
+			if (m_SelectOpponent.getSelectedItem().equals("Human")) {
+				player2 = new HumanPlayer(m_PlayerTwo.getText(), color2);
+			} else if (m_SelectOpponent.getSelectedItem().equals("Easy AI")) {
+				player2 = new AIEasy(m_PlayerTwo.getText(), color2);
+			} else if (m_SelectOpponent.getSelectedItem().equals("Hard AI")) {
+				player2 = new AIHard(m_PlayerTwo.getText(), color2);
+			}
+			
+			controller = new GameController(m_CurrentGameType, player1, player2);
+			player2.SetBoard(controller.GetBoard());
+			m_DisplaySelection.dispose();
 		}
 		
-		if (e.getSource() == m_BtnCancel) {
-			/** Closes the JFrame completely when button is performed.
-			 * Creates a new SelectGame * */
-			
-			SelectGame s = new SelectGame();
-			s.Draw();
-			m_DisplaySelection.dispose();
-			
-			if (test || m_Test){
-				System.out.println("Selection :: actionPerformed() END");
-			}
-		}
-
-		/** This if statement implements a action listener for the JComboBox */
-		if (e.getSource() == m_SelectOpponent) {
-			/** Setting opponent type to Human or AI */
-			m_OpponentType = (String) m_SelectOpponent.getSelectedItem();
-			
-			if (test || m_Test){
-				System.out.println("Selection :: actionPerformed() END");
-			}
-		}
-
-		/**
-		 * The if statement implements a action listener for the JButton
-		 * btn_play
-		 */
-		if (e.getSource() == m_BtnPlay) {
-			/** setting the Player one name to what is 
-			 * typed into the text field */
-			if (m_PlayerOne.getText().length() <= 20) {
-				if(m_PlayerOne.getText().equals(""))
-					setPlayerNameOne(m_p1Text);
-				else
-					setPlayerNameOne(m_PlayerOne.getText());
-			} else {
-				JOptionPane
-					.showMessageDialog(null,
-					"The name of player one exceeds the limit " +
-					"of 20 characters.");
-				setPlayerNameOne(m_PlayerOne.getText().substring(0, 20));
-			}
-			/** setting the Player two name to what is typed 
-			 * into the text field */
-			if (m_PlayerTwo.getText().length() <= 20) {
-				if(m_PlayerTwo.getText().equals(""))
-					setPlayerNameTwo(m_p2Text);
-				else
-					setPlayerNameTwo(m_PlayerTwo.getText());
-			} else {
-				JOptionPane
-					.showMessageDialog(null,
-					"The name of player two exceeds the limit of " +
-					"20 characters. ");
-				setPlayerNameTwo(m_PlayerTwo.getText().substring(0, 20));
-			}
-			/** this if statement checks if the chosenGame is Othello */
-			if (m_CurrentGameType == GameController.GameType.OTHELLO) {
-				/** then the first human player is set to the 
-				 * piece colour black */
-				HumanPlayer HuPlay = new HumanPlayer(m_p1Text, Color.BLACK);
-
-				/**
-				 * this if statement checks if the opponentType is a Human
-				 * player
-				 */
-				if (m_OpponentType.equals("Human")) {
-					/**
-					 * then the second human player is set to the piece colour
-					 * white
-					 */
-					HumanPlayer HuPlayOpponent = new HumanPlayer(m_p2Text,
-					Color.WHITE);
-					/** closes the JFrame displaySelection entirely */
-
-					/** creates a new gameController object */
-					GameController gameCont = new GameController(
-					GameController.GameType.OTHELLO, HuPlay, HuPlayOpponent);
-					m_DisplaySelection.dispose();
-				} else {
-					/**
-					 * displaySelections a error message dialog box, explaining
-					 * that AI can't be played in current version
-					 */
-					JOptionPane.showMessageDialog(null,
-					"AI not available in this version.", "Error",
-					JOptionPane.ERROR_MESSAGE);
-				}
-				if (test || m_Test){
-					System.out.println("Selection :: actionPerformed() END");
-				}
-			}
-
-			/**
-			 * this else if statement checks whether the chosen game is Connect
-			 * Four
-			 */
-			else if (m_CurrentGameType == GameController.GameType.CONNECTFOUR){
-				/** then the first human player is set to the piece colour red*/
-				HumanPlayer HuPlay = new HumanPlayer(m_p1Text, Color.RED);
-
-				/**
-				 * this if statement checks if the opponentType is a human
-				 * player
-				 */
-				if (m_OpponentType.equals("Human")) {
-					/**
-					 * then the second human player is set to the piece colour
-					 * yellow
-					 */
-					HumanPlayer HuPlayOpponent = new HumanPlayer(m_p2Text,
-							Color.YELLOW);
-					/** closes the JFrame displaySelection entirely */
-					m_DisplaySelection.dispose();
-					/** creates a new gameController object */
-					GameController gameCont = new GameController(
-					GameController.GameType.CONNECTFOUR, HuPlay, HuPlayOpponent);
-					
-					if (test || m_Test){
-						System.out.println("Selection :: actionPerformed() END");
-					}
-					
-				} else {
-					/**
-					 * displaySelections a error message dialog box, explaining
-					 * that AI can't be played in current version
-					 */
-					JOptionPane.showMessageDialog(null,
-					"AI not available in this version.", "Error",
-					JOptionPane.ERROR_MESSAGE);
-					
-					if (test || m_Test){
-					System.out.println("Selection :: actionPerformed() END");
-					}
-					
-				}
-				
-				if (test || m_Test){
-					System.out.println("Selection :: actionPerformed() END");
-				}
-			}
-		}
 	}
-	
 	/**
 	 * Constructor of Selection, receives the type of game, ready for later.
 	 * \param chosenGame a String for the chosen game.
 	 */
 	public Selection(GameController.GameType chosenGame) {
 		boolean test = false;
+		m_SelectOpponent = new JComboBox<String>(m_OpponentList);
 		if (test || m_Test){
 			System.out.println("Selection :: Selection() BEGIN");
 		}
 		setGameType(chosenGame);
-		if (chosenGame == GameController.GameType.OTHELLO
-				|| chosenGame == GameController.GameType.CONNECTFOUR)
-			setGameType(chosenGame);
-		else
-			System.err
-					.println("Selection::Selection() can only be Othello " +
-							"or ConnectFour.");
 		Draw();
-		if (test || m_Test){
-			System.out.println("Selection :: Selection() END");
-		}
 	}	
 	
 	public static void main(String args[]) {
-
-		Selection select = new Selection(GameController.GameType.CONNECTFOUR);
-		
+		new Selection(GameController.GameType.CONNECTFOUR);
 	}
 
 	/** The JFrame name for displaying. */
@@ -366,16 +194,9 @@ public class Selection implements ActionListener {
 	private JPanel m_BtnPanel, m_SelectPanel, m_ComboPanel;
 
 	/** The JComboBox */
-	private JComboBox m_SelectOpponent;
+	private final JComboBox<String> m_SelectOpponent;
 	/** The list of values for the JComboBox */
-	private String[] m_OpponentList = { "Human", "AI" };
-	/**
-	 * Initialising the opponent type in case the player doesn's select an
-	 * option from the JComboBox
-	 */
-	private String m_OpponentType = "Human";
-
-
+	private String[] m_OpponentList = { "Human", "Easy AI", "Hard AI" };
 	/** The JButtons used in the display */
 	private JButton m_BtnCancel, m_BtnPlay;
 	/** The JTextFields used in the display */
@@ -383,16 +204,6 @@ public class Selection implements ActionListener {
 
 	/** Number of character spaces in JTextField */
 	private final int FIELD_SIZE = 10;
-	/**
-	 * Initialising text to pass as parameter if user doesn't change the value
-	 * in JTextField
-	 */
-	private String m_p1Text = "playerOne";
-	/**
-	 * Initialising text to pass as parameter if user doesn't change the value
-	 * in JTextField
-	 */
-	private String m_p2Text = "playerTwo";
 	/** Variable used to turn testing on or off*/
 	private boolean m_Test = false;
 	/** Stores the game type that is passed through from SelectGame.java */

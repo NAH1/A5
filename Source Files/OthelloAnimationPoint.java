@@ -35,8 +35,10 @@ public class OthelloAnimationPoint {
 		g.fillRect(m_X * SQRW + 3, m_Y * SQRH + 1, SQRW - 4, SQRH - 2);
 		
 		g.setColor(color());
-        g.fillOval((m_X * SQRW) + (SQRW/2 - width()/2),
-        			m_Y * SQRH, width(), SQRH);
+        g.fillOval((m_X * SQRW) + (SQRW/2 - width()/2) + PADDING,
+        			m_Y * SQRH + PADDING,
+        			width(),
+        			DIAMETER);
 	}
 	
 	private int frame() {
@@ -44,7 +46,16 @@ public class OthelloAnimationPoint {
 	}
 	
 	private int width() {
-		return (int) Math.round(70.0 * (double) frame() / (double) m_Limit);
+		// from 1.0 to 0.0 to 1.0
+		
+		// 0.0 to 1.0
+		double completion = (double) frame() / (double) m_Limit;
+		
+		completion *= 2.0; // now 0.0 to 2.0
+		completion -= 1.0; // now -1.0 to 1.0
+		completion = Math.abs(completion);
+		
+		return (int) Math.round((double) DIAMETER * completion);
 	}
 	
 	private Color color() {
@@ -73,4 +84,6 @@ public class OthelloAnimationPoint {
 	private final int SQRW = 71; // square width (yeah WTF, right?)
 	private final int SQRH = 70; // square height
 	private final Color BGCOLOR = new Color(170, 150, 100);
+	private final int DIAMETER = 60;
+	private final int PADDING = 5;
 }

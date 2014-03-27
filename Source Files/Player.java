@@ -16,6 +16,15 @@ import java.awt.Color;
 
 public abstract class Player {
 
+	protected BoardGame GetBoard() {
+		return m_board;
+	}
+	
+	public boolean SetBoard(BoardGame board) {
+		m_board = board;
+		return true;
+	}
+	
 	/** \return m_pieceColor players piece colour */
 	public Color GetPieceColour() {
 		boolean test = false;
@@ -89,6 +98,8 @@ public abstract class Player {
 	protected String m_playerName;
 	/** The players piece colour */
 	protected Color m_pieceColor;
+
+	private BoardGame m_board;
 	/** Indicates whether to run tests */
     private boolean m_test = false;
 }

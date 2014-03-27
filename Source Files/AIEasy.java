@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -9,13 +10,12 @@ import java.util.Random;
 
 public class AIEasy extends Player{
 	
-	public AIEasy(BoardGame board) {
-		m_board = board;
+	public AIEasy(String name, Color color) {
+		SetPlayerName(name);
+		SetPieceColor(color);
 	}
 	
-	private BoardGame GetBoard() {
-		return m_board;
-	}
+	
 	
 	@Override
 	public int getX() {
@@ -61,6 +61,5 @@ public class AIEasy extends Player{
 	
 	private int m_X;
 	private int m_Y;
-	private BoardGame m_board;
 }
 

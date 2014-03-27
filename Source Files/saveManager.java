@@ -1,24 +1,18 @@
-/**
- * \\file -SaveManager.java
- * \author - Lewis Edwards
- * \date -24nd Mar 14
- * 
- * \brief  SaveManager handles the saving of a game.
- *
- * \
- */
-
-
-
-
-
 import java.awt.Color;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
+/**
+ * \file -SaveManager.java
+ * \author - Lewis Edwards
+ * \date -24nd Mar 14
+ * 
+ * \brief  SaveManager handles the saving of a game.
+ *
+ * 
+ */
 public class SaveManager {
 	
 	public SaveManager(GameController game) {
@@ -48,24 +42,31 @@ public class SaveManager {
 					else {
 						p.print("N");
 					}
-				}	
+				}
+				p.println();
+			}
 			p.print("x");
 			p.print(game.getPlayer1().GetPlayerName());
 			p.print(game.getPlayer1().GetPieceColour());
 			if (game.getPlayer1().isAI()) {
-				//p.print((game.getPlayer1() instanceof HardAI));
+				if(game.getPlayer1() instanceof AIHard) {
+					p.print("Hard");
+				} else {
+					p.print("Easy");
+				}
 			}
-			//AI TO BE IMPLEMENTED
 			p.print(game.getPlayer2().GetPlayerName());
 			p.print(game.getPlayer2().GetPieceColour());
 			if (game.getPlayer2().isAI()) {
-				//p.print((game.getPlayer1() instanceof HardAI));
-			}
+				if(game.getPlayer2() instanceof AIHard) {
+					p.print("Hard");
+				} else {
+					p.print("Easy");
+				}
 			}
 			
 			p.print(game.GetCurrent().GetPieceColour());
 			p.print(game.GetGUI().getClock().getTime());
-			//GET CLOCK TO BE IMPLEMENTED
 			p.close();
 
 			System.out.println("Saved");
@@ -76,15 +77,4 @@ public class SaveManager {
 		}
 		
 	}
-
-
-
-
-
-
-
-
-
-
-
 } 

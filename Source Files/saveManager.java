@@ -21,7 +21,7 @@ import java.io.PrintWriter;
 
 public class SaveManager {
 	
-	public SaveManager(BoardGame board, GameController game) {
+	public SaveManager(GameController game) {
 
 		File file = new File("SaveGame.txt");
 		String content = "This needs to be saved.";
@@ -31,18 +31,18 @@ public class SaveManager {
 			PrintWriter p = new PrintWriter(file);
 				
 			
-			for (int i = 0; i < board.GetWidth(); i++){
-				for (int j = 0; j< board.GetHeight(); j++){
-					if (board.GetPiece(i, j).GetColour() == Color.YELLOW){
+			for (int i = 0; i < game.GetBoard().GetWidth(); i++){
+				for (int j = 0; j< game.GetBoard().GetHeight(); j++){
+					if (game.GetBoard().GetPiece(i, j).GetColour() == Color.YELLOW){
 						p.print("Y");
 					}
-					else if (board.GetPiece(i, j).GetColour() == Color.RED){
+					else if (game.GetBoard().GetPiece(i, j).GetColour() == Color.RED){
 						p.print("R");
 					}
-					else if (board.GetPiece(i, j).GetColour() == Color.BLACK){
+					else if (game.GetBoard().GetPiece(i, j).GetColour() == Color.BLACK){
 						p.print("B");
 					}	
-					else if (board.GetPiece(i, j).GetColour() == Color.WHITE){
+					else if (game.GetBoard().GetPiece(i, j).GetColour() == Color.WHITE){
 						p.print("W");
 					}
 					else {

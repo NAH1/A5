@@ -247,7 +247,7 @@ public abstract class GUI extends JFrame {
 		public void mouseClicked(MouseEvent e) {
 			if(GetGame().GetGamOn()) {
 				playerMove(e);
-				if (GetGame().GetCurrent().isAI()) {
+				if (GetGame().GetCurrent().isAI() && GetGame().GetGamOn()) {
 					AIMove();
 				}
 			}

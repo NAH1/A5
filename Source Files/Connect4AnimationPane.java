@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 
 /**
  * 	\\file Connect4AnimationPane.java
- * 	\author Daniel Squires
+ * 	\author Daniel Squires - 709547
  *	\date 26/03/2014
  *
  *	\brief This class manages the glasspane to draw the object for animations

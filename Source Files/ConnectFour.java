@@ -2,6 +2,8 @@
 
 import java.awt.Color;
 
+import javax.swing.JPanel;
+
 import Player.Player;
 import piece.*;
 /**
@@ -199,7 +201,7 @@ public class ConnectFour extends BoardGame {
         if (test || m_test) {
             System.out.println("ConnectFour :: Move() BEGIN");
         }
-
+        
 		int index = 0;
 		if (board[x][0] == null) {
 			for (int h = 0; h < GetHeight(); ++h) {
@@ -207,7 +209,11 @@ public class ConnectFour extends BoardGame {
 					index = h;
 				}
 			}
+			//TODO GetAnimationController().animate(x,index,col) here?
+			GetAnimationController().animate(x,index,col);
+			
 			SetPiece(x, index, col);
+			
 			checkWin(col);
             if (test || m_test) {
                 System.out.println("ConnectFour :: Move() END :: true");
@@ -221,6 +227,10 @@ public class ConnectFour extends BoardGame {
 			return false;
 		}
 	
+	}
+	
+	public void HighlightWinners(JPanel[][] panels, Color winner) {
+		
 	}
 
 	/**

@@ -67,7 +67,7 @@ public abstract class BoardGame {
 	
 	// HACK
 	public GamePiece GetNonNullPiece(int x, int y) {
-		if (board[x][y] == null) {
+		if (m_board[x][y] == null) {
 			return new ConnectFourPiece(Color.PINK); // HACK
 		}
 		else {
@@ -86,12 +86,12 @@ public abstract class BoardGame {
             System.out.println("BoardGame :: GamePiece() BEGIN");
         }
 
-	    if  (board[x][y] != null) {
+	    if  (m_board[x][y] != null) {
 	        if (test || m_test) {
 	            System.out.println("BoardGame :: GamePiece() END");
 	        }
 	        
-	        return board[x][y];
+	        return m_board[x][y];
 	    } else {
 	        if (test || m_test) {
 	            System.out.println("BoardGame :: GamePiece() END");
@@ -102,7 +102,7 @@ public abstract class BoardGame {
 	}
 	
 	public boolean SetPiece(int x, int y, GamePiece piece) {
-		board[x][y] = piece;
+		m_board[x][y] = piece;
 		return true;
 	}
 	
@@ -128,7 +128,7 @@ public abstract class BoardGame {
 	    int count = 0;
 	    for (int y = 0; y < m_height; ++y) {
 	        for (int x = 0; x < m_width; ++x) {
-	            if (board[x][y] != null) {
+	            if (m_board[x][y] != null) {
 	                count++;
 	            }
 	        }
@@ -217,7 +217,7 @@ public abstract class BoardGame {
      * Abstract method.
      * \return boolean
      */
-	public abstract boolean SetWinner();
+	public abstract boolean m_SetWinner();
 
 	/**
      * Constructor of BoardGame, create a game board that stores the game pieces.
@@ -232,7 +232,7 @@ public abstract class BoardGame {
 
 	   SetWidth(x);
 	   SetHeight(y);
-	   board = new GamePiece[m_width][m_height];
+	   m_board = new GamePiece[m_width][m_height];
         
         if (test || m_test) {
             System.out.println("BoardGame :: BoardGame() END");
@@ -277,8 +277,8 @@ public abstract class BoardGame {
 	    
 	    for (int y = 0; y < m_height; ++y) {
 	        for (int x = 0; x < m_width; ++x) {
-	            if (board[x][y] != null) {
-	                boardStateString += "[" + board[x][y].GetColour() + "] ";
+	            if (m_board[x][y] != null) {
+	                boardStateString += "[" + m_board[x][y].GetColour() + "] ";
 	            } else {
 	                boardStateString += "[" + null + "] "; 
 	            }
@@ -296,7 +296,7 @@ public abstract class BoardGame {
 	}
 
 	/**The piece position on the board*/
-	protected GamePiece[][] board;
+	protected GamePiece[][] m_board;
 	/**The board width*/
     private int m_width;
     /**The board height*/

@@ -69,15 +69,17 @@ public class AIEasy extends Player{
 			for (int x = 0; x < GetBoard().GetWidth(); ++x) {
 				if (availableMoves[x][y] == 'O') {
 					int score = GetBoard().MoveQuality(x,y,this);
+					System.out.println(x + ":" + y + ":" + score);
 					int[] move = {x, y, score};
 					moves.add(move);
 				}
 			}
 		}
 		
+		System.out.println("Size " + moves.size());
 		Random ran = new Random();
 		int random = ran.nextInt(moves.size());
-					
+		System.out.println("Ran " + random);
 		m_X = moves.get(random)[0];	
 		m_Y = moves.get(random)[1];
 		

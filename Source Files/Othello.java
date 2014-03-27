@@ -81,7 +81,7 @@ public class Othello extends BoardGame {
 	 * \return boolean return true if the action completes.
 	 */
 	public boolean SetPiece(int x, int y, Color col) {
-        boolean test = true;
+        boolean test = false;
         if (test || m_test) {
             System.out.println("Othello :: SetPiece() BEGIN");
             System.out.println("Othello::SetPiecce()" + GetPiece(x, y));

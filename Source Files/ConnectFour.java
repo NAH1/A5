@@ -417,6 +417,12 @@ public class ConnectFour extends BoardGame {
 		//Horizontal check
 		int scoreHoriz = 0;
 		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
+			if (x - dx < 0 || x - dx > INITIAL_X - 1) {
+				break;
+			}
+			if (m_board[x - dx][y] == null) {
+				break;
+			}
 			if (m_board[x - dx][y].GetColour() == COLOUR) {
 				scoreHoriz++;
 			} else {
@@ -424,6 +430,12 @@ public class ConnectFour extends BoardGame {
 			}
 		}
 		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
+			if (x + dx < 0 || x + dx > INITIAL_X - 1) {
+				break;
+			}
+			if (m_board[x + dx][y] == null) {
+				break;
+			}
 			if (m_board[x + dx][y].GetColour() == COLOUR) {
 				scoreHoriz++;
 			} else {
@@ -434,6 +446,12 @@ public class ConnectFour extends BoardGame {
 		//Vertical check
 		int scoreVert = 0;
 		for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
+			if (y - dy < 0 || y - dy > INITIAL_Y - 1) {
+				break;
+			}
+			if (m_board[x][y - dy] == null) {
+				break;
+			}
 			if (m_board[x][y - dy].GetColour() == COLOUR) {
 				scoreVert++;
 			} else {
@@ -441,7 +459,13 @@ public class ConnectFour extends BoardGame {
 			}
 		}
 		for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
-			if (m_board[x][y + dy].GetColour().equals(COLOUR)) {
+			if (y + dy < 0 || y + dy > INITIAL_Y - 1) {
+				break;
+			}
+			if (m_board[x][y + dy] == null) {
+				break;
+			}
+			if (m_board[x][y + dy].GetColour() == COLOUR) {
 				scoreVert++;
 			} else {
 				break;
@@ -457,7 +481,16 @@ public class ConnectFour extends BoardGame {
 		int scoreLeftDiag = 0;
 		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
 			for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
-				if (m_board[x - dx][y - dy].GetColour().equals(COLOUR)) {
+				if(x - dx < 0 
+						|| y - dy < 0 
+						|| x - dx > INITIAL_X - 1 
+						|| y - dy > INITIAL_Y - 1) {
+					break;
+				}
+				if (m_board[x - dx][y - dy] == null) {
+					break;
+				}
+				if (m_board[x - dx][y - dy].GetColour() == COLOUR) {
 					scoreLeftDiag++;
 				} else {
 					break;
@@ -466,7 +499,16 @@ public class ConnectFour extends BoardGame {
 		}
 		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
 			for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
-				if (m_board[x + dx][y + dy].GetColour().equals(COLOUR)) {
+				if(x + dx < 0 
+						|| y + dy < 0 
+						|| x + dx > INITIAL_X - 1 
+						|| y + dy > INITIAL_Y - 1) {
+					break;
+				}
+				if (m_board[x + dx][y + dy] == null) {
+					break;
+				}
+				if (m_board[x + dx][y + dy].GetColour() == COLOUR) {
 					scoreLeftDiag++;
 				} else {
 					break;
@@ -478,7 +520,16 @@ public class ConnectFour extends BoardGame {
 		int scoreRightDiag = 0;
 		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
 			for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
-				if (m_board[x - dx][y + dy].GetColour().equals(COLOUR)) {
+				if(x - dx < 0 
+						|| y + dy < 0 
+						|| x - dx > INITIAL_X - 1 
+						|| y + dy > INITIAL_Y - 1) {
+					break;
+				}
+				if (m_board[x - dx][y + dy] == null) {
+					break;
+				}
+				if (m_board[x - dx][y + dy].GetColour() == COLOUR) {
 					scoreRightDiag++;
 				} else {
 					break;
@@ -487,7 +538,16 @@ public class ConnectFour extends BoardGame {
 		}
 		for (int dx = 0; dx < NUM_IN_ROW_WIN - 1; dx++) {
 			for (int dy = 0; dy < NUM_IN_ROW_WIN - 1; dy++) {
-				if (m_board[x + dx][y - dy].GetColour().equals(COLOUR)) {
+				if(x + dx < 0 
+						|| y - dy < 0 
+						|| x + dx > INITIAL_X - 1 
+						|| y - dy > INITIAL_Y - 1) {
+					break;
+				}
+				if (m_board[x + dx][y - dy] == null) {
+					break;
+				}
+				if (m_board[x + dx][y - dy].GetColour() == COLOUR) {
 					scoreRightDiag++;
 				} else {
 					break;

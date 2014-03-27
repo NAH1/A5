@@ -13,7 +13,9 @@ import java.util.Random;
 public class AIHard extends Player{
 
     /**
-     * Set the name and color of the AI player.
+     * Set the name and color of the AI player
+     * \param name - the name of the player
+     * \param color - the color of the player used
      */
 	public AIHard(String name, Color color) {
 		SetPlayerName(name);

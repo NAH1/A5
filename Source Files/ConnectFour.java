@@ -240,9 +240,7 @@ public class ConnectFour extends BoardGame {
 	}
 	
 	private boolean RightHighlight(JPanel[][] p, Color winner, int x, int y) {
-		if (x + 4 >= GetWidth()) { return false; }
-		
-		System.out.println("ConnectFour::RightHighlight:CHECK " + x + ", "+ y);
+		if (x + 3 >= GetWidth()) { return false; }
 		
 		if (
 			(GetNonNullPiece(x,y).GetColour() == winner) &&
@@ -261,7 +259,7 @@ public class ConnectFour extends BoardGame {
 	}
 	
 	private boolean DownHighlight(JPanel[][] p, Color winner, int x, int y) {
-		if (y + 4 >= GetHeight()) { return false; }
+		if (y + 3 >= GetHeight()) { return false; }
 		
 		if (
 			(GetNonNullPiece(x,y).GetColour() == winner) &&
@@ -281,8 +279,8 @@ public class ConnectFour extends BoardGame {
 
 	private boolean DiagHighlight1(JPanel[][] p, Color winner, int x, int y) {
 		// go down and right
-		if (x + 4 >= GetWidth()) { return false; }
-		if (y + 4 >= GetHeight()) { return false; }
+		if (x + 3 >= GetWidth()) { return false; }
+		if (y + 3 >= GetHeight()) { return false; }
 		
 		if (
 			(GetNonNullPiece(x,y).GetColour() == winner) &&
@@ -302,8 +300,8 @@ public class ConnectFour extends BoardGame {
 
 	private boolean DiagHighlight2(JPanel[][] p, Color winner, int x, int y) {
 		// go up and right
-		if (x + 4 >= GetWidth()) { return false; }
-		if (y - 3 < GetHeight()) { return false; }
+		if (x + 3 >= GetWidth()) { return false; }
+		if (y -3 <= 0) { return false; }
 		
 		if (
 			(GetNonNullPiece(x,y).GetColour() == winner) &&

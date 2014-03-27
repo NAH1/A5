@@ -21,12 +21,12 @@ public class OthelloAnimationPoint {
 	
 	/**
 	 * Constructor for an animation point
-	 * @param x The x position in the grid
-	 * @param y The y position in the grid
-	 * @param type The direction in which to animate (black to white, or
+	 * \param x The x position in the grid
+	 * \param y The y position in the grid
+	 * \param type The direction in which to animate (black to white, or
 	 *  			the reverse)
-	 * @param limit The limit of the animation size.
-	 * @param delay The delay
+	 * \param limit The limit of the animation size.
+	 * \param delay The delay
 	 */
 	public OthelloAnimationPoint(int x, int y, int type, int limit, int delay) {
 		m_X = x;
@@ -39,7 +39,7 @@ public class OthelloAnimationPoint {
 	
 	/**
 	 * Draw the animation point
-	 * @param g a graphics handle
+	 * zparam g a graphics handle
 	 */
 	public void draw(Graphics2D g) {
 		/*System.out.println("OthelloAnimationPoint::draw at "
@@ -63,7 +63,7 @@ public class OthelloAnimationPoint {
 	
 	/**
 	 * The current frame of the animation
-	 * @return The current frame of the animation
+	 * \return The current frame of the animation
 	 */
 	private int frame() {
 		return m_Completion;
@@ -72,7 +72,7 @@ public class OthelloAnimationPoint {
 	/**
 	 * The current width of an animated piece, which varies in order to simulate
 	 * "flipping" a peice.
-	 * @return The width
+	 * \return The width
 	 */
 	private int width() {
 		if (m_Delay > 0) { return DIAMETER; }
@@ -89,7 +89,7 @@ public class OthelloAnimationPoint {
 	
 	/**
 	 * The current colour at the current stage of the animation 
-	 * @return The colour
+	 * \return The colour
 	 */
 	private Color color() {
 		if (m_Delay > 0) {
@@ -115,7 +115,7 @@ public class OthelloAnimationPoint {
 	
 	/**
 	 * Query the status of the piece animation
-	 * @return True iff it has finished.
+	 * \return True iff it has finished.
 	 */
 	public boolean completed() {
 		return m_Completion == m_Limit;

@@ -190,11 +190,11 @@ public class Othello extends BoardGame {
 		m_scoreWhite = 0;
 		for (int i = 0; i < GetHeight(); i++) {
 			for (int j = 0; j < GetWidth(); j++) {
-				if (board[j][i] != null) {
+				if (m_board[j][i] != null) {
 	
-					if (board[j][i].GetColour() == Color.BLACK) {
+					if (m_board[j][i].GetColour() == Color.BLACK) {
 						m_scoreBlack++;
-					} else if (board[j][i].GetColour() == Color.WHITE)
+					} else if (m_board[j][i].GetColour() == Color.WHITE)
 						m_scoreWhite++;
 				}
 			}
@@ -223,7 +223,7 @@ public class Othello extends BoardGame {
 		for (int a = 0; a < m_counter; a++) {
 			m_searchY -= m_i_diff;
 			m_searchX -= m_j_diff;
-			board[m_searchX][m_searchY].SetColour(col);
+			m_board[m_searchX][m_searchY].SetColour(col);
 			
 			// here call Animation.setXcoord(m_searchX); TODO
 			// here call Animation.setYcoord(m_searchY); TODO
@@ -350,7 +350,7 @@ public class Othello extends BoardGame {
         }
 
 		// check valid move here (OTHELLO CORE)
-		if (board[x][y] == null) {
+		if (m_board[x][y] == null) {
 			GamePiece searchPiece;
 
 			m_counter = 1;
@@ -370,7 +370,7 @@ public class Othello extends BoardGame {
 						continue;
 
 					} else {
-						searchPiece = board[m_searchX][m_searchY];
+						searchPiece = m_board[m_searchX][m_searchY];
 					}
 					// skip the search if i and j is 0.
 					// skip the search if one of the direction is empty
@@ -394,7 +394,7 @@ public class Othello extends BoardGame {
 								|| (m_searchY >= GetHeight() || m_searchY < 0)){
 							found = true;
 						} else {
-							searchPiece = board[m_searchX][m_searchY];
+							searchPiece = m_board[m_searchX][m_searchY];
 							// System.out.println(searchValue.getColour());
 						}
 
@@ -448,7 +448,7 @@ public class Othello extends BoardGame {
 
 		for (int x = 0; x < GetWidth(); x++) {
 			for (int y = 0; y < GetHeight(); y++) {
-				if (board[x][y] == null && m_scoreBlack != 0 && 
+				if (m_board[x][y] == null && m_scoreBlack != 0 && 
 						m_scoreWhite != 0) {
 					return false;
 				}
@@ -467,12 +467,12 @@ public class Othello extends BoardGame {
 		countScore();
 		int black = GetBlackScore();
 		int white = GetWhiteScore();
-		final GamePiece[][] GRID = board;
+		final GamePiece[][] GRID = m_board;
 		Move(x, y, current.GetPieceColour());
 		countScore();
 		black = GetBlackScore() - black;
 		white = GetWhiteScore() - white;
-		board = GRID;
+		m_board = GRID;
 		if (current.GetPieceColour() == Color.WHITE) {
 			return white;
 		} else {

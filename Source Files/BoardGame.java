@@ -217,7 +217,7 @@ public abstract class BoardGame {
      * Abstract method.
      * \return boolean
      */
-	public abstract boolean m_SetWinner();
+	public abstract boolean SetWinner();
 
 	/**
      * Constructor of BoardGame, create a game board that stores the game pieces.

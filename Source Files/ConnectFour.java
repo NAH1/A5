@@ -332,7 +332,7 @@ public class ConnectFour extends BoardGame {
         }
 
 		if (m_counter >= NUM_IN_ROW_WIN) {
-			m_SetWinner();
+			SetWinner();
 	        if (test || m_Test) {
 	            System.out.println("ConnectFour :: singleDirection() END");
 	        }
@@ -350,7 +350,7 @@ public class ConnectFour extends BoardGame {
 		}
 		if (m_Draw == true) {
 			m_WinningColour = null;
-			m_SetWinner();
+			SetWinner();
 	        if (test || m_Test) {
 	            System.out.println("ConnectFour :: singleDirection() END");
 	        }
@@ -384,7 +384,7 @@ public class ConnectFour extends BoardGame {
 	 * true if one of the players wins the game, false if the game is on.
 	 */
 	@Override
-	public boolean m_SetWinner() {
+	public boolean SetWinner() {
         boolean test = false;
         if (test || m_Test) {
             System.out.println("ConnectFour :: SetWinner() BEGIN");
@@ -507,7 +507,7 @@ public class ConnectFour extends BoardGame {
         a.checkWin(Color.YELLOW);
         a.Move(2,4,Color.RED);
         a.WinningCondition();
-        a.m_SetWinner();
+        a.SetWinner();
     }
 
     /**checks to see if there is available space to draw a piece, draw means no winner (true = draw)*/

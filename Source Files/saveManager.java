@@ -32,25 +32,24 @@ public class SaveManager {
 			for (int i = 0; i < game.GetBoard().GetWidth(); i++){
 				for (int j = 0; j< game.GetBoard().GetHeight(); j++){
 					if (game.GetBoard().GetPiece(i, j) == null) {
-						p.print("N ");
+						p.println("N");
 					}
 					else if (game.GetBoard().GetPiece(i, j).GetColour() == Color.YELLOW){
-						p.print("Y ");
+						p.println("Y");
 					}
 					else if (game.GetBoard().GetPiece(i, j).GetColour() == Color.RED){
-						p.print("R ");
+						p.println("R");
 					}
 					else if (game.GetBoard().GetPiece(i, j).GetColour() == Color.BLACK){
-						p.print("B ");
+						p.println("B");
 					}	
 					else if (game.GetBoard().GetPiece(i, j).GetColour() == Color.WHITE){
-						p.print("W ");
+						p.println("W");
 					}
 					else {
-						p.print("N ");
+						p.println("N");
 					}
 				}
-				p.println();
 			}
 			p.println("x");
 			p.println(game.getPlayer1().GetPlayerName());

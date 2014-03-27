@@ -12,8 +12,8 @@ Topics Discussed:
 - Callum: Timer class needs slight adjustment to conform to project conventions.
 - Dan: Completed Connect 4 animation.
 - Ben: Othello animation completed.
-- Jiaming: AIEasy completed.
-- Geraint: AIHard needs to be completed.
+- Jiaming: AIHard completed.
+- Geraint: AIEasy needs to be completed.
 
 TODO (by deadline):
 - Lewis: Complete the save manager, test, and group report.

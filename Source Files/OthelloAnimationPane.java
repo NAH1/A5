@@ -5,24 +5,44 @@ import java.awt.event.AWTEventListener;
 import java.awt.event.MouseEvent; 
 import java.util.ArrayList;
  
-public class OthelloAnimationPane extends JPanel implements AWTEventListener { 
-    private final JFrame frame; 
-    private Point point = new Point(); 
+/**
+ * \\file -OthelloAnimationPane.java 
+ * \author -Ben Golightly
+ * \date -27th March 2014
+ * 
+ * \see Animation.java
+ * \see Othello.java
+ * \see OthelloAnimaiton.java
+ * \see OthelloAnimaitonPoint.java
+ * 
+ * \brief This class manages a "glass pane" to draw animations on to. 
+ */
+public class OthelloAnimationPane extends JPanel {  
  
-    public OthelloAnimationPane(JFrame frame) { 
+    /**
+     * Constructor for the glass pane
+     */
+    public OthelloAnimationPane() { 
         super(null); 
-        this.frame = frame; 
         m_toDraw = null;
         setOpaque(false); 
-        System.out.println("OthelloAnimationPane constructed");
         setLocation(0, 0);
         setSize(1000, 1000);
     } 
  
+    /**
+     * Set the list of points to draw
+     * @param points the points to draw
+     */
     public void setPoints(ArrayList <OthelloAnimationPoint> points) { 
         m_toDraw = points;
     } 
  
+    /**
+     * paintComponent is called automatically when the panel needs to be
+     * drawn.
+     * @param g a given graphics handle.
+     */
     protected void paintComponent(Graphics g) { 
         Graphics2D g2 = (Graphics2D) g;
         
@@ -38,19 +58,6 @@ public class OthelloAnimationPane extends JPanel implements AWTEventListener {
         g2.dispose(); 
     } 
     
-    /* This needs to be implemented to extend JPanel even though it is never
-     * called. */
-    public void eventDispatched(AWTEvent event) { 
-    	System.out.println("OthelloAnimationPane::paintComponent: redispatch event");
-        if (event instanceof MouseEvent) { 
-            MouseEvent me = (MouseEvent) event; 
-            if (!SwingUtilities.isDescendingFrom(me.getComponent(), frame)) { 
-                return; 
-            } 
-            repaint(); 
-        } 
-    } 
-
-    
+    /** the points to draw */
     private ArrayList <OthelloAnimationPoint> m_toDraw;
 } 

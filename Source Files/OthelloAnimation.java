@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * \author -Ben Golightly
  * \date -27th March 2014
  * 
+ * \see Animation.java
  * \see Othello.java
  * \see OthelloAnimaitonPane.java
  * \see OthelloAnimaitonPoint.java
@@ -30,7 +31,7 @@ public class OthelloAnimation extends Animation{
 	public OthelloAnimation(GUI gui) {
 		JFrame frame = gui.GetFrame();
 		
-		m_GlassPane = new OthelloAnimationPane(gui.GetFrame());
+		m_GlassPane = new OthelloAnimationPane();
 		m_Animating = new ArrayList<OthelloAnimationPoint>();
 		frame.setGlassPane(m_GlassPane);
 		m_GlassPane.setVisible(true);

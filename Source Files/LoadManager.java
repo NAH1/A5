@@ -225,5 +225,23 @@ public class LoadManager {
 		return in.nextInt();
 	}
 	
-	boolean m_Trace = true;
+	/**
+	 * Used for main method testing
+	 * Tests both Load manager and Save Manager
+	 */
+	public static void main(String args[]) {
+		final int maxY = 6;
+		final int maxX = 9;
+		GameController g = new GameController(GameController.GameType.CONNECTFOUR);
+		
+		g.GetBoard().SetPiece(0, maxY, Color.RED);
+		g.GetBoard().SetPiece(maxX, maxY, Color.YELLOW);
+		g.GetBoard().SetPiece(maxX - maxY, maxY, Color.RED);
+		g.GetGUI().DrawPieces();
+		
+		new SaveManager(g);
+		new LoadManager();
+	}
+	
+	private boolean m_Trace = true;
 }

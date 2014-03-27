@@ -18,12 +18,7 @@ public class SaveManager {
 	public SaveManager(GameController game) {
 		File file = new File("SaveGame.txt");
 		try (FileOutputStream f = new FileOutputStream(file)) {
-
-
-			PrintWriter p = new PrintWriter(file);
-			
-
-			
+			PrintWriter p = new PrintWriter(file);	
 			if (game.GetBoard() instanceof Othello) {
 				p.println("Othello");
 			} else {
@@ -33,20 +28,19 @@ public class SaveManager {
 				for (int j = 0; j< game.GetBoard().GetHeight(); j++){
 					if (game.GetBoard().GetPiece(i, j) == null) {
 						p.println("N");
-					}
-					else if (game.GetBoard().GetPiece(i, j).GetColour() == Color.YELLOW){
+					} else if (game.GetBoard().GetPiece(i, j)
+							.GetColour() == Color.YELLOW){
 						p.println("Y");
-					}
-					else if (game.GetBoard().GetPiece(i, j).GetColour() == Color.RED){
+					} else if (game.GetBoard().GetPiece(i, j)
+							.GetColour() == Color.RED){
 						p.println("R");
-					}
-					else if (game.GetBoard().GetPiece(i, j).GetColour() == Color.BLACK){
+					} else if (game.GetBoard().GetPiece(i, j)
+							.GetColour() == Color.BLACK){
 						p.println("B");
-					}	
-					else if (game.GetBoard().GetPiece(i, j).GetColour() == Color.WHITE){
+					} else if (game.GetBoard().GetPiece(i, j)
+							.GetColour() == Color.WHITE){
 						p.println("W");
-					}
-					else {
+					} else {
 						p.println("N");
 					}
 				}
@@ -58,7 +52,6 @@ public class SaveManager {
 			else if (color == Color.BLACK) p.println("Black");
 			else if (color == Color.RED) p.println("Red");
 			else if (color == Color.YELLOW) p.println("Yellow");
-			
 			if (game.getPlayer1().isAI()) {
 				if(game.getPlayer1() instanceof AIHard) {
 					p.println("Hard");
@@ -68,14 +61,12 @@ public class SaveManager {
 			} else {
 				p.println("Human");
 			}
-			
 			p.println(game.getPlayer2().GetPlayerName());
 			color = game.getPlayer2().GetPieceColour();
 			if (color == Color.WHITE) p.println("White");
 			else if (color == Color.BLACK) p.println("Black");
 			else if (color == Color.RED) p.println("Red");
 			else if (color == Color.YELLOW) p.println("Yellow");
-			
 			if (game.getPlayer2().isAI()) {
 				if(game.getPlayer2() instanceof AIHard) {
 					p.println("Hard");
@@ -85,7 +76,6 @@ public class SaveManager {
 			} else {
 				p.println("Human");
 			}
-			
 			color = game.GetCurrent().GetPieceColour();
 			if (color == Color.WHITE) p.println("White");
 			else if (color == Color.BLACK) p.println("Black");
@@ -93,13 +83,10 @@ public class SaveManager {
 			else if (color == Color.YELLOW) p.println("Yellow");
 			p.println(game.GetGUI().getClock().getTime());
 			p.close();
-
 			System.out.println("Saved");
-
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-	}
+	}	
 } 

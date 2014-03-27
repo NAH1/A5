@@ -39,35 +39,35 @@ public class OthelloGUI extends GUI {
 			System.out.println("OthelloGUI :: SetOthelloInfo() BEGIN");
 		}
 		
-		playerOneColor.setText(GetGame().GetPlayerName(Color.BLACK) + ":");
-		playerOneColor.setFont(FONT);
-		playerOneColor.setVisible(true);
+		m_playerOneColor.setText(GetGame().GetPlayerName(Color.BLACK) + ":");
+		m_playerOneColor.setFont(FONT);
+		m_playerOneColor.setVisible(true);
 		OthelloPiece black = new OthelloPiece(Color.BLACK);
-		playerOneIcon.setIcon(black.GetIcon());
-		playerOneIcon.setVisible(true);
-		playerTwoColor.setText(GetGame().GetPlayerName(Color.WHITE) + ":");
-		playerTwoColor.setFont(FONT);
-		playerTwoColor.setVisible(true);
+		m_playerOneIcon.setIcon(black.GetIcon());
+		m_playerOneIcon.setVisible(true);
+		m_playerTwoColor.setText(GetGame().GetPlayerName(Color.WHITE) + ":");
+		m_playerTwoColor.setFont(FONT);
+		m_playerTwoColor.setVisible(true);
 		OthelloPiece white = new OthelloPiece(Color.WHITE);
-		playerTwoIcon.setIcon(white.GetIcon());
-		playerTwoIcon.setVisible(true);
-		playerTurnIcon.setIcon(new OthelloPiece(
+		m_playerTwoIcon.setIcon(white.GetIcon());
+		m_playerTwoIcon.setVisible(true);
+		m_playerTurnIcon.setIcon(new OthelloPiece(
 				GetGame().GetCurrent().GetPieceColour()).GetIcon());
-		playerTurnIcon.setVisible(true);
-		playerTurnLabel.setText(
+		m_playerTurnIcon.setVisible(true);
+		m_playerTurnLabel.setText(
 				GetGame().GetCurrent().GetPlayerName() + "'s TURN");
-		playerTurnLabel.setFont(FONT);
-		playerTurnLabel.setVisible(true);
-		blackIcon.setIcon(black.GetIcon());
-		blackIcon.setVisible(true);
-		blackPieces.setText(((Othello) (GetBoard())).GetBlackScore() + "");
-		blackPieces.setFont(FONT);
-		blackPieces.setVisible(true);
-		whiteIcon.setIcon(white.GetIcon());
-		whiteIcon.setVisible(true);
-		whitePieces.setText(((Othello) (GetBoard())).GetWhiteScore() + "");
-		whitePieces.setFont(FONT);
-		whitePieces.setVisible(true);
+		m_playerTurnLabel.setFont(FONT);
+		m_playerTurnLabel.setVisible(true);
+		m_blackIcon.setIcon(black.GetIcon());
+		m_blackIcon.setVisible(true);
+		m_blackPieces.setText(((Othello) (GetBoard())).GetBlackScore() + "");
+		m_blackPieces.setFont(FONT);
+		m_blackPieces.setVisible(true);
+		m_whiteIcon.setIcon(white.GetIcon());
+		m_whiteIcon.setVisible(true);
+		m_whitePieces.setText(((Othello) (GetBoard())).GetWhiteScore() + "");
+		m_whitePieces.setFont(FONT);
+		m_whitePieces.setVisible(true);
 		PASSMOVE.setVisible(true);
 		FRAME.pack();
 		

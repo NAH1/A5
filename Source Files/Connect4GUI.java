@@ -31,25 +31,25 @@ public class Connect4GUI extends GUI {
 			System.out.println("Connect4GUI :: SetConnectFourInfo() BEGIN");
 		}
 		
-		playerOneColor.setText(GetGame().GetPlayerName(Color.RED)+":");
-		playerOneColor.setFont(FONT);
-		playerOneColor.setVisible(true);
+		m_playerOneColor.setText(GetGame().GetPlayerName(Color.RED)+":");
+		m_playerOneColor.setFont(FONT);
+		m_playerOneColor.setVisible(true);
 		ConnectFourPiece red = new ConnectFourPiece(Color.RED);
-		playerOneIcon.setIcon(red.GetIcon());
-		playerOneIcon.setVisible(true);
-		playerTwoColor.setText(GetGame().GetPlayerName(Color.YELLOW)+":");
-		playerTwoColor.setFont(FONT);
-		playerTwoColor.setVisible(true);
+		m_playerOneIcon.setIcon(red.GetIcon());
+		m_playerOneIcon.setVisible(true);
+		m_playerTwoColor.setText(GetGame().GetPlayerName(Color.YELLOW)+":");
+		m_playerTwoColor.setFont(FONT);
+		m_playerTwoColor.setVisible(true);
 		ConnectFourPiece yellow = new ConnectFourPiece(Color.YELLOW);
-		playerTwoIcon.setIcon(yellow.GetIcon());
-		playerTwoIcon.setVisible(true);
-		playerTurnIcon.setIcon(new ConnectFourPiece(
+		m_playerTwoIcon.setIcon(yellow.GetIcon());
+		m_playerTwoIcon.setVisible(true);
+		m_playerTurnIcon.setIcon(new ConnectFourPiece(
 				GetGame().GetCurrent().GetPieceColour()).GetIcon());
-		playerTurnIcon.setVisible(true);
-		playerTurnLabel.setText(
+		m_playerTurnIcon.setVisible(true);
+		m_playerTurnLabel.setText(
 				GetGame().GetCurrent().GetPlayerName() + "'s TURN");
-		playerTurnLabel.setFont(FONT);
-		playerTurnLabel.setVisible(true);
+		m_playerTurnLabel.setFont(FONT);
+		m_playerTurnLabel.setVisible(true);
 		FRAME.pack();
 		
 		if (test || m_test){

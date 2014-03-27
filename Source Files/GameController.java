@@ -1,9 +1,4 @@
 import java.awt.Color;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-
-import Player.*;
 /**
  * \\file -GameController.java 
  * \author - Thomas Letheby

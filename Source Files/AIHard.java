@@ -1,12 +1,5 @@
-
-
-package Player;
-
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
-
-import boardGame.*;
 
 /**
  * \\file - AIHard.java

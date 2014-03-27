@@ -1,22 +1,9 @@
-import java.awt.AWTEvent;
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
 
-import javax.print.attribute.AttributeSetUtilities;
-import javax.swing.JFrame;
 import javax.swing.ImageIcon;
-import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
-
-import piece.*;
+import javax.swing.JFrame;
 
 /**
  * \\file - Connect4Animation.java

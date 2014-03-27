@@ -1,4 +1,3 @@
-import java.awt.EventQueue;
 import java.util.Timer;
 import java.util.TimerTask;
 

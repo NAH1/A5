@@ -1,5 +1,3 @@
-package Player;
-
 import java.awt.Color;
 
 /**

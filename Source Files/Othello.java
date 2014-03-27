@@ -1,12 +1,9 @@
-
-
 import java.awt.Color;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import Player.Player;
-import piece.*;
+import piece.GamePiece;
+import piece.OthelloPiece;
 /**
  * \\file -Othello.java 
  * \author -Chun Kit So 742666

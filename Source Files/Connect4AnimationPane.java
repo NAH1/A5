@@ -4,7 +4,6 @@ import java.awt.Graphics2D;
 import java.awt.Toolkit;
 import java.awt.event.AWTEventListener;
 import java.awt.event.MouseEvent;
-import java.awt.*;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;

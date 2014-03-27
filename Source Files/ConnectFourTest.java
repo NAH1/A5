@@ -1,11 +1,12 @@
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.not;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.awt.Color;
 
 import org.junit.Test;
-
-import Player.HumanPlayer;
 
 /** This is a test class
 * \\file -ConnectFourTest.java 

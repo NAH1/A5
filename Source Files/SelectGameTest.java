@@ -1,7 +1,3 @@
-import static org.junit.Assert.*;
-
-import java.awt.event.*;
-import javax.swing.*;
 import org.junit.Test;
 /**
  * \\file SelectGameTest.java

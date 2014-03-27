@@ -1,11 +1,9 @@
-
-
 import java.awt.Color;
 
 import javax.swing.JPanel;
 
-import Player.Player;
-import piece.*;
+import piece.ConnectFourPiece;
+import piece.GamePiece;
 /**
  * \\file -ConnectFour.java 
  * \author - Lam Chak Yan 667271

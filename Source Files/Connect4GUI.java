@@ -1,12 +1,9 @@
 import java.awt.Color;
-import java.awt.Image;
-import java.awt.Toolkit;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 import piece.ConnectFourPiece;
-import piece.GamePiece;
-import piece.OthelloPiece;
 
 /**
 * \\file connect4GUI.java

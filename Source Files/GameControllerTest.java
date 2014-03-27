@@ -1,10 +1,8 @@
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import java.awt.Color;
 
 import org.junit.Test;
-
-import Player.HumanPlayer;
 /** This is a test class
 * 
 * \\file -GameControllerTest.java 

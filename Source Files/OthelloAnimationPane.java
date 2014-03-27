@@ -1,9 +1,9 @@
-import javax.swing.*; 
-
-import java.awt.*; 
-import java.awt.event.AWTEventListener; 
-import java.awt.event.MouseEvent; 
+import java.awt.AlphaComposite;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.util.ArrayList;
+
+import javax.swing.JPanel;
  
 /**
  * \\file -OthelloAnimationPane.java 

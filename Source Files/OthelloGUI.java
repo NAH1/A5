@@ -27,6 +27,12 @@ public class OthelloGUI extends GUI {
      *  to display on screen.
      * \return boolean  return true if the action complete.
      */
+	
+	final int BACKRED = 170;
+	final int BACKGREEN = 150;
+	final int BACKBLUE = 100;
+
+	
 	public boolean setInfo() {
 		boolean test = false;
 		if (test || m_test){
@@ -88,14 +94,14 @@ public class OthelloGUI extends GUI {
 		Color defCol = BACKGROUND_COLOR;
 		for (int y = 0; y < GetBoard().GetHeight(); ++y) {
 			for (int x = 0; x < GetBoard().GetWidth(); ++x) {
-				GetPanel(x, y).setBorder(BorderFactory
-						.createLineBorder(Color.black));
+			GetPanel(x, y).setBorder(BorderFactory
+					.createLineBorder(Color.black));
 				if (availableMoves[x][y] == 'O') {
-					if ((GetGame().GetCurrent().GetPieceColour() == Color.BLACK))
-						GetPanel(x, y).setBackground(Color.BLUE);
+					if ((GetGame().GetCurrent().GetPieceColour() 
+					== Color.BLACK))
+					GetPanel(x, y).setBackground(Color.BLUE);
 					else
-						GetPanel(x, y).setBackground(Color.RED);
-
+					GetPanel(x, y).setBackground(Color.RED);
 				} else {
 					GetPanel(x, y).setBackground(defCol);
 				}
@@ -110,9 +116,10 @@ public class OthelloGUI extends GUI {
 	}
 	
     /**
-    * Constructor of OthelloGUI, calls the constructor of GUI for constructing 
+    * Constructor of OthelloGUI, calls the constructor of GUI for constructing
     * the game board and sets the player information.
-    * \param a BoardGame object which is in Othello type,a GameController object
+    * \param a BoardGame object which is in Othello type,
+    * a GameController object
     */
 	public OthelloGUI(BoardGame b, GameController g) {
 		super(b, g);
@@ -121,5 +128,6 @@ public class OthelloGUI extends GUI {
 	/** boolean turn to true to print out begining and ends of methods*/
 	boolean m_test = false;
 	/** background colour */
-	private final Color BACKGROUND_COLOR = new Color(170, 150, 100);
+	private final Color BACKGROUND_COLOR = 
+			new Color(BACKRED, BACKGREEN, BACKBLUE);
 }

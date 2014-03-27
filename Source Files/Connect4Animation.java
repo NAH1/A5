@@ -19,12 +19,19 @@ import javax.swing.SwingUtilities;
 import piece.*;
 
 /**
- * \\file - Connect4Animation.java
- * \author Daniel Squires - 709547
- * \date 22/03/2014
+ * 	\\file - Connect4Animation.java
+ * 	\author Daniel Squires - 709547
+ * 	\date 22/03/2014
  * 
- * \brief Class which handles all the animations for connect four
+ * 	\brief Class which handles the animations for connect four
  * 
+ * 	This works by painting a "glasspane" over the application
+ * 	and painting to that every time cycle is called, which
+ * 	happens when the timer ticks over.
+ * 	
+ * 	The animation process is started when a move is made in Connect4
+ * 	and animate is called, which then sets everything up and starts the timer
+ * 	
  */
 public class Connect4Animation extends Animation{
 	/**
@@ -76,7 +83,7 @@ public class Connect4Animation extends Animation{
 	}	
 	
 	/**
-	 * 
+	 * Get the colour of the player
 	 * \return m_playerColour the colour of the players piece
 	 */
 	public Color getPlayerColour() {
@@ -84,7 +91,7 @@ public class Connect4Animation extends Animation{
 	}
 	
 	/**
-	 * 
+	 * Set the Connect4Animation object in the class Connect4AnimationPane
 	 */
 	public void setAnimationPane() {
 		m_GlassPane.setC4Animation(this);
@@ -92,10 +99,8 @@ public class Connect4Animation extends Animation{
 	
 	/**
 	 * Constructor of Connect4Animation
-	 * Calls the constructor of superclass Animation
-	 * Sets the X and Y Coordinate, and sets the Image Piece
-	 * \param frame - 
-	 * \param game - 
+	 * Sets the Y Coordinate, WIDTH and HEIGHT and
+	 * Creates the Timer, JFrame and GlassPane
 	 * \param gui - 
 	 */
 	public Connect4Animation(GUI gui) {
@@ -106,7 +111,7 @@ public class Connect4Animation extends Animation{
 		createTimer();
 		
 		JFrame frame = gui.GetFrame();
-		m_GlassPane = new Connect4AnimationPane(frame);		
+		m_GlassPane = new Connect4AnimationPane();		
 		frame.setGlassPane(m_GlassPane);
 		m_GlassPane.setVisible(true);
 		
@@ -118,7 +123,7 @@ public class Connect4Animation extends Animation{
 	 */
 	@Override
 	protected void cycle() {
-		final int INCREMENT = 10;
+		final int INCREMENT = 15;
 		
 		if (getYCoord() >= getLowestYCoord()) {
 			if (m_trace) {
@@ -132,11 +137,6 @@ public class Connect4Animation extends Animation{
 			setYCoord(getYCoord() + INCREMENT);
 		}
 		m_GlassPane.repaint();
-	}
-	
-	
-	public void paintComponent(Graphics g) {
-		System.out.println("Connect4Animation :: paintComponent: START");
 	}
 	
 	@Override
@@ -154,7 +154,33 @@ public class Connect4Animation extends Animation{
 		getTimer().start();
 	}
 	
-
+	public static void main(String args[]) {
+		final int x = 4;
+		final int y = 5;
+		final int sleepTime = 500;
+		GameController g = new GameController(GameController.GameType.CONNECTFOUR);
+		//Connect4Animation C4Animation = new Connect4Animation(g.GetGUI());
+		
+		g.GetBoard().GetAnimationController().animate(x, y, Color.RED, 0);
+		g.GetBoard().SetPiece(x, y, Color.RED);
+		
+		g.Alternate();
+		g.GetGUI().DrawPieces();
+		
+		try {
+			Thread.sleep(sleepTime);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		g.GetBoard().GetAnimationController().animate(y, x, Color.YELLOW, 0);
+		g.GetBoard().SetPiece(y, x, Color.YELLOW);
+		
+		g.Alternate();
+		g.GetGUI().DrawPieces();		
+	}
+	
+	//Global Variables
 	private int m_xCoord;
 	private int m_yCoord;
 	private int m_lowestYCoord;

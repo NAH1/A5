@@ -154,12 +154,15 @@ public class Connect4Animation extends Animation{
 		getTimer().start();
 	}
 	
+	/**
+	 * Main method used to test the class
+	 */
 	public static void main(String args[]) {
 		final int x = 4;
-		final int y = 5;
+		final int y = 6;
 		final int sleepTime = 500;
+		
 		GameController g = new GameController(GameController.GameType.CONNECTFOUR);
-		//Connect4Animation C4Animation = new Connect4Animation(g.GetGUI());
 		
 		g.GetBoard().GetAnimationController().animate(x, y, Color.RED, 0);
 		g.GetBoard().SetPiece(x, y, Color.RED);

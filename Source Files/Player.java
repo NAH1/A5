@@ -33,8 +33,9 @@ public abstract class Player {
 		return true;
 	}
 	
-	/** 
-	 * \return m_pieceColor players piece colour 
+	/**
+	 * Retrieves the colour of this player's piece.
+	 * \return Returns the color of the plaer's piece.
 	 */
 	public Color GetPieceColour() {
 		boolean test = false;
@@ -50,7 +51,8 @@ public abstract class Player {
 	}
 
 	/** 
-	 * \return m_playerName the players name 
+	 * Retrieves this player's name.
+	 * \return Returns the players name 
 	 */
 	public String GetPlayerName() {
 		boolean test = false;

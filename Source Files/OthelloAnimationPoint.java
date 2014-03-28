@@ -39,7 +39,7 @@ public class OthelloAnimationPoint {
 	
 	/**
 	 * Draw the animation point
-	 * zparam g a graphics handle
+	 * \param g a graphics handle
 	 */
 	public void draw(Graphics2D g) {
 		/*System.out.println("OthelloAnimationPoint::draw at "

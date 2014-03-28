@@ -26,13 +26,7 @@ public class OthelloGUI extends GUI {
      * Set the player names, scores, player turn, the pass and new game button
      *  to display on screen.
      * \return boolean  return true if the action complete.
-     */
-	
-	final int BACKRED = 170;
-	final int BACKGREEN = 150;
-	final int BACKBLUE = 100;
-
-	
+     */	
 	public boolean setInfo() {
 		boolean test = false;
 		if (test || m_test){
@@ -127,7 +121,11 @@ public class OthelloGUI extends GUI {
 	}
 	/** boolean turn to true to print out begining and ends of methods*/
 	boolean m_test = false;
+	private final int BACK_RED = 170;
+	private final int BACK_GREEN = 150;
+	private final int BACK_BLUE = 100;
 	/** background colour */
 	private final Color BACKGROUND_COLOR = 
-			new Color(BACKRED, BACKGREEN, BACKBLUE);
+			new Color(BACK_RED, BACK_GREEN, BACK_BLUE);
+
 }

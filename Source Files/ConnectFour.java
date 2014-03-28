@@ -227,6 +227,11 @@ public class ConnectFour extends BoardGame {
 	
 	}
 	
+	/**
+	 * Highlights the winner 4 pieces of the winning player
+	 * \param panels - the array of the board
+	 * \param winner - the colour of the winner
+	 */
 	public void HighlightWinners(JPanel[][] panels, Color winner) {
 		System.out.println("ConnectFour :: HighlightWinners");
 		for (int y = 0; y < GetHeight(); y++) {
@@ -239,6 +244,15 @@ public class ConnectFour extends BoardGame {
 		}
 	}
 	
+	/**
+	 * Highlight the 4 winning pieces starting from the left most piece
+	 * and moving right
+	 * \param p - array of JPanels (the board)
+	 * \param winner - Colour of the winning player
+	 * \param x - x coordinate of left most piece
+	 * \param y - y coordinate of left most piece
+	 * \return true if successful
+	 */
 	private boolean RightHighlight(JPanel[][] p, Color winner, int x, int y) {
 		if (x + 3 >= GetWidth()) { return false; }
 		
@@ -258,6 +272,15 @@ public class ConnectFour extends BoardGame {
 		return false;
 	}
 	
+	/**
+	 * Highlight the 4 winning pieces starting from the top piece
+	 * and moving down
+	 * \param p - array of JPanels (the board)
+	 * \param winner - Colour of the winning player
+	 * \param x - x coordinate of top piece
+	 * \param y - y coordinate of top piece
+	 * \return true if successful
+	 */
 	private boolean DownHighlight(JPanel[][] p, Color winner, int x, int y) {
 		if (y + 3 >= GetHeight()) { return false; }
 		
@@ -277,6 +300,15 @@ public class ConnectFour extends BoardGame {
 		return false;
 	}
 
+	/**
+	 * Highlight the 4 winning pieces starting from top left most one
+	 * and moving down and right
+	 * \param p - array of JPanels (the board)
+	 * \param winner - Colour of the winning player
+	 * \param x - x coordinate of top left most piece
+	 * \param y - y coordinate of top left most piece
+	 * \return true if successful
+	 */
 	private boolean DiagHighlight1(JPanel[][] p, Color winner, int x, int y) {
 		// go down and right
 		if (x + 3 >= GetWidth()) { return false; }
@@ -298,6 +330,15 @@ public class ConnectFour extends BoardGame {
 		return false;
 	}
 
+	/**
+	 * Highlight the 4 winning pieces starting from bottom left most one
+	 * and moving up and right
+	 * \param p - array of JPanels (the board)
+	 * \param winner - Colour of the winning player
+	 * \param x - x coordinate of bottom left most piece
+	 * \param y - y coordinate of bottom left most piece
+	 * \return true if successful
+	 */
 	private boolean DiagHighlight2(JPanel[][] p, Color winner, int x, int y) {
 		// go up and right
 		if (x + 3 >= GetWidth()) { return false; }
@@ -362,6 +403,7 @@ public class ConnectFour extends BoardGame {
 		return false;
 	}
 	
+	@Override
 	public char[][] AvailableMove(Color col) {
 		char grid[][] = new char[GetWidth()][GetHeight()];
 		for(int x = 0; x < GetWidth(); x++) {
@@ -404,18 +446,30 @@ public class ConnectFour extends BoardGame {
 		int moveScoreVer = 0;
 		int moveScoreLDia = 0;
 		int moveScoreRDia = 0;
+		final int MOVE_UP = 1;
+		final int MOVE_DOWN = -1;
+		
 		Color color = current.GetPieceColour();
-		moveScoreHor += lineQuality(x, y, 0, 1, color);
-		moveScoreHor += lineQuality(x, y, 0, -1, color);
-		moveScoreVer += lineQuality(x, y, 1, 0, color);
-		moveScoreVer += lineQuality(x, y, -1, 0, color);
-		moveScoreLDia += lineQuality(x, y, 1, 1, color);
-		moveScoreRDia += lineQuality(x, y, -1, 1, color);
-		moveScoreRDia += lineQuality(x, y, 1, -1, color);
-		moveScoreLDia += lineQuality(x, y, -0, -1, color);
+		moveScoreHor += lineQuality(x, y, 0, MOVE_UP, color);
+		moveScoreHor += lineQuality(x, y, 0, MOVE_DOWN, color);
+		moveScoreVer += lineQuality(x, y, MOVE_UP, 0, color);
+		moveScoreVer += lineQuality(x, y, MOVE_DOWN, 0, color);
+		moveScoreLDia += lineQuality(x, y, MOVE_UP, MOVE_UP, color);
+		moveScoreRDia += lineQuality(x, y, MOVE_DOWN, MOVE_UP, color);
+		moveScoreRDia += lineQuality(x, y, MOVE_UP, MOVE_DOWN, color);
+		moveScoreLDia += lineQuality(x, y, MOVE_DOWN, MOVE_DOWN, color);
 		return Math.max(moveScoreHor, Math.max(moveScoreVer, Math.max(moveScoreLDia, moveScoreRDia)));
 	}
 	
+	/**
+	 * Retrieve the quality of a move on a single plane
+	 * \param dx - x coordinate of the piece
+	 * \param dy - y coordinate of the piece
+	 * \param deltaX - how much to move in the x direction
+	 * \param deltaY - how much to move in the y direction
+	 * \param color - Colour of the current piece
+	 * \return score of the move
+	 */
 	private int lineQuality(int dx, int dy, int deltaX, int deltaY, Color color) {
 		int moveScore = 0;
 		int score = 0;

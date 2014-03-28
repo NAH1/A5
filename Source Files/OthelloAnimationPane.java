@@ -32,7 +32,7 @@ public class OthelloAnimationPane extends JPanel {
  
     /**
      * Set the list of points to draw
-     * @param points the points to draw
+     * \param points the points to draw
      */
     public void setPoints(ArrayList <OthelloAnimationPoint> points) { 
         m_toDraw = points;
@@ -41,7 +41,7 @@ public class OthelloAnimationPane extends JPanel {
     /**
      * paintComponent is called automatically when the panel needs to be
      * drawn.
-     * @param g a given graphics handle.
+     * \param g a given graphics handle.
      */
     protected void paintComponent(Graphics g) { 
         Graphics2D g2 = (Graphics2D) g;

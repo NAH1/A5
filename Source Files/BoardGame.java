@@ -38,9 +38,9 @@ public abstract class BoardGame {
 		return true;
 	}
 
-	 /**
+	/**
      * Get the board height.
-     * \return int  return the board height.
+     * \return int return the board height.
      */
 	public int GetHeight() {
         boolean test = false;

@@ -80,35 +80,35 @@ public class GameController {
 	}
 
 	 /**
-	 * @return the m_p1
+	 * \return the m_p1
 	 */
 	public Player getPlayer1() {
 		return m_p1;
 	}
 
 	/**
-	 * @param m_p1 the m_p1 to set
+	 * \param m_p1 the m_p1 to set
 	 */
 	public void setPlayer1(Player player) {
 		m_p1 = player;
 	}
 
 	/**
-	 * @return the m_p2
+	 * \return the m_p2
 	 */
 	public Player getPlayer2() {
 		return m_p2;
 	}
 
 	/**
-	 * @param m_p2 the m_p2 to set
+	 * \param m_p2 the m_p2 to set
 	 */
 	public void setPlayer2(Player player) {
 		m_p2 = player;
 	}
 
 	/**
-	 * @param currentPlayer the currentPlayer to set
+	 * \param currentPlayer the currentPlayer to set
 	 */
 	public void setCurrentPlayer(Player currentPlayer) {
 		m_currentPlayer = currentPlayer;
@@ -133,7 +133,7 @@ public class GameController {
 	
 	/**
 	 * Gets the GUI
-	 * @return the GUI
+	 * \return the GUI
 	 */
 	public GUI GetGUI() {
 		return m_GUI;
@@ -141,7 +141,7 @@ public class GameController {
 	
 	/**
 	 * Gets the game board for the game.
-	 * @return the game board
+	 * \return the game board
 	 */
 	public BoardGame GetBoard() {
 		return m_board;
@@ -149,7 +149,7 @@ public class GameController {
 
 	 /**
 	  * Exchange player turn in othello or connect four.
-  */
+	  */
 	public void Alternate() {
 		boolean test = false;
         if (test || m_test) {
@@ -177,7 +177,7 @@ public class GameController {
 
 	 /**
 	  * Check the winning condition of othello and connect four.
-	  * return boolean  true when the game is finished.
+	  * \return boolean  true when the game is finished.
   */
 	public boolean CheckWin() {
 		boolean test = false;

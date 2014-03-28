@@ -279,6 +279,12 @@ public abstract class GUI extends JFrame {
 			if (e.getSource() == SAVEGAME) {
 				if (GetGame().GetGamOn()) {
 					new SaveManager(GetGame());
+					JOptionPane.showMessageDialog(
+							FRAME, 
+							"Game has been Saved", 
+							"SaveGame", 
+							JOptionPane.INFORMATION_MESSAGE
+							);
 				}
 				
 			}
@@ -301,6 +307,13 @@ public abstract class GUI extends JFrame {
 					ShowWinningBox();
 				}
 				// System.out.println(GetBoard().toString());
+			} else {
+				JOptionPane.showMessageDialog(
+						FRAME, 
+						"Invalid move was performed", 
+						"Invalid move", 
+						JOptionPane.ERROR_MESSAGE
+						);
 			}
 		}
 		

@@ -42,8 +42,8 @@ public class Othello extends BoardGame {
 
 	/**
 	 * Highlight winning colours
-	 * @param m_Lables: the GUI label elements
-	 * @param winner the winning colour ID
+	 * \param m_Lables: the GUI label elements
+	 * \param winner the winning colour ID
 	 */
 	public void HighlightWinners(JPanel[][] panels, Color winner) {
 		for (int y = 0; y < GetHeight(); y++) {
@@ -60,7 +60,6 @@ public class Othello extends BoardGame {
 	 * Public method,It passes the score to GUI class. \return scoreBlack the
 	 * black player score.
 	 */
-	
 	public int GetBlackScore() {
         boolean test = false;
         if (test || m_test) {
@@ -122,7 +121,6 @@ public class Othello extends BoardGame {
 	 * \return availableMov return the char array that store 
 	 * all the available moves.
 	 */
-	
 	public char[][] AvailableMove(Color col) { // check available move and
 		// return the char array.
 		// 'O' means available move.
@@ -200,8 +198,7 @@ public class Othello extends BoardGame {
 			}
 		}
         
-		// System.out.println("Black Score:" + scoreBlack + " White Score:"
-		// + scoreWhite);
+		
         if (test || m_test) {
             System.out.println("Othello :: countScore() END");
         }
@@ -212,7 +209,6 @@ public class Othello extends BoardGame {
 	 * Flip the piece if it is a valid move
 	 * \param col the color of the game piece.
 	 */
-	
 	private void flip(Color col) {
         boolean test = false;
         if (test || m_test) {
@@ -265,7 +261,6 @@ public class Othello extends BoardGame {
 	 * \return boolean return true if the move is valid and the
 	 *  piece has been placed on the game board.
 	 */
-
 	public boolean Move(int x, int y, Color col) { // move action
         boolean test = true;
         if (test || m_test) {
@@ -298,6 +293,9 @@ public class Othello extends BoardGame {
 
 	}
 
+	/**
+	 *  This calculates and sets the winner of a game.
+	 */
 	public boolean SetWinner() {
         boolean test = false;
         if (test || m_test) {
@@ -320,15 +318,9 @@ public class Othello extends BoardGame {
         	}
 
 	/**
-	 * Check whether the move is valid or not , It will search through 8
-	 * directions of the new piece. 
-	 * \param x the x axis in the game board.
-	 * \param y the y axis in the game board. 
-	 * \param col the color of the game piece. 
-	 * \return boolean return true if the move is valid.
+	 * This checks if there are any availible for for all players.
+	 * \return false if there are no valid moves
 	 */
-
-		//HACK
 	public boolean AnyValidMoveForAnyone()
 	{
 		for (int y = 0; y < INITIAL_H; y++)
@@ -343,6 +335,14 @@ public class Othello extends BoardGame {
 		return false;
 	}
 	
+	/**
+	 * Check whether the move is valid or not , It will search through 8
+	 * directions of the new piece. 
+	 * \param x the x axis in the game board.
+	 * \param y the y axis in the game board. 
+	 * \param col the color of the game piece. 
+	 * \return boolean return true if the move is valid.
+	 */
 	private boolean validMove(int x, int y, Color col) {
         boolean test = false;
         if (test || m_test) {
@@ -439,7 +439,6 @@ public class Othello extends BoardGame {
 	 * one black/white pieces on the board , the game keeps go on. 
 	 * \return boolean return true if the player win the game.
 	 */
-
 	public boolean WinningCondition() {
         boolean test = false;
         if (test || m_test) {
@@ -462,6 +461,9 @@ public class Othello extends BoardGame {
         
 	}
 	
+	/**
+	 * 
+	 */
 	@Override
 	public int MoveQuality(int x, int y, Player current) {
 		int moveScore = 0;
@@ -477,6 +479,17 @@ public class Othello extends BoardGame {
 		return moveScore;
 	}
 	
+	/**
+	 * This method calculates this grid's positions move score in a
+	 * specific direction indicated by deltaX and deltaY
+	 * \param dx grid position for the calculation 
+	 * \param dy grid position for the calculation 
+	 * \param deltaX direction of the move score which is being calculated
+	 * \param deltaY direction of the move score which is being calculated
+	 * \param color colour of the current player
+	 * \return an integer indicating how effective 
+	 * the move is (Higher is better)
+	 */
 	private int lineQuality(int dx, int dy, int deltaX, int deltaY, Color color) {
 		int moveScore = 0;
 		int score = 0;

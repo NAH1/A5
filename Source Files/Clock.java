@@ -21,7 +21,7 @@ public class Clock {
 
 	/**
 	 * sets the GUI
-	 * \param the gui
+	 * \param m_gui the gui
 	 */
 	private void setGui(GUI m_gui) {
 		this.m_gui = m_gui;
@@ -29,7 +29,7 @@ public class Clock {
 	
 	/**
 	 * gets time
-	 * \param gets how many seconds have passed
+	 * \return gets how many seconds have passed
 	 */
 	public int getTime() {
 		return TASK.getSeconds();
@@ -37,7 +37,9 @@ public class Clock {
     
 	/**
 	 * Gets GUI and updates time every 1000 milliseconds 
-	 * \param the gui, time 
+	 * \param gui The GUI which clock should update.
+	 * \param time The initial time in seconds with which
+	 * the clock should start counting from.
 	 */
     public Clock(GUI gui, int time) {
     	setGui(gui);
@@ -45,9 +47,9 @@ public class Clock {
         TIMER.schedule(TASK, 0, MSINSEC);
     }
     
-    /**
-   	 * stops clock when game finishes
-   	 * \return true when method is run
+    	/**
+   	 * Stops the clock from counting
+   	 * \return Returns true if successful
    	 */
     public boolean stop() {
     	TIMER.cancel();
@@ -66,22 +68,26 @@ public class Clock {
 
 		/**
 		 * sets seconds passed
-		 * \param seconds passed
+		 * \param m_Seconds Set's the integer containing
+		 * the duration of the clock
 		 */ 
 		void setSeconds(int m_Seconds) {
 			this.m_Seconds = m_Seconds;
 		}
 		 
 		 /**
-		  * updates time with seconds passed
-		  * \param time
+		  * Constructor method which passes in the time
+		  * with which the clock should start counting
+		  * from.
+		  * \param time The duration to start from in seconds.
 		  */
 		public UpdateUITask(int time) {
 			setSeconds(time);
 		}
 		
 		/**
-		 * formats the seconds passed into hh:mm:ss
+		 * Formats the seconds passed into hh:mm:ss and passes
+		 * the time into the GUI
 		 */
 		public void run() {
 			int Hours = 0;
@@ -120,8 +126,8 @@ public class Clock {
 		boolean m_Trace = false;
 	}
 	/**
-	  * Main method to test class
-	  * runs GameController to test the timer works
+	  * Main method to test class runs GameController to
+	  * test the timer works
 	  */
     public static void main(String args[]) {
     	GameController g = new GameController(GameController.GameType.OTHELLO);

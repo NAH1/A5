@@ -54,18 +54,36 @@ public abstract class BoardGame {
 	    return m_height;
 	}
 
-	/** TODO comment */
+	/**
+	 * Set the m_animationController object
+	 * \param a - Animation object to set the AnimationController object to
+	 */
 	public void SetAnimationController(Animation a) {
 		m_animationController = a;
 	}
 	
+	/**
+	 * Get the animation controller
+	 * \return the variable m_animationController
+	 */
 	public Animation GetAnimationController() {
 		return m_animationController;
 	}
 	
+	/**
+	 * Abstract method to highlight the winning pieces in a game
+	 * \param panels - the array of the board
+	 * \param winner - the colour of the winner
+	 */
 	public abstract void HighlightWinners(JPanel[][] panels, Color winner);
 	
-	// HACK
+	/**
+	 * Gets a non-null piece, if the piece is null
+	 * return an arbirtary colour (in this case pink)
+	 * \param x - the x coordinate of the piece
+	 * \param y - the y coordinate of the piece
+	 * \return 
+	 */
 	public GamePiece GetNonNullPiece(int x, int y) {
 		if (m_board[x][y] == null) {
 			return new ConnectFourPiece(Color.PINK); // HACK
@@ -101,11 +119,25 @@ public abstract class BoardGame {
 	    }
 	}
 	
+	/**
+	 * Set a location of the board to a certain piece
+	 * \param x - the x coordinate of the piece
+	 * \param y - the y coordinate of the piece
+	 * \param piece - The piece to set the coordinate to
+	 * \return true
+	 */
 	public boolean SetPiece(int x, int y, GamePiece piece) {
 		m_board[x][y] = piece;
 		return true;
 	}
 	
+	/**
+	 * Abstract method to find out how good a certain move is
+	 * \param x - x coordinate of move
+	 * \param y - y coordinate of move
+	 * \param current - current player
+	 * \return an integer how good the move is, higher means better move
+	 */
 	public abstract int MoveQuality(int x, int y, Player current);
 
 	/**

@@ -80,35 +80,40 @@ public class GameController {
 	}
 
 	 /**
-	 * \return the m_p1
+	 * Retrieves the class containing Player 1's data
+	 * \return The class containing player 1
 	 */
 	public Player getPlayer1() {
 		return m_p1;
 	}
 
 	/**
-	 * \param m_p1 the m_p1 to set
+	 * Sets Player 1 to the indicated Player class
+	 * \param player The player which is to be saved as player 1
 	 */
 	public void setPlayer1(Player player) {
 		m_p1 = player;
 	}
 
 	/**
-	 * \return the m_p2
+	 * Retrieves the class containing Player 2's data
+	 * \return The class containing player 2
 	 */
 	public Player getPlayer2() {
 		return m_p2;
 	}
 
 	/**
-	 * \param m_p2 the m_p2 to set
+	 * Sets Player 2 to the indicated Player class
+	 * \param player The player which is to be saved as player 2
 	 */
 	public void setPlayer2(Player player) {
 		m_p2 = player;
 	}
 
 	/**
-	 * \param currentPlayer the currentPlayer to set
+	 * Sets the current player
+	 * \param currentPlayer the Playe class who's turn it currently is
 	 */
 	public void setCurrentPlayer(Player currentPlayer) {
 		m_currentPlayer = currentPlayer;

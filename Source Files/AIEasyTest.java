@@ -4,9 +4,20 @@ import java.awt.Color;
 
 import org.junit.Test;
 
+/**
+ * \\file - AIEasyTest.java
+ * \author - Geraint Howard - 710909
+ * \date - 27/03/14
+ * 
+ * \brief A test class that tests the AIEasy by placing pieces 
+ * into positions that are valid moves
+  */
 
 public class AIEasyTest {
     
+	/**
+	 * Tests the AIEasy by making a valid move in Othello
+	 */
 	@Test
 	public void test() {
 		BoardGame b = new Othello();

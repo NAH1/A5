@@ -1,3 +1,6 @@
+import java.util.Timer;
+import java.util.TimerTask;
+
  /**
   * \\file - Clock.java
   * \author	- Callum Hazelton
@@ -6,9 +9,6 @@
   * 
   * Counts the seconds since game started and converts to hh:mm:ss format. Also references GUI class
   */
-import java.util.Timer;
-import java.util.TimerTask;
-
 public class Clock {
     
 	/**

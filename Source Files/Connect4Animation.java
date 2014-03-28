@@ -155,7 +155,9 @@ public class Connect4Animation extends Animation{
 	}
 	
 	/**
-	 * Main method used to test the class
+	 * Used for main method testing, tests both the Connect4Animation
+	 * and Connect4AnimationPane, as Connect4Animation would not work
+	 * without Connect4AnimationPane
 	 */
 	public static void main(String args[]) {
 		final int x = 4;

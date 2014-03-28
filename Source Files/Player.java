@@ -17,7 +17,7 @@ public abstract class Player {
 
 	/**
 	 * This get's the game board.
-	 * @return the game board
+	 * \return the game board
 	 */
 	protected BoardGame GetBoard() {
 		return m_board;
@@ -25,8 +25,8 @@ public abstract class Player {
 	
 	/**
 	 * This sets the board for the player.
-	 * @param board instance of BoardGame
-	 * @return true if successful
+	 * \param board instance of BoardGame
+	 * \return true if successful
 	 */
 	public boolean SetBoard(BoardGame board) {
 		m_board = board;
@@ -67,13 +67,13 @@ public abstract class Player {
 	
 	/**
 	 * Gets the x coordinate 
-	 * @return the x coordinate
+	 * \return the x coordinate
 	 */
 	public abstract int getX();
 	
 	/**
 	 * Gets the x coordinate 
-	 * @return the y coordinate
+	 * \return the y coordinate
 	 */
 	public abstract int getY();
 	
@@ -106,14 +106,14 @@ public abstract class Player {
 	
 	/**
 	 * Check's if the player is an AI
-	 * @return if it is an AI
+	 * \return if it is an AI
 	 */
 	public abstract boolean isAI();
 	
 	
 	/**
 	 * Called whenever the game controller needs a move for an AI player
-	 * @return true if successful
+	 * \return true if successful
 	 */
 	public abstract boolean takeMove();
 

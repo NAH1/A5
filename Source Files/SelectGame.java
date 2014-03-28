@@ -16,6 +16,8 @@ public class SelectGame {
 	 * A method to draw GUI for SelectGame.
 	 */
 	public void Draw() {
+		final int Y_COORD = 2;
+		
 		boolean test = false;
 		if (test || m_test){
 			System.out.println("SelectGame :: Draw() BEGIN");
@@ -54,7 +56,7 @@ public class SelectGame {
 		c.gridy = BTN_CONNECT4_Y;
 		m_content.add(m_connectFour_Button, c);
 		
-		c.gridy = 2;
+		c.gridy = Y_COORD;
 		c.gridx = 0;
 		c.gridwidth = GridBagConstraints.REMAINDER;
 		m_content.add(loadGame, c);

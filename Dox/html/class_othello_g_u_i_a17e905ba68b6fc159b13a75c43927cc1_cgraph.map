@@ -1,0 +1,5 @@
+<map id="OthelloGUI.OthelloGUI" name="OthelloGUI.OthelloGUI">
+<area shape="rect" id="node2" href="$class_othello_g_u_i.html#a9034dcfa30401f9dac51dd901fefa461" title="OthelloGUI.setInfo" alt="" coords="206,31,333,57"/>
+<area shape="rect" id="node3" href="$class_g_u_i.html#aa44942974e65567c4b9b9327824becda" title="GUI.GetGame" alt="" coords="381,5,485,32"/>
+<area shape="rect" id="node4" href="$class_g_u_i.html#aefc2f3c72270de7346f5cc6b208a2e85" title="GUI.GetBoard" alt="" coords="382,56,485,83"/>
+</map>

@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['opacity',['OPACITY',['../class_othello_animation_pane.html#a1c4c2cce1c23aa5f145dfc7734e08cfb',1,'OthelloAnimationPane']]],
+  ['othello',['Othello',['../class_othello.html',1,'Othello'],['../class_othello.html#aea807276be1806d5dcc82789ab47103f',1,'Othello.Othello()'],['../enum_game_controller_1_1_game_type.html#a6ce7e24732535acda6637865a42ea80d',1,'GameController.GameType.OTHELLO()']]],
+  ['othello_2ejava',['Othello.java',['../_othello_8java.html',1,'']]],
+  ['othelloanimation',['OthelloAnimation',['../class_othello_animation.html',1,'OthelloAnimation'],['../class_othello_animation.html#a990dff5b43027a7c36ff3d78f02494a8',1,'OthelloAnimation.OthelloAnimation()']]],
+  ['othelloanimation_2ejava',['OthelloAnimation.java',['../_othello_animation_8java.html',1,'']]],
+  ['othelloanimationpane',['OthelloAnimationPane',['../class_othello_animation_pane.html',1,'OthelloAnimationPane'],['../class_othello_animation_pane.html#a5af4783245d63ee74af827944f0ee032',1,'OthelloAnimationPane.OthelloAnimationPane()']]],
+  ['othelloanimationpane_2ejava',['OthelloAnimationPane.java',['../_othello_animation_pane_8java.html',1,'']]],
+  ['othelloanimationpoint',['OthelloAnimationPoint',['../class_othello_animation_point.html',1,'OthelloAnimationPoint'],['../class_othello_animation_point.html#a2bc9fa1b0821e2b52093e66a78943edd',1,'OthelloAnimationPoint.OthelloAnimationPoint()']]],
+  ['othelloanimationpoint_2ejava',['OthelloAnimationPoint.java',['../_othello_animation_point_8java.html',1,'']]],
+  ['othelloanimationpointtest',['OthelloAnimationPointTest',['../class_othello_animation_point_test.html',1,'']]],
+  ['othelloanimationpointtest_2ejava',['OthelloAnimationPointTest.java',['../_othello_animation_point_test_8java.html',1,'']]],
+  ['othelloanimationtest',['OthelloAnimationTest',['../class_othello_animation_test.html',1,'']]],
+  ['othelloanimationtest_2ejava',['OthelloAnimationTest.java',['../_othello_animation_test_8java.html',1,'']]],
+  ['othellogui',['OthelloGUI',['../class_othello_g_u_i.html',1,'OthelloGUI'],['../class_othello_g_u_i.html#a17e905ba68b6fc159b13a75c43927cc1',1,'OthelloGUI.OthelloGUI()']]],
+  ['othellogui_2ejava',['OthelloGUI.java',['../_othello_g_u_i_8java.html',1,'']]],
+  ['othelloguitest',['OthelloGUITest',['../class_othello_g_u_i_test.html',1,'']]],
+  ['othelloguitest_2ejava',['OthelloGUITest.java',['../_othello_g_u_i_test_8java.html',1,'']]],
+  ['othellotest',['OthelloTest',['../class_othello_test.html',1,'']]],
+  ['othellotest_2ejava',['OthelloTest.java',['../_othello_test_8java.html',1,'']]]
+];

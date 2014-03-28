@@ -1,0 +1,6 @@
+<map id="Connect4Animation.Connect4Animation" name="Connect4Animation.Connect4Animation">
+<area shape="rect" id="node2" href="$class_connect4_animation.html#a6482121e302da9bf6d65e74bd59e3401" title="Connect4Animation.setYCoord" alt="" coords="248,5,448,32"/>
+<area shape="rect" id="node3" href="$class_animation.html#a5e0bda4bf871204aca337fbcff9c7587" title="Animation.createTimer" alt="" coords="272,56,424,83"/>
+<area shape="rect" id="node4" href="$class_animation.html#a4354f5c391eaeb6bdd5c62969338aa06" title="Animation.cycle" alt="" coords="507,31,621,57"/>
+<area shape="rect" id="node5" href="$class_animation.html#ab6bf42cf18f5b05128bc067b4a99e5a3" title="Animation.setTimer" alt="" coords="497,81,631,108"/>
+</map>

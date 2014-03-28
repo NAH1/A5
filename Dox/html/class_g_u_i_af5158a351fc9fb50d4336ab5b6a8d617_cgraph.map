@@ -1,0 +1,6 @@
+<map id="GUI.draw" name="GUI.draw">
+<area shape="rect" id="node2" href="$class_g_u_i.html#a3bcd0e4e9ffb4af4bc7687194970e5e7" title="GUI.DrawInfoPanel" alt="" coords="128,5,259,32"/>
+<area shape="rect" id="node3" href="$class_g_u_i.html#a4378fc24927185311e5df881a3d8f82a" title="GUI.SetPanel" alt="" coords="143,56,244,83"/>
+<area shape="rect" id="node4" href="$class_g_u_i.html#aa667c776b52c318ac828ca7588514e44" title="GUI.GetPanel" alt="" coords="142,107,245,133"/>
+<area shape="rect" id="node5" href="$class_g_u_i.html#a1c91a59c93b0664540296ffb007a0264" title="GUI.SetLabel" alt="" coords="144,157,243,184"/>
+</map>

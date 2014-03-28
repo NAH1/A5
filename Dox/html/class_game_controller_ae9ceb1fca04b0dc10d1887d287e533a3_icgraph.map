@@ -1,0 +1,9 @@
+<map id="GameController.getPlayer1" name="GameController.getPlayer1">
+<area shape="rect" id="node2" href="$class_game_controller.html#a8d4da8408cafde0b9a8c4b4f38f304f0" title="GameController.GetPlayerName" alt="" coords="232,56,440,83"/>
+<area shape="rect" id="node5" href="$class_game_controller.html#a30c867a298db9d694fd0c85dc0842104" title="GameController.Alternate" alt="" coords="252,107,420,133"/>
+<area shape="rect" id="node6" href="$class_game_controller.html#ad7cf04691277b54c56daa2a014a1dc76" title="GameController.GameController" alt="" coords="233,157,439,184"/>
+<area shape="rect" id="node8" href="$class_save_manager.html#a02974d9996e1687dfa9bfd661f61b1c3" title="SaveManager.SaveManager" alt="" coords="245,208,427,235"/>
+<area shape="rect" id="node3" href="$class_game_controller_test.html#a08a008c2a56f3a9100825d24d38f258e" title="GameControllerTest.TestGet\lPlayerName1" alt="" coords="488,5,675,46"/>
+<area shape="rect" id="node4" href="$class_game_controller_test.html#afb0a0ad78d2cf1a96c3cafc44d51a14c" title="GameControllerTest.TestGet\lPlayerName2" alt="" coords="488,70,675,111"/>
+<area shape="rect" id="node7" href="$class_game_controller.html#aa1e778994dd715bdf988d4c672616067" title="GameController.main" alt="" coords="509,157,653,184"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Connect4GUITest.testSetPanelColour" name="Connect4GUITest.testSetPanelColour">
+<area shape="rect" id="node2" href="$class_connect4_g_u_i.html#a502eb3ee3945f5eae37e75ef4fc3dd34" title="Connect4GUI.setPanelColour" alt="" coords="257,31,447,57"/>
+<area shape="rect" id="node3" href="$class_g_u_i.html#aefc2f3c72270de7346f5cc6b208a2e85" title="GUI.GetBoard" alt="" coords="497,5,599,32"/>
+<area shape="rect" id="node4" href="$class_g_u_i.html#aa667c776b52c318ac828ca7588514e44" title="GUI.GetPanel" alt="" coords="497,56,599,83"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="BoardGame.GetAnimationController" name="BoardGame.GetAnimationController">
+<area shape="rect" id="node2" href="$class_connect_four.html#a9b42d60252bace1445665ba6bcf7cf3d" title="ConnectFour.Move" alt="" coords="283,5,413,32"/>
+<area shape="rect" id="node4" href="$class_othello.html#a97ef0f4ca79d057a25a054fcf03247f2" title="Othello.flip" alt="" coords="307,56,389,83"/>
+<area shape="rect" id="node3" href="$class_connect_four_test.html#a260c28e0585a859c2de5a652a7bf6d11" title="ConnectFourTest.testMove" alt="" coords="462,5,639,32"/>
+<area shape="rect" id="node5" href="$class_othello.html#a0889bbeee3383e7aaa2bb030acb3f1a5" title="Othello.Move" alt="" coords="502,56,599,83"/>
+<area shape="rect" id="node6" href="$class_othello_test.html#aa1d7eaf75521a39071858e1763bba374" title="OthelloTest.testMove" alt="" coords="688,56,832,83"/>
+</map>

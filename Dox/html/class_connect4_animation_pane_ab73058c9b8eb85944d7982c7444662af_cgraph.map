@@ -1,0 +1,5 @@
+<map id="Connect4AnimationPane.paintComponent" name="Connect4AnimationPane.paintComponent">
+<area shape="rect" id="node2" href="$class_animation.html#abba233422f8c496a6ff1fdc628f71e19" title="Animation.getTimer" alt="" coords="283,5,418,32"/>
+<area shape="rect" id="node3" href="$class_connect4_animation.html#adc06f2f12eca8f226e7e1c74d16ab2ef" title="Connect4Animation.getLowest\lYCoord" alt="" coords="251,57,450,98"/>
+<area shape="rect" id="node4" href="$class_connect4_animation.html#a7ce92c264b21f664917ac67d9275f1a9" title="Connect4Animation.getYCoord" alt="" coords="251,123,451,149"/>
+</map>

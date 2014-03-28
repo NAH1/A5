@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$class_g_u_i.html" title="GUI is used to set up and update the display for game board and the information. " alt="" coords="121,31,165,57"/>
+<area shape="rect" id="node3" href="$class_connect4_g_u_i.html" title="Connect4GUI is used to set up the background of the game board.Extends GUI. " alt="" coords="213,5,312,32"/>
+<area shape="rect" id="node4" href="$class_othello_g_u_i.html" title="OthelloGUI is used to set up and update the background of the Othello game board. ..." alt="" coords="220,56,305,83"/>
+</map>

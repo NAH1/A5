@@ -1,0 +1,6 @@
+<map id="GUI.GUIHandler.actionPerformed" name="GUI.GUIHandler.actionPerformed">
+<area shape="rect" id="node2" href="$class_g_u_i.html#aa44942974e65567c4b9b9327824becda" title="GUI.GetGame" alt="" coords="491,5,595,32"/>
+<area shape="rect" id="node3" href="$class_g_u_i.html#aefc2f3c72270de7346f5cc6b208a2e85" title="GUI.GetBoard" alt="" coords="491,81,594,108"/>
+<area shape="rect" id="node4" href="$class_g_u_i.html#a7ec9dcd95ce6976a649fb7762ef5b54a" title="GUI.UpdatePlayerTurnIcon" alt="" coords="267,81,442,108"/>
+<area shape="rect" id="node5" href="$class_g_u_i.html#a96b7840223903ddf93720c643430fcaf" title="GUI.ShowWinningBox" alt="" coords="279,31,430,57"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Selection" name="Selection">
+<area shape="rect" id="node8" href="$class_g_u_i.html" title="GUI is used to set up and update the display for game board and the information. " alt="" coords="753,424,796,451"/>
+<area shape="rect" id="node7" href="$class_game_controller.html" title="GameController is used to control the game flow. " alt="" coords="267,544,379,571"/>
+<area shape="rect" id="node10" href="$class_clock.html" title="Makes the timer. " alt="" coords="963,544,1017,571"/>
+<area shape="rect" id="node11" href="$class_clock_1_1_update_u_i_task.html" title="Clock.UpdateUITask" alt="" coords="907,424,1047,451"/>
+<area shape="rect" id="node20" href="$class_animation.html" title="Abstract animation super class. " alt="" coords="5,96,85,123"/>
+<area shape="rect" id="node17" href="$class_board_game.html" title="BoardGame is an abstract class. " alt="" coords="189,187,280,213"/>
+<area shape="rect" id="node21" href="$class_player.html" title="Parent class of methods for HumanPlayer.java. " alt="" coords="293,424,352,451"/>
+</map>

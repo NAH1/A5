@@ -1,0 +1,4 @@
+<map id="Animation" name="Animation">
+<area shape="rect" id="node2" href="$class_connect4_animation.html" title="Class which handles the animations for connect four. " alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node3" href="$class_othello_animation.html" title="This class manages the animation of multiple Othello pieces. " alt="" coords="163,80,284,107"/>
+</map>

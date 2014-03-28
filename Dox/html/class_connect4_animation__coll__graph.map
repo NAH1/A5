@@ -1,0 +1,4 @@
+<map id="Connect4Animation" name="Connect4Animation">
+<area shape="rect" id="node5" href="$class_connect4_animation_pane.html" title="This class manages the glasspane to draw the object for animations. " alt="" coords="5,277,171,304"/>
+<area shape="rect" id="node2" href="$class_animation.html" title="Abstract animation super class. " alt="" coords="93,96,173,123"/>
+</map>

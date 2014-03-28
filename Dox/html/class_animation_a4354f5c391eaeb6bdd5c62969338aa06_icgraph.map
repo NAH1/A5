@@ -1,0 +1,5 @@
+<map id="Animation.cycle" name="Animation.cycle">
+<area shape="rect" id="node2" href="$class_animation.html#a5e0bda4bf871204aca337fbcff9c7587" title="Animation.createTimer" alt="" coords="168,45,320,72"/>
+<area shape="rect" id="node3" href="$class_connect4_animation.html#adbbe7ecbf46a8d184f0f9418f5b88ae8" title="Connect4Animation.Connect4\lAnimation" alt="" coords="368,5,563,46"/>
+<area shape="rect" id="node4" href="$class_othello_animation.html#a990dff5b43027a7c36ff3d78f02494a8" title="OthelloAnimation.Othello\lAnimation" alt="" coords="382,70,549,111"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Player.GetBoard" name="Player.GetBoard">
+<area shape="rect" id="node2" href="$class_a_i_easy.html#a5505a85681180d51209f09bc1cdd5d24" title="AIEasy.takeMove" alt="" coords="173,5,296,32"/>
+<area shape="rect" id="node4" href="$class_a_i_hard.html#ad65d616f68583926c7c40ccc62866bcc" title="AIHard.takeMove" alt="" coords="175,56,295,83"/>
+<area shape="rect" id="node3" href="$class_a_i_easy_test.html#a0dd67eb3e665be806955c6be9ea2065b" title="AIEasyTest.test" alt="" coords="344,5,459,32"/>
+<area shape="rect" id="node5" href="$class_a_i_hard_test.html#aac4bfa48689f3f0df2c610ebbcd20cf8" title="AIHardTest.test" alt="" coords="345,56,457,83"/>
+</map>

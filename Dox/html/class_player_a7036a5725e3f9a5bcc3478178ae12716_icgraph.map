@@ -1,0 +1,4 @@
+<map id="Player.getY" name="Player.getY">
+<area shape="rect" id="node2" href="$class_g_u_i_1_1_g_u_i_handler.html#a3d2fde38e230d0c5245abc8af145915d" title="GUI.GUIHandler.AIMove" alt="" coords="144,5,304,32"/>
+<area shape="rect" id="node3" href="$class_g_u_i_1_1_g_u_i_handler.html#a885845aa87e184ebfde3640f119075be" title="GUI.GUIHandler.mouseClicked" alt="" coords="352,5,552,32"/>
+</map>

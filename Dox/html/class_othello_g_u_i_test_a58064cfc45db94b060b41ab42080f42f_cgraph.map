@@ -1,0 +1,6 @@
+<map id="OthelloGUITest.testSetPanelColour" name="OthelloGUITest.testSetPanelColour">
+<area shape="rect" id="node2" href="$class_othello_g_u_i.html#a3720919bde2e89514187b014439ad4e3" title="OthelloGUI.setPanelColour" alt="" coords="243,56,421,83"/>
+<area shape="rect" id="node3" href="$class_g_u_i.html#aefc2f3c72270de7346f5cc6b208a2e85" title="GUI.GetBoard" alt="" coords="470,5,573,32"/>
+<area shape="rect" id="node4" href="$class_g_u_i.html#aa44942974e65567c4b9b9327824becda" title="GUI.GetGame" alt="" coords="469,56,573,83"/>
+<area shape="rect" id="node5" href="$class_g_u_i.html#aa667c776b52c318ac828ca7588514e44" title="GUI.GetPanel" alt="" coords="470,107,573,133"/>
+</map>

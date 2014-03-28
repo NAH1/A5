@@ -1,0 +1,6 @@
+<map id="GUI.ShowWinningBox" name="GUI.ShowWinningBox">
+<area shape="rect" id="node2" href="$class_g_u_i_1_1_g_u_i_handler.html#a037cb44b3cdfb6b4baea8e518ae03ce3" title="GUI.GUIHandler.actionPerformed" alt="" coords="206,5,418,32"/>
+<area shape="rect" id="node3" href="$class_g_u_i_1_1_g_u_i_handler.html#a9b78022997bc4f274a2ea6f8ac98c0b2" title="GUI.GUIHandler.playerMove" alt="" coords="221,56,403,83"/>
+<area shape="rect" id="node5" href="$class_g_u_i_1_1_g_u_i_handler.html#a3d2fde38e230d0c5245abc8af145915d" title="GUI.GUIHandler.AIMove" alt="" coords="232,107,392,133"/>
+<area shape="rect" id="node4" href="$class_g_u_i_1_1_g_u_i_handler.html#a885845aa87e184ebfde3640f119075be" title="GUI.GUIHandler.mouseClicked" alt="" coords="467,81,667,108"/>
+</map>

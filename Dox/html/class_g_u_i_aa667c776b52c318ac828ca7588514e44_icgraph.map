@@ -1,0 +1,12 @@
+<map id="GUI.GetPanel" name="GUI.GetPanel">
+<area shape="rect" id="node2" href="$class_connect4_g_u_i.html#a502eb3ee3945f5eae37e75ef4fc3dd34" title="Connect4GUI.setPanelColour" alt="" coords="158,16,349,43"/>
+<area shape="rect" id="node4" href="$class_g_u_i.html#af5158a351fc9fb50d4336ab5b6a8d617" title="GUI.draw" alt="" coords="216,71,291,97"/>
+<area shape="rect" id="node6" href="$class_g_u_i.html#a782d74d94e538cfcb5908b8d62769f96" title="GUI.DrawPieces" alt="" coords="195,172,312,199"/>
+<area shape="rect" id="node7" href="$class_g_u_i_1_1_g_u_i_handler.html#a9b78022997bc4f274a2ea6f8ac98c0b2" title="GUI.GUIHandler.playerMove" alt="" coords="407,121,590,148"/>
+<area shape="rect" id="node10" href="$class_othello_g_u_i.html#a3720919bde2e89514187b014439ad4e3" title="OthelloGUI.setPanelColour" alt="" coords="165,227,342,253"/>
+<area shape="rect" id="node3" href="$class_connect4_g_u_i_test.html#af8a9005e2776bddd18e4991c4e926266" title="Connect4GUITest.testSetPanel\lColour" alt="" coords="397,5,600,46"/>
+<area shape="rect" id="node5" href="$class_g_u_i.html#a36dcbbb018c170b1a1818600f9e121a6" title="GUI.GUI" alt="" coords="463,71,534,97"/>
+<area shape="rect" id="node9" href="$class_g_u_i_1_1_g_u_i_handler.html#a3d2fde38e230d0c5245abc8af145915d" title="GUI.GUIHandler.AIMove" alt="" coords="419,172,579,199"/>
+<area shape="rect" id="node8" href="$class_g_u_i_1_1_g_u_i_handler.html#a885845aa87e184ebfde3640f119075be" title="GUI.GUIHandler.mouseClicked" alt="" coords="648,147,848,173"/>
+<area shape="rect" id="node11" href="$class_othello_g_u_i_test.html#a58064cfc45db94b060b41ab42080f42f" title="OthelloGUITest.testSetPanel\lColour" alt="" coords="404,223,593,265"/>
+</map>

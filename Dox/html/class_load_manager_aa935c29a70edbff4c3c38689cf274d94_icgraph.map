@@ -1,0 +1,9 @@
+<map id="LoadManager.brokenFileMsg" name="LoadManager.brokenFileMsg">
+<area shape="rect" id="node2" href="$class_load_manager.html#a45d860195009583135a752d65e07f1b5" title="LoadManager.load" alt="" coords="461,84,589,110"/>
+<area shape="rect" id="node5" href="$class_load_manager.html#a7a01915aece0c54dd1772772cd96c198" title="LoadManager.gameType" alt="" coords="246,33,410,60"/>
+<area shape="rect" id="node6" href="$class_load_manager.html#ad11d8dc87d9529c06e5c102c740f11b9" title="LoadManager.gameBoard" alt="" coords="243,84,413,110"/>
+<area shape="rect" id="node7" href="$class_load_manager.html#aa569c6ec99b5381d4caeb4009ae7b7ad" title="LoadManager.player" alt="" coords="259,134,397,161"/>
+<area shape="rect" id="node8" href="$class_load_manager.html#a82725027d9c57c68f433c981e016f375" title="LoadManager.current" alt="" coords="256,185,400,212"/>
+<area shape="rect" id="node3" href="$class_load_manager.html#a396720166fef8f661857f8a3c91897ad" title="LoadManager.LoadManager" alt="" coords="638,84,821,110"/>
+<area shape="rect" id="node4" href="$class_load_manager.html#a79225a839fe5a510355467394b79ccda" title="LoadManager.main" alt="" coords="870,84,1002,110"/>
+</map>

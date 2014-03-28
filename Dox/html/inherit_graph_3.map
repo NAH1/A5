@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_board_game.html" title="BoardGame is an abstract class. " alt="" coords="5,31,96,57"/>
+<area shape="rect" id="node2" href="$class_connect_four.html" title="ConnectFour is used to store the game rules and control the game board extends BoardGame.java. " alt="" coords="144,5,240,32"/>
+<area shape="rect" id="node3" href="$class_othello.html" title="Othello is used to store the game rules and control the game board . extends BoardGame.java. " alt="" coords="161,56,223,83"/>
+</map>

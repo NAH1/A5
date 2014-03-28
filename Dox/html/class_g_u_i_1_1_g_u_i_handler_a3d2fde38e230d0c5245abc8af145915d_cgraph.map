@@ -1,0 +1,9 @@
+<map id="GUI.GUIHandler.AIMove" name="GUI.GUIHandler.AIMove">
+<area shape="rect" id="node2" href="$class_g_u_i.html#aa44942974e65567c4b9b9327824becda" title="GUI.GetGame" alt="" coords="413,6,517,33"/>
+<area shape="rect" id="node3" href="$class_g_u_i.html#aefc2f3c72270de7346f5cc6b208a2e85" title="GUI.GetBoard" alt="" coords="414,133,517,159"/>
+<area shape="rect" id="node4" href="$class_player.html#a7036a5725e3f9a5bcc3478178ae12716" title="Player.getY" alt="" coords="244,82,335,109"/>
+<area shape="rect" id="node5" href="$class_g_u_i.html#a782d74d94e538cfcb5908b8d62769f96" title="GUI.DrawPieces" alt="" coords="231,183,348,210"/>
+<area shape="rect" id="node8" href="$class_g_u_i.html#a96b7840223903ddf93720c643430fcaf" title="GUI.ShowWinningBox" alt="" coords="214,31,365,58"/>
+<area shape="rect" id="node6" href="$class_g_u_i.html#a233d7722cd6003736022aabd4e748e2b" title="GUI.GetLabel" alt="" coords="415,183,515,210"/>
+<area shape="rect" id="node7" href="$class_g_u_i.html#aa667c776b52c318ac828ca7588514e44" title="GUI.GetPanel" alt="" coords="414,234,517,261"/>
+</map>

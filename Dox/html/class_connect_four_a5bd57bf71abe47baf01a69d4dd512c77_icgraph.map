@@ -1,0 +1,5 @@
+<map id="ConnectFour.allDirection" name="ConnectFour.allDirection">
+<area shape="rect" id="node2" href="$class_connect_four.html#a659a7ae6716d51d90cdfe34025cb59ed" title="ConnectFour.checkWin" alt="" coords="219,5,378,32"/>
+<area shape="rect" id="node3" href="$class_connect_four.html#a9b42d60252bace1445665ba6bcf7cf3d" title="ConnectFour.Move" alt="" coords="427,5,557,32"/>
+<area shape="rect" id="node4" href="$class_connect_four_test.html#a260c28e0585a859c2de5a652a7bf6d11" title="ConnectFourTest.testMove" alt="" coords="606,5,783,32"/>
+</map>

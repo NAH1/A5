@@ -1,0 +1,4 @@
+<map id="BoardGame.BoardGame" name="BoardGame.BoardGame">
+<area shape="rect" id="node2" href="$class_board_game.html#a47c10250e3567e08754346bbae06d5e4" title="BoardGame.SetWidth" alt="" coords="220,5,369,32"/>
+<area shape="rect" id="node3" href="$class_board_game.html#ab7391ecd27c1f60f927866981618653d" title="BoardGame.SetHeight" alt="" coords="219,56,371,83"/>
+</map>

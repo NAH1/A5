@@ -1,0 +1,4 @@
+<map id="Connect4AnimationPane" name="Connect4AnimationPane">
+<area shape="rect" id="node3" href="$class_connect4_animation.html" title="Class which handles the animations for connect four. " alt="" coords="131,187,265,213"/>
+<area shape="rect" id="node4" href="$class_animation.html" title="Abstract animation super class. " alt="" coords="5,96,85,123"/>
+</map>

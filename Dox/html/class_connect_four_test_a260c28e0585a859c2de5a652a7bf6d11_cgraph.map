@@ -1,0 +1,10 @@
+<map id="ConnectFourTest.testMove" name="ConnectFourTest.testMove">
+<area shape="rect" id="node2" href="$class_connect_four.html#a9b42d60252bace1445665ba6bcf7cf3d" title="ConnectFour.Move" alt="" coords="232,71,363,97"/>
+<area shape="rect" id="node3" href="$class_board_game.html#ad8349b0b154504650b364e5f401ef98a" title="BoardGame.GetHeight" alt="" coords="1137,45,1290,72"/>
+<area shape="rect" id="node4" href="$class_board_game.html#a16a95b8dd044ee8c92a12c7099609293" title="BoardGame.GetAnimationController" alt="" coords="411,45,640,72"/>
+<area shape="rect" id="node5" href="$class_connect_four.html#aafbc5f3b6d418e85c08bbd8bdd6237fa" title="ConnectFour.SetPiece" alt="" coords="694,197,847,224"/>
+<area shape="rect" id="node7" href="$class_connect_four.html#a659a7ae6716d51d90cdfe34025cb59ed" title="ConnectFour.checkWin" alt="" coords="446,96,605,123"/>
+<area shape="rect" id="node6" href="$class_board_game.html#aa89dc29cdb90bfc949de5363c23960d1" title="BoardGame.GetWidth" alt="" coords="1138,147,1289,173"/>
+<area shape="rect" id="node8" href="$class_connect_four.html#a5bd57bf71abe47baf01a69d4dd512c77" title="ConnectFour.allDirection" alt="" coords="689,96,853,123"/>
+<area shape="rect" id="node9" href="$class_connect_four.html#a6128c0afd78f7860a9817c5fdfb1fae8" title="ConnectFour.singleDirection" alt="" coords="902,96,1087,123"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="GameController.GameController" name="GameController.GameController">
+<area shape="rect" id="node2" href="$class_game_controller.html#a2dc568d811888705139669f871fc7004" title="GameController.setPlayer1" alt="" coords="261,5,440,32"/>
+<area shape="rect" id="node3" href="$class_game_controller.html#ad25bc1730ea387b816d32d82c21cbe6c" title="GameController.setPlayer2" alt="" coords="261,56,440,83"/>
+<area shape="rect" id="node4" href="$class_game_controller.html#a28bbddec050f4bbbdcfd64fdaa1aac75" title="GameController.setCurrent\lPlayer" alt="" coords="263,107,439,149"/>
+<area shape="rect" id="node5" href="$class_game_controller.html#ae9ceb1fca04b0dc10d1887d287e533a3" title="GameController.getPlayer1" alt="" coords="261,173,440,200"/>
+<area shape="rect" id="node6" href="$class_game_controller.html#a36a32fb74524ccc300ee62af9fb356bd" title="GameController.SetUp" alt="" coords="275,224,427,251"/>
+<area shape="rect" id="node7" href="$class_game_controller.html#a5a1df67821b2e0d48b6994836812a58d" title="GameController.GetGUI" alt="" coords="489,224,647,251"/>
+</map>

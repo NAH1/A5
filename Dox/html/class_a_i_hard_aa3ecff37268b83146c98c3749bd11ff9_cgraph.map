@@ -1,0 +1,4 @@
+<map id="AIHard.AIHard" name="AIHard.AIHard">
+<area shape="rect" id="node2" href="$class_player.html#a3aa7f5e119009a209b79f6abb35ca98f" title="Player.SetPlayerName" alt="" coords="157,5,312,32"/>
+<area shape="rect" id="node3" href="$class_player.html#a63c74243188d8ba77ed14a59b52d4561" title="Player.SetPieceColor" alt="" coords="161,56,308,83"/>
+</map>

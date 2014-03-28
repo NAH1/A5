@@ -1,0 +1,6 @@
+<map id="GUI.GetLabel" name="GUI.GetLabel">
+<area shape="rect" id="node2" href="$class_g_u_i.html#a782d74d94e538cfcb5908b8d62769f96" title="GUI.DrawPieces" alt="" coords="155,31,272,57"/>
+<area shape="rect" id="node3" href="$class_g_u_i_1_1_g_u_i_handler.html#a9b78022997bc4f274a2ea6f8ac98c0b2" title="GUI.GUIHandler.playerMove" alt="" coords="321,5,503,32"/>
+<area shape="rect" id="node5" href="$class_g_u_i_1_1_g_u_i_handler.html#a3d2fde38e230d0c5245abc8af145915d" title="GUI.GUIHandler.AIMove" alt="" coords="332,56,492,83"/>
+<area shape="rect" id="node4" href="$class_g_u_i_1_1_g_u_i_handler.html#a885845aa87e184ebfde3640f119075be" title="GUI.GUIHandler.mouseClicked" alt="" coords="552,31,752,57"/>
+</map>

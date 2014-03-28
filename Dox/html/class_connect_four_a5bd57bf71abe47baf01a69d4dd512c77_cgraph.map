@@ -1,0 +1,5 @@
+<map id="ConnectFour.allDirection" name="ConnectFour.allDirection">
+<area shape="rect" id="node2" href="$class_connect_four.html#a6128c0afd78f7860a9817c5fdfb1fae8" title="ConnectFour.singleDirection" alt="" coords="219,31,405,57"/>
+<area shape="rect" id="node3" href="$class_board_game.html#aa89dc29cdb90bfc949de5363c23960d1" title="BoardGame.GetWidth" alt="" coords="455,5,606,32"/>
+<area shape="rect" id="node4" href="$class_board_game.html#ad8349b0b154504650b364e5f401ef98a" title="BoardGame.GetHeight" alt="" coords="454,56,607,83"/>
+</map>

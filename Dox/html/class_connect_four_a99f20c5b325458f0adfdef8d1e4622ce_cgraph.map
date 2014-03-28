@@ -1,0 +1,10 @@
+<map id="ConnectFour.HighlightWinners" name="ConnectFour.HighlightWinners">
+<area shape="rect" id="node2" href="$class_board_game.html#ad8349b0b154504650b364e5f401ef98a" title="BoardGame.GetHeight" alt="" coords="506,32,659,59"/>
+<area shape="rect" id="node3" href="$class_board_game.html#aa89dc29cdb90bfc949de5363c23960d1" title="BoardGame.GetWidth" alt="" coords="507,172,658,199"/>
+<area shape="rect" id="node4" href="$class_connect_four.html#a91f1d285d7d1288c7d02bfa9b6f83e2f" title="ConnectFour.RightHighlight" alt="" coords="255,134,435,160"/>
+<area shape="rect" id="node7" href="$class_connect_four.html#aca4fbac59f0c648000088a6cc63fbb77" title="ConnectFour.DownHighlight" alt="" coords="254,32,437,59"/>
+<area shape="rect" id="node8" href="$class_connect_four.html#ad6e098455e6ceeb56a7c9b98da94d8b7" title="ConnectFour.DiagHighlight1" alt="" coords="254,83,437,110"/>
+<area shape="rect" id="node9" href="$class_connect_four.html#a0c324954fa06d592c498a965fd903589" title="ConnectFour.DiagHighlight2" alt="" coords="254,184,437,211"/>
+<area shape="rect" id="node5" href="$class_board_game.html#ab10429d209944a0ea7b19778f42006a4" title="BoardGame.GetNonNullPiece" alt="" coords="485,108,680,135"/>
+<area shape="rect" id="node6" href="$class_board_game.html#ab64fcdec912dbd838750fc304aeee2ff" title="BoardGame.GetPiece" alt="" coords="728,108,877,135"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Othello.WinningCondition" name="Othello.WinningCondition">
+<area shape="rect" id="node2" href="$class_othello.html#a0889bbeee3383e7aaa2bb030acb3f1a5" title="Othello.Move" alt="" coords="281,5,378,32"/>
+<area shape="rect" id="node4" href="$class_othello_test.html#ae3d17515c125cf2ce5a27a667b1a16c0" title="OthelloTest.testWinningCondition" alt="" coords="222,56,437,83"/>
+<area shape="rect" id="node3" href="$class_othello_test.html#aa1d7eaf75521a39071858e1763bba374" title="OthelloTest.testMove" alt="" coords="485,5,629,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="BoardGame" name="BoardGame">
+<area shape="rect" id="node2" href="$class_connect_four.html" title="ConnectFour is used to store the game rules and control the game board extends BoardGame.java. " alt="" coords="5,80,101,107"/>
+<area shape="rect" id="node3" href="$class_othello.html" title="Othello is used to store the game rules and control the game board . extends BoardGame.java. " alt="" coords="126,80,188,107"/>
+</map>

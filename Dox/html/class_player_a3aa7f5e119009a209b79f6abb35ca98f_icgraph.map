@@ -1,0 +1,5 @@
+<map id="Player.SetPlayerName" name="Player.SetPlayerName">
+<area shape="rect" id="node2" href="$class_a_i_easy.html#ac34db1a5ed13b4b43d85a62ca566152f" title="AIEasy.AIEasy" alt="" coords="245,5,355,32"/>
+<area shape="rect" id="node3" href="$class_a_i_hard.html#aa3ecff37268b83146c98c3749bd11ff9" title="AIHard.AIHard" alt="" coords="248,56,352,83"/>
+<area shape="rect" id="node4" href="$class_human_player.html#a2f5da34016c4d7729fa0187143efde7c" title="HumanPlayer.HumanPlayer" alt="" coords="209,107,391,133"/>
+</map>

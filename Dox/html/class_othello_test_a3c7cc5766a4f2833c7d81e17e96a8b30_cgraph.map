@@ -1,0 +1,7 @@
+<map id="OthelloTest.testSetPiece" name="OthelloTest.testSetPiece">
+<area shape="rect" id="node2" href="$class_othello.html#aa7a14f99a8d0abaec06b1c79c56204ed" title="Othello.SetPiece" alt="" coords="221,81,341,108"/>
+<area shape="rect" id="node3" href="$class_board_game.html#ab64fcdec912dbd838750fc304aeee2ff" title="BoardGame.GetPiece" alt="" coords="389,5,539,32"/>
+<area shape="rect" id="node4" href="$class_board_game.html#aa89dc29cdb90bfc949de5363c23960d1" title="BoardGame.GetWidth" alt="" coords="589,81,739,108"/>
+<area shape="rect" id="node5" href="$class_board_game.html#ad8349b0b154504650b364e5f401ef98a" title="BoardGame.GetHeight" alt="" coords="587,144,741,171"/>
+<area shape="rect" id="node6" href="$class_othello.html#a8b2a1567712e3a4b299a25242735c46d" title="Othello.countScore" alt="" coords="397,107,531,133"/>
+</map>

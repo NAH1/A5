@@ -1,0 +1,11 @@
+<map id="Player.GetPieceColour" name="Player.GetPieceColour">
+<area shape="rect" id="node2" href="$class_a_i_easy.html#a5505a85681180d51209f09bc1cdd5d24" title="AIEasy.takeMove" alt="" coords="237,5,360,32"/>
+<area shape="rect" id="node4" href="$class_a_i_hard.html#ad65d616f68583926c7c40ccc62866bcc" title="AIHard.takeMove" alt="" coords="239,56,359,83"/>
+<area shape="rect" id="node6" href="$class_human_player_test_j_unit.html#aec1a7b79bfec51f2f4f0d2b3ea6aba34" title="HumanPlayerTestJUnit.test\lGetPiece" alt="" coords="209,107,389,149"/>
+<area shape="rect" id="node7" href="$class_human_player_test_j_unit.html#a9e7e40f515c4513a43373454fe7139a6" title="HumanPlayerTestJUnit.test\lSetPieceColor" alt="" coords="209,173,389,214"/>
+<area shape="rect" id="node8" href="$class_load_manager.html#a45d860195009583135a752d65e07f1b5" title="LoadManager.load" alt="" coords="235,239,363,265"/>
+<area shape="rect" id="node3" href="$class_a_i_easy_test.html#a0dd67eb3e665be806955c6be9ea2065b" title="AIEasyTest.test" alt="" coords="472,5,587,32"/>
+<area shape="rect" id="node5" href="$class_a_i_hard_test.html#aac4bfa48689f3f0df2c610ebbcd20cf8" title="AIHardTest.test" alt="" coords="473,56,585,83"/>
+<area shape="rect" id="node9" href="$class_load_manager.html#a396720166fef8f661857f8a3c91897ad" title="LoadManager.LoadManager" alt="" coords="438,239,621,265"/>
+<area shape="rect" id="node10" href="$class_load_manager.html#a79225a839fe5a510355467394b79ccda" title="LoadManager.main" alt="" coords="670,239,802,265"/>
+</map>

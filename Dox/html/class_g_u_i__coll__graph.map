@@ -1,0 +1,8 @@
+<map id="GUI" name="GUI">
+<area shape="rect" id="node5" href="$class_clock.html" title="Makes the timer. " alt="" coords="161,544,215,571"/>
+<area shape="rect" id="node10" href="$class_game_controller.html" title="GameController is used to control the game flow. " alt="" coords="771,544,883,571"/>
+<area shape="rect" id="node6" href="$class_clock_1_1_update_u_i_task.html" title="Clock.UpdateUITask" alt="" coords="55,424,195,451"/>
+<area shape="rect" id="node14" href="$class_animation.html" title="Abstract animation super class. " alt="" coords="949,96,1029,123"/>
+<area shape="rect" id="node11" href="$class_board_game.html" title="BoardGame is an abstract class. " alt="" coords="780,187,871,213"/>
+<area shape="rect" id="node15" href="$class_player.html" title="Parent class of methods for HumanPlayer.java. " alt="" coords="905,424,964,451"/>
+</map>

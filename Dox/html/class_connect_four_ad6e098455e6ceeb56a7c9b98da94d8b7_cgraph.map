@@ -1,0 +1,6 @@
+<map id="ConnectFour.DiagHighlight1" name="ConnectFour.DiagHighlight1">
+<area shape="rect" id="node2" href="$class_board_game.html#aa89dc29cdb90bfc949de5363c23960d1" title="BoardGame.GetWidth" alt="" coords="259,5,410,32"/>
+<area shape="rect" id="node3" href="$class_board_game.html#ad8349b0b154504650b364e5f401ef98a" title="BoardGame.GetHeight" alt="" coords="258,56,411,83"/>
+<area shape="rect" id="node4" href="$class_board_game.html#ab10429d209944a0ea7b19778f42006a4" title="BoardGame.GetNonNullPiece" alt="" coords="237,107,432,133"/>
+<area shape="rect" id="node5" href="$class_board_game.html#ab64fcdec912dbd838750fc304aeee2ff" title="BoardGame.GetPiece" alt="" coords="480,107,629,133"/>
+</map>

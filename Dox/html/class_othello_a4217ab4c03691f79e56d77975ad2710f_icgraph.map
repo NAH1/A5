@@ -1,0 +1,7 @@
+<map id="Othello.validMove" name="Othello.validMove">
+<area shape="rect" id="node2" href="$class_othello.html#a38e82335250c905be3c984d012acc1ab" title="Othello.AvailableMove" alt="" coords="209,5,357,32"/>
+<area shape="rect" id="node4" href="$class_othello.html#a0889bbeee3383e7aaa2bb030acb3f1a5" title="Othello.Move" alt="" coords="234,56,331,83"/>
+<area shape="rect" id="node6" href="$class_othello.html#a8c7afd49dc0c4b736cd312c9c45fe094" title="Othello.AnyValidMoveForAnyone" alt="" coords="177,107,389,133"/>
+<area shape="rect" id="node3" href="$class_othello_test.html#aaaa7a3ee2448b4e5b917eea25c0089f9" title="OthelloTest.testAvailableMove" alt="" coords="437,5,632,32"/>
+<area shape="rect" id="node5" href="$class_othello_test.html#aa1d7eaf75521a39071858e1763bba374" title="OthelloTest.testMove" alt="" coords="463,56,607,83"/>
+</map>

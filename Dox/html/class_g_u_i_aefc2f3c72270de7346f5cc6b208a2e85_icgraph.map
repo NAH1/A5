@@ -1,0 +1,16 @@
+<map id="GUI.GetBoard" name="GUI.GetBoard">
+<area shape="rect" id="node2" href="$class_connect4_g_u_i.html#a502eb3ee3945f5eae37e75ef4fc3dd34" title="Connect4GUI.setPanelColour" alt="" coords="158,12,349,39"/>
+<area shape="rect" id="node4" href="$class_g_u_i.html#a36dcbbb018c170b1a1818600f9e121a6" title="GUI.GUI" alt="" coords="218,63,289,89"/>
+<area shape="rect" id="node5" href="$class_g_u_i.html#a782d74d94e538cfcb5908b8d62769f96" title="GUI.DrawPieces" alt="" coords="195,164,312,191"/>
+<area shape="rect" id="node9" href="$class_g_u_i_1_1_g_u_i_handler.html#a037cb44b3cdfb6b4baea8e518ae03ce3" title="GUI.GUIHandler.actionPerformed" alt="" coords="401,265,613,292"/>
+<area shape="rect" id="node6" href="$class_g_u_i_1_1_g_u_i_handler.html#a9b78022997bc4f274a2ea6f8ac98c0b2" title="GUI.GUIHandler.playerMove" alt="" coords="415,215,598,241"/>
+<area shape="rect" id="node8" href="$class_g_u_i_1_1_g_u_i_handler.html#a3d2fde38e230d0c5245abc8af145915d" title="GUI.GUIHandler.AIMove" alt="" coords="427,164,587,191"/>
+<area shape="rect" id="node10" href="$class_g_u_i.html#a96b7840223903ddf93720c643430fcaf" title="GUI.ShowWinningBox" alt="" coords="178,215,329,241"/>
+<area shape="rect" id="node11" href="$class_othello_g_u_i.html#a9034dcfa30401f9dac51dd901fefa461" title="OthelloGUI.setInfo" alt="" coords="190,367,317,393"/>
+<area shape="rect" id="node14" href="$class_othello_g_u_i.html#a3720919bde2e89514187b014439ad4e3" title="OthelloGUI.setPanelColour" alt="" coords="165,421,342,448"/>
+<area shape="rect" id="node3" href="$class_connect4_g_u_i_test.html#af8a9005e2776bddd18e4991c4e926266" title="Connect4GUITest.testSetPanel\lColour" alt="" coords="405,5,608,46"/>
+<area shape="rect" id="node7" href="$class_g_u_i_1_1_g_u_i_handler.html#a885845aa87e184ebfde3640f119075be" title="GUI.GUIHandler.mouseClicked" alt="" coords="664,189,864,216"/>
+<area shape="rect" id="node12" href="$class_othello_g_u_i.html#a17e905ba68b6fc159b13a75c43927cc1" title="OthelloGUI.OthelloGUI" alt="" coords="431,367,583,393"/>
+<area shape="rect" id="node13" href="$class_othello_g_u_i_test.html#a4d6e651e29fb9e0d4c3e2472cba70033" title="OthelloGUITest.testSetOthelloInfo" alt="" coords="398,316,615,343"/>
+<area shape="rect" id="node15" href="$class_othello_g_u_i_test.html#a58064cfc45db94b060b41ab42080f42f" title="OthelloGUITest.testSetPanel\lColour" alt="" coords="412,418,601,459"/>
+</map>

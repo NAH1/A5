@@ -1,0 +1,28 @@
+var class_game_controller =
+[
+    [ "GameType", "enum_game_controller_1_1_game_type.html", "enum_game_controller_1_1_game_type" ],
+    [ "GameController", "class_game_controller.html#ad7cf04691277b54c56daa2a014a1dc76", null ],
+    [ "GameController", "class_game_controller.html#a8f9a0fc6e8d67abb935c24808643fc94", null ],
+    [ "Alternate", "class_game_controller.html#a30c867a298db9d694fd0c85dc0842104", null ],
+    [ "CheckWin", "class_game_controller.html#a62de02676786ebc57df57b8ab36d2d64", null ],
+    [ "GetBoard", "class_game_controller.html#a1e845ee70791d7a4e0605a9363af0847", null ],
+    [ "GetCurrent", "class_game_controller.html#ae84211ad1d2c1664d7542b231eab6957", null ],
+    [ "GetGamOn", "class_game_controller.html#a140c8c2f5b1ad2b510ad36f6b49c1102", null ],
+    [ "GetGUI", "class_game_controller.html#a5a1df67821b2e0d48b6994836812a58d", null ],
+    [ "getPlayer1", "class_game_controller.html#ae9ceb1fca04b0dc10d1887d287e533a3", null ],
+    [ "getPlayer2", "class_game_controller.html#a002508a52b5e574b15f2277c7dfb7ea3", null ],
+    [ "GetPlayerName", "class_game_controller.html#a8d4da8408cafde0b9a8c4b4f38f304f0", null ],
+    [ "setCurrentPlayer", "class_game_controller.html#a28bbddec050f4bbbdcfd64fdaa1aac75", null ],
+    [ "SetGameOn", "class_game_controller.html#ad0cc61bae4a78abbeb026734b4bde954", null ],
+    [ "setPlayer1", "class_game_controller.html#a2dc568d811888705139669f871fc7004", null ],
+    [ "setPlayer2", "class_game_controller.html#ad25bc1730ea387b816d32d82c21cbe6c", null ],
+    [ "SetUp", "class_game_controller.html#a36a32fb74524ccc300ee62af9fb356bd", null ],
+    [ "m_AnimationController", "class_game_controller.html#a0d47b32d4dba527c0f4d42b6ded44931", null ],
+    [ "m_board", "class_game_controller.html#aca6a5df9b4d0e6c46b3f2fde768d91a3", null ],
+    [ "m_currentPlayer", "class_game_controller.html#af9fae6403db3a3257a5f8a605b405018", null ],
+    [ "m_gameOn", "class_game_controller.html#ae4fcc83a94c131413b38da34b308761f", null ],
+    [ "m_GUI", "class_game_controller.html#a4473ee7e934d0744a4d0edb4323a4830", null ],
+    [ "m_p1", "class_game_controller.html#afda4a4fa79e46a8a5298f7b411c9ad7b", null ],
+    [ "m_p2", "class_game_controller.html#acdaee96ed44e02835440ea1a3e326600", null ],
+    [ "m_test", "class_game_controller.html#a6073665fb13edf426a3395f8f32362af", null ]
+];

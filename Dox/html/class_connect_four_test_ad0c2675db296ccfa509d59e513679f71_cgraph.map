@@ -1,0 +1,6 @@
+<map id="ConnectFourTest.testWinningCondition" name="ConnectFourTest.testWinningCondition">
+<area shape="rect" id="node2" href="$class_connect_four.html#a0a2249cb99e3582d3d4224b91d6122f9" title="ConnectFour.WinningCondition" alt="" coords="249,31,450,57"/>
+<area shape="rect" id="node3" href="$class_connect_four.html#a4726d2fde17ad5905b81b342b2cd1508" title="ConnectFour.SetWinner" alt="" coords="499,5,661,32"/>
+<area shape="rect" id="node5" href="$class_board_game.html#aa89dc29cdb90bfc949de5363c23960d1" title="BoardGame.GetWidth" alt="" coords="505,56,655,83"/>
+<area shape="rect" id="node4" href="$class_board_game.html#aee1a4a42b2a7bfa8ce2af62e75803417" title="BoardGame.SetWinningColour" alt="" coords="710,5,909,32"/>
+</map>

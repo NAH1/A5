@@ -1,0 +1,5 @@
+<map id="GUI.DrawPieces" name="GUI.DrawPieces">
+<area shape="rect" id="node2" href="$class_g_u_i.html#aefc2f3c72270de7346f5cc6b208a2e85" title="GUI.GetBoard" alt="" coords="171,5,274,32"/>
+<area shape="rect" id="node3" href="$class_g_u_i.html#a233d7722cd6003736022aabd4e748e2b" title="GUI.GetLabel" alt="" coords="173,56,273,83"/>
+<area shape="rect" id="node4" href="$class_g_u_i.html#aa667c776b52c318ac828ca7588514e44" title="GUI.GetPanel" alt="" coords="171,107,274,133"/>
+</map>

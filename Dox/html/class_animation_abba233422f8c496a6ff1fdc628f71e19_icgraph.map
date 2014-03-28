@@ -1,0 +1,6 @@
+<map id="Animation.getTimer" name="Animation.getTimer">
+<area shape="rect" id="node2" href="$class_connect4_animation.html#ab10759556703b14945774701b4ef862b" title="Connect4Animation.cycle" alt="" coords="203,5,373,32"/>
+<area shape="rect" id="node3" href="$class_connect4_animation.html#a98f65628ce68fbb87934eefaa392721b" title="Connect4Animation.animate" alt="" coords="195,56,381,83"/>
+<area shape="rect" id="node4" href="$class_connect4_animation_pane.html#ab73058c9b8eb85944d7982c7444662af" title="Connect4AnimationPane.paint\lComponent" alt="" coords="189,107,387,149"/>
+<area shape="rect" id="node5" href="$class_othello_animation.html#a990dff5b43027a7c36ff3d78f02494a8" title="OthelloAnimation.Othello\lAnimation" alt="" coords="205,173,371,214"/>
+</map>

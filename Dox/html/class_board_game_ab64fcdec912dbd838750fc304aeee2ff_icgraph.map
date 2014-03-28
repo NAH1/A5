@@ -1,0 +1,20 @@
+<map id="BoardGame.GetPiece" name="BoardGame.GetPiece">
+<area shape="rect" id="node2" href="$class_board_game.html#ab10429d209944a0ea7b19778f42006a4" title="BoardGame.GetNonNullPiece" alt="" coords="207,107,401,133"/>
+<area shape="rect" id="node8" href="$class_connect_four.html#af8df432503dfe3faf7d364cc9c60b8f5" title="ConnectFour.lineQuality" alt="" coords="223,169,385,196"/>
+<area shape="rect" id="node10" href="$class_connect_four_test.html#a0c08fffe6f26ba076d63b63588d36a3c" title="ConnectFourTest.testGetPiece" alt="" coords="203,220,405,247"/>
+<area shape="rect" id="node11" href="$class_othello.html#abb073f6b9f2519a9c77dd9e56607e580" title="Othello.HighlightWinners" alt="" coords="221,271,387,297"/>
+<area shape="rect" id="node12" href="$class_othello.html#aa7a14f99a8d0abaec06b1c79c56204ed" title="Othello.SetPiece" alt="" coords="244,321,364,348"/>
+<area shape="rect" id="node18" href="$class_othello.html#a6c9a2726fbce454b4ab4ee44611b36ea" title="Othello.lineQuality" alt="" coords="240,397,368,424"/>
+<area shape="rect" id="node3" href="$class_connect_four.html#a91f1d285d7d1288c7d02bfa9b6f83e2f" title="ConnectFour.RightHighlight" alt="" coords="455,5,635,32"/>
+<area shape="rect" id="node5" href="$class_connect_four.html#aca4fbac59f0c648000088a6cc63fbb77" title="ConnectFour.DownHighlight" alt="" coords="454,56,637,83"/>
+<area shape="rect" id="node6" href="$class_connect_four.html#ad6e098455e6ceeb56a7c9b98da94d8b7" title="ConnectFour.DiagHighlight1" alt="" coords="454,107,637,133"/>
+<area shape="rect" id="node7" href="$class_connect_four.html#a0c324954fa06d592c498a965fd903589" title="ConnectFour.DiagHighlight2" alt="" coords="454,157,637,184"/>
+<area shape="rect" id="node4" href="$class_connect_four.html#a99f20c5b325458f0adfdef8d1e4622ce" title="ConnectFour.HighlightWinners" alt="" coords="686,81,885,108"/>
+<area shape="rect" id="node9" href="$class_connect_four.html#adec6081ce7bb623d784b57bc6369bcb8" title="ConnectFour.MoveQuality" alt="" coords="460,208,631,235"/>
+<area shape="rect" id="node13" href="$class_othello.html#a0df095e3d41be9706af880de9b33477f" title="Othello.initialGame" alt="" coords="479,264,611,291"/>
+<area shape="rect" id="node15" href="$class_othello.html#a0889bbeee3383e7aaa2bb030acb3f1a5" title="Othello.Move" alt="" coords="497,315,594,341"/>
+<area shape="rect" id="node17" href="$class_othello_test.html#a3c7cc5766a4f2833c7d81e17e96a8b30" title="OthelloTest.testSetPiece" alt="" coords="462,365,629,392"/>
+<area shape="rect" id="node14" href="$class_othello.html#aea807276be1806d5dcc82789ab47103f" title="Othello.Othello" alt="" coords="731,264,839,291"/>
+<area shape="rect" id="node16" href="$class_othello_test.html#aa1d7eaf75521a39071858e1763bba374" title="OthelloTest.testMove" alt="" coords="713,315,857,341"/>
+<area shape="rect" id="node19" href="$class_othello.html#a2be95fc71ae57fd4053072a82cc8e394" title="Othello.MoveQuality" alt="" coords="476,416,615,443"/>
+</map>

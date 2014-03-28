@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_player.html" title="Parent class of methods for HumanPlayer.java. " alt="" coords="5,56,64,83"/>
+<area shape="rect" id="node2" href="$class_a_i_easy.html" title="Sets how the computer will make moves in both games. Computer selects any random legal move then plac..." alt="" coords="131,5,195,32"/>
+<area shape="rect" id="node3" href="$class_a_i_hard.html" title="This class pick a move by using logic. " alt="" coords="132,56,193,83"/>
+<area shape="rect" id="node4" href="$class_human_player.html" title="HumanPlayer, used to store data about the player, extends Player.java. " alt="" coords="113,107,213,133"/>
+</map>

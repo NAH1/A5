@@ -1,0 +1,5 @@
+<map id="Player" name="Player">
+<area shape="rect" id="node2" href="$class_a_i_easy.html" title="Sets how the computer will make moves in both games. Computer selects any random legal move then plac..." alt="" coords="5,80,69,107"/>
+<area shape="rect" id="node3" href="$class_a_i_hard.html" title="This class pick a move by using logic. " alt="" coords="93,80,155,107"/>
+<area shape="rect" id="node4" href="$class_human_player.html" title="HumanPlayer, used to store data about the player, extends Player.java. " alt="" coords="179,80,279,107"/>
+</map>

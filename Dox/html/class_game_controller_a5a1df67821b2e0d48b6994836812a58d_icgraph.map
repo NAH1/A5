@@ -1,0 +1,10 @@
+<map id="GameController.GetGUI" name="GameController.GetGUI">
+<area shape="rect" id="node2" href="$class_game_controller.html#a30c867a298db9d694fd0c85dc0842104" title="GameController.Alternate" alt="" coords="216,5,384,32"/>
+<area shape="rect" id="node3" href="$class_game_controller.html#a36a32fb74524ccc300ee62af9fb356bd" title="GameController.SetUp" alt="" coords="224,56,376,83"/>
+<area shape="rect" id="node6" href="$class_load_manager.html#a45d860195009583135a752d65e07f1b5" title="LoadManager.load" alt="" coords="236,107,364,133"/>
+<area shape="rect" id="node9" href="$class_othello_animation_test.html#a286ca482dede292e7a18a4ca58763d87" title="OthelloAnimationTest.test" alt="" coords="214,157,386,184"/>
+<area shape="rect" id="node4" href="$class_game_controller.html#ad7cf04691277b54c56daa2a014a1dc76" title="GameController.GameController" alt="" coords="435,56,642,83"/>
+<area shape="rect" id="node5" href="$class_game_controller.html#aa1e778994dd715bdf988d4c672616067" title="GameController.main" alt="" coords="691,56,835,83"/>
+<area shape="rect" id="node7" href="$class_load_manager.html#a396720166fef8f661857f8a3c91897ad" title="LoadManager.LoadManager" alt="" coords="447,107,630,133"/>
+<area shape="rect" id="node8" href="$class_load_manager.html#a79225a839fe5a510355467394b79ccda" title="LoadManager.main" alt="" coords="697,107,829,133"/>
+</map>

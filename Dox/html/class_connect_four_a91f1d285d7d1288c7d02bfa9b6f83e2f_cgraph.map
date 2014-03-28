@@ -1,0 +1,5 @@
+<map id="ConnectFour.RightHighlight" name="ConnectFour.RightHighlight">
+<area shape="rect" id="node2" href="$class_board_game.html#aa89dc29cdb90bfc949de5363c23960d1" title="BoardGame.GetWidth" alt="" coords="257,5,407,32"/>
+<area shape="rect" id="node3" href="$class_board_game.html#ab10429d209944a0ea7b19778f42006a4" title="BoardGame.GetNonNullPiece" alt="" coords="235,56,429,83"/>
+<area shape="rect" id="node4" href="$class_board_game.html#ab64fcdec912dbd838750fc304aeee2ff" title="BoardGame.GetPiece" alt="" coords="477,56,627,83"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Connect4GUI.setPanelColour" name="Connect4GUI.setPanelColour">
+<area shape="rect" id="node2" href="$class_g_u_i.html#aefc2f3c72270de7346f5cc6b208a2e85" title="GUI.GetBoard" alt="" coords="246,5,349,32"/>
+<area shape="rect" id="node3" href="$class_g_u_i.html#aa667c776b52c318ac828ca7588514e44" title="GUI.GetPanel" alt="" coords="246,56,349,83"/>
+</map>

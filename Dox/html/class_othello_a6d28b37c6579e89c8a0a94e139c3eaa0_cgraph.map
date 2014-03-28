@@ -1,0 +1,4 @@
+<map id="Othello.CheckPassTurn" name="Othello.CheckPassTurn">
+<area shape="rect" id="node2" href="$class_board_game.html#ad8349b0b154504650b364e5f401ef98a" title="BoardGame.GetHeight" alt="" coords="214,5,367,32"/>
+<area shape="rect" id="node3" href="$class_board_game.html#aa89dc29cdb90bfc949de5363c23960d1" title="BoardGame.GetWidth" alt="" coords="215,56,366,83"/>
+</map>

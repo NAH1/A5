@@ -1,0 +1,4 @@
+<map id="ConnectFourTest.testSetWinner" name="ConnectFourTest.testSetWinner">
+<area shape="rect" id="node2" href="$class_connect_four.html#a4726d2fde17ad5905b81b342b2cd1508" title="ConnectFour.SetWinner" alt="" coords="262,5,423,32"/>
+<area shape="rect" id="node3" href="$class_board_game.html#aee1a4a42b2a7bfa8ce2af62e75803417" title="BoardGame.SetWinningColour" alt="" coords="473,5,671,32"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="LoadManager.LoadManager" name="LoadManager.LoadManager">
+<area shape="rect" id="node2" href="$class_load_manager.html#a45d860195009583135a752d65e07f1b5" title="LoadManager.load" alt="" coords="237,208,365,235"/>
+<area shape="rect" id="node3" href="$class_load_manager.html#a7a01915aece0c54dd1772772cd96c198" title="LoadManager.gameType" alt="" coords="417,5,581,32"/>
+<area shape="rect" id="node5" href="$class_load_manager.html#ad11d8dc87d9529c06e5c102c740f11b9" title="LoadManager.gameBoard" alt="" coords="413,56,584,83"/>
+<area shape="rect" id="node6" href="$class_load_manager.html#aa569c6ec99b5381d4caeb4009ae7b7ad" title="LoadManager.player" alt="" coords="429,107,568,133"/>
+<area shape="rect" id="node7" href="$class_load_manager.html#a82725027d9c57c68f433c981e016f375" title="LoadManager.current" alt="" coords="427,157,571,184"/>
+<area shape="rect" id="node8" href="$class_load_manager.html#a0bb601f5e1a9f9f11eeaa5da504180f0" title="LoadManager.timer" alt="" coords="432,208,565,235"/>
+<area shape="rect" id="node9" href="$class_player.html#a5ff045ffcf20f8d23b0becffdf1997e2" title="Player.isAI" alt="" coords="456,259,541,285"/>
+<area shape="rect" id="node10" href="$class_player.html#afee2fc3eea28eefce2e6b3887abc8995" title="Player.GetPieceColour" alt="" coords="421,309,576,336"/>
+<area shape="rect" id="node4" href="$class_load_manager.html#aa935c29a70edbff4c3c38689cf274d94" title="LoadManager.brokenFileMsg" alt="" coords="632,107,821,133"/>
+<area shape="rect" id="node11" href="$class_game_controller.html#a5a1df67821b2e0d48b6994836812a58d" title="GameController.GetGUI" alt="" coords="419,411,578,437"/>
+</map>

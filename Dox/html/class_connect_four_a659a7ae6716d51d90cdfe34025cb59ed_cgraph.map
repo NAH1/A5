@@ -1,0 +1,6 @@
+<map id="ConnectFour.checkWin" name="ConnectFour.checkWin">
+<area shape="rect" id="node2" href="$class_board_game.html#aa89dc29cdb90bfc949de5363c23960d1" title="BoardGame.GetWidth" alt="" coords="663,5,814,32"/>
+<area shape="rect" id="node3" href="$class_board_game.html#ad8349b0b154504650b364e5f401ef98a" title="BoardGame.GetHeight" alt="" coords="662,56,815,83"/>
+<area shape="rect" id="node4" href="$class_connect_four.html#a5bd57bf71abe47baf01a69d4dd512c77" title="ConnectFour.allDirection" alt="" coords="214,31,378,57"/>
+<area shape="rect" id="node5" href="$class_connect_four.html#a6128c0afd78f7860a9817c5fdfb1fae8" title="ConnectFour.singleDirection" alt="" coords="427,31,613,57"/>
+</map>

@@ -1,0 +1,26 @@
+var class_connect4_animation =
+[
+    [ "Connect4Animation", "class_connect4_animation.html#adbbe7ecbf46a8d184f0f9418f5b88ae8", null ],
+    [ "animate", "class_connect4_animation.html#a98f65628ce68fbb87934eefaa392721b", null ],
+    [ "cycle", "class_connect4_animation.html#ab10759556703b14945774701b4ef862b", null ],
+    [ "getLowestYCoord", "class_connect4_animation.html#adc06f2f12eca8f226e7e1c74d16ab2ef", null ],
+    [ "getPlayerColour", "class_connect4_animation.html#aeb5684dfcf1d813c3d12012b63a11a84", null ],
+    [ "getXCoord", "class_connect4_animation.html#aed9d4220bd08330f56d208aab88449d6", null ],
+    [ "getYCoord", "class_connect4_animation.html#a7ce92c264b21f664917ac67d9275f1a9", null ],
+    [ "setAnimationPane", "class_connect4_animation.html#a86068167cf311a337fe778d9ba2984d0", null ],
+    [ "setLowestYCoord", "class_connect4_animation.html#ab518dc95d545c78e3fb059417cd10ad2", null ],
+    [ "setXCoord", "class_connect4_animation.html#ae200acd1d34c53d5894fd4d5ab40c539", null ],
+    [ "setYCoord", "class_connect4_animation.html#a6482121e302da9bf6d65e74bd59e3401", null ],
+    [ "HEIGHT", "class_connect4_animation.html#ad131f3c99bf93bf99f6df111f6b8d324", null ],
+    [ "INITIAL_X", "class_connect4_animation.html#aeea3142414066d6cfa400339d396c916", null ],
+    [ "INITIAL_Y", "class_connect4_animation.html#a59336831e91bc854260a935a21fe7e32", null ],
+    [ "m_GlassPane", "class_connect4_animation.html#a2123a177806562dd330f56af0c0d6276", null ],
+    [ "m_lowestYCoord", "class_connect4_animation.html#a5163abf42251dca4834da5def4a62e21", null ],
+    [ "m_playerColour", "class_connect4_animation.html#aed6ec8cf11efd7fdff6792f70266f8ec", null ],
+    [ "m_trace", "class_connect4_animation.html#a738805e3a92d977ed920e4e55761afd4", null ],
+    [ "m_xCoord", "class_connect4_animation.html#a9e65b10c5290e3ec143758d4d949a347", null ],
+    [ "m_yCoord", "class_connect4_animation.html#a356d20870fe634c750abe2ce9b6d6a36", null ],
+    [ "WIDTH", "class_connect4_animation.html#ac9604874e39ebf102491c7a13d1bf305", null ],
+    [ "xMultiple", "class_connect4_animation.html#a4f781c34b1a7c6779a7f85dfb87e90c6", null ],
+    [ "yMultiple", "class_connect4_animation.html#a2167369a714201321e735412ce6567f7", null ]
+];

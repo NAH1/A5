@@ -1,0 +1,5 @@
+<map id="SaveManager.SaveManager" name="SaveManager.SaveManager">
+<area shape="rect" id="node2" href="$class_game_controller.html#a1e845ee70791d7a4e0605a9363af0847" title="GameController.GetBoard" alt="" coords="241,5,412,32"/>
+<area shape="rect" id="node3" href="$class_game_controller.html#ae9ceb1fca04b0dc10d1887d287e533a3" title="GameController.getPlayer1" alt="" coords="237,56,416,83"/>
+<area shape="rect" id="node4" href="$class_game_controller.html#a002508a52b5e574b15f2277c7dfb7ea3" title="GameController.getPlayer2" alt="" coords="237,107,416,133"/>
+</map>

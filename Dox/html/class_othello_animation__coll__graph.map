@@ -1,0 +1,4 @@
+<map id="OthelloAnimation" name="OthelloAnimation">
+<area shape="rect" id="node2" href="$class_animation.html" title="Abstract animation super class. " alt="" coords="5,112,85,139"/>
+<area shape="rect" id="node5" href="$class_othello_animation_pane.html" title="This class manages a &quot;glass pane&quot; to draw animations on to. " alt="" coords="250,112,400,139"/>
+</map>

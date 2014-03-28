@@ -1,0 +1,4 @@
+<map id="GUI" name="GUI">
+<area shape="rect" id="node3" href="$class_connect4_g_u_i.html" title="Connect4GUI is used to set up the background of the game board.Extends GUI. " alt="" coords="5,155,104,181"/>
+<area shape="rect" id="node4" href="$class_othello_g_u_i.html" title="OthelloGUI is used to set up and update the background of the Othello game board. ..." alt="" coords="128,155,213,181"/>
+</map>

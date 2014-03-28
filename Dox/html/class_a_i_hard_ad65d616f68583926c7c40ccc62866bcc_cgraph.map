@@ -1,0 +1,4 @@
+<map id="AIHard.takeMove" name="AIHard.takeMove">
+<area shape="rect" id="node2" href="$class_player.html#a2b54cbfade05220b621f4bff642e214f" title="Player.GetBoard" alt="" coords="191,5,310,32"/>
+<area shape="rect" id="node3" href="$class_player.html#afee2fc3eea28eefce2e6b3887abc8995" title="Player.GetPieceColour" alt="" coords="173,56,328,83"/>
+</map>

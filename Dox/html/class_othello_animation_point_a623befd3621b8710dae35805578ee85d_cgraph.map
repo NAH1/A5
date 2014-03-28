@@ -1,0 +1,5 @@
+<map id="OthelloAnimationPoint.draw" name="OthelloAnimationPoint.draw">
+<area shape="rect" id="node2" href="$class_othello_animation_point.html#a0d25981d2a92507d9c9ae672c8db3618" title="OthelloAnimationPoint.color" alt="" coords="239,5,422,32"/>
+<area shape="rect" id="node4" href="$class_othello_animation_point.html#aca8d57cd4382d1f96faf03263f3254fb" title="OthelloAnimationPoint.width" alt="" coords="238,56,423,83"/>
+<area shape="rect" id="node3" href="$class_othello_animation_point.html#a3e94c6ded1700b3a7602b3ee011ce564" title="OthelloAnimationPoint.frame" alt="" coords="472,31,659,57"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="ConnectFour.SetPiece" name="ConnectFour.SetPiece">
+<area shape="rect" id="node2" href="$class_connect_four.html#a9b42d60252bace1445665ba6bcf7cf3d" title="ConnectFour.Move" alt="" coords="243,5,373,32"/>
+<area shape="rect" id="node4" href="$class_connect_four_test.html#a15a67c5e7beb70a0b02f572fc59e8d05" title="ConnectFourTest.testSetPiece" alt="" coords="208,56,408,83"/>
+<area shape="rect" id="node3" href="$class_connect_four_test.html#a260c28e0585a859c2de5a652a7bf6d11" title="ConnectFourTest.testMove" alt="" coords="457,5,634,32"/>
+</map>

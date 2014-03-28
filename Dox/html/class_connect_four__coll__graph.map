@@ -1,0 +1,4 @@
+<map id="ConnectFour" name="ConnectFour">
+<area shape="rect" id="node2" href="$class_board_game.html" title="BoardGame is an abstract class. " alt="" coords="140,187,231,213"/>
+<area shape="rect" id="node5" href="$class_animation.html" title="Abstract animation super class. " alt="" coords="256,96,336,123"/>
+</map>

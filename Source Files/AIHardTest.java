@@ -5,11 +5,11 @@ import java.awt.Color;
 import org.junit.Test;
 
 /**
- * \\file - AIHardTest.java
- * \author - Jiaming Dong - 742299
- * \date - 27/03/14
+ * \\file AIHardTest.java
+ * \author Jiaming Dong - 742299
+ * \date 27/03/14
  * 
- * \brief - A class that tests the AIHard class by placing a 
+ * \brief A class that tests the AIHard class by placing a 
  * piece into a position that is a valid move
  */
 

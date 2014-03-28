@@ -167,7 +167,7 @@ public class Selection implements ActionListener {
 	}
 	/**
 	 * Constructor of Selection, receives the type of game, ready for later.
-	 * \param chosenGame a String for the chosen game.
+	 * \param chosenGame An enumerator indicating which game type was chosen.
 	 */
 	public Selection(GameController.GameType chosenGame) {
 		boolean test = false;

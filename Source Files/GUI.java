@@ -38,7 +38,7 @@ public abstract class GUI extends JFrame {
 
 	 /**
      * Get the game controller object.
-     * \return GameController  return the game controller object.
+     * \return Returns the game controller object.
      */
 	public GameController GetGame() {
 		return m_game;
@@ -46,61 +46,127 @@ public abstract class GUI extends JFrame {
 
 	 /**
      * Get the board game object.
-     * \return BoardGame  return the board game object which is either 
+     * \return Returns the board game object which is either 
      * connect4 or othello.
      */
 	public BoardGame GetBoard() {
 		return m_board;
 	}
 
+	/**
+	 * Retrieves the JFrame which contains the game.
+	 * \return The JFrame containing the GUI inteface.
+	 */
 	public JFrame GetFrame() {
 		return FRAME;
 	}
 	
 	 /**
-     * Get the squares of the game board.
-     * \return JPanel[][]  return the two dimensional array in the game panel.
+     * Retrieves a grid of JPanels which are used to display the
+     * game board.
+     * \return Returns a two dimensional array of JPanels 
      */
 	public JPanel[][] GetPanel() {
 		return m_panels;
 	}
 	
+	/**
+	 * Retrieves a specific JPanel corresponding to the indicated
+	 * grid position in the game.
+	 * \param x The X coordinate of the grid position corresponding
+	 * to the JPanel required
+	 * \param y The Y coordinate of the grid position corresponding
+	 * to the JPanel required
+	 * \return Returns the JPanel
+	 */
 	public JPanel GetPanel(int x, int y) {
 		return m_panels[x][y];
 	}
 	
+	/**
+	 * Sets the specific JPanel corresponding to the indicated grid
+	 * position in the game.
+	 * \param x The X coordinate of the grid position
+	 * \param y The Y coordinate of the grid positioln
+	 * \param panel The new JPanel that is being saved into the
+	 * indicated grid position
+	 * \return Returns TRUE if successful
+	 */
 	public boolean SetPanel(int x, int y, JPanel panel) {
 		m_panels[x][y] = panel;
 		return true;
 	}
 	
+	/**
+	 * Retrieves the specific JLabel corresponding to the indicated
+	 * grid position in the game. The JLabel contains the icon image
+	 * of a piece on the game board.
+	 * \param x The X coordinate of the grid position
+	 * \param y The Y coordinate of the grid position
+	 * \return Returns the JLabel
+	 */
 	public JLabel GetLabel(int x, int y) {
 		return m_labels[x][y];
 	}
 	
+	/**
+	 * Sets the specific JLabel corresponding to the indicated grid
+	 * position in the game. The JLabel contains the icon image of
+	 * a piece on the game board.
+	 * \param x The X coordinate of the grid position
+	 * \param y The Y coordinate of the grid position
+	 * \param label The new JLabel that is being saved into the
+	 * indicated grid position
+	 * \return Returns TRUE if successful
+	 */
 	public boolean SetLabel(int x, int y, JLabel label) {
 		m_labels[x][y] = label;
 		return true;
 	}
 	
+	/**
+	 * Retrieves the clock class which displays and keeps track of
+	 * the duration of the game.
+	 * \return The Clock class currently recording game duration
+	 */
 	public Clock getClock() {
 		return m_clock;
 	}
 	
+	/**
+	 * Sets the clock class which is to be used to display and keep
+	 * track of the duration of the game.
+	 * \param clock The new clock class which is to be used to
+	 * record the time.
+	 * \return Returns TRUE if successful.
+	 */
 	public boolean setClock(Clock clock) {
 		m_clock = clock;
 		return true;
 	}
 	
+	/**
+	 * An abstract class that is called at initialisation and is used
+	 * to display the background grid on the game board GUI.
+	 * \return Returns TRUE if successful.
+	 */
 	public abstract boolean setPanelColour();
 	
+	/**
+	 * An abstract class that is called at initialisation and is used
+	 * to set the user and game information that is to be displayed in
+	 * the info panel.
+	 * \return Returns TRUE if successful.
+	 */
 	public abstract boolean setInfo();
 
-    /**
-    * Constructor of GUI, construct the game board and sets the player 
-    * information.
-    * \param a BoardGame object , a GameController object.
-    */
+	/**
+	 * Constructor class which initialises and draws the JFrame containing
+	 * the GUI interface of the game.
+	 * \param b The BoardGame class which this GUI will display data from.
+	 * \param g The GameController class which this GUI will display data
+	 * from.
+	 */
 	public GUI(BoardGame b, GameController g) {
 		
 		FRAME = new JFrame("Game");
@@ -120,17 +186,18 @@ public abstract class GUI extends JFrame {
 	}
 	
 	/**
-     * Update the piece icon of the current player.
-     * \return boolean  return true if the action completes.
-     */
+	 * Sets the Icon which indicates who's player turn it is.
+	 * \param picon The Icon which is to be displayed.
+	 * \return Returns TRUE if successful.
+	 */
 	public boolean UpdatePlayerTurnIcon(Icon picon) {
 		m_playerTurnIcon.setIcon(picon);
 		return true;
 	}
 	
 	/**
-     * Draw the main frame which includes the game panel and the info panel.
-     */
+	 * Draws the individual GUI elements within the JFrame.
+	 */
 	private void draw() {
 		final int PADX = 15;
 		GUIHandler handler = new GUIHandler();
@@ -165,6 +232,11 @@ public abstract class GUI extends JFrame {
 		FRAME.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
+	/**
+	 * Draws the sidebar panel which displays the game's data.
+	 * \param handler The GUIHandler which deals with the GUIs buttons.
+	 * \return Returns the completed sidebar JPanel.
+	 */
 	private JPanel DrawInfoPanel(GUIHandler handler) {
 		JPanel infoPanel = new JPanel(new GridLayout(7, 2));
 		m_playerOneColor = new JLabel();
@@ -215,14 +287,21 @@ public abstract class GUI extends JFrame {
 		return infoPanel;
 	}
 	
+	/**
+	 * Method used to update and set the JLabel displaying the
+	 * duration of the game to the user.
+	 * \param time The time in a String format of HH:MM:SS to
+	 * be displayed to the user.
+	 * \return Returns TRUE if successful.
+	 */
 	public boolean SetTime(String time) {
 		m_timerLabel.setText("Time Elapsed: " + time);
 		return true;
 	}
 
-		 /**
-     * Draw the pieces to be displayed on the JFrame.
-     */
+	/**
+	 * Draws and updates the graphical game board with the placed pieces.
+	 */
 	public void DrawPieces() {
 		for (int y = 0; y < HEIGHT; ++y) {
 			for (int x = 0; x < WIDTH; ++x) {
@@ -238,12 +317,24 @@ public abstract class GUI extends JFrame {
 		SwingUtilities.updateComponentTreeUI(FRAME);
 	}
 
-	/** These methods had to be declared as MouseListener is abstract. 
-	 * Detect mouse action and button click to pass the information to the 
-	 * BoardGame and GameController class.
+	/**
+	 * 
+	 * \author Gavin Tsang
+	 *
+	 * \brief This class is used by the main JFrame to provide methods for
+	 * the buttons to call.
+	 * 
+	 * This class contains methods used by the JFrame. Any user interaction
+	 * between the GUI get's sent to this class which then processes the action
+	 * and passes the input to the correct subsystem within the game.
 	 */
 	private class GUIHandler extends MouseAdapter implements ActionListener {
 		
+		/**
+		 * This method is called whenever the user clicks on the game board
+		 * in order to place a piece down. If player 2 is an AI player, player
+		 * 2 will then take a move.
+		 */
 		public void mouseClicked(MouseEvent e) {
 			if(GetGame().GetGamOn()) {
 				playerMove(e);
@@ -253,6 +344,10 @@ public abstract class GUI extends JFrame {
 			}
 		}
 		
+		/**
+		 * Provides interaction between the pass, new game and save game buttons
+		 * within the GUI.
+		 */
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == PASSMOVE) {
 				if (GetGame().GetGamOn()) {
@@ -290,6 +385,12 @@ public abstract class GUI extends JFrame {
 			}
 		}
 		
+		/**
+		 * This method is called whenever it is a human player's turn.
+		 * It processes the mouse click and passes the move into the game
+		 * logic to be validated and saved.
+		 * \param e The mouseEvent indicating the mouse move.
+		 */
 		private void playerMove(MouseEvent e) {
 			boolean moveComplete = false;
 			for (int y = 0; y < HEIGHT; y++) {
@@ -317,6 +418,11 @@ public abstract class GUI extends JFrame {
 			}
 		}
 		
+		/**
+		 * This method is called whenever it is an AI player's turn.
+		 * It calls the correct AI logic process which provides a move
+		 * before being sent to game logic to be validated and saved.
+		 */
 		private void AIMove() {
 			boolean moveComplete = false;
 			Player player = GetGame().GetCurrent();
@@ -334,7 +440,7 @@ public abstract class GUI extends JFrame {
 	}
 
 	 /**
-     * Show a dialog box of the game result when the game ends.
+     * Shows a dialog box of the game result when the game ends.
      */
 	public void ShowWinningBox() {
 		m_clock.stop();

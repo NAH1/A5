@@ -48,6 +48,9 @@ public class AIHard extends Player{
 	 * Pick a move.
 	 */
 	public boolean takeMove(){
+		final int XCOORD = 0;
+		final int YCOORD = 1;
+		final int MOVESCORE = 2;
 		ArrayList<int[]> moves = new ArrayList<int[]>();
 		char[][] availableMoves = (GetBoard())
 				.AvailableMove(GetPieceColour());
@@ -64,7 +67,7 @@ public class AIHard extends Player{
 		
 		int position_max = 0;
 		for(int i=0; i < moves.size() ;i++){
-			if (moves.get(i)[2] > moves.get(position_max)[2]) {
+			if (moves.get(i)[MOVESCORE] > moves.get(position_max)[MOVESCORE]) {
 				position_max = i;
 			}
 		}
@@ -72,7 +75,7 @@ public class AIHard extends Player{
 		ArrayList<int[]> bestMoves = new ArrayList<int[]>();
 		bestMoves.add(moves.get(position_max));
 		for (int i = 0; i < moves.size(); i++) {
-			if(moves.get(i)[2] == moves.get(position_max)[2]) {
+			if(moves.get(i)[MOVESCORE] == moves.get(position_max)[MOVESCORE]) {
 				bestMoves.add(moves.get(i));
 			}
 		}
@@ -80,8 +83,8 @@ public class AIHard extends Player{
 		Random ran = new Random();
 		int random = ran.nextInt(bestMoves.size());
 					
-		m_X = bestMoves.get(random)[0];	
-		m_Y = bestMoves.get(random)[1];
+		m_X = bestMoves.get(random)[XCOORD];	
+		m_Y = bestMoves.get(random)[YCOORD];
 		
 		return true;
 	}

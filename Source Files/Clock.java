@@ -1,5 +1,5 @@
  /**
-  * \\file - Clock.Java
+  * \\file - Clock.java
   * \author	- Callum Hazelton
   * \date - 27/03/2014
   * \brief - Makes the timer

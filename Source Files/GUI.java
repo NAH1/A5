@@ -200,6 +200,8 @@ public abstract class GUI extends JFrame {
 	 */
 	private void draw() {
 		final int PADX = 15;
+		final int X_DIMENSION = 70;
+		final int Y_DIMENSION = 70;
 		GUIHandler handler = new GUIHandler();
 		JPanel infoPanel = DrawInfoPanel(handler);
 		JPanel mainPanel = new JPanel(new GridBagLayout());
@@ -216,7 +218,8 @@ public abstract class GUI extends JFrame {
 		for (int y = 0; y < HEIGHT; ++y) {
 			for (int x = 0; x < WIDTH; ++x) {
 				SetPanel(x, y, new JPanel());
-				GetPanel(x, y).setPreferredSize(new Dimension(70, 70));
+				GetPanel(x, y).setPreferredSize(new Dimension(X_DIMENSION,
+						Y_DIMENSION));
 				SetLabel(x, y, new JLabel());
 				GetPanel(x, y).addMouseListener(handler);
 				gamePanel.add(GetPanel(x, y));
@@ -238,7 +241,9 @@ public abstract class GUI extends JFrame {
 	 * \return Returns the completed sidebar JPanel.
 	 */
 	private JPanel DrawInfoPanel(GUIHandler handler) {
-		JPanel infoPanel = new JPanel(new GridLayout(7, 2));
+		final int ROWS = 7;
+		final int COLUMNS = 2;
+		JPanel infoPanel = new JPanel(new GridLayout(ROWS, COLUMNS));
 		m_playerOneColor = new JLabel();
 		m_playerOneColor.setVisible(false);
 		infoPanel.add(m_playerOneColor);
@@ -427,7 +432,8 @@ public abstract class GUI extends JFrame {
 			boolean moveComplete = false;
 			Player player = GetGame().GetCurrent();
 			player.takeMove();
-			moveComplete = GetBoard().Move(player.getX(), player.getY(), player.GetPieceColour());
+			moveComplete = GetBoard().Move(player.getX(), player.getY(),
+					player.GetPieceColour());
 			if (moveComplete) {
 				GetGame().Alternate();
 				DrawPieces();
@@ -460,8 +466,9 @@ public abstract class GUI extends JFrame {
 	protected final Font FONT = new Font("Dialog", Font.PLAIN, FSIZE);
 	/**Setting up all of the JLabels for the GUI*/
 	protected JLabel m_playerOneColor, m_playerOneIcon, m_playerTwoColor,
-	                 m_playerTwoIcon, m_playerTurnIcon, m_playerTurnLabel, m_whiteIcon,
-	                 m_whitePieces, m_blackIcon, m_blackPieces, m_timerLabel;
+	                 m_playerTwoIcon, m_playerTurnIcon, m_playerTurnLabel, 
+	                 m_whiteIcon,m_whitePieces, m_blackIcon, m_blackPieces,
+	                 m_timerLabel;
 	/**The gameBoard*/
 	protected BoardGame m_board;
 	/**setting up the GameController to interact with for each game*/

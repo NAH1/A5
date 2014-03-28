@@ -13,19 +13,29 @@ import java.awt.Color;
  * This abstract class is the parent object for the different types of players,
  * it contains accessor methods for player data and abstract method declarations
  */
-
 public abstract class Player {
 
+	/**
+	 * This get's the game board.
+	 * @return the game board
+	 */
 	protected BoardGame GetBoard() {
 		return m_board;
 	}
 	
+	/**
+	 * This sets the board for the player.
+	 * @param board instance of BoardGame
+	 * @return true if successful
+	 */
 	public boolean SetBoard(BoardGame board) {
 		m_board = board;
 		return true;
 	}
 	
-	/** \return m_pieceColor players piece colour */
+	/** 
+	 * \return m_pieceColor players piece colour 
+	 */
 	public Color GetPieceColour() {
 		boolean test = false;
         if (test || m_test) {
@@ -39,7 +49,9 @@ public abstract class Player {
 		return m_pieceColor;
 	}
 
-	/** \return m_playerName the players name */
+	/** 
+	 * \return m_playerName the players name 
+	 */
 	public String GetPlayerName() {
 		boolean test = false;
         if (test || m_test) {
@@ -53,8 +65,16 @@ public abstract class Player {
 		return m_playerName;
 	}
 	
+	/**
+	 * Gets the x coordinate 
+	 * @return the x coordinate
+	 */
 	public abstract int getX();
 	
+	/**
+	 * Gets the x coordinate 
+	 * @return the y coordinate
+	 */
 	public abstract int getY();
 	
 	/**
@@ -84,8 +104,17 @@ public abstract class Player {
 		return true;
 	}
 	
+	/**
+	 * Check's if the player is an AI
+	 * @return if it is an AI
+	 */
 	public abstract boolean isAI();
 	
+	
+	/**
+	 * Called whenever the game controller needs a move for an AI player
+	 * @return true if successful
+	 */
 	public abstract boolean takeMove();
 
 	/**

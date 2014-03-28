@@ -131,10 +131,18 @@ public class GameController {
 		return m_currentPlayer;
 	}
 	
+	/**
+	 * Gets the GUI
+	 * @return the GUI
+	 */
 	public GUI GetGUI() {
 		return m_GUI;
 	}
 	
+	/**
+	 * Gets the game board for the game.
+	 * @return the game board
+	 */
 	public BoardGame GetBoard() {
 		return m_board;
 	}

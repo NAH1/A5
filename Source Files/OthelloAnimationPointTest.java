@@ -4,10 +4,18 @@ import java.awt.Color;
 
 import org.junit.Test;
 
-
+/**
+ * 	\\file OthelloAnimationPointTest.java
+ * 	\author Ben Golightly
+ *	\date 28/03/2014
+ *
+ *	\brief test the OthelloAnimationPoint class
+ */
 public class OthelloAnimationPointTest {
 
-	// Test that a point animates to completion
+	/**
+	 *  Test that a point animates to completion
+	 */
 	@Test
 	public void testCompletion() {
 		OthelloAnimationPoint p = new OthelloAnimationPoint

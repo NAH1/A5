@@ -37,8 +37,10 @@ public class ConnectFour extends BoardGame {
 
 	/**
 	 * Place the ConnectFour piece on the game board \param x the x axis in the
-	 * game board. \param y the y axis in the game board. \param col the color
-	 * of the game piece. \return boolean return true if the action complete.
+	 * game board. 
+	 * \param y the y axis in the game board. \param col the color
+	 * of the game piece. 
+	 * \return boolean return true if the action complete.
 	 */
 	public boolean SetPiece(int x, int y, Color col) {
         boolean test = false;

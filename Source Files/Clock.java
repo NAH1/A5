@@ -1,11 +1,11 @@
  /**
- *  \\file - Clock.Java
- * 	\author	- Callum Hazelton
- * 	\date - 27/03/2014
- * 	\brief - Makes the timer
- * 
- * Counts the seconds since game started and converts to hh:mm:ss format. Also references GUI class
- */
+  * \\file - Clock.java
+  * \author	- Callum Hazelton
+  * \date - 27/03/2014
+  * \brief - Makes the timer
+  * 
+  * Counts the seconds since game started and converts to hh:mm:ss format. Also references GUI class
+  */
 import java.util.Timer;
 import java.util.TimerTask;
 
